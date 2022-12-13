@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 25px;
+        color: #2bae66ff;
+      }
+      header {
+        margin-left: 150px;
+        margin-top: 80px;
+      }
+      .upi img {
+        border-radius: 50%;
+        align-content: center;
+      }
+      .pay-icons {
+        display: flex;
+        width: 500px;
+        justify-content: space-evenly;
+        align-content: center;
+      }
+      hr {
+        width: 500px;
+        margin-left: 00px;
+        margin-top: 60px;
+      }
+      .footer {
+        margin-top: 30px;
+        align-content: center;
+        margin-left: 680px;
+        position: fixed;
+      }
+      .footer button {
+        width: 200px;
+        background-color: #2bae66ff;
+        color: white;
+        border-radius: 10px;
+        font-size: 25px;
+        height: 40px;
+      }
+      .detail {
+        width: 100px;
+      }
+      .details {
+        float: right;
+        width: 500px;
+        margin-top: -170px;
+      }
+      input {
+        font-size: 30px;
+      }
+      .logo {
+        text-align: center;
+        margin-top: -80px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>PAYMENT PAGE</h1>
+    <div class="logo">
+      <img src="images/logo.png" alt="logo" width="110px" />
+    </div>
+    <h3>Payment mode:</h3>
+    <div class="details">
+      <h3>Your Delivery details here:</h3>
+      <div class="detail">
+        <input type="text" placeholder="name" />
+        <input type="number" placeholder="Phone number" />
+        <input type="text" placeholder="address" />
+        <input type="date" placeholder="Pickup date" />
+      </div>
+    </div>
+    <div class="pay-icons">
+      <nav class="upi">
+        <p>UPI</p>
+        <img src="images/upi.png" alt="upi" width="70px" />
+      </nav>
+      <nav class="upi">
+        <p>Google Pay</p>
+        <img src="images/g-pay.png" alt="g-pay" width="90px" />
+      </nav>
+      <nav class="upi">
+        <p>Phone pe</p>
+        <img src="images/phone-pe.png" alt="pp" width="110px" />
+      </nav>
+    </div>
+    <hr />
+    <div>
+      <p>Scan QR Code</p>
+      <img src="images/qr-code.png" alt="qr-code" width="200px" />
+    </div>
+    <footer class="footer">
+      <a href="../100-day-project/9.conform.html"> <button>Okay</button></a>
+    </footer>
+  </body>
+</html>

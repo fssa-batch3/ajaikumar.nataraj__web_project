@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: #2bae66ff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 30px;
+        margin-top: 50px;
+      }
+
+      h2 {
+        color: blue;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .logo {
+        margin-left: 55px;
+        margin-top: 5px;
+        width: 200px;
+      }
+
+      .head {
+        display: flex;
+        justify-content: space-between;
+        background-color: #fcf6f5ff;
+        color: #2bae66ff;
+        margin-top: -40px;
+        height: 100px;
+        border-radius: 50px;
+        position: fixed;
+        width: 98%;
+        z-index: 3;
+      }
+      .h-mid {
+        display: flex;
+        justify-content: space-evenly;
+        align-content: space-evenly;
+        width: 550px;
+        margin-top: 25px;
+      }
+      .h-mid a {
+        text-decoration: none;
+        color: #2bae66ff;
+      }
+      .h-mid nav :hover {
+        color: blue;
+      }
+      .h-mid a :hover {
+        color: blue;
+      }
+
+      .big img {
+        border-radius: 50px;
+        margin-top: 50px;
+        margin-left: 50px;
+      }
+      .foot {
+        display: flex;
+        font-size: 20px;
+        align-content: space-between;
+        bottom: 00px;
+        background-color: #fcf6f5ff;
+        color: #2bae66ff;
+        width: 95%;
+        border-radius: 50px;
+        margin-left: 50px;
+      }
+      .foot-1 {
+        margin-left: 200px;
+      }
+      .foot-2 {
+        margin-left: 300px;
+      }
+      .foot h4 {
+        color: blue;
+      }
+      .about {
+        color: #fcf6f5ff;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      .about p {
+        margin-top: 100px;
+        margin-left: 50px;
+      }
+      .about h4 {
+        margin-top: 200px;
+        margin-left: 50px;
+        color: blue;
+      }
+
+      button:hover {
+        transform: translateY(-10px);
+      }
+
+      .img-1,
+      .img-3 img {
+        float: right;
+        margin-top: 20px;
+        margin-right: 50px;
+      }
+      .img-2,
+      .img-4 img {
+        float: left;
+        margin-top: 20px;
+        margin-left: 50px;
+      }
+      .img-2 p {
+        margin-left: 790px;
+      }
+      p {
+        margin-left: 30px;
+      }
+      .img-1 img {
+        border-radius: 50px;
+      }
+      .img-2 img {
+        margin-top: 30px;
+        border-radius: 50px;
+      }
+      .img-3 img {
+        margin-top: 100px;
+        border-radius: 50px;
+      }
+      .img-4 img {
+        margin-top: 100px;
+        border-radius: 50px;
+      }
+      .btn button {
+        width: 120px;
+        border-radius: 50px;
+        height: 50px;
+        margin-top: 20px;
+        color: blue;
+        font-size: 20px;
+        margin-right: 20px;
+        background-color: #2bae66ff;
+      }
+      .btn {
+        display: flex;
+      }
+      h2 {
+        text-align: center;
+      }
+      .no-dw a {
+        color: blue;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .btn-1:hover .no-dw {
+        display: block;
+      }
+      .no-dw a:hover {
+        background-color: lightgreen;
+        border-radius: 20px;
+      }
+      .no-dw {
+        display: none;
+        position: absolute;
+        background-color: rgb(140, 198, 220);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgb(103, 181, 99);
+        z-index: 1;
+        border-radius: 20px;
+        margin-left: -30px;
+        margin-top: -00px;
+        font-size: 20px;
+      }
+      .imgp-1 {
+        margin-top: -150px;
+      }
+      .imgp-2 {
+        margin-top: 50px;
+      }
+      .img-3 {
+        margin-top: 50px;
+      }
+      .imgp-1 p {
+        width: 650px;
+        display: flex;
+      }
+      .imgp-2 p {
+        width: 500px;
+        display: flex;
+        margin-left: 800px;
+      }
+      .imgp-2 h4 {
+        margin-left: 800px;
+      }
+      .img-3 p {
+        width: 650px;
+        display: flex;
+      }
+      .img-4 p {
+        width: 500px;
+        display: flex;
+        margin-left: 800px;
+      }
+      .img-4 h4 {
+        margin-left: 800px;
+      }
+      .img-2 {
+        position: relative;
+        bottom: 50px;
+      }
+      .img-3 img {
+        position: relative;
+        bottom: 50px;
+      }
+      .img-4 img {
+        position: relative;
+        bottom: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <header class="head">
+        <div class="logo">
+          <img src="images/logo.png" alt="logo" width="100px" />
+        </div>
+        <div class="h-mid">
+          <a href="../100-day-project/4.index.html"> <nav>Home</nav></a>
+          <nav><a href="#foot"> Contact</a></nav>
+          <nav><a href="#about"> About us</a></nav>
+        </div>
+        <div class="btn">
+          <div>
+            <a href="../100-day-project/1.signin.html">
+              <button>Sign up</button></a
+            >
+          </div>
+          <div class="btn-1">
+            <button class="no">Log In</button>
+            <div class="no-dw">
+              <a href="../100-day-project/2.Login.html"> as Customer</a>
+              <a href="../100-day-project/16-admin-home.html"> as Admin</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <h2 id="about">About us</h2>
+    <div class="about">
+      <div class="imgp-1">
+        <div class="img-1">
+          <img src="images/sunny-meadow.jpg" alt="sunny" width="700px" />
+        </div>
+
+        <h4>About our Website</h4>
+        <p>
+          We created this website for farmers, who are not able to sell their
+          productions, we help him to sell their products with a profitable
+          price. We take all responsibilities including transaction money,
+          transportation and sell their products.
+        </p>
+      </div>
+      <div class="imgp-2">
+        <div class="img-2">
+          <img src="images/farmer-problem.jpg" alt="plo" width="700px" />
+        </div>
+        <h4>What is the Problem?</h4>
+        <p>
+          Many Farmers are not able to sell their products. If their is a way to
+          sell their products it contains less profit amount.
+        </p>
+      </div>
+      <div class="img-3">
+        <img
+          src="images/farmer with money.jpg"
+          alt="farmer-with-money"
+          width="700px"
+        />
+
+        <h4>How we solved the Problem?</h4>
+        <p>
+          We solved the problem by take their products with some profit amount,
+          which is profit for all people who are their in this chain.
+        </p>
+      </div>
+      <div class="img-4">
+        <img src="images/plough.jpg" alt="plough" width="700px" />
+
+        <h4>About Agriculture</h4>
+        <p>
+          Agriculture is the art and science of cultivating the soil, growing
+          crops and raising livestock. It includes the preparation of plant and
+          animal products for people to use and their distribution to markets.
+          Agriculture provides most of the world's food and fabrics.
+        </p>
+      </div>
+    </div>
+    <div class="big">
+      <img src="images/cow-plough.jpg" alt="cow-plough" width="1400px" />
+    </div>
+    <footer class="foot" id="foot">
+      <div class="foot-1">
+        <h4>Contact us</h4>
+        <ul>
+          <i
+            class="fa fa-phone"
+            style="font-size: 24px; color: rgb(49, 49, 176)"
+          ></i>
+          - 9876543210
+        </ul>
+        <ul>
+          <i
+            class="fa fa-envelope"
+            style="font-size: 24px; color: rgb(219, 30, 30)"
+          ></i>
+          - customer.organic-market@gmail.com
+        </ul>
+        <ul>
+          <i class="fa fa-whatsapp" style="font-size: 24px; color: green"></i>
+          - 8967452301
+        </ul>
+      </div>
+      <div class="foot-2">
+        <h4>Follow us on</h4>
+        <div class="follow">
+          <ul>
+            <i
+              class="fa fa-youtube-play"
+              style="font-size: 24px; color: red"
+            ></i>
+            You Tube
+          </ul>
+          <ul class="fb">
+            <i
+              class="fa fa-facebook-f"
+              style="font-size: 24px; color: blue"
+            ></i>
+            Face book
+          </ul>
+          <ul>
+            <i
+              class="fa fa-twitter"
+              style="font-size: 24px; color: skyblue"
+            ></i>
+            Twitter
+          </ul>
+          <ul>
+            <i class="fa fa-instagram" style="font-size: 24px; color: red"></i>
+            Instagram
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

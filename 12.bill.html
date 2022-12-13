@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        margin-left: 100px;
+        margin-top: 60px;
+        font-size: 30px;
+        color: #2bae66ff;
+      }
+      table {
+        margin-top: 30px;
+      }
+      table .tr {
+        top: 100px;
+      }
+      .detail {
+        width: 100px;
+      }
+      .details {
+        float: right;
+        width: 500px;
+        margin-top: -140px;
+      }
+      input {
+        font-size: 30px;
+        color: #2bae66ff;
+      }
+
+      .footer {
+        top: 820px;
+        align-content: center;
+        margin-left: 440px;
+        position: fixed;
+      }
+      .footer button {
+        width: 400px;
+        background-color: #2bae66ff;
+        color: white;
+        font-size: 30px;
+        border-radius: 10px;
+      }
+      .img img {
+        margin-top: -40px;
+      }
+      .img {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="img">
+      <img
+        src="images/logo.png"
+        alt="logo"
+        width="130px
+      "
+      />
+    </div>
+    <h2>Thanks for uploading and your Products bill is here</h2>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td><input type="text" placeholder="Banana" /></td>
+        <td><input type="number" placeholder="Rs.3000" /></td>
+      </tr>
+      <tr class="tr">
+        <td>Total Amount</td>
+        <td>Rs.3000</td>
+      </tr>
+    </table>
+    <div class="details">
+      <h3>Fill your pickup details here:</h3>
+
+      <div class="detail">
+        <input type="text" placeholder="name" />
+        <input type="number" placeholder="Phone number" />
+        <input type="text" placeholder="address" />
+        <input type="date" placeholder="Pickup date" />
+      </div>
+    </div>
+    <footer class="footer">
+      <a href="../100-day-project/13.Acct.detail.html"
+        ><button>Go to Payment Page</button></a
+      >
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin-top: 30px;
+        margin-left: 30px;
+        font-size: 25px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #2bae66ff;
+      }
+      .header {
+        display: flex;
+      }
+      .head {
+        display: flex;
+        align-content: center;
+        width: 1000px;
+        margin-left: 250px;
+        color: white;
+      }
+      .update {
+        display: flex;
+      }
+      .update button {
+        width: 200px;
+        height: 50px;
+        border-radius: 50px;
+        margin-left: 20px;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #2bae66ff;
+      }
+      .form {
+        width: 200px;
+        margin-top: 150px;
+        margin-left: 500px;
+      }
+      .form input {
+        font-size: 25px;
+        color: #2bae66ff;
+        background-color: white;
+      }
+      .form label {
+        color: white;
+      }
+      .sign button {
+        width: 200px;
+        height: 50px;
+        border-radius: 50px;
+        margin-left: 500px;
+        margin-top: 100px;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: #2bae66ff;
+      }
+      .day-type {
+        margin-left: 1000px;
+        margin-top: 150px;
+      }
+      .day-type input {
+        width: 330px;
+        font-size: 20px;
+        color: #2bae66ff;
+      }
+      .th {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div>
+        <img src="images/logo.png" alt="logo" width="150px" />
+      </div>
+      <div class="head">
+        <img src="images/waving-hand.gif" alt="hand" width="110px" />
+        <h1>Happy Morning Buddy!</h1>
+        <img src="images/smiling-face.gif" alt="smile" width="110px" />
+      </div>
+    </header>
+    <div class="update">
+      <button>G-Mail</button>
+      <button>Reviews</button>
+      <button>New Order</button>
+      <button>Order Inprogress</button>
+    </div>
+    <div class="form">
+      <label>User Name:</label>
+      <input type="text" placeholder="Shin Chan" />
+      <label>Password:</label>
+      <input type="password" placeholder="Sc@123!" />
+    </div>
+    <div class="sign">
+      <a href="../100-day-project/17-admin-index.html">
+        <button>Sign In</button></a
+      >
+    </div>
+    <div class="day-type">
+      <th class="th" style="color: white">Today...</th>
+      <br />
+      <td>
+        <input list="Types" name="Types" />
+        <datalist id="Types">
+          <option value="Hurry! You have more work!"></option>
+          <option value="Relax! You have less work!"></option>
+          <option value="Cool! You have ordinary work!"></option>
+        </datalist>
+      </td>
+    </div>
+  </body>
+</html>

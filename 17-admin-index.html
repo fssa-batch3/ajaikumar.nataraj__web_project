@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 30px;
+      }
+      .logo {
+        margin-left: 620px;
+        margin-top: 15px;
+      }
+      .pro {
+        margin-right: 50px;
+        margin-top: 10px;
+        width: 200px;
+        color: white;
+        font-size: 30px;
+      }
+      .head {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -1px;
+        background-color: #2bae66ff;
+        color: white;
+        margin-top: 00px;
+        height: 130px;
+        border-radius: 100px;
+      }
+      .side-bar {
+        position: fixed;
+        height: 330px;
+        width: 320px;
+        background-color: #2bae66ff;
+        margin-left: -10px;
+        color: white;
+        margin-top: 130px;
+        font-size: 30px;
+        border-radius: 50px;
+      }
+      .side-bar h3 {
+        margin-left: 10px;
+      }
+      .btn button {
+        font-size: 30px;
+        width: 280px;
+        height: 70px;
+        border-radius: 50px;
+        font-size: 30px;
+        margin: 20px;
+        background-color: #2bae66ff;
+        color: blue;
+      }
+      .btn {
+        width: 200px;
+        margin-left: 550px;
+        margin-top: 120px;
+      }
+      .no-dw a {
+        color: blue;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      .btn-1:hover .no-dw {
+        display: block;
+      }
+      .no-dw a:hover {
+        background-color: lightgreen;
+        border-radius: 20px;
+      }
+      .no-dw {
+        display: none;
+        position: absolute;
+        background-color: rgb(140, 198, 220);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgb(103, 181, 99);
+        z-index: 1;
+        border-radius: 20px;
+        margin-left: 300px;
+        margin-top: -90px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head">
+      <div class="logo">
+        <img src="images/logo.png" alt="logo" width="110px" />
+      </div>
+      <div class="pro"><img src="images/profile.png" alt="profile" /></div>
+    </header>
+    <div class="side-bar">
+      <h3>Member's List</h3>
+      <p>Customer's</p>
+      <p>Hotel Customers</p>
+      <p>Vendors</p>
+    </div>
+    <div class="btn">
+      <div class="btn-1">
+        <button class="no">New Order</button>
+        <div class="no-dw">
+          <a href="../100-day-project/18-hotel-order-list.html"> Hotels</a>
+          <a href="../100-day-project/20-customer-order-list.html">
+            Small Customers</a
+          >
+        </div>
+      </div>
+      <div class="btn-1">
+        <button class="no">Completed Order</button>
+        <div class="no-dw">
+          <a href="../100-day-project/22-com-ord.html"> Delivered Orders</a>
+          <a href="../100-day-project/23-picked-up-order.html">
+            Picked Up Orders</a
+          >
+        </div>
+      </div>
+      <a href="../100-day-project/24-inprogress-orders.html">
+        <button class="oi">Order Inprogress</button></a
+      >
+      <a href="../100-day-project/21-new-upload.html">
+        <button class="nu">New Upload</button></a
+      >
+    </div>
+  </body>
+</html>
