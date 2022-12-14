@@ -1,0 +1,56 @@
+body {
+  background-color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  background-image: url(images/types-bg.png);
+}
+.logo {
+  margin-left: 5px;
+  margin-top: 5px;
+  width: 200px;
+}
+.pro {
+  margin-right: 50px;
+  margin-top: 10px;
+  width: 200px;
+  color: white;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -1px;
+  background-color: #2bae66ff;
+  color: white;
+  margin-top: 00px;
+  height: 130px;
+  border-radius: 50px;
+}
+.head button {
+  border-radius: 100px;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+.img-1 {
+  display: flex;
+  margin-top: 130px;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+.img-1 img {
+  border-radius: 20px;
+}
+.img-1 img:hover {
+  transform: translateY(-20px);
+}
+.img-2 {
+  display: flex;
+  margin-top: 130px;
+  justify-content: space-evenly;
+  align-content: space-evenly;
+}
+.img-2 img {
+  border-radius: 20px;
+}
+.img-2 img:hover {
+  transform: translateY(-20px);
+}

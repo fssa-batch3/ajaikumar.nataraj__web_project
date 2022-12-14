@@ -1,0 +1,53 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  color: #2bae66ff;
+}
+header {
+  margin-left: 150px;
+  margin-top: 80px;
+}
+.upi img {
+  border-radius: 50%;
+  align-content: center;
+}
+.pay-icons {
+  display: flex;
+  width: 500px;
+  justify-content: space-evenly;
+  align-content: center;
+}
+hr {
+  width: 500px;
+  margin-left: 00px;
+  margin-top: 60px;
+}
+.footer {
+  margin-top: 30px;
+  align-content: center;
+  margin-left: 680px;
+  position: fixed;
+}
+.footer button {
+  width: 200px;
+  background-color: #2bae66ff;
+  color: white;
+  border-radius: 10px;
+  font-size: 25px;
+  height: 40px;
+}
+.detail {
+  width: 100px;
+}
+.details {
+  float: right;
+  width: 500px;
+  margin-top: -170px;
+}
+input {
+  font-size: 30px;
+}
+.logo {
+  text-align: center;
+  margin-top: -80px;
+}

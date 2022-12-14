@@ -1,0 +1,57 @@
+.body {
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 80px;
+  margin-top: 30px;
+  color: #2bae66ff;
+}
+header {
+  justify-content: space-around;
+  align-content: space-around;
+}
+.header {
+  text-align: center;
+}
+.header img {
+  margin-top: -80px;
+}
+.detail {
+  width: 100px;
+}
+.details {
+  float: right;
+  width: 500px;
+  margin-top: 40px;
+}
+input {
+  font-size: 30px;
+  color: #2bae66ff;
+}
+.footer {
+  position: fixed;
+  text-align: center;
+  top: 800px;
+  background-color: #2bae66ff;
+  color: white;
+  width: 1550px;
+  height: 120px;
+  margin-top: 0px;
+  left: 00px;
+}
+.id {
+  margin-top: 330px;
+  display: flex;
+}
+.foot-p {
+  margin-top: 10px;
+  font-family: papyrus;
+}
+p {
+  margin-left: 150px;
+}
+p img {
+  margin-top: 10px;
+}
+.total-amount {
+  margin-top: 30px;
+}

@@ -1,0 +1,64 @@
+body {
+  margin-top: 30px;
+  margin-left: 30px;
+  font-size: 25px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #2bae66ff;
+}
+.header {
+  display: flex;
+}
+.head {
+  display: flex;
+  align-content: center;
+  width: 1000px;
+  margin-left: 250px;
+  color: white;
+}
+.update {
+  display: flex;
+}
+.update button {
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  margin-left: 20px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2bae66ff;
+}
+.form {
+  width: 200px;
+  margin-top: 150px;
+  margin-left: 500px;
+}
+.form input {
+  font-size: 25px;
+  color: #2bae66ff;
+  background-color: white;
+}
+.form label {
+  color: white;
+}
+.sign button {
+  width: 200px;
+  height: 50px;
+  border-radius: 50px;
+  margin-left: 500px;
+  margin-top: 100px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #2bae66ff;
+}
+.day-type {
+  margin-left: 1000px;
+  margin-top: 150px;
+}
+.day-type input {
+  width: 330px;
+  font-size: 20px;
+  color: #2bae66ff;
+}
+.th {
+  color: white;
+}

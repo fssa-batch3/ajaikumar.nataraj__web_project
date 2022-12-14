@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/CSS/10-upload.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="110px
+      "
+        />
+      </div>
+      <div class="header">
+        <div class="head">
+          <a href="../pages/3.home.html">
+            <button>
+              <img
+                src="../assets/image/arrowback.png"
+                alt="arrow-back"
+                width="50px"
+              /></button
+          ></a>
+        </div>
+        <div class="title">
+          <h1>Hi Farmer...</h1>
+        </div>
+      </div>
+    </header>
+    <div>
+      <table>
+        <div class="main">
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>cancel</th>
+          </tr>
+        </div>
+        <div class="main">
+          <tr>
+            <td>
+              <input
+                type="image"
+                value="upload image"
+                placeholder="upload Photo"
+              />
+            </td>
+            <td>
+              <input type="text" placeholder="your product" />
+            </td>
+            <td>
+              <input list="Types" name="Types" />
+              <datalist id="Types">
+                <option value="Fruits"></option>
+                <option value="Vegetables"></option>
+                <option value="Coffee & Tea"></option>
+                <option value="Pulses/Grains"></option>
+                <option value="Seeds"></option>
+                <option value="Dhals"></option>
+                <option value="Nursery Plants"></option>
+                <option value="Manure"></option>
+              </datalist>
+            </td>
+            <td>
+              <input type="number" value="kg" placeholder="Rs.20/kg" />
+            </td>
+            <td>
+              <input type="number" value="kg" placeholder="150 kg" />
+            </td>
+            <td>
+              <i class="fa fa-close" style="font-size: 36px"></i>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>
+    <div class="add">
+      <img src="../assets/image/add.png" alt="add" width="80px" />
+    </div>
+
+    <footer class="footer">
+      <a href="../pages/11.place-products.html"><button>Okay</button></a>
+    </footer>
+  </body>
+</html>

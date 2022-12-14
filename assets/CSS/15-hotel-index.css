@@ -1,0 +1,62 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  background-image: url(images/signup.jpg);
+  background-size: cover;
+}
+.body {
+  font-size: 30px;
+  color: white;
+}
+
+.center {
+  text-align: start;
+  justify-content: space-between;
+  color: white;
+}
+
+.sub {
+  margin-top: 20px;
+}
+
+.bottom {
+  align-items: baseline;
+  display: inline-block;
+}
+.form {
+  align-content: center;
+  justify-content: center;
+  margin-top: 00px;
+}
+.form input {
+  font-size: 25px;
+}
+.full {
+  justify-content: center;
+  margin-left: 500px;
+  top: 10px;
+  color: lightgreen;
+}
+label,
+placeholder {
+  color: lightgreen;
+}
+.log {
+  margin-top: 50px;
+}
+p {
+  margin-top: 00px;
+}
+button {
+  font-size: 30px;
+}
+.h {
+  margin-left: -400px;
+  font-size: 30px;
+  margin-top: -10px;
+  display: flex;
+}
+footer {
+  bottom: 00px;
+  position: fixed;
+}

@@ -1,0 +1,37 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 30px;
+  color: white;
+  background-color: #2bae66ff;
+}
+h2 {
+  margin-left: 80px;
+  top: 80px;
+}
+.form {
+  width: 420px;
+  margin-top: 50px;
+  margin-left: 550px;
+  align-content: space-between;
+  justify-content: space-between;
+}
+.form input {
+  font-size: 30px;
+}
+.footer {
+  top: 820px;
+  align-content: center;
+  margin-left: 680px;
+  position: fixed;
+}
+.footer button {
+  width: 200px;
+  color: #2bae66ff;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 30px;
+}
+.logo {
+  text-align: center;
+}

@@ -1,0 +1,70 @@
+body {
+  background-image: url(images/rice-fields-bali.jpg);
+}
+.body img {
+  opacity: 2;
+}
+.body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 23px;
+}
+.search-bar {
+  height: 43px;
+  width: 320px;
+  font-size: 30px;
+}
+.header {
+  margin-top: 40px;
+  margin-left: 250px;
+  display: flex;
+}
+.search-button {
+  padding-top: -50px;
+}
+.sb {
+  margin-top: 00px;
+  height: 50px;
+}
+.sb::placeholder {
+  padding: 50px;
+}
+.side-bar {
+  position: fixed;
+  height: 500px;
+  width: 240px;
+  background-color: white;
+  margin-left: 00px;
+  color: #2bae66ff;
+  border-radius: 50px;
+}
+.main {
+  margin-top: 00px;
+  margin-left: 220px;
+  display: flex;
+
+  text-align: center;
+}
+.main-1 {
+  margin-top: 00px;
+  margin-left: 70px;
+  display: flex;
+
+  text-align: center;
+}
+.footer {
+  top: 790px;
+  align-content: center;
+  margin-left: 680px;
+  position: fixed;
+}
+.footer button {
+  width: 200px;
+  background-color: #2bae66ff;
+  color: white;
+
+  border-radius: 50px;
+  font-size: 30px;
+}
+.logo {
+  text-align: center;
+}

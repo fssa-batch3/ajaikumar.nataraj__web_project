@@ -1,0 +1,45 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-left: 100px;
+  margin-top: 60px;
+  font-size: 30px;
+  color: #2bae66ff;
+}
+table {
+  margin-top: 30px;
+}
+table .tr {
+  top: 100px;
+}
+.detail {
+  width: 100px;
+}
+.details {
+  float: right;
+  width: 500px;
+  margin-top: -140px;
+}
+input {
+  font-size: 30px;
+  color: #2bae66ff;
+}
+
+.footer {
+  top: 820px;
+  align-content: center;
+  margin-left: 440px;
+  position: fixed;
+}
+.footer button {
+  width: 400px;
+  background-color: #2bae66ff;
+  color: white;
+  font-size: 30px;
+  border-radius: 10px;
+}
+.img img {
+  margin-top: -40px;
+}
+.img {
+  text-align: center;
+}
