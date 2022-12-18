@@ -15,7 +15,7 @@
   font-weight: bold;
   font-size: 25px;
   cursor: pointer;
-  margin-top: 200px;
+  margin-top: 160px;
   transition: box-shadow 0.2s;
   border-color: black;
 }
@@ -33,7 +33,7 @@
   font-weight: bold;
   font-size: 25px;
   cursor: pointer;
-  margin-top: 200px;
+  margin-top: 160px;
   transition: box-shadow 0.2s;
   border-color: black;
 }
@@ -52,7 +52,7 @@
   font-weight: bold;
   font-size: 25px;
   cursor: pointer;
-  margin-top: 200px;
+  margin-top: 160px;
   transition: box-shadow 0.2s;
 }
 .sell-btn:hover {
@@ -88,4 +88,9 @@ body {
   color: white;
   height: 100px;
   border-radius: 50px;
+}
+.com-btn button {
+  width: 300px;
+  height: 100px;
+  font-size: 40px;
 }
