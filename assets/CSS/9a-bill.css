@@ -30,6 +30,7 @@ header {
 }
 input {
   font-size: 30px;
+  background-color: rgb(191, 227, 191);
 }
 .footer {
   position: fixed;
@@ -47,7 +48,7 @@ input {
 }
 .foot-p {
   margin-top: 10px;
-  font-family: papyrus;
+  font-family: "Times New Roman", Times, serif;
 }
 p {
   margin-left: 100px;

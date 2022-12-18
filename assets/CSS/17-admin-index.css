@@ -20,7 +20,6 @@ body {
   margin-top: -1px;
   background-color: #2bae66ff;
   color: white;
-  margin-top: 00px;
   height: 130px;
   border-radius: 100px;
 }
@@ -43,7 +42,6 @@ body {
   width: 280px;
   height: 70px;
   border-radius: 50px;
-  font-size: 30px;
   margin: 20px;
   background-color: #2bae66ff;
   color: blue;

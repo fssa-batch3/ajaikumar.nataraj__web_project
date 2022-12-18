@@ -18,6 +18,9 @@ header {
   justify-content: space-evenly;
   align-content: center;
 }
+.pay p {
+  text-align: center;
+}
 hr {
   width: 500px;
   margin-left: 00px;
@@ -47,6 +50,7 @@ hr {
 }
 input {
   font-size: 30px;
+  background-color: rgb(191, 227, 191);
 }
 .logo {
   text-align: center;

@@ -36,16 +36,13 @@ body {
   top: 10px;
   color: #2bae66ff;
 }
-label,
-placeholder {
+label {
   color: #2bae66ff;
 }
 .log {
   margin-top: 50px;
 }
-p {
-  margin-top: 00px;
-}
+
 button {
   font-size: 30px;
 }
