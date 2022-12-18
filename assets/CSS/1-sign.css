@@ -43,8 +43,9 @@ body {
   border-radius: 40px;
 }
 .form input {
-  font-size: 25px;
+  font-size: 30px;
   border-radius: 10px;
+  border: none;
 }
 .full {
   justify-content: center;
@@ -72,6 +73,8 @@ button {
   color: seagreen;
 }
 footer {
-  bottom: 00px;
   position: fixed;
+}
+button:hover {
+  transform: scaleY(1.2);
 }

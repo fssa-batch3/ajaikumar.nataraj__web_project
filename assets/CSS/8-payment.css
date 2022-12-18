@@ -40,6 +40,9 @@ hr {
   font-size: 25px;
   height: 40px;
 }
+.footer button:hover {
+  transform: scaleY(1.5);
+}
 .detail {
   width: 100px;
 }

@@ -31,6 +31,10 @@ table {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #2bae66ff;
 }
+.table input {
+  background-color: rgb(191, 227, 191);
+  border: #2bae66ff;
+}
 
 .footer {
   top: 820px;

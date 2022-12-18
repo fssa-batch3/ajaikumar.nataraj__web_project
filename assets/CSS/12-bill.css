@@ -24,7 +24,12 @@ input {
   font-size: 30px;
   color: #2bae66ff;
 }
-
+.detail input {
+  background-color: rgb(191, 227, 191);
+}
+table input {
+  background-color: rgb(191, 227, 191);
+}
 .footer {
   top: 820px;
   align-content: center;
@@ -37,6 +42,9 @@ input {
   color: white;
   font-size: 30px;
   border-radius: 10px;
+}
+.footer button:hover {
+  transform: scaleY(1.3);
 }
 .img img {
   margin-top: -40px;

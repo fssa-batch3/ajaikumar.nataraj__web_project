@@ -5,7 +5,9 @@
   background-size: center;
   width: 1490px;
   height: 800px;
+  text-align: center;
 }
+
 h1 {
   margin-left: 500px;
   margin-top: 30px;
@@ -22,12 +24,12 @@ h1 {
 }
 .center input {
   border-radius: 8px;
+  border: none;
 }
 .form {
   align-content: center;
   justify-content: center;
   margin-top: 40px;
-  margin-left: 550px;
 }
 .form input {
   font-size: 30px;
@@ -45,4 +47,7 @@ h1 {
 }
 button {
   font-size: 30px;
+}
+.footer button:hover {
+  transform: scaleY(1.5);
 }

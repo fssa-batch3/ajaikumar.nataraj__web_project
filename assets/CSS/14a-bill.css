@@ -27,6 +27,7 @@ header {
 input {
   font-size: 30px;
   color: #2bae66ff;
+  background-color: rgb(191, 227, 191);
 }
 .footer {
   position: fixed;

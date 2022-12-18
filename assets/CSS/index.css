@@ -159,6 +159,10 @@ p {
   margin-right: 20px;
   background-color: #2bae66ff;
   border: 2px solid #2bae66ff;
+  translate: 1.5;
+}
+.btn button:hover {
+  transform: scaleY(1.5);
 }
 .btn {
   display: flex;
@@ -357,6 +361,12 @@ button {
   font-size: 40px;
   color: #2bae66ff;
   margin-left: 100px;
+}
+.dis-ap p:hover {
+  transform: scaleY(1.5);
+}
+.dis-p p:hover {
+  transform: scaleY(1.5);
 }
 .dis-ft img {
   float: right;

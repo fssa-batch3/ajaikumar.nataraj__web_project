@@ -4,6 +4,7 @@
   background-size: cover;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
+  text-align: center;
 }
 body {
   background-image: url(../image/growing\ tree.gif);
@@ -13,7 +14,7 @@ body {
   color: black;
   border: none;
   height: 50px;
-  width: 174px;
+  width: 74px;
   border-radius: 18px;
   font-weight: bold;
   font-size: 25px;
@@ -31,7 +32,7 @@ body {
   color: black;
   border: none;
   height: 50px;
-  width: 174px;
+  width: 74px;
   border-radius: 18px;
   font-weight: bold;
   font-size: 25px;
@@ -50,7 +51,7 @@ body {
   background-color: rgb(16, 102, 242);
   border: none;
   height: 50px;
-  width: 174px;
+  width: 74px;
   border-radius: 18px;
   font-weight: bold;
   font-size: 25px;
@@ -69,7 +70,7 @@ body {
   padding-top: 150px;
 }
 body {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 .logo {
   margin-left: 5px;
@@ -85,7 +86,6 @@ body {
 .head {
   display: flex;
   justify-content: space-between;
-  margin-top: 00px;
   background-color: #2bae66ff;
   color: white;
   height: 100px;
@@ -93,6 +93,9 @@ body {
 }
 .com-btn button {
   width: 300px;
-  height: 100px;
+  height: 50px;
   font-size: 40px;
+}
+.com-btn button:hover {
+  transform: scaleY(1.3);
 }

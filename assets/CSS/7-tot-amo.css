@@ -3,6 +3,7 @@ body {
   color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: rgb(191, 227, 191);
+  margin-left: 50px;
 }
 .full {
   margin-left: 100px;
@@ -24,8 +25,8 @@ body {
 }
 .footer {
   top: 800px;
-  align-content: center;
-  margin-left: -10px;
+  text-align: center;
+  margin-left: -50px;
   position: fixed;
   width: 1520px;
   height: 100px;
@@ -37,9 +38,11 @@ body {
   color: #2bae66ff;
   padding: 15px 30px;
   border-radius: 10px;
-  margin-left: 650px;
   margin-top: 30px;
   font-size: 20px;
+}
+.footer button:hover {
+  transform: scaleY(1.2);
 }
 .details {
   margin-left: 750px;

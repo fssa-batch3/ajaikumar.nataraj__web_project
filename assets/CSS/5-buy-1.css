@@ -1,8 +1,8 @@
 body {
   background-color: rgb(191, 227, 191);
 }
-.body img {
-  opacity: 2;
+.body img:hover {
+  transform: scaleY(1.15);
 }
 .body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -41,6 +41,13 @@ body {
 }
 .side-bar a {
   text-decoration: none;
+}
+.side-bar ul:hover {
+  transform: scaleY(1.5);
+  transform: scaleX(1.1);
+}
+.side-bar h3 {
+  margin-left: 10px;
 }
 .main {
   margin-top: 100px;
@@ -121,6 +128,9 @@ body {
   border-radius: 50px;
   font-size: 30px;
   margin-top: 20px;
+}
+.footer button:hover {
+  transform: scaleY(1.2);
 }
 .logo {
   position: fixed;
