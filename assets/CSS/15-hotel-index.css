@@ -1,8 +1,7 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
-  background-image: url(images/signup.jpg);
-  background-size: cover;
+  background-color: rgb(191, 227, 191);
 }
 .body {
   font-size: 30px;
@@ -35,11 +34,11 @@ body {
   justify-content: center;
   margin-left: 500px;
   top: 10px;
-  color: lightgreen;
+  color: #2bae66ff;
 }
 label,
 placeholder {
-  color: lightgreen;
+  color: #2bae66ff;
 }
 .log {
   margin-top: 50px;

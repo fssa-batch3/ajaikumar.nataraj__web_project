@@ -1,6 +1,7 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
+  background-color: rgb(191, 227, 191);
 }
 .logo {
   margin-left: 620px;

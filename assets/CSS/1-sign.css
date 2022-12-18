@@ -1,43 +1,57 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
-  background-color: #2bae66ff;
-  color: white;
+  background-color: rgb(191, 227, 191);
+  color: black;
 }
 .body {
   font-size: 30px;
-  color: white;
+  color: black;
 }
 
 .center {
   text-align: start;
   justify-content: space-between;
-  color: white;
+  color: black;
+  margin-left: 130px;
+  margin-top: 30px;
 }
 
 .sub {
   margin-top: 20px;
+  margin-left: 130px;
 }
 
 .bottom {
   align-items: baseline;
   display: inline-block;
 }
-.form {
+.form .c {
   align-content: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: -130px;
+  margin-left: 100px;
+}
+.fs {
+  border: solid 2px blue;
+  width: 600px;
+  height: 500px;
+  margin-top: 150px;
+  background-color: #d6fa8c;
+  border-radius: 40px;
 }
 .form input {
   font-size: 25px;
+  border-radius: 10px;
 }
 .full {
   justify-content: center;
-  margin-left: 500px;
+  margin-left: 400px;
   margin-top: -40px;
 }
 .log {
   margin-top: 30px;
+  margin-left: 130px;
 }
 p {
   margin-top: 00px;
@@ -51,9 +65,9 @@ button {
 .h {
   margin-left: -400px;
   font-size: 30px;
-  margin-top: 20px;
+  margin-top: -150px;
   display: flex;
-  color: blue;
+  color: seagreen;
 }
 footer {
   bottom: 00px;

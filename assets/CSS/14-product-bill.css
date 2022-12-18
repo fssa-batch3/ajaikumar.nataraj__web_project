@@ -3,6 +3,7 @@ body {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #2bae66ff;
+  background-color: rgb(191, 227, 191);
 }
 button {
   font-size: 25px;

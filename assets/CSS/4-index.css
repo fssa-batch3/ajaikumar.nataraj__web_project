@@ -1,8 +1,7 @@
 body {
-  background-color: white;
+  background-color: rgb(191, 227, 191);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
-  background-image: url(images/types-bg.png);
 }
 .logo {
   margin-left: 5px;

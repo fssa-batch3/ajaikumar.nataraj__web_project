@@ -1,7 +1,7 @@
 body {
-  background-color: white;
   color: #2bae66ff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(191, 227, 191);
 }
 .header {
   display: flex;
@@ -40,7 +40,7 @@ body {
   background-color: #2bae66ff;
 }
 .f-btn {
-  background-color: white;
+  background-color: rgb(191, 227, 191);
   top: 803px;
   position: fixed;
   margin-left: -10px;

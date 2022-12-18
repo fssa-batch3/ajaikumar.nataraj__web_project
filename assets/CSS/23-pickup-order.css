@@ -1,11 +1,14 @@
 .header {
   display: flex;
   font-size: 40px;
-  background-color: #2bae66ff;
+  background-color: rgb(191, 227, 191);
   height: 100px;
   width: 100%;
   border-radius: 50px;
   position: fixed;
+}
+body {
+  background-color: rgb(191, 227, 191);
 }
 .header button {
   border-radius: 50px;
@@ -15,7 +18,7 @@
 .hol {
   text-align: center;
   width: 1200px;
-  color: white;
+  color: #2bae66ff;
   margin-top: 25px;
 }
 .side-bar {
@@ -51,7 +54,7 @@
   border-radius: 50px;
 }
 .f-btn {
-  background-color: white;
+  background-color: rgb(191, 227, 191);
   top: 803px;
   position: fixed;
   margin-left: -10px;

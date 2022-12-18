@@ -1,7 +1,8 @@
 body {
   margin-top: 60px;
-  color: #2bae66ff;
+  color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: rgb(191, 227, 191);
 }
 .full {
   margin-left: 100px;
@@ -47,7 +48,8 @@ body {
 }
 .details input {
   font-size: 30px;
-  color: #2bae66ff;
+  color: black;
+  background-color: skyblue;
 }
 .logo {
   text-align: center;
