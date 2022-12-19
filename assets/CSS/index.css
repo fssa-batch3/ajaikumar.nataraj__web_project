@@ -169,6 +169,7 @@ p {
 }
 h2 {
   text-align: center;
+  margin-top: 10px;
 }
 .no-dw a {
   color: blue;
@@ -345,6 +346,12 @@ button {
 .dis {
   display: flex;
 }
+.dis img:hover {
+  transform: scaleY(1.2);
+}
+.dis-ft img:hover {
+  transform: scaleY(1.2);
+}
 .dis-p {
   text-align: center;
   align-content: center;
@@ -370,4 +377,8 @@ button {
 }
 .dis-ft img {
   float: right;
+}
+.famous {
+  text-align: center;
+  margin-top: 20px;
 }
