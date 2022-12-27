@@ -1,0 +1,96 @@
+body {
+  background-color: rgb(191, 227, 191);
+  width: 1000px;
+}
+.body img:hover {
+  transform: scaleY(1.15);
+}
+.body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 23px;
+}
+.search-bar {
+  height: 43px;
+  width: 320px;
+  font-size: 30px;
+}
+.header {
+  top: 20px;
+  margin-left: 250px;
+  display: flex;
+  position: fixed;
+}
+.search-button {
+  padding-top: -50px;
+}
+.sb {
+  margin-top: 00px;
+  height: 50px;
+}
+.sb::placeholder {
+  padding: 50px;
+}
+.side-bar {
+  position: fixed;
+  height: 500px;
+  width: 240px;
+  background-color: skyblue;
+  margin-left: 00px;
+  color: #2bae66ff;
+  border-radius: 50px;
+  top: 200px;
+}
+.side-bar a {
+  text-decoration: none;
+}
+.side-bar ul:hover {
+  transform: scaleY(1.5);
+  transform: scaleX(1.1);
+}
+.side-bar h3 {
+  margin-left: 10px;
+}
+.footer {
+  top: 810px;
+  text-align: center;
+  position: fixed;
+  background-color: skyblue;
+  width: 100%;
+  height: 100px;
+}
+.footer button {
+  width: 200px;
+  background-color: #2bae66ff;
+  color: white;
+  align-content: center;
+  border-radius: 50px;
+  font-size: 30px;
+  margin-top: 20px;
+}
+.footer button:hover {
+  transform: scaleY(1.2);
+}
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+.bar {
+  width: 20px;
+}
+.f-main {
+  margin-top: 100px;
+  margin-left: 200px;
+}
+.main {
+  top: 100px;
+  left: 300px;
+}
+.main-1 {
+  top: 50px;
+  margin-left: 600px;
+}
+.s {
+  border: 2px solid black;
+  width: 300px;
+}

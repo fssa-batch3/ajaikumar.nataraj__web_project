@@ -34,14 +34,14 @@ h2 {
   position: fixed;
   width: 92%;
   z-index: 3;
-  margin-left: 50px;
+  margin-left: 5%;
   border: 2px solid #2bae66ff;
 }
 .h-mid {
   display: flex;
   justify-content: space-evenly;
   align-content: space-evenly;
-  width: 550px;
+  width: 40%;
   margin-top: 25px;
 }
 .h-mid a {
@@ -224,10 +224,10 @@ h2 {
 .img-4 p {
   width: 500px;
   display: flex;
-  margin-left: 800px;
+  margin-left: 50%;
 }
 .img-4 h3 {
-  margin-left: 800px;
+  margin-left: 50%;
 }
 .img-2 {
   position: relative;
@@ -356,7 +356,7 @@ button {
   text-align: center;
   align-content: center;
   padding-top: 250px;
-  width: 500px;
+  width: 35%;
   font-size: 40px;
   color: #2bae66ff;
 }
