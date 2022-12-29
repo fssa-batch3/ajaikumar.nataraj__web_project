@@ -76,21 +76,30 @@ body {
   left: 20px;
 }
 .bar {
-  width: 20px;
+  width: 50px;
+  border-radius: 5px;
 }
 .f-main {
   margin-top: 100px;
-  margin-left: 200px;
+  margin-left: 300px;
+}
+.f-main img {
+  border-radius: 10px;
 }
 .main {
   top: 100px;
   left: 300px;
+  display: flex;
+}
+.f-main nav {
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 500px;
+  margin-left: 5px;
+  font-size: 20px;
 }
 .main-1 {
-  top: 50px;
-  margin-left: 600px;
-}
-.s {
-  border: 2px solid black;
-  width: 300px;
+  margin-top: 50px;
+  left: 300px;
+  display: flex;
 }
