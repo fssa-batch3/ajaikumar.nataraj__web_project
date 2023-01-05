@@ -18,16 +18,43 @@
     <div class="form">
       <form class="center">
         <label>User name:</label><br />
-        <input style="color: grey" type="text" placeholder="Shin chan" /><br />
+        <input
+          style="color: grey"
+          type="text"
+          id="name"
+          value="Shin chan"
+          placeholder="User Name"
+        /><br />
         <label>User id:</label><br />
-        <input style="color: grey" type="text" placeholder="MO191122" /><br />
+        <input
+          style="color: grey"
+          type="text"
+          id="userid"
+          value="MO191122"
+          placeholder="User Id"
+        /><br />
         <label>Password:</label><br />
-        <input style="color: grey" type="password" placeholder="Sc@123!" />
+        <input
+          style="color: grey"
+          type="password"
+          id="password"
+          value="Sc@123!"
+          placeholder="Sc@123!"
+        />
       </form>
     </div>
     <div class="footer">
       <a href="../pages/3.home.html"><button>Sign in</button></a>
     </div>
     <footer class="footer">Toll-Free no:1800 123 100</footer>
+    <script>
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("userid").value;
+      const password = document.getElementById("password").value;
+
+      console.log(name);
+      console.log(userid);
+      console.log(password);
+    </script>
   </body>
 </html>

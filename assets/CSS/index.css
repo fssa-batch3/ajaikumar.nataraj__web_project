@@ -25,6 +25,7 @@ h2 {
 }
 .head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   background-color: #fcf6f5ff;
   color: #2bae66ff;
@@ -34,11 +35,12 @@ h2 {
   position: fixed;
   width: 92%;
   z-index: 3;
-  margin-left: 5%;
+  margin-left: 3.4%;
   border: 2px solid #2bae66ff;
 }
 .h-mid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-content: space-evenly;
   width: 40%;
@@ -53,6 +55,10 @@ h2 {
 }
 .h-mid a :hover {
   color: black;
+}
+
+.mobile-menu-div {
+  display: none;
 }
 h3 {
   font-size: 70px;
@@ -69,6 +75,7 @@ h3 {
 }
 .foot {
   display: flex;
+  flex-wrap: wrap;
   font-size: 25px;
   align-content: space-between;
   justify-content: space-evenly;
@@ -166,6 +173,7 @@ p {
 }
 .btn {
   display: flex;
+  flex-wrap: wrap;
 }
 h2 {
   text-align: center;
@@ -208,10 +216,12 @@ h2 {
 .imgp-1 p {
   width: 650px;
   display: flex;
+  flex-wrap: wrap;
 }
 .imgp-2 p {
   width: 500px;
   display: flex;
+  flex-wrap: wrap;
   margin-left: 800px;
 }
 .imgp-2 h3 {
@@ -220,10 +230,12 @@ h2 {
 .img-3 p {
   width: 650px;
   display: flex;
+  flex-wrap: wrap;
 }
 .img-4 p {
   width: 500px;
   display: flex;
+  flex-wrap: wrap;
   margin-left: 50%;
 }
 .img-4 h3 {
@@ -243,6 +255,7 @@ h2 {
 }
 .f-products {
   display: flex;
+  flex-wrap: wrap;
   height: 500px;
   background-color: white;
   border-radius: 30px;
@@ -329,6 +342,7 @@ h2 {
 }
 .scroll-ln {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 40px;
   overflow: hidden;
   width: 93%;
@@ -345,6 +359,7 @@ button {
 }
 .dis {
   display: flex;
+  flex-wrap: wrap;
 }
 .dis img:hover {
   transform: scaleY(1.2);
@@ -381,4 +396,151 @@ button {
 .famous {
   text-align: center;
   margin-top: 20px;
+}
+
+/* media query */
+
+@media screen and (max-width: 600px) {
+  .head {
+    display: flex;
+    flex-wrap: wrap;
+    width: 540px;
+    height: 70px;
+    margin-left: 20px;
+  }
+  .logo img {
+    width: 50px;
+    margin-top: 5px;
+    margin-left: -40px;
+  }
+  .mobile-menu-div img {
+    width: 40px;
+    padding: 15px 20px 0px 0px;
+  }
+  .h-mid {
+    margin-left: 0px;
+    display: none;
+  }
+  .h-mid nav {
+    display: flex;
+    font-size: 15px;
+    margin-left: -100px;
+    margin-right: 10px;
+    margin-top: -30px;
+  }
+
+  .mobile-menu-div {
+    display: block;
+  }
+  .btn {
+    display: none;
+  }
+  .btn button {
+    font-size: 10px;
+    width: 50px;
+    border-radius: 5px;
+    height: 20px;
+    margin-top: 0px;
+  }
+  .gif img {
+    width: 500px;
+    margin-left: -50px;
+  }
+  .ln {
+    font-size: 10px;
+    width: 150px;
+    height: 15px;
+    margin-top: 0px;
+    text-align: center;
+  }
+  .scroll {
+    font-size: 10px;
+    margin-top: 3px;
+    height: 18px;
+  }
+  h3 {
+    font-size: 40px;
+  }
+  .imgp-1 img {
+    width: 500px;
+    margin-left: 100px;
+  }
+  .imgp-1 p,
+  h3 {
+    width: 500px;
+    margin-top: 0px;
+  }
+  .img-2 img {
+    width: 500px;
+    margin-left: -10px;
+  }
+  .imgp-2 p {
+    width: 500px;
+    margin-top: 0px;
+    margin-left: 50px;
+  }
+  .imgp-2 h3 {
+    margin-left: 20px;
+    width: 500px;
+  }
+  .img-3 img {
+    width: 500px;
+  }
+  .img-3 p {
+    width: 500px;
+    margin-top: 00px;
+  }
+  .img-4 img {
+    width: 500px;
+    margin-left: 30px;
+  }
+  .img-4 h3 {
+    width: 500px;
+    margin-left: 50px;
+  }
+  .img-4 p {
+    width: 500px;
+    margin-left: 40px;
+    margin-top: 00px;
+  }
+  h2 {
+    margin-top: 80px;
+    font-size: 35px;
+  }
+  .f-products {
+    width: 500px;
+    margin-left: 40px;
+  }
+  .dis img {
+    width: 500px;
+    margin-left: 40px;
+  }
+  .dis-p {
+    width: 500px;
+    margin-top: -300px;
+    margin-left: 40px;
+    font-size: 30px;
+  }
+  .dis-ft img {
+    width: 500px;
+  }
+  .dis-ap {
+    width: 500px;
+    margin-left: 40px;
+    margin-top: -30px;
+    font-size: 30px;
+  }
+  .big {
+    width: 520px;
+    margin-left: 00px;
+  }
+  .foot {
+    width: 500px;
+    margin-left: 40px;
+  }
+  .copyright {
+    width: 520px;
+    margin-left: 30px;
+    font-size: 10px;
+  }
 }

@@ -15,7 +15,7 @@
     <div class="full">
       <div class="fs">
         <div class="h">
-          <h1>Welcome! to Organic Market</h1>
+          <h1>Welcome! to Rishi Organic Market</h1>
         </div>
         <div class="form">
           <form class="center">
@@ -23,45 +23,68 @@
             <input
               style="color: grey"
               type="text"
-              placeholder="Shin chan"
+              id="name"
+              placeholder="name"
             /><br />
             <label>Mail id:</label><br />
             <input
               style="color: grey"
               type="email"
-              placeholder="shinchan1234@gmail.com"
+              id="email"
+              placeholder="name@gmail.com"
             /><br />
             <label>Phone no:</label><br />
             <input
               style="color: grey"
               type="tel"
+              id="phoneno"
               placeholder="9876543210"
             /><br />
             <label>Password:</label><br />
-            <input style="color: grey" type="password" placeholder="Sc@123!" />
+            <input
+              style="color: grey"
+              id="password"
+              type="password"
+              placeholder="ab@123!"
+            />
             <br />
             <label>Conform Password:</label><br />
             <input
               style="color: grey"
               type="password-hidden"
-              placeholder="Sc@123!"
+              id="conform-password"
+              placeholder="ab@123!"
             /><br />
           </form>
-        </div>
-        <div class="sub">
-          <a href="../pages/3.home.html"><button>sign up</button> </a>
+
+          <button class="sub" type="button" onclick="submit()">sign up</button>
         </div>
       </div>
       <footer>
         <div>
-          <div class="log">
-            <a href="../pages/2.Login.html">
-              <button>Login</button>
-            </a>
-          </div>
+          <button class="log" type="button" onclick="submit">Login</button>
+
           <p>If you already sign in! Please Login..</p>
         </div>
       </footer>
     </div>
+    <script>
+      function submit() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const phoneno = document.getElementById("phoneno").value;
+        const password = document.getElementById("password").value;
+        const conformpassword =
+          document.getElementById("conform-password").value;
+
+        console.log(name);
+        console.log(email);
+        console.log(phoneno);
+        console.log(password);
+        console.log(conformpassword);
+
+        window.location.href = "../3.home.html";
+      }
+    </script>
   </body>
 </html>

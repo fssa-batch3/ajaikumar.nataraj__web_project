@@ -54,3 +54,15 @@ body {
 .img-2 img:hover {
   transform: scaleY(1.2);
 }
+
+/* Media query*/
+@media screen and (max-width: 600px) {
+  body {
+    width: 600px;
+    font-size: 15px;
+    gap: 00px;
+  }
+  img {
+    width: 60px;
+  }
+}

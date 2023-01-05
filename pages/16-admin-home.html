@@ -26,9 +26,14 @@
     </div>
     <div class="form">
       <label>User Name:</label>
-      <input type="text" placeholder="Shin Chan" />
+      <input type="text" id="name" value="Shinchan" placeholder="Shinchan" />
       <label>Password:</label>
-      <input type="password" placeholder="Sc@123!" />
+      <input
+        type="password"
+        id="password"
+        value="Sc@123!"
+        placeholder="Sc@123!"
+      />
     </div>
     <div class="sign">
       <a href="../pages/17-admin-index.html"> <button>Sign In</button></a>
@@ -37,7 +42,7 @@
       <th class="th" style="color: white">Today...</th>
       <br />
       <td>
-        <input list="Types" name="Types" />
+        <input list="Types" id="mode" value="Your work" name="Types" />
         <datalist id="Types">
           <option value="Hurry! You have more work!"></option>
           <option value="Relax! You have less work!"></option>
@@ -45,5 +50,14 @@
         </datalist>
       </td>
     </div>
+    <script>
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+      const mode = document.getElementById("mode").value;
+
+      console.log(name);
+      console.log(password);
+      console.log(mode);
+    </script>
   </body>
 </html>

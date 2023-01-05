@@ -51,3 +51,37 @@ button {
 .footer button:hover {
   transform: scaleY(1.5);
 }
+
+/* Media query*/
+@media screen and (max-width: 600px) {
+  * {
+    width: 600px;
+  }
+
+  body {
+    width: 600px;
+    height: 800px;
+    font-size: 20px;
+    text-align: start;
+    overflow: hidden;
+  }
+  .body {
+    width: 600px;
+  }
+  .body img {
+    width: 90px;
+    text-align: none;
+  }
+  .form {
+    width: 500px;
+    margin-left: 00px;
+    align-content: none;
+    justify-content: none;
+  }
+  h1 {
+    margin-left: 40px;
+  }
+  input {
+    width: 400px;
+  }
+}

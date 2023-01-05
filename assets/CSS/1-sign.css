@@ -78,3 +78,45 @@ footer {
 button:hover {
   transform: scaleY(1.2);
 }
+
+/* Media query*/
+@media screen and (max-width: 600px) {
+  * {
+    font-size: 20px;
+    margin-left: -50px;
+  }
+  .head img {
+    margin-left: 80px;
+    width: 80px;
+  }
+  .form input {
+    font-size: 15px;
+  }
+  .h {
+    margin-top: -110px;
+    margin-left: 50px;
+  }
+  .fs {
+    margin-left: -345px;
+    width: 500px;
+    height: 500px;
+  }
+  .form {
+    margin-left: 70px;
+    margin-top: 150px;
+  }
+  .sub button {
+    font-size: 20px;
+    width: 150px;
+    margin-left: 100px;
+  }
+  .log button {
+    font-size: 20px;
+    width: 150px;
+    margin-left: -150px;
+  }
+  p {
+    margin: 0px;
+    margin-left: -170px;
+  }
+}

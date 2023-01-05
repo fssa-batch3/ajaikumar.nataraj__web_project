@@ -99,3 +99,31 @@ body {
 .com-btn button:hover {
   transform: scaleY(1.3);
 }
+
+/* Media query */
+@media screen and (max-width: 600px) {
+  .body {
+    width: 600px;
+    margin-top: 00px;
+    margin-bottom: 00px;
+  }
+  body {
+    width: 600px;
+    height: 700px;
+    background-image: none;
+  }
+  .head {
+    width: 500px;
+    margin-left: 40px;
+    margin-top: 00px;
+  }
+  .buy-btn {
+    margin-top: 00px;
+  }
+  .sell-btn {
+    margin-top: 40px;
+  }
+  .hbuy-btn {
+    margin-top: 40px;
+  }
+}
