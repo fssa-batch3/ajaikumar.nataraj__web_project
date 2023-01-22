@@ -19,23 +19,34 @@
           <img src="../assets/image/logo.png" alt="logo" width="100px" />
         </div>
 
-        <div class="pro">
-          <img src="../assets/image/profile.png" alt="profile" />
-        </div>
+        <button class="pro">Shin chan</button>
       </header>
     </div>
     <div class="com-btn">
-      <div>
-        <a href="../pages/4.index.html">
-          <button class="buy-btn">Buyer</button>
-        </a>
-        <a href="../pages/10.upload.html">
-          <button class="sell-btn">Vendor</button></a
-        >
-        <a href="../pages/15.hotel-index.html">
-          <button class="hbuy-btn">Hotel-Buyer</button></a
-        >
-      </div>
+      <button type="button" onclick="buyer()">Buyer</button>
+      <button type="button" onclick="farmer()">Vendor</button>
+      <button type="button" onclick="wholebuyer()">Hotel-Buyer</button>
     </div>
+
+    <script>
+      function submitForm() {
+        const user_name = localStorage.getItem("user_name");
+
+        document.getElementsByClassName("pro")[0].innerHTML = user_name;
+
+        console.log(user_name);
+      }
+      submitForm();
+      function buyer() {
+        window.location.href = "http://127.0.0.1:5500/pages/4.index.html";
+      }
+      function farmer() {
+        window.location.href = "http://127.0.0.1:5500/pages/10.upload.html";
+      }
+      function wholebuyer() {
+        window.location.href =
+          "http://127.0.0.1:5500/pages/15.hotel-index.html";
+      }
+    </script>
   </body>
 </html>

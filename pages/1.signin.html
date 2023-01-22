@@ -62,7 +62,7 @@
       </div>
       <footer>
         <div>
-          <button class="log" type="button" onclick="submit">Login</button>
+          <button class="log" type="button" onclick="log()">Login</button>
 
           <p>If you already sign in! Please Login..</p>
         </div>
@@ -83,7 +83,16 @@
         console.log(password);
         console.log(conformpassword);
 
-        window.location.href = "../3.home.html";
+        localStorage.setItem("user_name", name);
+        localStorage.setItem("user_email", email);
+        localStorage.setItem("user_phoneno", phoneno);
+        localStorage.setItem("user_password", password);
+        localStorage.setItem("user_conformpassword", conformpassword);
+
+        window.location.href = "http://127.0.0.1:5500/pages/3.home.html";
+      }
+      function log() {
+        window.location.href = "http://127.0.0.1:5500/pages/2.Login.html";
       }
     </script>
   </body>

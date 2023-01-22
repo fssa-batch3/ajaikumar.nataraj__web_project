@@ -44,17 +44,21 @@
       </form>
     </div>
     <div class="footer">
-      <a href="../pages/3.home.html"><button>Sign in</button></a>
+      <button type="button" onclick="submit()">Sign in</button>
     </div>
     <footer class="footer">Toll-Free no:1800 123 100</footer>
     <script>
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("userid").value;
-      const password = document.getElementById("password").value;
+      function submit() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("userid").value;
+        const password = document.getElementById("password").value;
 
-      console.log(name);
-      console.log(userid);
-      console.log(password);
+        console.log(name);
+        console.log(userid);
+        console.log(password);
+
+        window.location.href = "http://127.0.0.1:5500/pages/3.home.html";
+      }
     </script>
   </body>
 </html>

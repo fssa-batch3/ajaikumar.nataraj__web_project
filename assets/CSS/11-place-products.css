@@ -38,9 +38,7 @@ table {
 
 .footer {
   top: 820px;
-  align-content: center;
-  margin-left: 580px;
-  position: fixed;
+  text-align: center;
 }
 .footer button {
   width: 400px;
@@ -55,4 +53,28 @@ input {
 }
 .logo {
   text-align: center;
+}
+
+/* Media query*/
+
+@media screen and (max-width: 600px) {
+  body {
+    width: 600px;
+  }
+  th {
+    width: 60px;
+    font-size: 20px;
+  }
+  td {
+    width: 60px;
+    font-size: 10px;
+  }
+  input {
+    width: 100px;
+  }
+  .footer {
+    position: fixed;
+    top: 730px;
+    left: 100px;
+  }
 }

@@ -1,6 +1,6 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   background-color: rgb(191, 227, 191);
   color: black;
 }
@@ -14,7 +14,7 @@ body {
 .center {
   text-align: start;
   justify-content: space-between;
-  color: black;
+  color: #2bae66ff;
   margin-left: 130px;
   margin-top: 30px;
 }
@@ -35,7 +35,7 @@ body {
   margin-left: 130px;
 }
 .fs {
-  border: solid 2px blue;
+  border: solid 2px #2bae66ff;
   width: 600px;
   height: 500px;
   margin-top: 150px;
@@ -54,20 +54,19 @@ body {
 }
 .log {
   margin-top: 30px;
-  margin-left: 130px;
+  margin-left: 25%;
 }
-p {
-  margin-top: 00px;
-}
+
 button {
   font-size: 30px;
   border-radius: 50px;
   width: 300px;
-  color: blue;
+  color: #2bae66ff;
+  border: 1px solid #2bae66ff;
 }
 .h {
   margin-left: -400px;
-  font-size: 30px;
+  font-size: 25px;
   margin-top: -150px;
   display: flex;
   color: seagreen;
@@ -82,7 +81,7 @@ button:hover {
 /* Media query*/
 @media screen and (max-width: 600px) {
   * {
-    font-size: 20px;
+    font-size: 25px;
     margin-left: -50px;
   }
   .head img {
@@ -90,7 +89,7 @@ button:hover {
     width: 80px;
   }
   .form input {
-    font-size: 15px;
+    font-size: 20px;
   }
   .h {
     margin-top: -110px;
@@ -102,21 +101,24 @@ button:hover {
     height: 500px;
   }
   .form {
-    margin-left: 70px;
-    margin-top: 150px;
+    margin-left: 40px;
+    margin-top: 120px;
   }
-  .sub button {
-    font-size: 20px;
-    width: 150px;
+  .center {
+    width: 300px;
+  }
+  .sub {
     margin-left: 100px;
   }
-  .log button {
-    font-size: 20px;
-    width: 150px;
-    margin-left: -150px;
+  .log {
+    margin-left: -50px;
   }
   p {
     margin: 0px;
     margin-left: -170px;
+  }
+  button {
+    font-size: 20px;
+    width: 150px;
   }
 }

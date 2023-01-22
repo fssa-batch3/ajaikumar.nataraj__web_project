@@ -77,7 +77,7 @@ body {
   width: 200px;
   height: 50px;
   background-color: white;
-  color: skyblue;
+  color: #2bae66ff;
   border-radius: 10px;
   margin-left: 650px;
   margin-top: 30px;
@@ -88,5 +88,58 @@ body {
 }
 .logo {
   text-align: center;
-  margin-top: -60px;
+  margin-top: 00px;
+}
+
+/* Media query*/
+
+@media screen and (max-width: 600px) {
+  .body {
+    width: 580px;
+    height: 600px;
+  }
+  .logo img {
+    width: 70px;
+  }
+  .logo {
+    width: 470px;
+  }
+  .header {
+    margin-top: 00px;
+    margin-left: 20px;
+    width: 600px;
+  }
+  .sb input {
+    width: 250px;
+  }
+  .table {
+    width: 600px;
+    margin-left: 40px;
+  }
+  .table tr {
+    width: 500px;
+  }
+  .main {
+    font-size: 20px;
+  }
+  .main-1 {
+    font-size: 20px;
+  }
+  .main-1 button {
+    font-size: 20px;
+    height: 30px;
+    width: 80px;
+    border: 1px solid #2bae66ff;
+  }
+  .footer {
+    top: 710px;
+    width: 600px;
+  }
+  .footer button {
+    margin-top: 30px;
+    margin-left: 230px;
+    height: 30px;
+    width: 150px;
+    font-size: 20px;
+  }
 }

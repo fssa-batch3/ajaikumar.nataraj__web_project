@@ -9,65 +9,17 @@
 body {
   background-image: url(../image/growing\ tree.gif);
 }
-.buy-btn {
-  background-color: lightgreen;
-  color: black;
-  border: none;
-  height: 50px;
-  width: 74px;
-  border-radius: 18px;
-  font-weight: bold;
-  font-size: 25px;
-  cursor: pointer;
-  margin-top: 160px;
-  transition: box-shadow 0.2s;
-  border-color: black;
-}
-.buy-btn:hover {
-  color: white;
-  background-color: rgba(6, 229, 245, 0.37);
-}
-.hbuy-btn {
-  background-color: rgb(13, 235, 21);
-  color: black;
-  border: none;
-  height: 50px;
-  width: 74px;
-  border-radius: 18px;
-  font-weight: bold;
-  font-size: 25px;
-  cursor: pointer;
-  margin-top: 160px;
-  transition: box-shadow 0.2s;
-  border-color: black;
-}
-.hbuy-btn:hover {
-  color: white;
-  background-color: blue;
-}
-
-.sell-btn {
-  color: white;
-  background-color: rgb(16, 102, 242);
-  border: none;
-  height: 50px;
-  width: 74px;
-  border-radius: 18px;
-  font-weight: bold;
-  font-size: 25px;
-  cursor: pointer;
-  margin-top: 160px;
-  transition: box-shadow 0.2s;
-}
-.sell-btn:hover {
-  background-color: yellow;
-  color: black;
-}
 
 .com-btn {
   text-align: center;
   justify-content: space-between;
-  padding-top: 150px;
+  padding-top: 250px;
+}
+.com-btn button {
+  border: 2px solid #2bae66ff;
+  background-color: rgb(191, 227, 191);
+  color: #2bae66ff;
+  border-radius: 10px;
 }
 body {
   margin-top: 30px;
@@ -79,9 +31,12 @@ body {
 }
 .pro {
   margin-right: 50px;
-  margin-top: 10px;
+  margin-top: 25px;
   width: 200px;
-  color: white;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 25px;
+  color: #2bae66ff;
 }
 .head {
   display: flex;

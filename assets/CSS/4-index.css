@@ -10,9 +10,12 @@ body {
 }
 .pro {
   margin-right: 50px;
-  margin-top: 10px;
-  width: 200px;
-  color: white;
+  margin-top: 25px;
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 25px;
+  color: #2bae66ff;
 }
 .head {
   display: flex;
@@ -25,8 +28,8 @@ body {
   width: 85%;
   margin-left: 100px;
 }
-.head button {
-  border-radius: 100px;
+.before-arrow {
+  border-radius: 50px;
   margin-top: 30px;
   margin-left: 30px;
 }
@@ -63,6 +66,31 @@ body {
     gap: 00px;
   }
   img {
-    width: 60px;
+    width: 90px;
+    border-radius: 5px;
+  }
+  .head {
+    width: 550px;
+    height: 80px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+  }
+  .head button img {
+    width: 20px;
+  }
+  .logo {
+    text-align: center;
+  }
+  .logo img {
+    width: 70px;
+  }
+  .pro {
+    margin-right: 80px;
+    width: 20px;
+  }
+  .pro img {
+    width: 50px;
   }
 }

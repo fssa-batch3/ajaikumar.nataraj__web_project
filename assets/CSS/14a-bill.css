@@ -30,7 +30,6 @@ input {
   background-color: rgb(191, 227, 191);
 }
 .footer {
-  position: fixed;
   text-align: center;
   top: 800px;
   background-color: #2bae66ff;
@@ -42,7 +41,6 @@ input {
 }
 .id {
   margin-top: 330px;
-  display: flex;
 }
 .foot-p {
   margin-top: 10px;
@@ -56,4 +54,42 @@ p img {
 }
 .total-amount {
   margin-top: 30px;
+}
+
+/* media query*/
+
+@media screen and (max-width: 600px) {
+  .body {
+    width: 600px;
+    margin-left: 00px;
+  }
+  table {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  .main {
+    margin-left: 50px;
+  }
+  .details {
+    margin-top: 00px;
+    margin-left: 10px;
+  }
+  .footer {
+    width: 600px;
+    height: 180px;
+  }
+  .foot-p {
+    width: 500px;
+    margin-left: 50px;
+  }
+  .id {
+    margin-top: 100px;
+    margin-left: 00px;
+    width: 600px;
+  }
+  .header img {
+    width: 80px;
+  }
 }

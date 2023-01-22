@@ -14,10 +14,24 @@ button {
 }
 .btn button {
   background-color: #2bae66ff;
-  color: blue;
+  color: rgb(191, 227, 191);
   width: 300px;
   height: 50px;
 }
 .btn button:hover {
   transform: scaleY(1.3);
+}
+
+/*media query*/
+
+@media screen and (max-width: 600px) {
+  img {
+    width: 190px;
+  }
+  .logo img {
+    width: 100px;
+  }
+  .btn button {
+    width: 130px;
+  }
 }

@@ -31,10 +31,8 @@ table input {
   background-color: rgb(191, 227, 191);
 }
 .footer {
-  top: 820px;
-  align-content: center;
-  margin-left: 440px;
-  position: fixed;
+  text-align: center;
+  margin-top: 50px;
 }
 .footer button {
   width: 400px;
@@ -51,4 +49,29 @@ table input {
 }
 .img {
   text-align: center;
+}
+
+/*media query*/
+
+@media screen and (max-width: 600px) {
+  body {
+    width: 600px;
+    margin-left: 10px;
+  }
+  h2 {
+    font-size: 25px;
+    width: 580px;
+  }
+  .details {
+    margin-top: 20px;
+  }
+  input {
+    width: 250px;
+  }
+  .footer {
+    text-align: center;
+  }
+  .footer button {
+    margin-top: 40px;
+  }
 }

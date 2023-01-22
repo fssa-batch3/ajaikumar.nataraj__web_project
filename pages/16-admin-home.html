@@ -13,9 +13,9 @@
         <img src="../assets/image/logo.png" alt="logo" width="150px" />
       </div>
       <div class="head">
-        <img src="../assets/image/waving-hand.gif" alt="hand" width="150px" />
+        <img src="../assets/image/waving-hand.gif" alt="hand" width="80px" />
         <h1>Happy Morning Buddy!</h1>
-        <img src="../assets/image/smiling-face.gif" alt="smile" width="150px" />
+        <img src="../assets/image/smiling-face.gif" alt="smile" width="80px" />
       </div>
     </header>
     <div class="update">
@@ -36,28 +36,30 @@
       />
     </div>
     <div class="sign">
-      <a href="../pages/17-admin-index.html"> <button>Sign In</button></a>
+      <button type="button" onclick="submit()">Sign In</button>
     </div>
     <div class="day-type">
-      <th class="th" style="color: white">Today...</th>
-      <br />
-      <td>
-        <input list="Types" id="mode" value="Your work" name="Types" />
-        <datalist id="Types">
-          <option value="Hurry! You have more work!"></option>
-          <option value="Relax! You have less work!"></option>
-          <option value="Cool! You have ordinary work!"></option>
-        </datalist>
-      </td>
+      <h4>Today...</h4>
+      <input list="Types" id="mode" value="Your work" name="Types" />
+      <datalist id="Types">
+        <option value="Hurry! You have more work!"></option>
+        <option value="Relax! You have less work!"></option>
+        <option value="Cool! You have ordinary work!"></option>
+      </datalist>
     </div>
     <script>
-      const name = document.getElementById("name").value;
-      const password = document.getElementById("password").value;
-      const mode = document.getElementById("mode").value;
+      function submit() {
+        const name = document.getElementById("name").value;
+        const password = document.getElementById("password").value;
+        const mode = document.getElementById("mode").value;
 
-      console.log(name);
-      console.log(password);
-      console.log(mode);
+        console.log(name);
+        console.log(password);
+        console.log(mode);
+
+        window.location.href =
+          "http://127.0.0.1:5500/pages/17-admin-index.html";
+      }
     </script>
   </body>
 </html>

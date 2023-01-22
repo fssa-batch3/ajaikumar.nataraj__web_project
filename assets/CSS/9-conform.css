@@ -27,3 +27,11 @@ button {
 .body {
   margin-top: -90px;
 }
+
+/* media query*/
+
+@media screen and (max-width: 600px) {
+  .body {
+    height: 700px;
+  }
+}

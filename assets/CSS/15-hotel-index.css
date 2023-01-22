@@ -8,7 +8,7 @@ body {
   color: white;
 }
 .logo {
-  margin-left: 600px;
+  text-align: center;
 }
 .center {
   text-align: start;
@@ -24,17 +24,12 @@ body {
   align-items: baseline;
   display: inline-block;
 }
-.form {
-  align-content: center;
-  justify-content: center;
-  margin-top: 00px;
-}
+
 .form input {
   font-size: 25px;
 }
 .full {
-  justify-content: center;
-  margin-left: 500px;
+  margin-left: 20%;
   margin-top: -100px;
   color: #2bae66ff;
 }
@@ -49,12 +44,25 @@ button {
   font-size: 30px;
 }
 .h {
-  margin-left: -400px;
   font-size: 30px;
   margin-top: -10px;
   display: flex;
 }
-footer {
-  bottom: 00px;
-  position: fixed;
+
+/*media query*/
+
+@media screen and (max-width: 600px) {
+  .body {
+    width: 600px;
+  }
+  h1 {
+    font-size: 30px;
+    width: 500px;
+  }
+  .log {
+    margin-top: 10px;
+  }
+  p {
+    font-size: 20px;
+  }
 }

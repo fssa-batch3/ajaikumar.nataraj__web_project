@@ -44,15 +44,20 @@ body {
   border-radius: 50px;
   margin: 20px;
   background-color: #2bae66ff;
-  color: blue;
+  color: white;
+  border: none;
 }
 .btn {
   width: 200px;
   margin-left: 550px;
   margin-top: 120px;
 }
+.btn-1 a {
+  border: 1px solid #2bae66ff;
+  border-radius: 20px;
+}
 .no-dw a {
-  color: blue;
+  color: #2bae66ff;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -67,7 +72,7 @@ body {
 .no-dw {
   display: none;
   position: absolute;
-  background-color: rgb(140, 198, 220);
+  background-color: rgb(191, 227, 191);
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgb(103, 181, 99);
   z-index: 1;
