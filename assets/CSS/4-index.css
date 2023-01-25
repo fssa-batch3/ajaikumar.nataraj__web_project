@@ -10,8 +10,8 @@ body {
 }
 .pro {
   margin-right: 50px;
-  margin-top: 25px;
-  width: 100px;
+  margin-top: 15px;
+  width: 200px;
   height: 50px;
   border-radius: 5px;
   font-size: 25px;
@@ -30,8 +30,9 @@ body {
 }
 .before-arrow {
   border-radius: 50px;
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 15px;
+
+  height: 40px;
 }
 .img-1 {
   display: flex;
@@ -45,17 +46,14 @@ body {
 .img-1 img:hover {
   transform: scaleY(1.2);
 }
-.img-2 {
-  display: flex;
-  margin-top: 130px;
-  justify-content: space-evenly;
-  align-content: space-evenly;
-}
-.img-2 img {
-  border-radius: 20px;
-}
-.img-2 img:hover {
-  transform: scaleY(1.2);
+
+.img-1 button {
+  width: 200px;
+  background-color: #2bae66ff;
+  color: white;
+  font-size: 24px;
+  border: 1px solid #2bae66ff;
+  border-radius: 10px;
 }
 
 /* Media query*/
@@ -73,9 +71,6 @@ body {
     width: 550px;
     height: 80px;
     margin-left: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-content: space-between;
   }
   .head button img {
     width: 20px;
@@ -87,10 +82,24 @@ body {
     width: 70px;
   }
   .pro {
-    margin-right: 80px;
-    width: 20px;
+    margin-right: 00px;
+    width: 100px;
+    font-size: 15px;
   }
-  .pro img {
-    width: 50px;
+  .img-1 {
+    flex-wrap: wrap;
+    margin-top: 100px;
+  }
+  .img-1 img {
+    width: 250px;
+    margin-top: 20px;
+  }
+  .img-1 button {
+    width: 240px;
+    background-color: #2bae66ff;
+    color: white;
+    font-size: 18px;
+    border: 1px solid #2bae66ff;
+    border-radius: 10px;
   }
 }

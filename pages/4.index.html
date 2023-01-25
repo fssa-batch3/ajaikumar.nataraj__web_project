@@ -13,90 +13,53 @@
   </head>
   <body>
     <header class="head">
-      <a href="../pages/3.home.html">
-        <button class="before-arrow">
-          <img
-            src="../assets/image/arrowback.png"
-            alt="arrow-back"
-            width="40px"
-          />
-        </button>
-      </a>
+      <button type="button" onclick="submit()" class="before-arrow">
+        <img
+          src="../assets/image/arrowback.png"
+          alt="arrow-back"
+          width="40px"
+        />
+      </button>
+
       <div class="logo">
         <img src="../assets/image/logo.png" alt="logo" width="130px" />
       </div>
       <button class="pro">Shin chan</button>
     </header>
-    <div class="img-1">
+    <main class="img-1">
       <nav>
-        <a href="../pages/5a-fruits.html">
-          <img src="../assets/image/Fruits.jpg" alt="Fruits" width="200px" />
-          <br />
-          <p>Fruits</p>
-        </a>
+        <img src="../assets/image/Fruits.jpg" alt="Fruits" width="200px" />
+        <br />
+        <button type="button" onclick="fruit()">Fruits</button>
       </nav>
       <nav>
-        <a href="../pages/5b-vegetable.html">
-          <img
-            src="../assets/image/vegetables.jpg"
-            alt="vegetables"
-            width="200px"
-          />
-          <br />
-          <p>Vegetables</p>
-        </a>
+        <img
+          src="../assets/image/vegetables.jpg"
+          alt="vegetables"
+          width="200px"
+        />
+        <br />
+        <button type="button" onclick="veg()">Vegetables</button>
       </nav>
       <nav>
-        <a href="../pages/5c-tea.html">
-          <img
-            src="../assets/image/Coffee-Tea-Powder-Combo-Pack.jpg"
-            alt="powder"
-            width="200px"
-          />
-          <br />
-          <p>Coffee & Tea</p>
-        </a>
+        <img
+          src="../assets/image/Coffee-Tea-Powder-Combo-Pack.jpg"
+          alt="powder"
+          width="200px"
+        />
+        <br />
+        <button type="button" onclick="coffee()">Coffee & Tea</button>
       </nav>
       <nav>
-        <a href="../pages/5d-cereals.html">
-          <img
-            src="../assets/image/Cereals-and-Pulses.jpg"
-            alt="grains"
-            width="230px"
-          />
-          <br />
-          <p>Cereals & Grains</p>
-        </a>
+        <img
+          src="../assets/image/Cereals-and-Pulses.jpg"
+          alt="grains"
+          width="230px"
+        />
+        <br />
+        <button type="button" onclick="grain()">Cereals & Grains</button>
       </nav>
-    </div>
-    <section class="img-2">
-      <nav>
-        <a href="../pages/5e-seeds.html">
-          <img src="../assets/image/Seeds.jpg" alt="seeds" width="200px" />
-          <br />
-          <p>Seeds</p>
-        </a>
-      </nav>
-      <nav>
-        <a href="../pages/5f-dhals.html">
-          <img src="../assets/image/Dals.jpg" alt="dhals" width="200px" />
-          <br />
-          <p>Dhals</p>
-        </a>
-      </nav>
-      <nav>
-        <a href="../pages/5g-nurseryplant.html">
-          <img src="../assets/image/nplants.jpg" alt="nursery" width="200px" />
-          <br />Nursary Plants
-        </a>
-      </nav>
-      <nav>
-        <a href="../pages/5h-manure.html">
-          <img src="../assets/image/Manure.jpg" alt="Manure" width="160px" />
-          <br />Manure
-        </a>
-      </nav>
-    </section>
+    </main>
 
     <script>
       function submitForm() {
@@ -107,6 +70,21 @@
         console.log(user_name);
       }
       submitForm();
+      function submit() {
+        window.location.href = "http://127.0.0.1:5500/pages/3.home.html";
+      }
+      function fruit() {
+        window.location.href = "http://127.0.0.1:5500/pages/5a-fruits.html";
+      }
+      function veg() {
+        window.location.href = "http://127.0.0.1:5500/pages/5b-vegetable.html";
+      }
+      function coffee() {
+        window.location.href = "http://127.0.0.1:5500/pages/5c-tea.html";
+      }
+      function grain() {
+        window.location.href = "http://127.0.0.1:5500/pages/5d-cereals.html";
+      }
     </script>
   </body>
 </html>
