@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../assets/CSS/5a-fruits.css" />
+    <link rel="stylesheet" href="../pages/6.buy-2.html" />
   </head>
   <body class="body">
     <div class="logo">
@@ -13,83 +14,267 @@
     </div>
     <header>
       <div class="header">
-        <a href="../pages/4.index.html">
-          <button>
+        <button class="b-arrow" type="button" onclick="back()">
+          <img
+            class="before-arrow"
+            src="../assets/image/arrowback.png"
+            alt="arrow-back"
+            width="40px"
+          />
+        </button>
+        <div class="head">
+          <div class="sb">
+            <input
+              class="search-bar"
+              type="text"
+              placeholder="Search"
+              height="50px"
+            />
+          </div>
+          <button class="search-button">
             <img
-              class="before-arrow"
-              src="../assets/image/arrowback.png"
-              alt="arrow-back"
+              class="search-icon"
+              src="../assets/image/search.png"
+              alt="search"
               width="40px"
             />
           </button>
-        </a>
-        <div class="sb">
-          <input
-            class="search-bar"
-            type="text"
-            placeholder="Search"
-            height="50px"
-          />
+          <button class="voice-button">
+            <img
+              class="voice-icon"
+              src="../assets/image/mic.png"
+              alt="mic"
+              width="40px"
+            />
+            <br />
+          </button>
         </div>
-        <button class="search-button">
-          <img
-            class="search-icon"
-            src="../assets/image/search.png"
-            alt="search"
-            width="40px"
-          />
-        </button>
-        <button class="voice-button">
-          <img
-            class="voice-icon"
-            src="../assets/image/mic.png"
-            alt="mic"
-            width="40px"
-          />
-          <br />
-        </button>
       </div>
     </header>
     <div class="side-bar">
       <h3>Types</h3>
-      <ul>
-        <a href="./5a-fruits.html"> Fruits</a>
-      </ul>
-      <ul>
-        <a href="./5b-vegetable.html"> Vegetables</a>
-      </ul>
-      <ul>
-        <a href="./5c-tea.html"> Coffee&Tea</a>
-      </ul>
-      <ul>
-        <a href="./5d-cereals.html"> Pulses&Grains</a>
-      </ul>
-      <ul>
-        <a href="./5e-seeds.html"> Seeds</a>
-      </ul>
-      <ul>
-        <a href="./5f-dhals.html"> Dhals</a>
-      </ul>
-      <ul>
-        <a href="./5g-nurseryplant.html"> Nursery_Plants</a>
-      </ul>
-      <ul>
-        <a href="./5h-manure.html"> Manure</a>
-      </ul>
+      <div class="button">
+        <button type="button" onclick="fruit()">Fruits</button>
+        <button type="button" onclick="vegetable()">Vegetables</button>
+        <button type="button" onclick="coffee()">Coffee</button>
+        <button type="button" onclick="grain()">Grains</button>
+      </div>
     </div>
-    <div class="f-main">
-      <div class="main-1">
-        <nav>
-          <img src="../assets/image/apple.jpg" alt="apple" width="100px" />
+    <main class="f-main">
+      <section class="main-1">
+        <script>
+          let fruitCard = [
+            {
+              fruitImage: "../assets/image/apple.jpg",
+              fruitName: "Apple",
+              price: 150,
+              width: 115,
+              alt: "apple",
+            },
+            {
+              fruitImage: "../assets/image/orange.jpg",
+              fruitName: "Orange",
+              price: 120,
+              width: 95,
+              alt: "orange",
+            },
+            {
+              fruitImage: "../assets/image/banana.webp",
+              fruitName: "Banana",
+              price: 50,
+              width: 130,
+              alt: "banana",
+            },
+            {
+              fruitImage: "../assets/image/lemons.webp",
+              fruitName: "Lemon",
+              price: 100,
+              width: 130,
+              alt: "lemon",
+            },
+            {
+              fruitImage: "../assets/image/papaya.jpg",
+              fruitName: "Papaya",
+              price: 30,
+              width: 62,
+              alt: "papaya",
+            },
+            {
+              fruitImage: "../assets/image/Guava.jpg",
+              fruitName: "Guava",
+              price: 150,
+              width: 130,
+              alt: "guava",
+            },
+            {
+              fruitImage: "../assets/image/apple.jpg",
+              fruitName: "Apple",
+              price: 150,
+              width: 115,
+              alt: "apple",
+            },
+            {
+              fruitImage: "../assets/image/orange.jpg",
+              fruitName: "Orange",
+              price: 120,
+              width: 95,
+              alt: "orange",
+            },
+            {
+              fruitImage: "../assets/image/banana.webp",
+              fruitName: "Banana",
+              price: 50,
+              width: 130,
+              alt: "banana",
+            },
+            {
+              fruitImage: "../assets/image/lemons.webp",
+              fruitName: "Lemon",
+              price: 100,
+              width: 130,
+              alt: "lemon",
+            },
+            {
+              fruitImage: "../assets/image/papaya.jpg",
+              fruitName: "Papaya",
+              price: 30,
+              width: 62,
+              alt: "papaya",
+            },
+            {
+              fruitImage: "../assets/image/Guava.jpg",
+              fruitName: "Guava",
+              price: 150,
+              width: 130,
+              alt: "guava",
+            },
+            {
+              fruitImage: "../assets/image/apple.jpg",
+              fruitName: "Apple",
+              price: 150,
+              width: 115,
+              alt: "apple",
+            },
+            {
+              fruitImage: "../assets/image/orange.jpg",
+              fruitName: "Orange",
+              price: 120,
+              width: 95,
+              alt: "orange",
+            },
+            {
+              fruitImage: "../assets/image/banana.webp",
+              fruitName: "Banana",
+              price: 50,
+              width: 130,
+              alt: "banana",
+            },
+            {
+              fruitImage: "../assets/image/lemons.webp",
+              fruitName: "Lemon",
+              price: 100,
+              width: 130,
+              alt: "lemon",
+            },
+            {
+              fruitImage: "../assets/image/papaya.jpg",
+              fruitName: "Papaya",
+              price: 30,
+              width: 62,
+              alt: "papaya",
+            },
+            {
+              fruitImage: "../assets/image/Guava.jpg",
+              fruitName: "Guava",
+              price: 150,
+              width: 130,
+              alt: "guava",
+            },
+          ];
+
+          for (let i = 0; i <= fruitCard.length; i++) {
+            let div_card = document.createElement("div");
+            div_card.setAttribute("class", "full_card");
+
+            let image = document.createElement("img");
+            image.setAttribute("src", fruitCard[i]["fruitImage"]);
+            image.setAttribute("alt", fruitCard[i]["alt"]);
+            image.setAttribute("width", fruitCard[i]["width"] + "px");
+            div_card.append(image);
+
+            let fruit_name = document.createElement("p");
+            fruit_name.innerText = fruitCard[i]["fruitName"];
+            div_card.append(fruit_name);
+
+            let rupees = document.createElement("p");
+            rupees.innerText = fruitCard[i]["price"] + "/kg";
+            div_card.append(rupees);
+
+            let input_value = document.createElement("input");
+            input_value.setAttribute("class", "bar");
+            input_value.setAttribute("type", "number");
+            input_value.setAttribute("width", "10px");
+            input_value.setAttribute("id", "quantity");
+            div_card.append(input_value);
+
+            const a = document.createElement("a");
+            a.setAttribute(
+              "href",
+              "../pages/6.buy-2.html?fruiName" + fruitCard[i]["fruitName"]
+            );
+            div_card.append(a);
+
+            let buttons = document.createElement("button");
+            buttons.setAttribute("class", "button");
+
+            buttons.innerText = "ADD CART";
+            a.append(buttons);
+
+            document.querySelector("section.main-1").append(div_card);
+          }
+        </script>
+        <!-- <div class="full_card">
+          <img src="../assets/image/apple.jpg" alt="apple" width="80px" />
           <p>Apple</p>
           <p>Rs.150/kg</p>
           <input class="bar" type="number" width="10px" />
+          <button>ADD CART</button>
           <img src="../assets/image/cart.png" alt="cart" width="30px" />
-        </nav>
-      </div>
-    </div>
+        </div> -->
+        <!--  <nav>
+          <img src="../assets/image/orange.jpg" alt="orange" width="100px" />
+          <p>Orange</p>
+          <p>Rs.120/kg</p>
+          <input class="bar" type="number" width="10px" />
+          <img src="../assets/image/cart.png" alt="cart" width="30px" />
+        </nav> -->
+      </section>
+    </main>
     <footer class="footer">
-      <a href="../pages/6.buy-2.html"><button>Okay</button></a>
+      <button type="button" onclick="okay()">Okay</button>
     </footer>
+
+    <script>
+      function fruit() {
+        window.location.href = "http://127.0.0.1:5500/pages/5a-fruits.html";
+      }
+      function vegetable() {
+        window.location.href = "";
+      }
+      function coffee() {
+        window.location.href = "";
+      }
+      function grain() {
+        window.location.href = "";
+      }
+
+      function back() {
+        window.location.href = "http://127.0.0.1:5500/pages/4.index.html";
+      }
+
+      function okay() {
+        window.location.href = "http://127.0.0.1:5500/pages/6.buy-2.html";
+      }
+    </script>
   </body>
 </html>

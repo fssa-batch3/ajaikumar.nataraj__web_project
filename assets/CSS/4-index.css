@@ -27,6 +27,7 @@ body {
   border-radius: 50px;
   width: 85%;
   margin-left: 100px;
+  box-shadow: 2.5px 5px 15px rgba(0, 0, 0, 0.525);
 }
 .before-arrow {
   border-radius: 50px;
@@ -44,7 +45,7 @@ body {
   border-radius: 20px;
 }
 .img-1 img:hover {
-  transform: scaleY(1.2);
+  box-shadow: 2.5px 5px 15px rgba(0, 0, 0, 0.525);
 }
 
 .img-1 button {

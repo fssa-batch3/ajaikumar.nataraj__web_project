@@ -22,10 +22,14 @@
     <div class="details">
       <h3>Your pickup details:</h3>
       <div class="detail">
-        <input type="text" placeholder="Name" />
+        <!-- <input type="text" placeholder="Name" />
         <input type="number" placeholder="Phone number" />
         <input type="text" placeholder="Address" />
-        <input type="date" placeholder="Pickup date" />
+        <input type="date" placeholder="Pickup date" /> -->
+        <button class="name">Name</button>
+        <button class="phno">Phone Number</button>
+        <button class="add">Address</button>
+        <button class="pickup">Pickup Date</button>
       </div>
     </div>
     <div class="main">
@@ -73,5 +77,26 @@
         We always Welcomes you!
       </p>
     </footer>
+
+    <script>
+      function output() {
+        const user_name = localStorage.getItem("user_name");
+        document.getElementsByClassName("name")[0].innerHTML = user_name;
+        console.log(user_name);
+
+        const user_add = localStorage.getItem("user_add");
+        document.getElementsByClassName("add")[0].innerHTML = user_add;
+        console.log(user_add);
+
+        const user_phno = localStorage.getItem("user_phno");
+        document.getElementsByClassName("phno")[0].innerHTML = user_phno;
+        console.log(user_phno);
+
+        const user_pickup = localStorage.getItem("user_pickup");
+        document.getElementsByClassName("pickup")[0].innerHTML = user_pickup;
+        console.log(user_pickup);
+      }
+      output();
+    </script>
   </body>
 </html>

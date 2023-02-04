@@ -14,7 +14,7 @@
       </div>
       <div class="header">
         <a href="../pages/5a-fruits.html">
-          <button>
+          <button type="button" onclick="back()">
             <img
               class="before-arrow"
               src="../assets/image/arrowback.png"
@@ -75,7 +75,18 @@
       </div>
     </table>
     <footer class="footer">
-      <a href="../pages/7.tot-amo.html"> <button>Place Order</button></a>
+       <button type="button" onclick="order()">Place Order</button>
     </footer>
+
+
+    <script>
+      function order() {
+        window.location.href = "http://127.0.0.1:5500/pages/7.tot-amo.html";
+      }
+
+      function back() {
+        window.location.href = "http://127.0.0.1:5500/pages/5a-fruits.html";
+      }
+    </script>
   </body>
 </html>

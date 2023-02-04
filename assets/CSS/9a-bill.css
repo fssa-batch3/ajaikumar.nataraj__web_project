@@ -25,6 +25,15 @@ header {
 }
 .details {
   width: 500px;
+  margin-left: 100px;
+}
+.detail button {
+  width: 400px;
+  height: 50px;
+  font-size: 30px;
+  color: #2bae66ff;
+  background-color: rgb(191, 227, 191);
+  border: 1.5px solid #2bae66ff;
 }
 input {
   font-size: 30px;
@@ -32,15 +41,17 @@ input {
 }
 .footer {
   text-align: center;
-  top: 800px;
+  top: 775px;
   background-color: #2bae66ff;
   color: white;
   height: 120px;
-  margin-top: 0px;
+  position: fixed;
+  width: 1500px;
 }
 .id {
-  margin-top: 50px;
+  top: 700px;
   display: flex;
+  position: fixed;
 }
 .foot-p {
   margin-top: 10px;

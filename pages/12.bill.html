@@ -36,16 +36,36 @@
       <h3>Fill your pickup details here:</h3>
 
       <div class="detail">
-        <input type="text" placeholder="name" />
-        <input type="number" placeholder="Phone number" />
-        <input type="text" placeholder="address" />
-        <input type="date" placeholder="Pickup date" />
+        <input type="text" id="name" placeholder="name" />
+        <input type="number" id="phno" placeholder="Phone number" />
+        <input type="text" id="add" placeholder="address" />
+        <input type="date" id="pickup" placeholder="Pickup date" />
       </div>
     </div>
     <footer class="footer">
-      <a href="../pages/13.Acct.detail.html"
-        ><button>Go to Payment Page</button></a
-      >
+      <button type="button" onclick="payment()">Go to Payment Page</button>
     </footer>
+
+    <script>
+      function payment() {
+        const name = document.getElementById("name").value;
+        const address = document.getElementById("add").value;
+        const phoneno = document.getElementById("phno").value;
+        const pickup = document.getElementById("pickup").value;
+
+        console.log(name);
+        console.log(address);
+        console.log(phoneno);
+        console.log(pickup);
+
+        localStorage.setItem("user_name", name);
+        localStorage.setItem("user_add", address);
+        localStorage.setItem("user_phno", phoneno);
+        localStorage.setItem("user_pickup", pickup);
+
+        window.location.href =
+          "http://127.0.0.1:5500/pages/13.Acct.detail.html";
+      }
+    </script>
   </body>
 </html>

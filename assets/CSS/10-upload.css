@@ -4,7 +4,7 @@ body {
   color: #2bae66ff;
   margin-left: 70px;
   margin-top: 100px;
-  background-color: rgb(191, 227, 191);
+  /* background-color: rgb(191, 227, 191); */
 }
 .logo {
   text-align: center;
@@ -22,7 +22,7 @@ body {
 }
 .title {
   color: #2bae66ff;
-  margin-left: 300px;
+  margin-left: 200px;
   margin-top: -40px;
 }
 .main {
@@ -35,20 +35,23 @@ body {
 }
 input {
   font-size: 23px;
+  margin-top: 15px;
 }
 .main ::placeholder {
   font-size: 40px;
 }
 
 .footer {
-  top: 90%;
-  left: 40%;
+  display: flex;
   position: fixed;
+  text-align: center;
+  align-items: center;
+  top: 790px;
 }
 .footer button {
   width: 200px;
   background-color: #2bae66ff;
-  color: blue;
+  color: white;
   padding: 15px 30px;
   border-radius: 10px;
   font-size: 25px;
@@ -56,9 +59,33 @@ input {
 .add img {
   margin-left: 150px;
 }
+.btn {
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  width: 140px;
+  height: 40px;
+}
+.btn-card {
+  margin-top: 20px;
+}
+
 button {
   background-color: #2bae66ff;
   color: white;
+  border: none;
+}
+
+.details {
+  text-align: center;
+  height: 300px;
+}
+.full-card {
+  background-color: rgb(191, 227, 191);
+  width: 550px;
+  text-align: center;
+  border-radius: 10px;
+  height: 400px;
 }
 
 /* media query*/

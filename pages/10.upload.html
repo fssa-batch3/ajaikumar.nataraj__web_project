@@ -30,67 +30,126 @@
               width="50px"
           /></a>
         </div>
-        <h1 class="title">Hi Farmer...</h1>
+        <div class="title"><h2>Hi Farmer...</h2></div>
       </div>
     </header>
-    <div class="table">
-      <table aria-describedby="upload-datail">
-        <!-- Noncompliant -->
-        <div class="main">
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Price</th>
-            <th>Qty</th>
-            <th>cancel</th>
-          </tr>
+
+    <!-- <div class="full-card">
+      <h3>Upload your products</h3>
+      <div class="details">
+        <div class="img">
+          <input type="text" placeholder="type url" />
         </div>
-        <div class="main">
-          <tr>
-            <td>
-              <input
-                type="image"
-                value="upload image"
-                placeholder="upload Photo"
-                alt="img"
-              />
-            </td>
-            <td>
-              <input type="text" placeholder="your product" />
-            </td>
-            <td>
-              <input list="Types" name="Types" />
-              <datalist id="Types">
-                <option value="Fruits"></option>
-                <option value="Vegetables"></option>
-                <option value="Coffee & Tea"></option>
-                <option value="Pulses/Grains"></option>
-                <option value="Seeds"></option>
-                <option value="Dhals"></option>
-                <option value="Nursery Plants"></option>
-                <option value="Manure"></option>
-              </datalist>
-            </td>
-            <td>
-              <input type="number" value="kg" placeholder="Rs.20/kg" />
-            </td>
-            <td>
-              <input type="number" value="kg" placeholder="150 kg" />
-            </td>
-            <td>
-              <i class="fa fa-close" style="font-size: 36px"></i>
-            </td>
-          </tr>
+        <div class="detail">
+          <nav><input type="text" placeholder="your product" /></nav>
+          <nav>
+            <input list="Types" name="Types" />
+            <datalist id="Types">
+              <option value="Fruits"></option>
+              <option value="Vegetables"></option>
+              <option value="Coffee & Tea"></option>
+              <option value="Pulses/Grains"></option>
+            </datalist>
+          </nav>
+          <nav><input type="number" placeholder="Rs.20/kg" /></nav>
+          <nav><input type="number" placeholder="150 kg" /></nav>
+          <nav><i class="fa fa-close" style="font-size: 36px"></i></nav>
         </div>
-      </table>
-    </div>
-    <div class="add">
-      <img src="../assets/image/add.png" alt="add" width="80px" />
-    </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="add">
+      <img src="../assets/image/add.png" alt="add" width="40px" />
+    </div> -->
+
+    <section class="sec"></section>
+
+    <script>
+      let div_card = document.createElement("div");
+      div_card.setAttribute("class", "full-card");
+      console.log(div_card);
+
+      let input_h1 = document.createElement("h3");
+      input_h1.innerText = "Upload your products";
+      div_card.append(input_h1);
+
+      let input_url = document.createElement("input");
+      input_url.setAttribute("class", "img");
+      input_url.setAttribute("type", "text");
+      div_card.append(input_url);
+
+      let input_product = document.createElement("input");
+      input_product.setAttribute("class", "detail");
+      input_product.setAttribute("type", "text");
+      div_card.append(input_product);
+
+      let input_types = document.createElement("input");
+      input_types.setAttribute("class", "detail");
+      input_types.setAttribute("list", "Types");
+      input_types.setAttribute("name", "Types");
+      div_card.append(input_types);
+
+      let datalist = document.createElement("datalist");
+      datalist.setAttribute("id", "Types");
+      input_types.append(datalist);
+
+      let option_1 = document.createElement("option");
+      option_1.setAttribute("value", "Fruits");
+      datalist.append(option_1);
+
+      let option_2 = document.createElement("option");
+      option_2.setAttribute("value", "Vegetables");
+      datalist.append(option_2);
+
+      let option_3 = document.createElement("option");
+      option_3.setAttribute("value", "Coffee & Tea");
+      datalist.append(option_3);
+
+      let option_4 = document.createElement("option");
+      option_4.setAttribute("value", "Cereals & Grains");
+      datalist.append(option_4);
+
+      let input_price = document.createElement("input");
+      input_price.setAttribute("class", "detail");
+      input_price.setAttribute("type", "number");
+      div_card.append(input_price);
+
+      let input_qty = document.createElement("input");
+      input_qty.setAttribute("class", "detail");
+      input_qty.setAttribute("type", "number");
+      div_card.append(input_qty);
+
+      let btn_card = document.createElement("div");
+      btn_card.setAttribute("class", "btn-card");
+      div_card.append(btn_card);
+
+      let buttons = document.createElement("button");
+      buttons.setAttribute("class", "btn");
+      buttons.innerText = "CANCEL";
+      btn_card.append(buttons);
+
+      document.querySelector(".sec").append(div_card);
+
+      let add_card = document.createElement("div");
+      add_card.setAttribute("class", "add-card");
+      console.log(add_card);
+      document.querySelector("body").append(add_card);
+
+      let add_buttons = document.createElement("button");
+      add_buttons.setAttribute("class", "add");
+      add_buttons.innerText = "ADD";
+      add_card.append(add_buttons);
+
+      document.querySelector(".sec").append(div_card);
+
+      function submit() {
+        window.location.href =
+          "http://127.0.0.1:5500/pages/11.place-products.html";
+      }
+    </script>
 
     <footer class="footer">
-      <a href="../pages/11.place-products.html"><button>Okay</button></a>
+      <button type="button" onclick="submit()">Submit</button>
     </footer>
   </body>
 </html>

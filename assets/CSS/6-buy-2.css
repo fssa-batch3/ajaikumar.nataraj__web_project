@@ -9,7 +9,6 @@ body {
   font-size: 30px;
 }
 .header {
-  margin-top: 40px;
   margin-left: 50px;
   display: flex;
 }
@@ -24,7 +23,7 @@ body {
   padding: 50px;
 }
 .table {
-  margin-left: 100px;
+  /* margin-left: 100px; */
   margin-top: 50px;
 }
 .table th {
@@ -35,7 +34,7 @@ body {
 }
 .main {
   margin-top: 00px;
-  margin-left: -60px;
+  /* margin-left: -60px; */
   display: flex;
   justify-content: space-evenly;
   align-content: space-around;
@@ -44,7 +43,7 @@ body {
 }
 .main-1 {
   margin-top: 00px;
-  margin-left: -60px;
+  /* margin-left: -60px; */
   display: flex;
   justify-content: space-evenly;
   align-content: space-around;
@@ -66,10 +65,9 @@ body {
 }
 .footer {
   top: 800px;
-  align-content: center;
-  margin-left: -5px;
+  text-align: center;
   position: fixed;
-  width: 1520px;
+  width: 1440px;
   height: 100px;
   background-color: #2bae66ff;
 }
@@ -79,7 +77,6 @@ body {
   background-color: white;
   color: #2bae66ff;
   border-radius: 10px;
-  margin-left: 650px;
   margin-top: 30px;
   font-size: 25px;
 }

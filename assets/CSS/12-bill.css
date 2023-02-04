@@ -1,6 +1,5 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-left: 100px;
   margin-top: 60px;
   font-size: 30px;
   color: #2bae66ff;
@@ -32,7 +31,9 @@ table input {
 }
 .footer {
   text-align: center;
-  margin-top: 50px;
+  width: 1440px;
+  position: fixed;
+  top: 820px;
 }
 .footer button {
   width: 400px;
