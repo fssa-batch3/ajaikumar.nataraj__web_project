@@ -34,39 +34,74 @@
       </div>
     </header>
 
-    <!-- <div class="full-card">
-      <h3>Upload your products</h3>
-      <div class="details">
-        <div class="img">
-          <input type="text" placeholder="type url" />
-        </div>
-        <div class="detail">
-          <nav><input type="text" placeholder="your product" /></nav>
-          <nav>
-            <input list="Types" name="Types" />
-            <datalist id="Types">
-              <option value="Fruits"></option>
-              <option value="Vegetables"></option>
-              <option value="Coffee & Tea"></option>
-              <option value="Pulses/Grains"></option>
-            </datalist>
-          </nav>
-          <nav><input type="number" placeholder="Rs.20/kg" /></nav>
-          <nav><input type="number" placeholder="150 kg" /></nav>
-          <nav><i class="fa fa-close" style="font-size: 36px"></i></nav>
-        </div>
-      </div>
-    </div> -->
+    <section class="output_section"></section>
 
-    <!-- <div class="add">
-      <img src="../assets/image/add.png" alt="add" width="40px" />
-    </div> -->
-
-    <section class="sec"></section>
-
+    <section class="sec"><form></form></section>
     <script>
+      // JSON
+      let detail = [
+        {
+          url: "",
+          name: "",
+          types: "",
+          price: "",
+          quantity: "",
+        },
+      ];
+
+      // Added Cards
+      for (let i = 0; i <= detail.length; i++) {
+        let div_card_output = document.createElement("div");
+        div_card_output.setAttribute("class", "div_card-output");
+        console.log(div_card_output);
+
+        let output_h5 = document.createElement("h5");
+        output_h5.innerText = "Your product Details";
+        div_card_output.append(output_h5);
+
+        let output_url = document.createElement("input");
+        output_url.setAttribute("class", "output-btn");
+        output_url.setAttribute("type", "text");
+        output_url.setAttribute("placeholder", "URL");
+        div_card_output.append(output_url);
+
+        let output_name = document.createElement("input");
+        output_name.setAttribute("class", "output-btn");
+        output_name.setAttribute("type", "text");
+        output_name.setAttribute("placeholder", "Name");
+        div_card_output.append(output_name);
+
+        let output_type = document.createElement("input");
+        output_type.setAttribute("class", "output-btn");
+        output_type.setAttribute("type", "text");
+        output_type.setAttribute("placeholder", "Type");
+        div_card_output.append(output_type);
+
+        let output_price = document.createElement("input");
+        output_price.setAttribute("class", "output-btn");
+        output_price.setAttribute("type", "text");
+        output_price.setAttribute("placeholder", "Price");
+        div_card_output.append(output_price);
+
+        let output_qty = document.createElement("input");
+        output_qty.setAttribute("class", "output-btn");
+        output_qty.setAttribute("type", "text");
+        output_qty.setAttribute("placeholder", "Quantity");
+        div_card_output.append(output_qty);
+
+        let cancel_btn = document.createElement("button");
+        cancel_btn.setAttribute("class", "btn");
+        cancel_btn.setAttribute("type", "reset");
+        cancel_btn.innerText = "CANCEL";
+        div_card_output.append(cancel_btn);
+
+        document.querySelector(".output_section").append(div_card_output);
+      }
+      // Enter the datas
+
       let div_card = document.createElement("div");
       div_card.setAttribute("class", "full-card");
+      div_card.setAttribute("id", "details");
       console.log(div_card);
 
       let input_h1 = document.createElement("h3");
@@ -75,18 +110,23 @@
 
       let input_url = document.createElement("input");
       input_url.setAttribute("class", "img");
+      input_url.setAttribute("id", "img");
       input_url.setAttribute("type", "text");
+      input_url.setAttribute("placeholder", "Enter URL");
       div_card.append(input_url);
 
       let input_product = document.createElement("input");
       input_product.setAttribute("class", "detail");
+      input_product.setAttribute("id", "detail");
       input_product.setAttribute("type", "text");
+      input_product.setAttribute("placeholder", "Your Product Name");
       div_card.append(input_product);
 
       let input_types = document.createElement("input");
       input_types.setAttribute("class", "detail");
       input_types.setAttribute("list", "Types");
       input_types.setAttribute("name", "Types");
+      input_types.setAttribute("placeholder", "Types");
       div_card.append(input_types);
 
       let datalist = document.createElement("datalist");
@@ -112,44 +152,58 @@
       let input_price = document.createElement("input");
       input_price.setAttribute("class", "detail");
       input_price.setAttribute("type", "number");
+      input_price.setAttribute("placeholder", "Enter Your Price");
       div_card.append(input_price);
 
       let input_qty = document.createElement("input");
       input_qty.setAttribute("class", "detail");
       input_qty.setAttribute("type", "number");
+      input_qty.setAttribute("placeholder", "Enter Your Product Quantity");
       div_card.append(input_qty);
 
       let btn_card = document.createElement("div");
       btn_card.setAttribute("class", "btn-card");
       div_card.append(btn_card);
 
-      let buttons = document.createElement("button");
-      buttons.setAttribute("class", "btn");
-      buttons.innerText = "CANCEL";
-      btn_card.append(buttons);
+      let add = document.createElement("button");
+      add.setAttribute("class", "btn");
+      add.innerText = "ADD";
+      btn_card.append(add);
 
-      document.querySelector(".sec").append(div_card);
+      let cancel = document.createElement("button");
+      cancel.setAttribute("class", "btn");
+      cancel.setAttribute("type", "reset");
+      cancel.innerText = "CANCEL";
+      btn_card.append(cancel);
 
-      let add_card = document.createElement("div");
-      add_card.setAttribute("class", "add-card");
-      console.log(add_card);
-      document.querySelector("body").append(add_card);
+      document.querySelector("form").append(div_card);
 
-      let add_buttons = document.createElement("button");
-      add_buttons.setAttribute("class", "add");
-      add_buttons.innerText = "ADD";
-      add_card.append(add_buttons);
-
-      document.querySelector(".sec").append(div_card);
-
-      function submit() {
-        window.location.href =
-          "http://127.0.0.1:5500/pages/11.place-products.html";
-      }
+      //get references for text input and button fields
+      var firstname = document.getElementById("firstname");
+      var lastname = document.getElementById("lastname");
+      var jsonBtn = document.getElementById("jsonbtn");
+      var jsonText = document.getElementById("jsontext");
+      //add click event listener, to get data when data is entered
+      jsonBtn.addEventListener("click", function () {
+        //store data in JavaScript object
+        var data = {
+          firstName: firstname.value,
+          lastName: lastname.value,
+        };
+        //convert JavaScript object to JSON
+        jsonText.innerHTML = JSON.stringify(data);
+      });
     </script>
 
     <footer class="footer">
       <button type="button" onclick="submit()">Submit</button>
     </footer>
+
+    <script>
+      function submit() {
+        window.location.href =
+          "http://127.0.0.1:5500/pages/11.place-products.html";
+      }
+    </script>
   </body>
 </html>

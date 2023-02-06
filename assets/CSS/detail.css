@@ -1,5 +1,7 @@
 body {
   align-content: center;
+  color: #2bae66ff;
+  background-color: rgb(191, 227, 191);
 }
 
 .card {
@@ -18,7 +20,7 @@ p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 input {
-  width: 10%;
+  width: 20%;
   /* height: 10%; */
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

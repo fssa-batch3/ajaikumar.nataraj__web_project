@@ -9,12 +9,13 @@
   </head>
   <body>
     <header class="head">
+      <nav class="back">
+        <img src="../assets/image/arrowback.png" alt="back" />
+      </nav>
       <div class="logo">
         <img src="../assets/image/logo.png" alt="logo" width="110px" />
       </div>
-      <div class="pro">
-        <img src="../assets/image/profile.png" alt="profile" />
-      </div>
+      <button class="pro" placeholder="Shin Chan">Shin chan</button>
     </header>
     <div class="side-bar">
       <h3>Member's List</h3>
@@ -44,5 +45,15 @@
         <button class="nu">New Upload</button></a
       >
     </div>
+
+    <script>
+      function submitForm() {
+        const user_name = localStorage.getItem("user_name");
+
+        document.getElementsByClassName("pro")[0].innerHTML = user_name;
+
+        console.log(user_name);
+      }
+    </script>
   </body>
 </html>

@@ -195,6 +195,15 @@
           for (let i = 0; i <= fruitCard.length; i++) {
             let div_card = document.createElement("div");
             div_card.setAttribute("class", "full_card");
+            div_card.setAttribute("type", "button");
+            div_card.setAttribute("onclick", "card()");
+
+            // const b = document.createElement("a");
+            // b.setAttribute(
+            //   "href",
+            //   "../pages/detail.html?" + fruitCard[i]["fruitName"]
+            // );
+            // div_card.append(b);
 
             let image = document.createElement("img");
             image.setAttribute("src", fruitCard[i]["fruitImage"]);
@@ -226,7 +235,6 @@
 
             let buttons = document.createElement("button");
             buttons.setAttribute("class", "button");
-
             buttons.innerText = "ADD CART";
             a.append(buttons);
 
@@ -266,6 +274,10 @@
       }
       function grain() {
         window.location.href = "";
+      }
+
+      function card() {
+        window.location.href = "http://127.0.0.1:5500/pages/detail.html";
       }
 
       function back() {
