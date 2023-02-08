@@ -16,53 +16,51 @@
     />
     <h1>Hi! User...</h1>
     <div class="form">
-      <form class="center">
+      <form class="center" id="form">
         <label>User name:</label><br />
-        <input
-          style="color: grey"
-          type="text"
-          id="name"
-          value="Shin chan"
-          placeholder="User Name"
-        /><br />
-        <label>User id:</label><br />
-        <input
-          style="color: grey"
-          type="text"
-          id="userid"
-          value="MO191122"
-          placeholder="User Id"
-        /><br />
+        <input type="text" id="username" /><br />
+        <label>User Mail id:</label><br />
+        <input type="text" id="userid" /><br />
         <label>Password:</label><br />
-        <input
-          style="color: grey"
-          type="password"
-          id="password"
-          value="Sc@123!"
-          placeholder="Sc@123!"
-        />
+        <input type="password" id="password" /> <br />
+        <button class="btn" type="submit" onclick="sign()">Sign in</button>
       </form>
     </div>
-    <div class="footer">
-      <button type="button" onclick="submit()">Sign in</button>
-    </div>
+
     <footer class="footer">Toll-Free no:1800 123 100</footer>
+
     <script>
-      function submit() {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("userid").value;
-        let password = document.getElementById("password").value;
+      let logIn = document.getElementById("form");
+      logIn.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let defaultData = JSON.parse(localStorage.getItem("user_info"));
+        console.log(defaultData);
+        let Username = document.getElementById("username").value;
+        let Useremail = document.getElementById("userid").value;
+        let Password = document.getElementById("password").value;
 
-        console.log(name);
-        console.log(userid);
-        console.log(password);
+        let match = false;
 
-        localStorage.setItem("user_name", name);
-        localStorage.setItem("user_id", userid);
-        localStorage.setItem("user_password", password);
+        for (let i = 0; i < defaultData.length; i++) {
+          if (
+            Username == defaultData[i].firstName &&
+            Useremail == defaultData[i].email &&
+            Password == defaultData[i].password
+          ) {
+            match = true;
+            break;
+          } else {
+            match = false;
+          }
+        }
 
-        window.location.href = "http://127.0.0.1:5500/pages/3.home.html";
-      }
+        if (match == true) {
+          alert("Success");
+          window.location.href = "3.home.html";
+        } else {
+          alert("Failed");
+        }
+      });
     </script>
   </body>
 </html>

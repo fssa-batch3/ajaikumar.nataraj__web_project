@@ -17,14 +17,14 @@
         <div class="h">
           <h1>Welcome! to Rishi Organic Market</h1>
         </div>
-        <div class="form">
-          <form class="center">
-            <label>User name:</label><br />
+        <div class="form" id="form">
+          <form action="#" class="center">
+            <label>Full Name:</label><br />
             <input
               style="color: grey"
               type="text"
-              id="name"
-              placeholder="name"
+              id="f-name"
+              placeholder="Full_Name"
             /><br />
             <label>Mail id:</label><br />
             <input
@@ -48,52 +48,74 @@
               placeholder="ab@123!"
             />
             <br />
-            <label>Conform Password:</label><br />
+            <label>Confirm Password:</label><br />
             <input
               style="color: grey"
               type="password-hidden"
-              id="conform-password"
+              id="conform_password"
               placeholder="ab@123!"
             /><br />
+            <nav>
+              <a href=""></a>
+              <input type="checkbox" id="gender" value="Male" /> Male
+              <input type="checkbox" id="gender" value="Female" /> Female
+            </nav>
+            <button class="sub" type="submit" value="submit" onclick="sign()">
+              sign up
+            </button>
+            <script>
+              function sign() {
+                window.location.href = "3.home.html";
+              }
+            </script>
           </form>
-
-          <button class="sub" type="button" onclick="submit()">sign up</button>
         </div>
       </div>
       <footer>
         <div>
-          <button class="log" type="button" onclick="log()">Login</button>
+          <button class="log" type="submit" onclick="log()">Login</button>
+          <script>
+            function log() {
+              window.location.href = "2.Login.html";
+            }
+          </script>
 
           <p>If you already sign in! Please Login..</p>
         </div>
       </footer>
     </div>
+
     <script>
-      function submit() {
-        const name = document.getElementById("name").value;
+      const signUpForm = document.getElementById("form");
+      signUpForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let userArr = [];
+
+        if (localStorage.getItem("user_info") != null) {
+          userArr = JSON.parse(localStorage.getItem("user_info"));
+        }
+        const firstName = document.getElementById("f-name").value;
+        const mobileNumber = document.getElementById("phoneno").value;
         const email = document.getElementById("email").value;
-        const phoneno = document.getElementById("phoneno").value;
-        let password = document.getElementById("password").value;
-        const conformpassword =
-          document.getElementById("conform-password").value;
+        const password = document.getElementById("password").value;
+        const conform_password =
+          document.getElementById("conform_password").value;
+        const gender = document.getElementById("gender").value;
 
-        console.log(name);
-        console.log(email);
-        console.log(phoneno);
-        console.log(password);
-        console.log(conformpassword);
-
-        localStorage.setItem("user_name", name);
-        localStorage.setItem("user_email", email);
-        localStorage.setItem("user_phoneno", phoneno);
-        localStorage.setItem("user_password", password);
-        localStorage.setItem("user_conformpassword", conformpassword);
-
-        window.location.href = "http://127.0.0.1:5500/pages/3.home.html";
-      }
-      function log() {
-        window.location.href = "http://127.0.0.1:5500/pages/2.Login.html";
-      }
+        // assign data for object
+        let userObj = {
+          firstName,
+          mobileNumber,
+          email,
+          password,
+          conform_password,
+          gender,
+        };
+        userArr.push(userObj);
+        const str = JSON.stringify(userArr);
+        localStorage.setItem("user_info", str);
+        console.log(str);
+      });
     </script>
   </body>
 </html>
