@@ -11,7 +11,7 @@ Sonar Cloud:https://sonarcloud.io/project/overview?id=fssa-batch3_ajaikumar.nata
 
 Features:
 
-1. UUID (not start) (2 days)
+1. User CRUD (completed)
 
 2. User Story
 -> Add Farming Products (Completed)
