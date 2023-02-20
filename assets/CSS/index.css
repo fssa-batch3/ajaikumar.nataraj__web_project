@@ -1,5 +1,4 @@
 body {
-  background-color: rgb(203, 223, 203);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
 }
@@ -20,7 +19,7 @@ h2 {
 }
 .gif img {
   border-radius: 10px;
-  border: 2px solid #2bae66ff;
+  /* border: 2px solid #2bae66ff; */
 }
 .head {
   display: flex;
@@ -63,7 +62,7 @@ h3 {
   margin-top: 50px;
   margin-left: 50px;
   width: 93%;
-  border: 2px solid #2bae66ff;
+  /* border: 2px solid #2bae66ff; */
 }
 .foot {
   display: flex;
@@ -79,7 +78,7 @@ h3 {
   margin-left: 50px;
   margin-top: 50px;
   cursor: pointer;
-  border: 2px solid #2bae66ff;
+  /* border: 2px solid #2bae66ff; */
 }
 .foot ul:hover {
   color: #2bae66ff;
@@ -160,7 +159,7 @@ p {
   font-size: 20px;
   margin-right: 20px;
   background-color: #2bae66ff;
-  border: 2px solid #2bae66ff;
+  /* border: 2px solid #2bae66ff; */
   translate: 1.5;
 }
 .btn button:hover {
@@ -182,6 +181,17 @@ h2 {
 }
 .btn-1:hover .no-dw {
   display: block;
+}
+.no {
+  width: 120px;
+  border-radius: 50px;
+  height: 50px;
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+  margin-right: 20px;
+  background-color: #2bae66ff;
+  /* border: 2px solid #2bae66ff; */
 }
 .no-dw a:hover {
   background-color: lightgreen;
@@ -258,7 +268,7 @@ h2 {
   width: 93%;
   margin-left: 50px;
   margin-top: 30px;
-  border: 2px solid #2bae66ff;
+  /* border: 2px solid #2bae66ff; */
 }
 .f-products button {
   width: 200px;

@@ -61,210 +61,128 @@
       </div>
     </div>
     <main class="f-main">
-      <section class="main-1">
-        <script>
-          let fruitCard = [
-            {
-              fruitImage: "../assets/image/apple.jpg",
-              fruitName: "Apple",
-              price: 150,
-              width: 115,
-              alt: "apple",
-            },
-            {
-              fruitImage: "../assets/image/orange.jpg",
-              fruitName: "Orange",
-              price: 120,
-              width: 95,
-              alt: "orange",
-            },
-            {
-              fruitImage: "../assets/image/banana.webp",
-              fruitName: "Banana",
-              price: 50,
-              width: 130,
-              alt: "banana",
-            },
-            {
-              fruitImage: "../assets/image/lemons.webp",
-              fruitName: "Lemon",
-              price: 100,
-              width: 130,
-              alt: "lemon",
-            },
-            {
-              fruitImage: "../assets/image/papaya.jpg",
-              fruitName: "Papaya",
-              price: 30,
-              width: 62,
-              alt: "papaya",
-            },
-            {
-              fruitImage: "../assets/image/Guava.jpg",
-              fruitName: "Guava",
-              price: 150,
-              width: 130,
-              alt: "guava",
-            },
-            {
-              fruitImage: "../assets/image/apple.jpg",
-              fruitName: "Apple",
-              price: 150,
-              width: 115,
-              alt: "apple",
-            },
-            {
-              fruitImage: "../assets/image/orange.jpg",
-              fruitName: "Orange",
-              price: 120,
-              width: 95,
-              alt: "orange",
-            },
-            {
-              fruitImage: "../assets/image/banana.webp",
-              fruitName: "Banana",
-              price: 50,
-              width: 130,
-              alt: "banana",
-            },
-            {
-              fruitImage: "../assets/image/lemons.webp",
-              fruitName: "Lemon",
-              price: 100,
-              width: 130,
-              alt: "lemon",
-            },
-            {
-              fruitImage: "../assets/image/papaya.jpg",
-              fruitName: "Papaya",
-              price: 30,
-              width: 62,
-              alt: "papaya",
-            },
-            {
-              fruitImage: "../assets/image/Guava.jpg",
-              fruitName: "Guava",
-              price: 150,
-              width: 130,
-              alt: "guava",
-            },
-            {
-              fruitImage: "../assets/image/apple.jpg",
-              fruitName: "Apple",
-              price: 150,
-              width: 115,
-              alt: "apple",
-            },
-            {
-              fruitImage: "../assets/image/orange.jpg",
-              fruitName: "Orange",
-              price: 120,
-              width: 95,
-              alt: "orange",
-            },
-            {
-              fruitImage: "../assets/image/banana.webp",
-              fruitName: "Banana",
-              price: 50,
-              width: 130,
-              alt: "banana",
-            },
-            {
-              fruitImage: "../assets/image/lemons.webp",
-              fruitName: "Lemon",
-              price: 100,
-              width: 130,
-              alt: "lemon",
-            },
-            {
-              fruitImage: "../assets/image/papaya.jpg",
-              fruitName: "Papaya",
-              price: 30,
-              width: 62,
-              alt: "papaya",
-            },
-            {
-              fruitImage: "../assets/image/Guava.jpg",
-              fruitName: "Guava",
-              price: 150,
-              width: 130,
-              alt: "guava",
-            },
-          ];
-
-          for (let i = 0; i <= fruitCard.length; i++) {
-            let div_card = document.createElement("div");
-            div_card.setAttribute("class", "full_card");
-            div_card.setAttribute("type", "button");
-            div_card.setAttribute("onclick", "card()");
-
-            // const b = document.createElement("a");
-            // b.setAttribute(
-            //   "href",
-            //   "../pages/detail.html?" + fruitCard[i]["fruitName"]
-            // );
-            // div_card.append(b);
-
-            let image = document.createElement("img");
-            image.setAttribute("src", fruitCard[i]["fruitImage"]);
-            image.setAttribute("alt", fruitCard[i]["alt"]);
-            image.setAttribute("width", fruitCard[i]["width"] + "px");
-            div_card.append(image);
-
-            let fruit_name = document.createElement("p");
-            fruit_name.innerText = fruitCard[i]["fruitName"];
-            div_card.append(fruit_name);
-
-            let rupees = document.createElement("p");
-            rupees.innerText = fruitCard[i]["price"] + "/kg";
-            div_card.append(rupees);
-
-            let input_value = document.createElement("input");
-            input_value.setAttribute("class", "bar");
-            input_value.setAttribute("type", "number");
-            input_value.setAttribute("width", "10px");
-            input_value.setAttribute("id", "quantity");
-            div_card.append(input_value);
-
-            const a = document.createElement("a");
-            a.setAttribute(
-              "href",
-              "../pages/6.buy-2.html?fruiName" + fruitCard[i]["fruitName"]
-            );
-            div_card.append(a);
-
-            let buttons = document.createElement("button");
-            buttons.setAttribute("class", "button");
-            buttons.innerText = "ADD CART";
-            a.append(buttons);
-
-            document.querySelector("section.main-1").append(div_card);
-          }
-        </script>
-        <!-- <div class="full_card">
-          <img src="../assets/image/apple.jpg" alt="apple" width="80px" />
-          <p>Apple</p>
-          <p>Rs.150/kg</p>
-          <input class="bar" type="number" width="10px" />
-          <button>ADD CART</button>
-          <img src="../assets/image/cart.png" alt="cart" width="30px" />
-        </div> -->
-        <!--  <nav>
-          <img src="../assets/image/orange.jpg" alt="orange" width="100px" />
-          <p>Orange</p>
-          <p>Rs.120/kg</p>
-          <input class="bar" type="number" width="10px" />
-          <img src="../assets/image/cart.png" alt="cart" width="30px" />
-        </nav> -->
-      </section>
+      <section class="main-1"></section>
     </main>
     <footer class="footer">
       <button type="button" onclick="okay()">Okay</button>
     </footer>
 
+    <!-- <script src="../pages/details.js"></script> -->
     <script>
+      // JSON
+
+      let Card = [
+        {
+          Image: "../assets/image/apple.jpg",
+          Name: "Apple",
+          alt: "Apple",
+          Price: 140,
+          width: 100,
+          Type: "Kashmir Reddish Apple",
+          Place: "Pulwama district, Kashmir",
+          Description:
+            "It is a fresh and organic apple from pulwama district in kashmir",
+        },
+        //   {
+        //     Image: "../assets/image/orange.jpg",
+        //     Name: "Orange",
+        //     alt: "orange",
+        //     Price: 120,
+        //     width: 95,
+        //     Type: "Nagpur Santra",
+        //     Place: "Nagpur, Maharashtra",
+        //     Description:
+        //       "It is a fresh and organic orange from Nagpur district in Maharashtra",
+        //   },
+        //   {
+        //     Image: "../assets/image/banana.webp",
+        //     Name: "Banana",
+        //     alt: "banana",
+        //     Price: 50,
+        //     width: 130,
+        //     Type: "Poovan Banana",
+        //     Place: "Coimbatore, Tamil nadu",
+        //     Description:
+        //       "It is a fresh and organic Banana from Coimbatore district in Tamil nadu",
+        //   },
+        //   {
+        //     Image: "../assets/image/lemons.webp",
+        //     Name: "Lemon",
+        //     alt: "lemon",
+        //     Price: 100,
+        //     width: 130,
+        //     Type: "Malta Lemon",
+        //     Place: "Puliangudi, Thirunelveli, Tamilnadu",
+        //     Description:
+        //       "It is a fresh and organic Lemon from Thirunelveli district in Tamilnadu",
+        //   },
+        //   {
+        //     Image: "../assets/image/papaya.jpg",
+        //     Name: "Papaya",
+        //     alt: "papaya",
+        //     Price: 30,
+        //     width: 62,
+        //     Type: "Arka Surya",
+        //     Place: "Madurai",
+        //     Description:
+        //       "It is a fresh and organic Papaya from Madurai district in Tamilnadu",
+        //   },
+        //   {
+        //     Image: "../assets/image/Guava.jpg",
+        //     Name: "Guava",
+        //     alt: "guava",
+        //     Price: 150,
+        //     width: 130,
+        //     Type: "Pink Guava",
+        //     Place: "Ariyalur, Tamilnadu",
+        //     Description:
+        //       "It is a fresh and organic Guava from Ariyalur district in Tamilnadu",
+        //   },
+      ];
+
+      // Card creating by using JavaScript
+
+      for (let i = 0; i <= Card.length; i++) {
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "full_card");
+        div_card.setAttribute("type", "button");
+        div_card.setAttribute("onclick", "card()");
+
+        let image = document.createElement("img");
+        image.setAttribute("src", Card[i]["Image"]);
+        image.setAttribute("alt", Card[i]["alt"]);
+        image.setAttribute("width", Card[i]["width"] + "px");
+        div_card.append(image);
+
+        let fruit_name = document.createElement("p");
+        fruit_name.innerText = Card[i]["Name"];
+        div_card.append(fruit_name);
+
+        let rupees = document.createElement("p");
+        rupees.innerText = Card[i]["Price"] + "/kg";
+        div_card.append(rupees);
+
+        let input_value = document.createElement("input");
+        input_value.setAttribute("class", "bar");
+        input_value.setAttribute("type", "number");
+        input_value.setAttribute("width", "10px");
+        input_value.setAttribute("id", "quantity");
+        div_card.append(input_value);
+
+        const a = document.createElement("a");
+        a.setAttribute("href", "../pages/6.buy-2.html?Name" + Card[i]["Name"]);
+        div_card.append(a);
+
+        let buttons = document.createElement("button");
+        buttons.setAttribute("class", "button");
+        buttons.innerText = "ADD CART";
+        a.append(buttons);
+
+        document.querySelector("section.main-1").append(div_card);
+      }
+
       function fruit() {
-        window.location.href = "http://127.0.0.1:5500/pages/5a-fruits.html";
+        window.location.href = "/pages/5a-fruits.html";
       }
       function vegetable() {
         window.location.href = "";
@@ -277,16 +195,26 @@
       }
 
       function card() {
-        window.location.href = "http://127.0.0.1:5500/pages/detail.html";
+        window.location.href = "/pages/detail.html";
       }
 
       function back() {
-        window.location.href = "http://127.0.0.1:5500/pages/4.index.html";
+        window.location.href = "/pages/4.index.html";
       }
 
       function okay() {
-        window.location.href = "http://127.0.0.1:5500/pages/6.buy-2.html";
+        window.location.href = "/pages/6.buy-2.html";
       }
+
+      // Get details from localstorage...
+
+      const details = JSON.parse(localStorage.getItem("product_details"));
+
+      const Url = document.getElementById("Url").value;
+      const Name = document.getElementById("Name").value;
+      const Type = document.getElementById("Type").value;
+      const Price = document.getElementById("Price").value;
+      const Qty = document.getElementById("Qty").value;
     </script>
   </body>
 </html>

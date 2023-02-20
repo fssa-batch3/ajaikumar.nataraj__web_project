@@ -24,7 +24,7 @@
       <div class="logo">
         <img src="../assets/image/logo.png" alt="logo" width="130px" />
       </div>
-      <button class="pro" placeholder="Shin Chan">Shin chan</button>
+      <button id="profile" placeholder="Shin Chan">Shin chan</button>
     </header>
     <main class="img-1">
       <nav>
@@ -63,13 +63,11 @@
     </main>
 
     <script>
-      function submitForm() {
-        const user_name = localStorage.getItem("user_name");
+      let BIO = JSON.parse(localStorage.getItem("BIO"));
+      console.log(BIO);
 
-        document.getElementsByClassName("pro")[0].innerHTML = user_name;
+      document.getElementById("profile").innerHTML = BIO[0]["FN"];
 
-        console.log(user_name);
-      }
       submitForm();
       function submit() {
         window.location.href = "/pages/3.home.html";

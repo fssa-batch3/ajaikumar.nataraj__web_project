@@ -17,13 +17,11 @@
     <h1>Hi! User...</h1>
     <div class="form">
       <form class="center" id="form">
-        <label>User name:</label><br />
-        <input type="text" id="username" /><br />
         <label>User Mail id:</label><br />
-        <input type="text" id="userid" /><br />
+        <input type="text" id="Email" required="true" /><br />
         <label>Password:</label><br />
-        <input type="password" id="password" /> <br />
-        <button class="btn" type="submit" onclick="sign()">Sign in</button>
+        <input type="password" id="Password" required="true" /> <br />
+        <button class="btn" type="submit">Sign in</button>
       </form>
     </div>
 
@@ -31,24 +29,33 @@
 
     <script>
       let logIn = document.getElementById("form");
+      console.log(logIn);
+
+      let arr = [];
+
       logIn.addEventListener("submit", (event) => {
         event.preventDefault();
         let defaultData = JSON.parse(localStorage.getItem("user_info"));
         console.log(defaultData);
-        let Username = document.getElementById("username").value;
-        let Useremail = document.getElementById("userid").value;
-        let Password = document.getElementById("password").value;
+
+        let Email = document.getElementById("Email").value.toLowerCase().trim();
+        let Password = document.getElementById("Password").value;
 
         let match = false;
 
         for (let i = 0; i < defaultData.length; i++) {
           if (
-            Username == defaultData[i].firstName &&
-            Useremail == defaultData[i].email &&
-            Password == defaultData[i].password
+            Email == defaultData[i]["Email"] &&
+            Password == defaultData[i]["Password"]
           ) {
             match = true;
+            arr.push(defaultData[i]);
+            window.localStorage.setItem(
+              "logIn",
+              JSON.stringify(arr[0]["Email"])
+            );
             break;
+            // i = i + defaultData.length;
           } else {
             match = false;
           }
@@ -56,9 +63,10 @@
 
         if (match == true) {
           alert("Success");
-          window.location.href = "3.home.html";
+
+          window.location.href = "/pages/3.home.html";
         } else {
-          alert("Failed");
+          alert("Login credentials not correct");
         }
       });
     </script>

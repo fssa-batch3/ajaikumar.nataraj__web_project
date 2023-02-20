@@ -2,6 +2,17 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 25px;
   background-image: url(../image/grass-land.webp);
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+input:valid {
+  border: 2px solid rgb(15, 232, 15);
+}
+input:invalid {
+  border: 2px solid red;
 }
 .body {
   font-size: 30px;
@@ -14,23 +25,30 @@ body {
   text-align: start;
   justify-content: space-between;
   color: #2bae66ff;
-  margin-left: 130px;
+  /* margin-left: 130px; */
   margin-top: 30px;
 }
 
 .sub {
   margin-top: 20px;
-  margin-left: 80px;
+  margin-left: 60px;
 }
 
 .bottom {
   align-items: baseline;
   display: inline-block;
 }
+.form {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  /* backdrop-filter: blur(6px); */
+}
 .form .c {
   align-content: center;
   justify-content: center;
-  margin-top: -130px;
+  /* margin-top: -130px; */
   margin-left: 130px;
 }
 .fs {
@@ -39,8 +57,13 @@ body {
   width: 600px;
   height: 550px;
   margin-top: 100px;
-  /* background-color: #d6fa8c; */
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
   border-radius: 40px;
+  backdrop-filter: blur(4px);
 }
 .form input {
   font-size: 30px;
@@ -49,11 +72,11 @@ body {
 }
 .full {
   justify-content: center;
-  margin-left: 480px;
+  /* margin-left: 480px; */
 }
 .log {
   margin-top: 30px;
-  margin-left: 25%;
+  margin-left: 5%;
 }
 
 button {
@@ -63,10 +86,10 @@ button {
   color: #2bae66ff;
   border: 1px solid #2bae66ff;
 }
-.h {
-  margin-left: -400px;
+h1 {
+  /* margin-left: -400px; */
   font-size: 25px;
-  margin-top: -150px;
+  /* margin-top: -150px; */
   display: flex;
   color: seagreen;
 }

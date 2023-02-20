@@ -14,24 +14,27 @@
 
       <div class="button">
         <form id="form" onsubmit="userDetail() ">
-          <input type="text" id="First_Name" placeholder="First Name" /><br />
-          <input type="text" id="Last_Name" placeholder="Last Name" /><br />
+          <input type="text" id="First_Name" placeholder="First Name" required/><br />
+          <input type="text" id="Last_Name" placeholder="Last Name" required/><br />
           <input
             type="number"
             id="Phone_number"
             placeholder="Phone Number"
+            required
           /><br />
-          <input type="email" id="email" placeholder="Email@gmail.com" /><br />
-          <input type="date" id="DOB" placeholder="Date Of birth" /><br />
+          <input type="email" id="email" placeholder="Email@gmail.com" required/><br />
+          <input type="date" id="DOB" placeholder="Date Of birth" required/><br />
           <input
             type="text"
             id="Home_Address"
             placeholder="Home Address"
+            required
           /><br />
           <input
             type="text"
             id="Land_Address"
             placeholder="Land Address"
+            required
           /><br />
           <input type="checkbox" id="gender" value="Male" /> Male
           <input type="checkbox" id="gender" value="Female" /> Female <br />
@@ -41,6 +44,7 @@
             type="number"
             id="Aadhar_number"
             placeholder="Aadhar_number"
+            required
           /><br />
         </div>
     </main>
@@ -58,7 +62,7 @@
           event.preventDefault();
           if (localStorage.getItem("BIO") === null) {
               let arr = [];
-            console.log("hi");
+            // console.log("hi");
             localStorage.setItem("BIO",JSON.stringify(arr)) 
         //   JSON.parse(localStorage.getItem("BIO"));
         }

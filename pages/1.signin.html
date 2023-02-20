@@ -9,113 +9,129 @@
   </head>
 
   <body class="body">
-    <header class="head">
-      <img src="../assets/image/logo.png" alt="logo" width="100px" />
-    </header>
     <div class="full">
+      <h1>Welcome! to Rishi Organic Market</h1>
       <div class="fs">
-        <div class="h">
-          <h1>Welcome! to Rishi Organic Market</h1>
-        </div>
         <div class="form" id="form">
           <form action="#" class="center">
             <label>Full Name:</label><br />
             <input
-              style="color: grey"
               type="text"
-              id="f-name"
-              placeholder="Full_Name"
+              id="full_name"
+              placeholder="User_Name"
+              pattern="[a-zA-Z]{1,20}"
+              autocomplete="off"
+              required
             /><br />
             <label>Mail id:</label><br />
             <input
-              style="color: grey"
               type="email"
               id="email"
               placeholder="name@gmail.com"
+              autocomplete="hgfgtyfygh"
+              required
             /><br />
             <label>Phone no:</label><br />
             <input
-              style="color: grey"
               type="tel"
-              id="phoneno"
+              id="phone_number"
               placeholder="9876543210"
+              pattern="[0-9]{10}"
+              autocomplete="hgfgtyfygh"
+              required
             /><br />
             <label>Password:</label><br />
             <input
-              style="color: grey"
               id="password"
               type="password"
-              placeholder="ab@123!"
+              placeholder="ab@123@gmail.com"
+              pattern="{6,12}"
+              autocomplete="hg"
+              required
             />
             <br />
             <label>Confirm Password:</label><br />
             <input
-              style="color: grey"
-              type="password-hidden"
+              type="password"
               id="conform_password"
-              placeholder="ab@123!"
+              placeholder="ab@123@gmail.com"
+              pattern="{6,12}"
+              autocomplete="hg"
+              required
             /><br />
-            <nav>
-              <a href=""></a>
-              <input type="checkbox" id="gender" value="Male" /> Male
-              <input type="checkbox" id="gender" value="Female" /> Female
-            </nav>
+            <!-- <nav>
+              <input type="checkbox" id="gender" value="Female" /> Male
+              <input type="checkbox" id="gender" value="Male" /> Female
+            </nav> -->
             <button class="sub" type="submit" value="submit" onclick="sign()">
               sign up
             </button>
-            <script>
-              function sign() {
-                window.location.href = "3.home.html";
-              }
-            </script>
           </form>
         </div>
       </div>
+
       <footer>
         <div>
           <button class="log" type="submit" onclick="log()">Login</button>
-          <script>
-            function log() {
-              window.location.href = "2.Login.html";
-            }
-          </script>
 
-          <p>If you already sign in! Please Login..</p>
+          <small><p>If you already sign in! Please Login..</p></small>
         </div>
       </footer>
     </div>
 
     <script>
-      const signUpForm = document.getElementById("form");
-      signUpForm.addEventListener("submit", function (event) {
+      signUpform = document.getElementById("form");
+      document.createElement("user_info");
+      signUpform.addEventListener("submit", function (event) {
         event.preventDefault();
-        let userArr = [];
-
+        let array = [];
         if (localStorage.getItem("user_info") != null) {
-          userArr = JSON.parse(localStorage.getItem("user_info"));
+          array = JSON.parse(localStorage.getItem("user_info"));
         }
-        const firstName = document.getElementById("f-name").value;
-        const mobileNumber = document.getElementById("phoneno").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        const conform_password =
-          document.getElementById("conform_password").value;
-        const gender = document.getElementById("gender").value;
 
-        // assign data for object
-        let userObj = {
-          firstName,
-          mobileNumber,
-          email,
-          password,
-          conform_password,
-          gender,
-        };
-        userArr.push(userObj);
-        const str = JSON.stringify(userArr);
-        localStorage.setItem("user_info", str);
-        console.log(str);
+        let match = false;
+        const FullName = document.getElementById("full_name").value;
+        const Email = document.getElementById("email").value.toLowerCase();
+        const Phone_number = document.getElementById("phone_number").value;
+        const Password = document.getElementById("password").value;
+        // const Gender = document.getElementById("gender").value;
+        const Confirm_Password =
+          document.getElementById("conform_password").value;
+        if (Password != Confirm_Password) {
+          alert("Password and Confirm password are not match");
+          return false;
+        } else {
+          for (let i = 0; i < array.length; i++) {
+            if (Email == array[i]["Email"]) {
+              match = true;
+            }
+          }
+        }
+
+        if (match == true) {
+          alert("Email is already Exist");
+          return false;
+        } else {
+          let userObj = {
+            FullName,
+            Email,
+            Phone_number,
+            Password,
+            Confirm_Password,
+          };
+          console.log(userObj);
+
+          array.push(userObj);
+          const str = JSON.stringify(array);
+          localStorage.setItem("user_info", str);
+          console.log(str);
+          window.location.href = "/pages/3.home.html";
+        }
       });
+
+      function log() {
+        window.location.href = "/pages/2.Login.html";
+      }
     </script>
   </body>
 </html>

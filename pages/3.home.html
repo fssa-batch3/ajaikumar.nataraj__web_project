@@ -19,7 +19,7 @@
           <img src="../assets/image/logo.png" alt="logo" width="100px" />
         </div>
 
-        <button class="pro">Shin chan</button>
+        <button id="profile" onclick="profile()">Shin chan</button>
       </header>
     </div>
     <div class="com-btn">
@@ -29,23 +29,22 @@
     </div>
 
     <script>
-      function submitForm() {
-        const user_name = localStorage.getItem("user_name");
+      let BIO = JSON.parse(localStorage.getItem("logIn"));
+      console.log(BIO);
 
-        document.getElementsByClassName("pro")[0].innerHTML = user_name;
+      document.getElementById("profile").innerHTML = user_info[0]["FullName"];
 
-        console.log(user_name);
-      }
-      submitForm();
       function buyer() {
-        window.location.href = "http://127.0.0.1:5500/pages/4.index.html";
+        window.location.href = "/pages/4.index.html";
       }
       function farmer() {
-        window.location.href = "http://127.0.0.1:5500/pages/10.upload.html";
+        window.location.href = "/pages/10.upload.html";
       }
       function wholebuyer() {
-        window.location.href =
-          "http://127.0.0.1:5500/pages/15.hotel-index.html";
+        window.location.href = "/pages/15.hotel-index.html";
+      }
+      function profile() {
+        window.location.href = "/pages/profile.html";
       }
     </script>
   </body>

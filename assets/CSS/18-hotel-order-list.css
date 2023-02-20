@@ -1,15 +1,13 @@
 body {
   color: #2bae66ff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgb(191, 227, 191);
 }
 .header {
   display: flex;
-  font-size: 40px;
-  background-color: #2bae66ff;
+  font-size: 30px;
+  background-color: rgb(191, 227, 191);
   height: 100px;
   width: 100%;
-  border-radius: 50px;
 }
 .header button {
   border-radius: 70px;
@@ -19,21 +17,20 @@ body {
 .hol {
   text-align: center;
   width: 1200px;
-  color: white;
+  color: #2bae66ff;
   margin-top: 20px;
 }
 .table {
-  font-size: 40px;
+  font-size: 30px;
   margin-top: 30px;
-  border: solid 1px blue;
+  border: solid 1px #2bae66ff;
   margin-left: 30px;
 }
 .table tr td {
-  border: 1px solid blue;
+  border: 1px solid #2bae66ff;
 }
 .table button {
   font-size: 20px;
-  color: blue;
   width: 120px;
   height: 40px;
   border-radius: 50px;
@@ -54,6 +51,5 @@ body {
   height: 50px;
   border-radius: 50px;
   background-color: #2bae66ff;
-  color: blue;
   font-size: 25px;
 }

@@ -36,12 +36,13 @@
 
     <section class="output_section"></section>
 
+    <a href="../assets/image/apple.jpg"></a>
     <section class="sec"><form></form></section>
     <script>
       // JSON
       let detail = [
         {
-          url: "yugygygu",
+          image: "../assets/image/apple.jpg",
           name: "hvbuhvyvyu",
           types: "fruit",
           price: "67",
@@ -50,58 +51,58 @@
       ];
 
       // Added Cards
-      for (let i = 0; i <= detail.length; i++) {
-        let div_card_output = document.createElement("div");
-        div_card_output.setAttribute("class", "div_card-output");
-        console.log(div_card_output);
+      // for (let i = 0; i <= detail.length; i++) {
+      //   let div_card_output = document.createElement("div");
+      //   div_card_output.setAttribute("class", "div_card-output");
+      //   console.log(div_card_output);
 
-        let output_h5 = document.createElement("h5");
-        output_h5.innerText = "Your product Details";
-        div_card_output.append(output_h5);
+      //   let output_h5 = document.createElement("h5");
+      //   output_h5.innerText = "Your product Details";
+      //   div_card_output.append(output_h5);
 
-        let output_url = document.createElement("input");
-        output_url.setAttribute("class", "output-btn");
-        output_url.setAttribute("type", detail[i]["url"]);
-        output_url.setAttribute("placeholder", "URL");
-        div_card_output.append(output_url);
+      //   let output_url = document.createElement("input");
+      //   output_url.setAttribute("class", "output-btn");
+      //   output_url.setAttribute("src", detail[i]["image"]);
+      //   output_url.setAttribute("placeholder", "URL");
+      //   div_card_output.append(output_url);
 
-        let output_name = document.createElement("input");
-        output_name.setAttribute("class", "output-btn");
-        output_name.setAttribute("type", detail[i]["name"]);
-        output_name.setAttribute("placeholder", "Name");
-        div_card_output.append(output_name);
+      //   let output_name = document.createElement("input");
+      //   output_name.setAttribute("class", "output-btn");
+      //   output_name.setAttribute("type", detail[i]["name"]);
+      //   output_name.setAttribute("placeholder", "Name");
+      //   div_card_output.append(output_name);
 
-        let output_type = document.createElement("input");
-        output_type.setAttribute("class", "output-btn");
-        output_type.setAttribute("type", detail[i]["types"]);
-        output_type.setAttribute("placeholder", "Type");
-        div_card_output.append(output_type);
+      //   let output_type = document.createElement("input");
+      //   output_type.setAttribute("class", "output-btn");
+      //   output_type.setAttribute("type", detail[i]["types"]);
+      //   output_type.setAttribute("placeholder", "Type");
+      //   div_card_output.append(output_type);
 
-        let output_price = document.createElement("input");
-        output_price.setAttribute("class", "output-btn");
-        output_price.setAttribute("type", detail[i]["price"]);
-        output_price.setAttribute("placeholder", "Price");
-        div_card_output.append(output_price);
+      //   let output_price = document.createElement("input");
+      //   output_price.setAttribute("class", "output-btn");
+      //   output_price.setAttribute("type", detail[i]["price"]);
+      //   output_price.setAttribute("placeholder", "Price");
+      //   div_card_output.append(output_price);
 
-        let output_qty = document.createElement("input");
-        output_qty.setAttribute("class", "output-btn");
-        output_qty.setAttribute("type", detail[i]["quantity"]);
-        output_qty.setAttribute("placeholder", "Quantity");
-        div_card_output.append(output_qty);
+      //   let output_qty = document.createElement("input");
+      //   output_qty.setAttribute("class", "output-btn");
+      //   output_qty.setAttribute("type", detail[i]["quantity"]);
+      //   output_qty.setAttribute("placeholder", "Quantity");
+      //   div_card_output.append(output_qty);
 
-        let cancel_btn = document.createElement("button");
-        cancel_btn.setAttribute("class", "btn");
-        cancel_btn.setAttribute("type", "reset");
-        cancel_btn.innerText = "CANCEL";
-        div_card_output.append(cancel_btn);
+      //   let cancel_btn = document.createElement("button");
+      //   cancel_btn.setAttribute("class", "btn");
+      //   cancel_btn.setAttribute("type", "reset");
+      //   cancel_btn.innerText = "CANCEL";
+      //   div_card_output.append(cancel_btn);
 
-        document.querySelector(".output_section").append(div_card_output);
-      }
+      //   document.querySelector(".output_section").append(div_card_output);
+      // }
       // Enter the datas
 
-      let div_card = document.createElement("div");
+      let div_card = document.createElement("form");
       div_card.setAttribute("class", "full-card");
-      div_card.setAttribute("id", "details");
+      div_card.setAttribute("id", "form");
       console.log(div_card);
 
       let input_h1 = document.createElement("h3");
@@ -111,7 +112,7 @@
       let input_url = document.createElement("input");
       input_url.setAttribute("class", "img");
       input_url.setAttribute("id", "url");
-      input_url.setAttribute("type", "text");
+      input_url.setAttribute("type", "file");
       input_url.setAttribute("placeholder", "Enter URL");
       div_card.append(input_url);
 
@@ -171,6 +172,7 @@
       let add = document.createElement("button");
       add.setAttribute("class", "btn");
       add.setAttribute("id", "add");
+      add.setAttribute("type", "submit");
       add.innerText = "ADD";
       btn_card.append(add);
 
@@ -182,30 +184,11 @@
       btn_card.append(cancel);
 
       document.querySelector("form").append(div_card);
-
-      //get references for text input and button fields
-      var url = document.getElementById("url").value;
-      var name = document.getElementById("product").value;
-      var type = document.getElementById("type").value;
-      var price = document.getElementById("price").value;
-      var qty = document.getElementById("qty").value;
-      //add click event listener, to get data when data is entered
-      jsonBtn.addEventListener("click", function () {
-        //store data in JavaScript object
-        var data = {
-          URL_img: url,
-          User_name: name,
-          Type: type,
-          Price: price,
-          QTY: qty,
-        };
-        //convert JavaScript object to JSON
-        jsonText.innerHTML = JSON.stringify(data);
-        console.log(data);
-      });
     </script>
 
     <footer class="footer">
+      <button type="button" onclick="myFunction()">Add Card</button>
+
       <button type="button" onclick="submit()">Submit</button>
     </footer>
 
@@ -214,6 +197,38 @@
         window.location.href =
           "http://127.0.0.1:5500/pages/11.place-products.html";
       }
+
+      signUpform = document.getElementById("form");
+      document.createElement("product_details");
+      signUpform.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let array = [];
+        if (localStorage.getItem("product_details") != null) {
+          array = JSON.parse(localStorage.getItem("product_details"));
+        }
+
+        let match = false;
+        const Url = document.getElementById("url").value;
+        const Name = document.getElementById("product").value;
+        const Type = document.getElementById("type").value;
+        const Price = document.getElementById("price").value;
+        // const Gender = document.getElementById("gender").value;
+        const Qty = document.getElementById("qty").value;
+
+        let inputDetails = {
+          Url,
+          Name,
+          Type,
+          Price,
+          Qty,
+        };
+        console.log(inputDetails);
+
+        array.push(inputDetails);
+        const str = JSON.stringify(array);
+        localStorage.setItem("product_details", str);
+        console.log(str);
+      });
     </script>
   </body>
 </html>
