@@ -6,3 +6,16 @@ Market Research:https://docs.google.com/document/d/1xiBJQXavYewImtFTtYipX6VEFBit
 User Flow:https://drive.google.com/drive/folders/1sjlE22PvCJrWwvK4X6nLd-ImfY-3i6_4
 Wire Frame:https://drive.google.com/drive/folders/1t0aGf2JX3ZECWNzi2KCNpNYoXFcbtkx2
 Sonar Cloud:https://sonarcloud.io/project/overview?id=fssa-batch3_ajaikumar.nataraj__web_project
+
+
+
+Features:
+
+1. UUID (not start) (2 days)
+
+2. User Story
+-> Add Farming Products (Completed)
+-> Farming Products list (In progres) (2 days)
+-> Farming Products details (In progress) (2 days)
+-> Update Farming Products (In progress) (2 days)
+-> Close or Deactive the Farming Products data (Not started) (4 days)
