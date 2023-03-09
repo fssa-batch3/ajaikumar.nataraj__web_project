@@ -137,7 +137,7 @@
   transition: 1s;
 }
 .discount_day {
-  /* border: 2px solid #2bae66ff; */
+  border: 2px solid #2bae66ff;
   position: relative;
   width: 400px;
 }

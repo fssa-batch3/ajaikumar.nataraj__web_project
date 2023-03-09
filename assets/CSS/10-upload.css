@@ -3,27 +3,42 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #2bae66ff;
   margin-left: 70px;
-  margin-top: 100px;
+  margin-top: 10px;
   /* background-color: rgb(191, 227, 191); */
 }
 .logo {
   text-align: center;
-  margin-top: -70px;
+  /* margin-top: -70px; */
 }
 .main input {
   background-color: rgb(191, 227, 191);
 }
-.header {
+header {
   display: flex;
+  justify-content: space-between;
+}
+header button {
+  font-size: 25px;
+  height: 50px;
+  width: 130px;
+  border: none;
+  background-color: #2bae66ff;
+  color: aliceblue;
+  border-radius: 5px;
+}
+header button:hover {
+  color: #2bae66ff;
+  background-color: aliceblue;
+  transition: 1s;
 }
 .head img {
-  border-radius: 20px;
+  border-radius: 5px;
   background-color: #2bae66ff;
+  color: aliceblue;
 }
 .title {
   color: #2bae66ff;
   margin-left: 200px;
-  margin-top: -40px;
 }
 .main {
   margin-top: 00px;
@@ -40,13 +55,18 @@ input {
 .main ::placeholder {
   font-size: 40px;
 }
-
+.sec {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 .footer {
   display: flex;
-  position: fixed;
+  justify-content: center;
   text-align: center;
   align-items: center;
-  top: 790px;
+  align-content: center;
+  top: 830px;
+  position: fixed;
 }
 .footer button {
   width: 200px;
@@ -58,7 +78,7 @@ input {
   border: none;
 }
 .footer button:hover {
-  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(162, 211, 139);
+  scale: 1.1;
 }
 .add img {
   margin-left: 150px;
@@ -91,7 +111,7 @@ input {
   width: 550px;
   text-align: center;
   border-radius: 10px;
-  height: 400px;
+  height: 450px;
 }
 .btn-card {
   display: flex;

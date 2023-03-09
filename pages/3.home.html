@@ -18,14 +18,28 @@
         <div class="logo">
           <img src="../assets/image/logo.png" alt="logo" width="100px" />
         </div>
-
         <button id="profile" onclick="profile()">Shin chan</button>
+        <img
+          onclick="profile()"
+          src="../assets/image/profile.png"
+          alt="profilr"
+          width="100px"
+        />
       </header>
     </div>
     <div class="com-btn">
-      <button type="button" onclick="buyer()">Retail Buyer</button>
-      <button type="button" onclick="farmer()">Vendor</button>
-      <button type="button" onclick="wholebuyer()">Whole sale Buyer</button>
+      <nav class="com-btn_nav1">
+        <img src="../assets/image/select_buying.png" alt="buyer" />
+        <button type="button" onclick="buyer()">Buyer</button>
+      </nav>
+      <nav class="com-btn_nav2">
+        <img src="../assets/image/sell_online.png" alt="farmer" />
+        <button type="button" onclick="farmer()">Vendor</button>
+      </nav>
+      <!-- <nav>
+        <img src="" alt="wholebuyer" />
+        <button type="button" onclick="wholebuyer()">Whole sale Buyer</button>
+      </nav> -->
     </div>
 
     <script>

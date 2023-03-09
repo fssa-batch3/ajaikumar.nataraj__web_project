@@ -1,30 +1,30 @@
 .body {
-  background-image: url(../image/grass-land.webp);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 30px;
-  background-size: center;
-  width: 1490px;
-  height: 800px;
   text-align: center;
+  align-items: center;
+  align-content: center;
 }
 
-h1 {
-  margin-left: 500px;
-  margin-top: 30px;
-  text-align: center;
-  color: white;
-  background-color: #2bae66ff;
-  border-radius: 50px;
-  width: 500px;
-}
 .center {
   justify-content: space-between;
   align-content: center;
-  color: black;
+  border: 1px solid #2bae66ff;
+  box-shadow: 3px 3px 3px 3px rgb(217, 244, 217);
+  height: 400px;
+  width: 500px;
 }
 .center input {
   border-radius: 8px;
-  border: none;
+}
+.center label {
+  margin-top: 30px;
+}
+input:valid {
+  border: 2px solid rgb(15, 232, 15);
+}
+input:invalid {
+  border: 2px solid red;
 }
 .btn {
   font-size: 30px;
@@ -33,14 +33,18 @@ h1 {
   background-color: #2bae66ff;
   color: white;
   border: none;
-  box-shadow: 2px 2px 2px rgba(100, 100, 100);
+  box-shadow: 2px 2px 2px rgb(217, 244, 217);
   border-radius: 5px;
 }
 .form {
+  display: flex;
   align-content: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   margin-top: 40px;
 }
+
 .form input {
   font-size: 30px;
 }
@@ -84,9 +88,6 @@ button {
   }
   .form {
     width: 500px;
-    margin-left: 00px;
-    align-content: none;
-    justify-content: none;
   }
   h1 {
     margin-left: 40px;

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -67,78 +67,12 @@
       <button type="button" onclick="okay()">Okay</button>
     </footer>
 
-    <!-- <script src="../pages/details.js"></script> -->
-    <script>
+    <script src="../pages/details.js"></script> -->
+<!-- <script>
       // JSON
+      let Card;
 
-      let Card = [
-        {
-          Image: "../assets/image/apple.jpg",
-          Name: "Apple",
-          alt: "Apple",
-          Price: 140,
-          width: 100,
-          Type: "Kashmir Reddish Apple",
-          Place: "Pulwama district, Kashmir",
-          Description:
-            "It is a fresh and organic apple from pulwama district in kashmir",
-        },
-        //   {
-        //     Image: "../assets/image/orange.jpg",
-        //     Name: "Orange",
-        //     alt: "orange",
-        //     Price: 120,
-        //     width: 95,
-        //     Type: "Nagpur Santra",
-        //     Place: "Nagpur, Maharashtra",
-        //     Description:
-        //       "It is a fresh and organic orange from Nagpur district in Maharashtra",
-        //   },
-        //   {
-        //     Image: "../assets/image/banana.webp",
-        //     Name: "Banana",
-        //     alt: "banana",
-        //     Price: 50,
-        //     width: 130,
-        //     Type: "Poovan Banana",
-        //     Place: "Coimbatore, Tamil nadu",
-        //     Description:
-        //       "It is a fresh and organic Banana from Coimbatore district in Tamil nadu",
-        //   },
-        //   {
-        //     Image: "../assets/image/lemons.webp",
-        //     Name: "Lemon",
-        //     alt: "lemon",
-        //     Price: 100,
-        //     width: 130,
-        //     Type: "Malta Lemon",
-        //     Place: "Puliangudi, Thirunelveli, Tamilnadu",
-        //     Description:
-        //       "It is a fresh and organic Lemon from Thirunelveli district in Tamilnadu",
-        //   },
-        //   {
-        //     Image: "../assets/image/papaya.jpg",
-        //     Name: "Papaya",
-        //     alt: "papaya",
-        //     Price: 30,
-        //     width: 62,
-        //     Type: "Arka Surya",
-        //     Place: "Madurai",
-        //     Description:
-        //       "It is a fresh and organic Papaya from Madurai district in Tamilnadu",
-        //   },
-        //   {
-        //     Image: "../assets/image/Guava.jpg",
-        //     Name: "Guava",
-        //     alt: "guava",
-        //     Price: 150,
-        //     width: 130,
-        //     Type: "Pink Guava",
-        //     Place: "Ariyalur, Tamilnadu",
-        //     Description:
-        //       "It is a fresh and organic Guava from Ariyalur district in Tamilnadu",
-        //   },
-      ];
+      Card = JSON.parse(localStorage.getItem("product_details"));
 
       // Card creating by using JavaScript
 
@@ -152,21 +86,24 @@
         image.setAttribute("src", Card[i]["Image"]);
         image.setAttribute("alt", Card[i]["alt"]);
         image.setAttribute("width", Card[i]["width"] + "px");
+        image.setAttribute("id", "Url");
         div_card.append(image);
 
         let fruit_name = document.createElement("p");
         fruit_name.innerText = Card[i]["Name"];
+        fruit_name.setAttribute("id", "Name");
         div_card.append(fruit_name);
 
         let rupees = document.createElement("p");
-        rupees.innerText = Card[i]["Price"] + "/kg";
+        rupees.innerText = Card[i]["Price"];
+        rupees.setAttribute("id", "Price");
         div_card.append(rupees);
 
         let input_value = document.createElement("input");
         input_value.setAttribute("class", "bar");
         input_value.setAttribute("type", "number");
         input_value.setAttribute("width", "10px");
-        input_value.setAttribute("id", "quantity");
+        input_value.setAttribute("id", "Qty");
         div_card.append(input_value);
 
         const a = document.createElement("a");
@@ -205,16 +142,208 @@
       function okay() {
         window.location.href = "/pages/6.buy-2.html";
       }
+    </script>
+  </body>
+</html> -->
 
-      // Get details from localstorage...
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/CSS/history.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="../assets/image/arrowback.png"
+          alt="arrow"
+          onclick="back()"
+          style="
+            border-radius: 50px;
+            padding: 10px 10px 10px 10px;
+            background-color: #2bae66ff;
+          "
+        />
+      </nav>
+      <nav>
+        <img
+          src="../assets/image/RISHIMARKET (1).png"
+          alt="logo"
+          width="100px"
+        />
+      </nav>
+      <!-- <nav><h2>Your history</h2></nav> -->
+      <nav>
+        <img src="../assets/image/profile.png" alt="profile" width="80px" />
+      </nav>
+    </header>
+    <button onclick="cart()">Go to Cart</button>
 
-      const details = JSON.parse(localStorage.getItem("product_details"));
+    <main class="card_main">
+      <!-- <section class="card_div">
+        <input type="image" />
+        <input type="text" />
+        <input type="number" />
+        <input type="number" />
+      </section> -->
+    </main>
+    <!-- <form>
+      First Number<br />
+      <input id="num1" type="number" name="num1" />
+      <br />
+      Second Number:<br />
+      <input id="num2" type="number" name="num2" />
+      <br /><br />
+      <input type="button" value="Do Maths" onclick="doMath();" />
+    </form> -->
 
-      const Url = document.getElementById("Url").value;
-      const Name = document.getElementById("Name").value;
-      const Type = document.getElementById("Type").value;
-      const Price = document.getElementById("Price").value;
-      const Qty = document.getElementById("Qty").value;
+    <script>
+      // JSON
+      let Card = JSON.parse(localStorage.getItem("product_details"));
+      console.log(Card);
+
+      const detail = JSON.parse(localStorage.getItem("product_details"));
+
+      // Card creating by using JavaScript
+      for (let i = 0; i < Card.length; i++) {
+        let findDetail = detail.find(function (event) {
+          let id = event["Product_id"];
+          if (Card[i]["Product_id"] == id) {
+            return true;
+          }
+        });
+        // console.log(Card[i]["Url"]);
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "card_div");
+        div_card.setAttribute("type", "button");
+        div_card.setAttribute("id", "div");
+        // div_card.setAttribute("id", Card[i]["id"]);
+        // div_card.setAttribute("onclick", "card(this.id)");
+
+        let image = document.createElement("img");
+        // console.log(Card[i]);
+        image.setAttribute("src", Card[i]["Url"]);
+        image.setAttribute("alt", "image");
+        image.setAttribute("id", "pUrl");
+        div_card.append(image);
+
+        let fruit_name = document.createElement("input");
+        fruit_name.setAttribute("value", Card[i]["Name"]);
+        fruit_name.setAttribute("id", "pName");
+        div_card.append(fruit_name);
+
+        let rupees = document.createElement("input");
+        rupees.setAttribute("value", Card[i]["Price"]);
+        rupees.setAttribute("id", "pPrice");
+        rupees.setAttribute("type", "text");
+        div_card.append(rupees);
+
+        let input_value = document.createElement("input");
+        // input_value.setAttribute("value", Card[i]["Qty"]);
+        input_value.setAttribute("type", "number");
+        input_value.setAttribute("placeholder", "Enter your quantity");
+        input_value.setAttribute("width", "10px");
+        input_value.setAttribute("id", "Qty");
+        div_card.append(input_value);
+
+        let button = document.createElement("button");
+        button.innerText = "Add Cart";
+        button.setAttribute("id", "delete");
+        button.setAttribute("value", "delete");
+        button.setAttribute("onclick", doMath());
+        div_card.append(button);
+
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          let addData = JSON.parse(localStorage.getItem("added_list"));
+          let findIndex = detail.indexOf(findDetail);
+          let msg = confirm(
+            "Are you sure you want to add this product to your cart"
+          );
+          if (msg !== true) {
+            return;
+          } else {
+            if (addData === null) {
+              let array = [];
+              array.push(Card[findIndex]);
+              localStorage.setItem("added_list", JSON.stringify(array));
+            } else {
+              addData.push(Card[findIndex]);
+              localStorage.setItem("added_list", JSON.stringify(addData));
+            }
+          }
+
+          function doMath() {
+            var numOne = document.getElementById("pPrice");
+            var numTwo = document.getElementById("Qty");
+            var theProduct = numOne * numTwo;
+            document.write(theProduct);
+
+            localStorage.setItem("value", Card[i]["Total"]);
+            let lastname = localStorage.getItem(theProduct);
+          }
+        });
+
+        document.querySelector(".card_main").append(div_card);
+      }
+      // const product_id = JSON.parse(localStorage.getItem("product_details"));
+      // let id = document.getElementById("Product_id");
+
+      // console.log(detail);
+      // const url = document.getElementById("pUrl");
+      // const pname = document.getElementById("pName");
+      // const price = document.getElementById("pPrice");
+      // const qty = document.getElementById("pQty");
+
+      // // url.value = detail["Url"];
+      // pname.value = detail["Name"];
+      // price.value = detail["Price"];
+      // qty.value = detail["Qty"];
+
+      // const div = document.getElementById("div");
+      // div.addEventListener("submit", function (event) {
+      //   event.preventDefault();
+      //   // let Url = document.getElementById("pUrl").value;
+      //   let Name = document.getElementById("pName").value;
+      //   let Price = document.getElementById("pPrice").value;
+      //   let Qty = document.getElementById("pQty").value;
+
+      //   let changeData = {
+      //     // Url,
+      //     Name,
+      //     Price,
+      //     Qty,
+      //   };
+      //   // console.log(changeData);
+      // });
+
+      function cart() {
+        window.location.href = "/pages/6.buy-2.html";
+      }
+
+      function back() {
+        window.location.href = "/pages/4.index.html";
+      }
+      // function deleteP() {
+      //   let Total = rupees * input_value;
+      //   let object = detail.find(button);
+      //   localStorage.getItem;
+      //   localStorage.setItem("added_list", JSON.stringify(Total));
+      // }
+
+      // function doMath() {
+      //   var numOne = document.getElementById("pPrice");
+      //   var numTwo = document.getElementById("Qty");
+      //   var theProduct = numOne * numTwo;
+      //   document.write(theProduct);
+
+      //   localStorage.setItem(Total, "theProduct");
+      //   let lastname = localStorage.getItem(theProduct);
+      // }
     </script>
   </body>
 </html>

@@ -23,9 +23,12 @@
       </div>
       <div class="head">
         <p>Home</p>
-        <p>About us</p>
-        <p>Register</p>
-        <p>Log In</p>
+        <p onclick="about()">About us</p>
+        <p onclick="sign()">Register</p>
+        <p onclick="customer()">Log In</p>
+      </div>
+      <div>
+        <img src="./assets/image/profile.png" alt="profile" width="120px" />
       </div>
     </header>
 
@@ -224,5 +227,20 @@
     <nav class="copyright">
       @ copyright 2022 RISHI AGRI MARKET | All rights reserved
     </nav>
+
+    <script>
+      function sign() {
+        window.location.href = "/pages/1.signin.html";
+      }
+      function customer() {
+        window.location.href = "/pages/2.Login.html";
+      }
+      function admin() {
+        window.location.href = "/pages/16-admin-home.html";
+      }
+      function about() {
+        window.location.href = "/pages/Aboutus.html";
+      }
+    </script>
   </body>
 </html>

@@ -11,64 +11,55 @@
   <body class="body">
     <div class="full">
       <h1>Welcome! to Rishi Organic Market</h1>
-      <div class="fs">
-        <div class="form" id="form">
-          <form action="#" class="center">
-            <label>Full Name:</label><br />
-            <input
-              type="text"
-              id="full_name"
-              placeholder="User_Name"
-              pattern="[a-zA-Z]{1,20}"
-              autocomplete="off"
-              required
-            /><br />
-            <label>Mail id:</label><br />
-            <input
-              type="email"
-              id="email"
-              placeholder="name@gmail.com"
-              autocomplete="hgfgtyfygh"
-              required
-            /><br />
-            <label>Phone no:</label><br />
-            <input
-              type="tel"
-              id="phone_number"
-              placeholder="9876543210"
-              pattern="[0-9]{10}"
-              autocomplete="hgfgtyfygh"
-              required
-            /><br />
-            <label>Password:</label><br />
-            <input
-              id="password"
-              type="password"
-              placeholder="ab@123"
-              pattern="{6,12}"
-              autocomplete="hg"
-              required
-            />
-            <br />
-            <label>Confirm Password:</label><br />
-            <input
-              type="password"
-              id="conform_password"
-              placeholder="ab@123"
-              pattern="{6,12}"
-              autocomplete="hg"
-              required
-            /><br />
-            <!-- <nav>
-              <input type="checkbox" id="gender" value="Female" /> Male
-              <input type="checkbox" id="gender" value="Male" /> Female
-            </nav> -->
-            <button class="sub" type="submit" value="submit" onclick="sign()">
-              sign up
-            </button>
-          </form>
-        </div>
-      </div>
+      <form class="form" id="form">
+        <nav>
+          <img src="../assets/image/profile.png" alt="profile" width="100px" />
+        </nav>
+        <label>Full Name:</label><br />
+        <input
+          type="text"
+          id="full_name"
+          pattern="[a-zA-Z]{1,20}"
+          autocomplete="off"
+          required
+        /><br />
+        <label>Mail id:</label><br />
+        <input
+          type="email"
+          id="email"
+          autocomplete="hgfgtyfygh"
+          required
+        /><br />
+        <label>Phone no:</label><br />
+        <input
+          type="tel"
+          id="phone_number"
+          pattern="[0-9]{10}"
+          autocomplete="hgfgtyfygh"
+          required
+        /><br />
+        <label>Password:</label><br />
+        <input
+          id="password"
+          type="password"
+          pattern="{6,12}"
+          autocomplete="hg"
+          required
+        />
+        <br />
+        <label>Confirm Password:</label><br />
+        <input
+          type="password"
+          id="conform_password"
+          pattern="{6,12}"
+          autocomplete="hg"
+          required
+        /><br />
+
+        <button class="sub" type="submit" value="submit" onclick="sign()">
+          sign up
+        </button>
+      </form>
 
       <footer>
         <div>
@@ -80,7 +71,7 @@
     </div>
 
     <script>
-      signUpform = document.getElementById("form");
+      let signUpform = document.getElementById("form");
       document.createElement("user_info");
       signUpform.addEventListener("submit", function (event) {
         event.preventDefault();

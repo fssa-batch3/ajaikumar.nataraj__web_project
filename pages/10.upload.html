@@ -13,222 +13,100 @@
   </head>
   <body>
     <header>
-      <div class="logo">
-        <img
-          src="../assets/image/logo.png"
-          alt="logo"
-          width="110px
-      "
-        />
+      <div class="head">
+        <a href="../pages/3.home.html">
+          <img
+            src="../assets/image/arrowback.png"
+            alt="arrow-back"
+            width="50px"
+        /></a>
       </div>
-      <div class="header">
-        <div class="head">
-          <a href="../pages/3.home.html">
-            <img
-              src="../assets/image/arrowback.png"
-              alt="arrow-back"
-              width="50px"
-          /></a>
-        </div>
-        <div class="title"><h2>Hi Farmer...</h2></div>
-      </div>
+      <div class="title"><h2>Hi Farmer...</h2></div>
+      <button onclick="history()">History</button>
     </header>
 
     <section class="output_section"></section>
 
     <a href="../assets/image/apple.jpg"></a>
-    <section class="sec"><form></form></section>
-    <script>
-      // JSON
-      let detail = [
-        {
-          image: "../assets/image/apple.jpg",
-          name: "hvbuhvyvyu",
-          types: "fruit",
-          price: "67",
-          quantity: "76",
-        },
-      ];
+    <section class="sec"></section>
 
-      // Added Cards
-      // for (let i = 0; i <= detail.length; i++) {
-      //   let div_card_output = document.createElement("div");
-      //   div_card_output.setAttribute("class", "div_card-output");
-      //   console.log(div_card_output);
+    <form action="/action_page.php" method="get" class="full-card" id="form">
+      <h3>Upload your products</h3>
+      <input type="url" id="url" placeholder="Enter Url" />
+      <input type="text" id="product" placeholder="Your Product Name" />
+      <input list="type" name="type" placeholder="Type" />
+      <datalist id="type">
+        <option value="Fruit"></option>
+        <option value="Vegetable"></option>
+        <option value="Coffe & Tea"></option>
+        <option value="Cereals & Grains"></option>
+      </datalist>
+      <input type="number" id="price" placeholder="Enter Your Price" />
+      <input type="number" id="qty" placeholder="Enter Your Product Quantity" />
+      <div class="btn-card">
+        <button class="btn" id="add-btn">Add</button>
+        <button class="btn" type="reset" id="cancel">Cancel</button>
+      </div>
+    </form>
 
-      //   let output_h5 = document.createElement("h5");
-      //   output_h5.innerText = "Your product Details";
-      //   div_card_output.append(output_h5);
+    <!-- <footer class="footer">
+      <button id="add">Add</button>
 
-      //   let output_url = document.createElement("input");
-      //   output_url.setAttribute("class", "output-btn");
-      //   output_url.setAttribute("src", detail[i]["image"]);
-      //   output_url.setAttribute("placeholder", "URL");
-      //   div_card_output.append(output_url);
-
-      //   let output_name = document.createElement("input");
-      //   output_name.setAttribute("class", "output-btn");
-      //   output_name.setAttribute("type", detail[i]["name"]);
-      //   output_name.setAttribute("placeholder", "Name");
-      //   div_card_output.append(output_name);
-
-      //   let output_type = document.createElement("input");
-      //   output_type.setAttribute("class", "output-btn");
-      //   output_type.setAttribute("type", detail[i]["types"]);
-      //   output_type.setAttribute("placeholder", "Type");
-      //   div_card_output.append(output_type);
-
-      //   let output_price = document.createElement("input");
-      //   output_price.setAttribute("class", "output-btn");
-      //   output_price.setAttribute("type", detail[i]["price"]);
-      //   output_price.setAttribute("placeholder", "Price");
-      //   div_card_output.append(output_price);
-
-      //   let output_qty = document.createElement("input");
-      //   output_qty.setAttribute("class", "output-btn");
-      //   output_qty.setAttribute("type", detail[i]["quantity"]);
-      //   output_qty.setAttribute("placeholder", "Quantity");
-      //   div_card_output.append(output_qty);
-
-      //   let cancel_btn = document.createElement("button");
-      //   cancel_btn.setAttribute("class", "btn");
-      //   cancel_btn.setAttribute("type", "reset");
-      //   cancel_btn.innerText = "CANCEL";
-      //   div_card_output.append(cancel_btn);
-
-      //   document.querySelector(".output_section").append(div_card_output);
-      // }
-      // Enter the datas
-
-      let div_card = document.createElement("form");
-      div_card.setAttribute("class", "full-card");
-      div_card.setAttribute("id", "form");
-      console.log(div_card);
-
-      let input_h1 = document.createElement("h3");
-      input_h1.innerText = "Upload your products";
-      div_card.append(input_h1);
-
-      let input_url = document.createElement("input");
-      input_url.setAttribute("class", "img");
-      input_url.setAttribute("id", "url");
-      input_url.setAttribute("type", "file");
-      input_url.setAttribute("placeholder", "Enter URL");
-      div_card.append(input_url);
-
-      let input_product = document.createElement("input");
-      input_product.setAttribute("class", "detail");
-      input_product.setAttribute("id", "product");
-      input_product.setAttribute("type", "text");
-      input_product.setAttribute("placeholder", "Your Product Name");
-      div_card.append(input_product);
-
-      let input_types = document.createElement("input");
-      input_types.setAttribute("class", "detail");
-      input_types.setAttribute("list", "Types");
-      input_types.setAttribute("id", "type");
-      input_types.setAttribute("name", "Types");
-      input_types.setAttribute("placeholder", "Types");
-      div_card.append(input_types);
-
-      let datalist = document.createElement("datalist");
-      datalist.setAttribute("id", "Types");
-      input_types.append(datalist);
-
-      let option_1 = document.createElement("option");
-      option_1.setAttribute("value", "Fruits");
-      datalist.append(option_1);
-
-      let option_2 = document.createElement("option");
-      option_2.setAttribute("value", "Vegetables");
-      datalist.append(option_2);
-
-      let option_3 = document.createElement("option");
-      option_3.setAttribute("value", "Coffee & Tea");
-      datalist.append(option_3);
-
-      let option_4 = document.createElement("option");
-      option_4.setAttribute("value", "Cereals & Grains");
-      datalist.append(option_4);
-
-      let input_price = document.createElement("input");
-      input_price.setAttribute("class", "detail");
-      input_price.setAttribute("type", "number");
-      input_price.setAttribute("id", "price");
-      input_price.setAttribute("placeholder", "Enter Your Price");
-      div_card.append(input_price);
-
-      let input_qty = document.createElement("input");
-      input_qty.setAttribute("class", "detail");
-      input_qty.setAttribute("type", "number");
-      input_qty.setAttribute("id", "qty");
-      input_qty.setAttribute("placeholder", "Enter Your Product Quantity");
-      div_card.append(input_qty);
-
-      let btn_card = document.createElement("div");
-      btn_card.setAttribute("class", "btn-card");
-      div_card.append(btn_card);
-
-      let add = document.createElement("button");
-      add.setAttribute("class", "btn");
-      add.setAttribute("id", "add");
-      add.setAttribute("type", "submit");
-      add.innerText = "ADD";
-      btn_card.append(add);
-
-      let cancel = document.createElement("button");
-      cancel.setAttribute("class", "btn");
-      cancel.setAttribute("id", "cancel");
-      cancel.setAttribute("type", "reset");
-      cancel.innerText = "CANCEL";
-      btn_card.append(cancel);
-
-      document.querySelector("form").append(div_card);
-    </script>
-
-    <footer class="footer">
-      <button type="button" onclick="myFunction()">Add Card</button>
-
-      <button type="button" onclick="submit()">Submit</button>
-    </footer>
+       <button type="button" onclick="submit()">Submit</button> 
+    </footer> -->
 
     <script>
       function submit() {
-        window.location.href =
-          "http://127.0.0.1:5500/pages/11.place-products.html";
+        window.location.href = "/pages/11.place-products.html";
+      }
+      function history() {
+        window.location.href = "/pages/10.a.history.html";
       }
 
-      signUpform = document.getElementById("form");
+      uploadForm = document.getElementById("form");
       document.createElement("product_details");
-      signUpform.addEventListener("submit", function (event) {
+      uploadForm.addEventListener("submit", function (event) {
         event.preventDefault();
         let array = [];
         if (localStorage.getItem("product_details") != null) {
           array = JSON.parse(localStorage.getItem("product_details"));
         }
 
+        // let id = JSON.parse(localStorage.getItem("user_info"));
+
         let match = false;
         const Url = document.getElementById("url").value;
         const Name = document.getElementById("product").value;
         const Type = document.getElementById("type").value;
         const Price = document.getElementById("price").value;
-        // const Gender = document.getElementById("gender").value;
         const Qty = document.getElementById("qty").value;
+        let ProductId = Date.now();
+        let Total = document.getElementById("");
+
+        // for (let i = 0; i < array.length; i++) {
+        //   if (Email == array[i]["Email"]) {
+        //     match = true;
+        //   }
+        // }
 
         let inputDetails = {
           Url,
           Name,
           Type,
-          Price,
+          Price: Price + "/kg",
           Qty,
+          Product_id: ProductId,
+          Total,
         };
-        console.log(inputDetails);
+        // console.log(Product_id);
 
         array.push(inputDetails);
         const str = JSON.stringify(array);
         localStorage.setItem("product_details", str);
         console.log(str);
       });
+
+      // const start = Date.now();
     </script>
   </body>
 </html>
