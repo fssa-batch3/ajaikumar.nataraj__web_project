@@ -49,11 +49,11 @@
       </div>
     </form>
 
-    <!-- <footer class="footer">
-      <button id="add">Add</button>
+    <footer class="footer">
+      <!-- <button id="add">Add</button> -->
 
-       <button type="button" onclick="submit()">Submit</button> 
-    </footer> -->
+      <button type="button" onclick="submit()">Submit</button>
+    </footer>
 
     <script>
       function submit() {
@@ -81,7 +81,6 @@
         const Price = document.getElementById("price").value;
         const Qty = document.getElementById("qty").value;
         let ProductId = Date.now();
-        let Total = document.getElementById("");
 
         // for (let i = 0; i < array.length; i++) {
         //   if (Email == array[i]["Email"]) {
@@ -93,10 +92,9 @@
           Url,
           Name,
           Type,
-          Price: Price + "/kg",
+          Price,
           Qty,
           Product_id: ProductId,
-          Total,
         };
         // console.log(Product_id);
 
@@ -104,6 +102,7 @@
         const str = JSON.stringify(array);
         localStorage.setItem("product_details", str);
         console.log(str);
+        document.getElementById("form").reset();
       });
 
       // const start = Date.now();

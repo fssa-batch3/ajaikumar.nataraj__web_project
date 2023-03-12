@@ -204,7 +204,6 @@
     <script>
       // JSON
       let Card = JSON.parse(localStorage.getItem("product_details"));
-      console.log(Card);
 
       const detail = JSON.parse(localStorage.getItem("product_details"));
 
@@ -216,7 +215,7 @@
             return true;
           }
         });
-        // console.log(Card[i]["Url"]);
+
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "card_div");
         div_card.setAttribute("type", "button");
@@ -240,6 +239,7 @@
         rupees.setAttribute("value", Card[i]["Price"]);
         rupees.setAttribute("id", "pPrice");
         rupees.setAttribute("type", "text");
+        rupees.setAttribute("name", "num1");
         div_card.append(rupees);
 
         let input_value = document.createElement("input");
@@ -247,78 +247,93 @@
         input_value.setAttribute("type", "number");
         input_value.setAttribute("placeholder", "Enter your quantity");
         input_value.setAttribute("width", "10px");
+        input_value.setAttribute("pattern", "[0-9]{10}");
         input_value.setAttribute("id", "Qty");
+        input_value.setAttribute("name", "num2");
         div_card.append(input_value);
 
         let button = document.createElement("button");
         button.innerText = "Add Cart";
         button.setAttribute("id", "delete");
         button.setAttribute("value", "delete");
-        button.setAttribute("onclick", doMath());
+        // button.setAttribute("onclick", multiply());
         div_card.append(button);
 
         button.addEventListener("click", function (event) {
           event.preventDefault();
-          let addData = JSON.parse(localStorage.getItem("added_list"));
-          let findIndex = detail.indexOf(findDetail);
+          let addData = JSON.parse(localStorage.getItem("added_list")) || [];
+          console.log(addData);
           let msg = confirm(
             "Are you sure you want to add this product to your cart"
           );
-          if (msg !== true) {
-            return;
-          } else {
-            if (addData === null) {
-              let array = [];
-              array.push(Card[findIndex]);
-              localStorage.setItem("added_list", JSON.stringify(array));
-            } else {
-              addData.push(Card[findIndex]);
-              localStorage.setItem("added_list", JSON.stringify(addData));
+          if (msg) {
+            if (
+              addData !== null &&
+              addData !== undefined &&
+              addData.length > 0
+            ) {
+              const thisIndex = addData.indexOf(findDetail);
+              addData[thisIndex]["Qty"] = input_value.value;
             }
-          }
 
-          function doMath() {
-            var numOne = document.getElementById("pPrice");
-            var numTwo = document.getElementById("Qty");
-            var theProduct = numOne * numTwo;
-            document.write(theProduct);
-
-            localStorage.setItem("value", Card[i]["Total"]);
-            let lastname = localStorage.getItem(theProduct);
+            addData.push(Card[i]);
+            localStorage.setItem("added_list", JSON.stringify(addData));
+            // console.log(detail[thisIndex]["Qty"]);
+            console.log();
           }
+          // for (let i = 0; i < Card.length; i++) {
+          //   let numOne = JSON.parse(
+          //     document.getElementById("pPrice").value.split("/")[i]
+          //   );
+          //   let numTwo = document.getElementById("Qty").value;
+          //   if (msg !== true) {
+          //     return;
+          //   } else {
+          //     if (addData === null) {
+          //       let array = [];
+          //       console.log(numOne, numTwo);
+          //       array.push(Card[findIndex]);
+          //     } else {
+          //       let addData = JSON.parse(localStorage.getItem("added_list"));
+          //       addData.push(Card[findIndex]);
+          //       Card[findIndex].total = numOne * numTwo;
+          //       localStorage.setItem("added_list", JSON.stringify(addData));
+          //     }
+          //   }
+          // }
+
+          //   function multiply() {
+          //     var numOne = document.getElementById("pPrice");
+          //     var numTwo = document.getElementById("Qty");
+          //     var theProduct = numOne.value * numTwo.value;
+          //     document.write(theProduct);
+
+          //     localStorage.setItem("added_list", Card[i]["Qty"]);
+          //     let lastname = localStorage.getItem(added_list);
+          //   }
         });
 
         document.querySelector(".card_main").append(div_card);
       }
-      // const product_id = JSON.parse(localStorage.getItem("product_details"));
-      // let id = document.getElementById("Product_id");
 
-      // console.log(detail);
-      // const url = document.getElementById("pUrl");
-      // const pname = document.getElementById("pName");
-      // const price = document.getElementById("pPrice");
-      // const qty = document.getElementById("pQty");
+      // for add total
+      // const product_id = JSON.parse(localStorage.getItem("added_list"));
+      // let id = document.getElementById("Qty");
 
-      // // url.value = detail["Url"];
-      // pname.value = detail["Name"];
-      // price.value = detail["Price"];
-      // qty.value = detail["Qty"];
+      // // console.log(detail);
+      // const total = document.getElementById("Qty");
+
+      // total.value = detail["Qty"];
 
       // const div = document.getElementById("div");
-      // div.addEventListener("submit", function (event) {
+      // div.addEventListener("delete", function (event) {
       //   event.preventDefault();
-      //   // let Url = document.getElementById("pUrl").value;
-      //   let Name = document.getElementById("pName").value;
-      //   let Price = document.getElementById("pPrice").value;
-      //   let Qty = document.getElementById("pQty").value;
+      //   let Qty = document.getElementById("Qty").value;
 
       //   let changeData = {
-      //     // Url,
-      //     Name,
-      //     Price,
       //     Qty,
       //   };
-      //   // console.log(changeData);
+      // console.log(changeData);
       // });
 
       function cart() {

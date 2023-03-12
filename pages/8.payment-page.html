@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -53,23 +53,108 @@
 
     <script>
       function okay() {
-        const name = document.getElementById("name").value;
-        const address = document.getElementById("add").value;
-        const phoneno = document.getElementById("phno").value;
-        const pickup = document.getElementById("pickup").value;
+        // const name = document.getElementById("name").value;
+        // const address = document.getElementById("add").value;
+        // const phoneno = document.getElementById("phno").value;
+        // const pickup = document.getElementById("pickup").value;
 
-        console.log(name);
-        console.log(address);
-        console.log(phoneno);
-        console.log(pickup);
+        // console.log(name);
+        // console.log(address);
+        // console.log(phoneno);
+        // console.log(pickup);
 
-        localStorage.setItem("user_name", name);
-        localStorage.setItem("user_add", address);
-        localStorage.setItem("user_phno", phoneno);
-        localStorage.setItem("user_pickup", pickup);
+        // localStorage.setItem("user_name", name);
+        // localStorage.setItem("user_add", address);
+        // localStorage.setItem("user_phno", phoneno);
+        // localStorage.setItem("user_pickup", pickup);
 
         window.location.href = "http://127.0.0.1:5500/pages/9.conform.html";
       }
     </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/8-payment.css" />
+    <title>payment-page</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="../assets/image/arrowback.png"
+          alt="arrow"
+          onclick="back()"
+          style="
+            border-radius: 50px;
+            padding: 10px 10px 10px 10px;
+            background-color: #2bae66ff;
+          "
+        />
+      </nav>
+      <nav>
+        <img
+          src="../assets/image/RISHIMARKET (1).png"
+          alt="logo"
+          width="100px"
+        />
+      </nav>
+      <nav><h2>Payment Details</h2></nav>
+      <nav>
+        <img src="../assets/image/profile.png" alt="profile" width="80px" />
+      </nav>
+    </header>
+
+    <section class="side-bar">
+      <nav>
+        <a href="bgb">Cards</a>
+      </nav>
+      <nav>
+        <a href="yu">Account Details</a>
+      </nav>
+      <nav>
+        <a href="hgy">QR Code</a>
+      </nav>
+    </section>
+
+    <main>
+      <section class="section_card">
+        <div class="div_card">
+          <img
+            src="../assets/image/paypal-logo.png"
+            alt="paypal"
+            width="250px"
+          />
+          <img src="../assets/image/visa.png" alt="visa" width="250px" />
+        </div>
+        <div class="div_card">
+          <img
+            src="../assets/image/Mastercard-logo.png"
+            alt="Mastercard-logo"
+            width="250px"
+          />
+          <img
+            src="../assets/image/maestro-logo.png"
+            alt="maestro-logo"
+            width="250px"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <img
+        src="../assets/image/promo_code.png"
+        alt="coupon code"
+        width="50px"
+      />
+      <p>Do you have Coupon Code?</p>
+      <input type="text" />
+    </footer>
   </body>
 </html>

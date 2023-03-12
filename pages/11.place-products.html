@@ -4,81 +4,196 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/11-place-products.css" />
+    <link rel="stylesheet" href="../assets/CSS/history.css" />
   </head>
   <body>
-    <div class="logo">
-      <img
-        src="../assets/image/logo.png"
-        alt="logo"
-        width="110px
-      "
-      />
-    </div>
     <header>
-      <div class="header">
-        <a href="../pages/10.upload.html">
-          <button>
-            <img
-              class="before-arrow"
-              src="../assets/image/arrowback.png"
-              alt="arrow-back"
-              width="40px"
-            />
-          </button>
-        </a>
-        <div class="sb">
-          <input
-            class="search-bar"
-            type="text"
-            placeholder="Search"
-            height="50px"
-          />
-        </div>
-        <button class="search-button">
-          <img
-            class="search-icon"
-            src="../assets/image/search.png"
-            alt="sb"
-            width="40px"
-          />
-        </button>
-        <button class="voice-button">
-          <img
-            class="voice-icon"
-            src="../assets/image/mic.png"
-            alt="vb"
-            width="40px"
-          />
-          <br />
-        </button>
-      </div>
+      <nav>
+        <img
+          src="../assets/image/arrowback.png"
+          alt="arrow"
+          style="
+            border-radius: 50px;
+            padding: 10px 10px 10px 10px;
+            background-color: #2bae66ff;
+          "
+        />
+      </nav>
+      <nav>
+        <img
+          src="../assets/image/RISHIMARKET (1).png"
+          alt="logo"
+          width="100px"
+        />
+      </nav>
+      <nav><h2>Your Order List</h2></nav>
+      <nav>
+        <img src="../assets/image/profile.png" alt="profile" width="80px" />
+      </nav>
     </header>
-    <table aria-describedby="name" class="table">
-      <!-- Noncompliant -->
-      <tr>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Amount</th>
-        <th>Decline</th>
-      </tr>
-      <tr>
-        <td><input type="text" placeholder="Banana" /></td>
-        <td><input type="number" placeholder="Rs.20/kg" /></td>
-        <td><input type="number" placeholder="150 kg" /></td>
-        <td><input type="number" placeholder="Rs. 3000" /></td>
-        <td><i class="fa fa-close" style="font-size: 36px"></i></td>
-      </tr>
-    </table>
 
-    <footer class="footer">
-      <a href="../pages/12.bill.html"><button>Place Products</button></a>
+    <main class="card_main">
+      <!-- <section class="card_div">
+        <input type="image" />
+        <input type="text" />
+        <input type="number" />
+        <input type="number" />
+      </section> -->
+    </main>
+
+    <footer>
+      <button onclick="bill()">Go to Bill Page</button>
     </footer>
+
+    <script>
+      // JSON
+      let Card = JSON.parse(localStorage.getItem("product_details"));
+      console.log(Card);
+
+      const detail = JSON.parse(localStorage.getItem("product_details"));
+
+      // Card creating by using JavaScript
+      for (let i = 0; i <= Card.length; i++) {
+        let findDetail = detail.find(function (event) {
+          let id = event["Product_id"];
+          if (Card[i]["Product_id"] == id) {
+            return true;
+          }
+        });
+        // console.log(Card[i]["Url"]);
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "card_div");
+        div_card.setAttribute("type", "button");
+        div_card.setAttribute("id", "div");
+        // div_card.setAttribute("id", Card[i]["id"]);
+        // div_card.setAttribute("onclick", "card(this.id)");
+
+        let image = document.createElement("img");
+        // console.log(Card[i]);
+        image.setAttribute("src", Card[i]["Url"]);
+        image.setAttribute("alt", "image");
+        image.setAttribute("id", "pUrl");
+        div_card.append(image);
+
+        let fruit_name = document.createElement("input");
+        fruit_name.setAttribute("value", Card[i]["Name"]);
+        fruit_name.setAttribute("id", "pName");
+        div_card.append(fruit_name);
+
+        let rupees = document.createElement("input");
+        rupees.setAttribute("value", Card[i]["Price"]);
+        rupees.setAttribute("id", "pPrice");
+        rupees.setAttribute("type", "text");
+        div_card.append(rupees);
+
+        let input_value = document.createElement("input");
+        input_value.setAttribute("value", Card[i]["Qty"]);
+        input_value.setAttribute("type", "number");
+        input_value.setAttribute("width", "10px");
+        input_value.setAttribute("id", "pQty");
+        div_card.append(input_value);
+
+        let edit = document.createElement("button");
+        edit.innerText = "Edit";
+        // edit.setAttribute("id", Card[i]["id"]);
+        // edit.setAttribute("onclick", "productEdit(this.id)");
+        // edit.setAttribute("onclick", "edit(/pages/10.product_edit_page.html)");
+        // edit.setAttribute(
+        //   "href",
+        //   "../pages/10.product_edit_page.html?Product_id=" +
+        //     Card[i]["Product_id"]
+        // );
+        edit.setAttribute("id", "submit");
+        edit.setAttribute("type", "submit");
+        div_card.append(edit);
+
+        let button = document.createElement("button");
+        button.innerText = "Delete";
+        button.setAttribute("id", "delete");
+        button.setAttribute("value", "delete");
+        // button.setAttribute("onclick", deleteProduct());
+        div_card.append(button);
+
+        edit.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          let changeData = {
+            // Url: image.value,
+            Name: fruit_name.value,
+            Price: rupees.value,
+            Qty: input_value.value,
+          };
+          console.log(changeData);
+
+          const assignData = Object.assign(findDetail, changeData);
+
+          let findIndex = detail.indexOf(findDetail);
+          detail[findIndex] = assignData;
+          localStorage.setItem("product_details", JSON.stringify(detail));
+          alert("Succesfully changed");
+        });
+        button.addEventListener("click", function (event) {
+          event.preventDefault();
+          let deleteData = JSON.parse(localStorage.getItem("deleted_list"));
+          let findIndex = detail.indexOf(findDetail);
+          let msg = confirm("Are you sure you want to delete this product");
+          if (msg !== true) {
+            return;
+          } else {
+            if (deleteData === null) {
+              let array = [];
+              array.push(Card[findIndex]);
+              localStorage.setItem("deleted_list", JSON.stringify(array));
+            } else {
+              deleteData.push(Card[findIndex]);
+              localStorage.setItem("deleted_list", JSON.stringify(deleteData));
+            }
+
+            detail.splice(findIndex, 1);
+            localStorage.setItem("product_details", JSON.stringify(detail));
+          }
+        });
+
+        document.querySelector(".card_main").append(div_card);
+      }
+      // const product_id = JSON.parse(localStorage.getItem("product_details"));
+      // let id = document.getElementById("Product_id");
+
+      // console.log(detail);
+      // const url = document.getElementById("pUrl");
+      const pname = document.getElementById("pName");
+      const price = document.getElementById("pPrice");
+      const qty = document.getElementById("pQty");
+
+      // url.value = detail["Url"];
+      pname.value = detail["Name"];
+      price.value = detail["Price"];
+      qty.value = detail["Qty"];
+
+      const div = document.getElementById("div");
+      div.addEventListener("submit", function (event) {
+        event.preventDefault();
+        // let Url = document.getElementById("pUrl").value;
+        let Name = document.getElementById("pName").value;
+        let Price = document.getElementById("pPrice").value;
+        let Qty = document.getElementById("pQty").value;
+
+        let changeData = {
+          // Url,
+          Name,
+          Price,
+          Qty,
+        };
+        // console.log(changeData);
+      });
+
+      function deleted() {
+        window.location.href = "/pages/10.deleted_list.html";
+      }
+      function bill() {
+        window.location.href = "/pages/12.bill.html";
+      }
+    </script>
   </body>
 </html>

@@ -19,6 +19,9 @@ table .tr {
   width: 500px;
   margin-top: -140px;
 }
+.FullName {
+  display: flex;
+}
 input {
   font-size: 30px;
   color: #2bae66ff;
@@ -43,7 +46,7 @@ table input {
   border-radius: 10px;
 }
 .footer button:hover {
-  transform: scaleY(1.3);
+  scale: 1.2;
 }
 .img img {
   margin-top: -40px;

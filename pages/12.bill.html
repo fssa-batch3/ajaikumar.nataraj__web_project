@@ -8,38 +8,38 @@
     <link rel="stylesheet" href="../assets/CSS/12-bill.css" />
   </head>
   <body>
-    <div class="img">
-      <img
-        src="../assets/image/logo.png"
-        alt="logo"
-        width="130px
-      "
-      />
-    </div>
-    <h2>Thanks for uploading and your Products bill is here</h2>
+    <div class="FullName">
+      <div class="details">
+        <h2>
+          Thanks for uploading your Products and Your product's bill is here
+        </h2>
 
-    <table aria-describedby="bill">
-      <tr>
-        <th>Name</th>
-        <th>Amount</th>
-      </tr>
-      <tr>
-        <td><input type="text" placeholder="Banana" /></td>
-        <td><input type="number" placeholder="Rs.3000" /></td>
-      </tr>
-      <tr class="tr">
-        <td>Total Amount</td>
-        <td>Rs.3000</td>
-      </tr>
-    </table>
-    <div class="details">
-      <h3>Fill your pickup details here:</h3>
+        <table aria-describedby="bill">
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Banana" /></td>
+            <td><input type="number" placeholder="Rs.3000" /></td>
+          </tr>
+          <tr class="tr">
+            <td>Total Amount</td>
+            <td>Rs.3000</td>
+          </tr>
+        </table>
+      </div>
+      <script></script>
 
-      <div class="detail">
-        <input type="text" id="name" placeholder="name" />
-        <input type="number" id="phno" placeholder="Phone number" />
-        <input type="text" id="add" placeholder="address" />
-        <input type="date" id="pickup" placeholder="Pickup date" />
+      <div class="details">
+        <h3>Fill your pickup details here:</h3>
+
+        <div class="detail">
+          <input type="text" id="name" placeholder="name" />
+          <input type="number" id="phno" placeholder="Phone number" />
+          <input type="text" id="add" placeholder="address" />
+          <input type="date" id="pickup" placeholder="Pickup date" />
+        </div>
       </div>
     </div>
     <footer class="footer">
@@ -48,23 +48,22 @@
 
     <script>
       function payment() {
-        const name = document.getElementById("name").value;
-        const address = document.getElementById("add").value;
-        const phoneno = document.getElementById("phno").value;
-        const pickup = document.getElementById("pickup").value;
+        // const name = document.getElementById("name").value;
+        // const address = document.getElementById("add").value;
+        // const phoneno = document.getElementById("phno").value;
+        // const pickup = document.getElementById("pickup").value;
 
-        console.log(name);
-        console.log(address);
-        console.log(phoneno);
-        console.log(pickup);
+        // console.log(name);
+        // console.log(address);
+        // console.log(phoneno);
+        // console.log(pickup);
 
-        localStorage.setItem("user_name", name);
-        localStorage.setItem("user_add", address);
-        localStorage.setItem("user_phno", phoneno);
-        localStorage.setItem("user_pickup", pickup);
+        // localStorage.setItem("user_name", name);
+        // localStorage.setItem("user_add", address);
+        // localStorage.setItem("user_phno", phoneno);
+        // localStorage.setItem("user_pickup", pickup);
 
-        window.location.href =
-          "http://127.0.0.1:5500/pages/13.Acct.detail.html";
+        window.location.href = "/pages/13.Acct.detail.html";
       }
     </script>
   </body>
