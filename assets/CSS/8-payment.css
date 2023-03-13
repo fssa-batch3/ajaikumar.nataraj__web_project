@@ -83,23 +83,35 @@ input {
 header {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(191, 227, 191);
+  box-shadow: 2px 2px 2px 2px rgb(191, 227, 191);
+  /* background-color: rgb(191, 227, 191); */
   text-align: center;
   align-items: center;
   align-content: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
+  color: #2bae66ff;
+}
+.topic {
+  /* background-color: #2bae66ff; */
+  color: #2bae66ff;
+  font-size: 20px;
+  display: flex;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  justify-content: center;
 }
 .side-bar {
   position: fixed;
+  border-radius: 5px;
   top: 150px;
   width: 200px;
-  height: 600px;
+  height: 270px;
   box-shadow: 2px 2px 2px 2px rgb(191, 227, 191);
 }
 .side-bar nav {
   width: 200px;
-  height: 200px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,7 +131,7 @@ main {
   margin-left: 300px;
 }
 .div_card img {
-  padding: 150px 0px 0px 150px;
+  padding: 120px 0px 0px 150px;
 }
 footer {
   top: 803px;
