@@ -112,9 +112,9 @@
   </head>
   <body>
     <header>
-      <img src="../assets/image/logo (2).png" alt="logo" width="100px" />
+      <img src="../assets/image/logo (2).png" alt="logo" width="130px" />
       <h4>Your Product's Bill</h4>
-      <img src="../assets/image/profile.png" alt="profile" width="80px" />
+      <img src="../assets/image/profile.png" alt="profile" width="110px" />
     </header>
 
     <table>
@@ -151,7 +151,7 @@
           td_tr2.append(td2_tr);
 
           let td3_tr = document.createElement("td");
-          td3_tr.innerText = Card[i]["total"];
+          td3_tr.innerText = Card[i]["Price"] * Card[i]["Qty"];
           td_tr2.append(td3_tr);
 
           document.querySelector("table").append(table_card);

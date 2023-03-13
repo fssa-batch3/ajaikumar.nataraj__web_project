@@ -79,28 +79,20 @@
         div_card.append(fruit_name);
 
         let rupees = document.createElement("input");
-        rupees.setAttribute("value", Card[i]["Price"]);
+        rupees.setAttribute("value", Card[i]["Price"] + " /kg");
         rupees.setAttribute("id", "pPrice");
         rupees.setAttribute("type", "text");
         div_card.append(rupees);
 
         let input_value = document.createElement("input");
-        input_value.setAttribute("value", Card[i]["Qty"]);
-        input_value.setAttribute("type", "number");
+        input_value.setAttribute("value", Card[i]["Qty"] + " kg");
+        // input_value.setAttribute("type", "number");
         input_value.setAttribute("width", "10px");
         input_value.setAttribute("id", "pQty");
         div_card.append(input_value);
 
         let edit = document.createElement("button");
         edit.innerText = "Edit";
-        // edit.setAttribute("id", Card[i]["id"]);
-        // edit.setAttribute("onclick", "productEdit(this.id)");
-        // edit.setAttribute("onclick", "edit(/pages/10.product_edit_page.html)");
-        // edit.setAttribute(
-        //   "href",
-        //   "../pages/10.product_edit_page.html?Product_id=" +
-        //     Card[i]["Product_id"]
-        // );
         edit.setAttribute("id", "submit");
         edit.setAttribute("type", "submit");
         div_card.append(edit);

@@ -103,70 +103,38 @@
         // div_card.setAttribute("id", Card[i]["id"]);
         // div_card.setAttribute("onclick", "card(this.id)");
 
-        let image = document.createElement("img");
-        // console.log(Card[i]);
-        image.setAttribute("src", Card[i]["Url"]);
-        image.setAttribute("alt", "image");
-        image.setAttribute("id", "pUrl");
-        div_card.append(image);
-
         let fruit_name = document.createElement("input");
         fruit_name.setAttribute("value", Card[i]["Name"]);
         fruit_name.setAttribute("id", "pName");
         div_card.append(fruit_name);
 
         let rupees = document.createElement("input");
-        rupees.setAttribute("value", Card[i]["Price"]);
+        rupees.setAttribute("value", Card[i]["Price"] + " /kg");
         rupees.setAttribute("id", "pPrice");
         rupees.setAttribute("type", "text");
         div_card.append(rupees);
 
         let input_value = document.createElement("input");
-        input_value.setAttribute("value", Card[i]["Qty"]);
-        input_value.setAttribute("type", "number");
+        input_value.setAttribute("value", Card[i]["Qty"] + " kg");
+        // input_value.setAttribute("type", "number");
         input_value.setAttribute("width", "10px");
         input_value.setAttribute("id", "pQty");
         div_card.append(input_value);
 
-        // let button = document.createElement("button");
-        // button.innerText = "Add Cart";
-        // button.setAttribute("id", "delete");
-        // button.setAttribute("value", "delete");
-        // // button.setAttribute("onclick", deleteProduct());
-        // div_card.append(button);
+        let image = document.createElement("input");
+        // console.log(Card[i]);
+        image.setAttribute("value", "Rs." + Card[i]["Price"] * Card[i]["Qty"]);
+        image.setAttribute("alt", "image");
+        image.setAttribute("id", "pUrl");
+        div_card.append(image);
 
         let edit = document.createElement("button");
         edit.innerText = "Cancel";
-        // edit.setAttribute("id", Card[i]["id"]);
-        // edit.setAttribute("onclick", "productEdit(this.id)");
-        // edit.setAttribute("onclick", "edit(/pages/10.product_edit_page.html)");
-        // edit.setAttribute(
-        //   "href",
-        //   "../pages/10.product_edit_page.html?Product_id=" +
-        //     Card[i]["Product_id"]
-        // );
+
         edit.setAttribute("id", "submit");
         edit.setAttribute("type", "submit");
         div_card.append(edit);
 
-        // edit.addEventListener("click", function (event) {
-        //   event.preventDefault();
-
-        //   let changeData = {
-        //     // Url: image.value,
-        //     Name: fruit_name.value,
-        //     Price: rupees.value,
-        //     Qty: input_value.value,
-        //   };
-        //   console.log(changeData);
-
-        //   const assignData = Object.assign(findDetail, changeData);
-
-        //   let findIndex = detail.indexOf(findDetail);
-        //   detail[findIndex] = assignData;
-        //   localStorage.setItem("added_list", JSON.stringify(detail));
-        //   alert("Succesfully changed");
-        // });
         edit.addEventListener("click", function (event) {
           event.preventDefault();
           let addData = JSON.parse(localStorage.getItem("added_list"));
@@ -184,36 +152,6 @@
 
         document.querySelector(".card_main").append(div_card);
       }
-      // const product_id = JSON.parse(localStorage.getItem("added_list"));
-      // let id = document.getElementById("Product_id");
-
-      // console.log(detail);
-      // const url = document.getElementById("pUrl");
-      // const pname = document.getElementById("pName");
-      // const price = document.getElementById("pPrice");
-      // const qty = document.getElementById("pQty");
-
-      // // url.value = detail["Url"];
-      // pname.value = detail["Name"];
-      // price.value = detail["Price"];
-      // qty.value = detail["Qty"];
-
-      // const div = document.getElementById("div");
-      // div.addEventListener("submit", function (event) {
-      //   event.preventDefault();
-      //   // let Url = document.getElementById("pUrl").value;
-      //   let Name = document.getElementById("pName").value;
-      //   let Price = document.getElementById("pPrice").value;
-      //   let Qty = document.getElementById("pQty").value;
-
-      //   let changeData = {
-      //     // Url,
-      //     Name,
-      //     Price,
-      //     Qty,
-      //   };
-      //   // console.log(changeData);
-      // });
 
       function back() {
         window.location.href = "/pages/4.index.html";
