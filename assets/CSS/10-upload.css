@@ -4,7 +4,7 @@ body {
   color: #2bae66ff;
   margin-left: 70px;
   margin-top: 10px;
-  /* background-color: rgb(191, 227, 191); */
+  /* background-color: rgb(237, 247, 237); */
 }
 .logo {
   text-align: center;
@@ -26,7 +26,7 @@ header button {
   color: aliceblue;
   border-radius: 5px;
 }
-header button:hover {
+button:hover {
   color: #2bae66ff;
   background-color: aliceblue;
   transition: 1s;
@@ -78,7 +78,9 @@ input {
   border: none;
 }
 .footer button:hover {
-  scale: 1.1;
+  color: #2bae66ff;
+  background-color: aliceblue;
+  transition: 1s;
 }
 .add img {
   margin-left: 150px;
@@ -107,11 +109,12 @@ input {
   height: 300px;
 }
 .full-card {
-  background-color: rgb(191, 227, 191);
+  background-color: rgb(237, 247, 237);
   width: 550px;
   text-align: center;
   border-radius: 10px;
   height: 450px;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(146, 193, 125);
 }
 .btn-card {
   display: flex;

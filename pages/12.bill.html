@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -63,6 +63,122 @@
         // localStorage.setItem("user_phno", phoneno);
         // localStorage.setItem("user_pickup", pickup);
 
+        window.location.href = "/pages/13.Acct.detail.html";
+      }
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bill</title>
+    <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../assets/image/logo (2).png" alt="logo" width="130px" />
+      <h4>Your Product's Bill</h4>
+      <img src="../assets/image/profile.png" alt="profile" width="110px" />
+    </header>
+    <button onclick="account()">Account Detail</button>
+    <table>
+      <script>
+        let Card = JSON.parse(localStorage.getItem("product_details"));
+
+        for (let i = 0; i <= Card.length; i++) {
+          let table_card = document.createElement("table");
+
+          let th_tr1 = document.createElement("tr");
+          table_card.append(th_tr1);
+
+          let th1_tr = document.createElement("th");
+          th1_tr.innerText = "Products Name";
+          th_tr1.append(th1_tr);
+
+          let th2_tr = document.createElement("th");
+          th2_tr.innerText = "Quantity";
+          th_tr1.append(th2_tr);
+
+          let th3_tr = document.createElement("th");
+          th3_tr.innerText = "Amount";
+          th_tr1.append(th3_tr);
+
+          let td_tr2 = document.createElement("tr");
+          table_card.append(td_tr2);
+
+          let td1_tr = document.createElement("td");
+          td1_tr.innerText = Card[i]["Name"];
+          td_tr2.append(td1_tr);
+
+          let td2_tr = document.createElement("td");
+          td2_tr.innerText = Card[i]["Qty"] + " kg";
+          td_tr2.append(td2_tr);
+
+          let td3_tr = document.createElement("td");
+          td3_tr.innerText = "Rs. " + Card[i]["Price"] * Card[i]["Qty"];
+          td_tr2.append(td3_tr);
+
+          document.querySelector("table").append(table_card);
+        }
+      </script>
+      <div class="details">
+        <h3>Your Delivery details:</h3>
+        <div class="detail">
+          <input type="text" id="First_name" placeholder="name" />
+          <input
+            type="number"
+            id="Phone_Number"
+            placeholder="Phone number"
+            maxlength="10"
+          />
+          <input type="text" id="Land_Address" placeholder="address" />
+          <input type="date" placeholder="Pickup date" />
+        </div>
+      </div>
+    </table>
+
+    <footer>
+      <img
+        src="../assets/image/smiling-face.gif"
+        alt="smiling-face"
+        width="50px"
+      />
+      Thanks for Purchasing
+      <img src="../assets/image/sparkling-heart.gif" alt="heart" width="50px" />
+      We always Welcomes you!
+    </footer>
+    <script>
+      const oneUser = JSON.parse(localStorage.getItem("logIn"));
+
+      const user_info = JSON.parse(localStorage.getItem("user_info"));
+      let select_user = user_info.find(function (event) {
+        let customerEmail = event["Email"];
+        if (user_info == customerEmail) {
+          return true;
+        } else if (oneUser == customerEmail) {
+          return true;
+        }
+      });
+
+      console.log(select_user);
+      // to get value from registration form
+      const phNo = document.getElementById("Phone_Number");
+      const userName = document.getElementById("First_name");
+      // const Home_Address = document.getElementById("Home_Address");
+      const Land_Address = document.getElementById("Land_Address");
+
+      // Compare the values
+
+      phNo.value = select_user["Phone_number"];
+      userName.value = select_user["FullName"];
+      // Home_Address.value = select_user["Home_Address"];
+      Land_Address.value = select_user["Land_Address"];
+
+      function account() {
         window.location.href = "/pages/13.Acct.detail.html";
       }
     </script>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,5 +34,100 @@
     <footer class="footer">
       <a href="../pages/14.product-bill.html"><button>Okay</button></a>
     </footer>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/8-payment.css" />
+    <title>payment-page</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img
+          src="../assets/image/arrowback.png"
+          alt="arrow"
+          onclick="back()"
+          style="
+            border-radius: 50px;
+            padding: 10px 10px 10px 10px;
+            background-color: #2bae66ff;
+          "
+        />
+      </nav>
+      <nav>
+        <img
+          src="../assets/image/RISHIMARKET (1).png"
+          alt="logo"
+          width="100px"
+        />
+      </nav>
+      <nav><h2>Payment Details</h2></nav>
+      <nav>
+        <img src="../assets/image/profile.png" alt="profile" width="80px" />
+      </nav>
+    </header>
+
+    <!-- <section class="side-bar">
+      <nav>
+        <a href="#card">Cards</a>
+      </nav>
+      <nav>
+        <a href="#account">Account Details</a>
+      </nav>
+      <nav>
+        <a href="#qr_code">QR Code</a>
+      </nav>
+    </section> -->
+
+    <button onclick="bill()">Bill</button>
+
+    <!-- <main>
+      <div id="card" class="topic">
+        <h2>Choose Your Best Payment Method</h2>
+      </div>
+    </main> -->
+    <div id="account"></div>
+    <h2 class="topic_t2">Fill Account Details here</h2>
+    <main class="detail_main1">
+      <section class="section-detail">
+        <label for="card_no">Enter Your Card No</label> <br />
+        <input type="number" pattern="[a-zA-Z]{12,16}" autocomplete="off" />
+        <br />
+        <label for="card_name">Enter Your Card Holder Name</label> <br />
+        <input type="text" pattern="[a-zA-Z]{1,20}" autocomplete="off" /><br />
+        <label for="card_ifsc_no">Enter Your IFSC Code</label> <br />
+        <input type="text" pattern="[a-zA-Z]{1,20}" autocomplete="off" /><br />
+        <label for="card_cvv_no">Enter Your CVV No</label> <br />
+        <input
+          type="number"
+          pattern="[a-zA-Z]{1,20}"
+          autocomplete="off"
+        /><br />
+        <label for="card_ex_date">Enter Your Expiry Date</label> <br />
+        <input type="date" pattern="[a-zA-Z]{1,20}" autocomplete="off" /><br />
+      </section>
+    </main>
+
+    <footer>
+      <img
+        src="../assets/image/promo_code.png"
+        alt="coupon code"
+        width="50px"
+      />
+      <p>Do you have Coupon Code?</p>
+      <input type="text" />
+    </footer>
+
+    <script>
+      function bill() {
+        window.location.href = "/pages/14.product-bill.html";
+      }
+    </script>
   </body>
 </html>

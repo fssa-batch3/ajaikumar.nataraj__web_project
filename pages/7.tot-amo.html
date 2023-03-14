@@ -71,6 +71,20 @@
     </header>
     <button onclick="order()">Payment Page</button>
 
+    <div class="details">
+      <h1>Enter your delivery details:</h1>
+      <div class="detail">
+        <input type="text" id="First_name" placeholder="Name" />
+        <input
+          type="tel"
+          id="Phone_Number"
+          maxlength="10"
+          placeholder="Phone number"
+        />
+        <input type="text" id="Land_Address" placeholder="Address" />
+        <input type="date" id="Pickup_date" placeholder="Pickup date" />
+      </div>
+    </div>
     <main class="card_main">
       <!-- <section class="card_div">
         <input type="image" />
@@ -109,7 +123,7 @@
         div_card.append(fruit_name);
 
         let rupees = document.createElement("input");
-        rupees.setAttribute("value", Card[i]["Price"] + " /kg");
+        rupees.setAttribute("value", "Rs." + Card[i]["Price"] + " /kg");
         rupees.setAttribute("id", "pPrice");
         rupees.setAttribute("type", "text");
         div_card.append(rupees);
@@ -152,6 +166,32 @@
 
         document.querySelector(".card_main").append(div_card);
       }
+
+      const oneUser = JSON.parse(localStorage.getItem("logIn"));
+
+      const user_info = JSON.parse(localStorage.getItem("user_info"));
+      let select_user = user_info.find(function (event) {
+        let customerEmail = event["Email"];
+        if (user_info == customerEmail) {
+          return true;
+        } else if (oneUser == customerEmail) {
+          return true;
+        }
+      });
+
+      console.log(select_user);
+      // to get value from registration form
+      const phNo = document.getElementById("Phone_Number");
+      const userName = document.getElementById("First_name");
+      // const Home_Address = document.getElementById("Home_Address");
+      const Land_Address = document.getElementById("Land_Address");
+
+      // Compare the values
+
+      phNo.value = select_user["Phone_number"];
+      userName.value = select_user["FullName"];
+      // Home_Address.value = select_user["Home_Address"];
+      Land_Address.value = select_user["Land_Address"];
 
       function back() {
         window.location.href = "/pages/4.index.html";

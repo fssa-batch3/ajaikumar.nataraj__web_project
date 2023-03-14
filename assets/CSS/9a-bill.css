@@ -118,3 +118,6 @@ table {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   color: #2bae66ff;
 }
+input {
+  font-size: 30px;
+}
