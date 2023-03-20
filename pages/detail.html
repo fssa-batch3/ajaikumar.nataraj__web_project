@@ -28,10 +28,28 @@
       <button>BUY NOW</button>
       <button>ADD CART</button>
     </footer> -->
-    <script src="../pages/card.js"></script>
+    <!-- <script src="../pages/card.js"></script> -->
     <script>
-      for (let i = 0; i <= Card.length; i++) {
+      let Card = JSON.parse(localStorage.getItem("product_details"));
+
+      const url = window.location.search; // ?name=Fruit[i]
+      console.log(url);
+      const urlParams = new URLSearchParams(url); // converting string into key value pair
+      const username = urlParams.get("Name"); // return value of the "Name" key
+      console.log(username);
+
+      let data = Card.find((e) => username === e["Name"]);
+
+      for (let i = 0; i <= 0; i++) {
+        let findDetail = Card.find(function (event) {
+          let id = event["Product_id"];
+          if (Card[i]["Product_id"] == id) {
+            return true;
+          }
+        });
+        console.log(Card[i]);
         let div_card = document.createElement("div");
+        div_card.setAttribute("id", "form");
         div_card.setAttribute("class", "card");
 
         let card = document.createElement("div");
@@ -39,33 +57,32 @@
         div_card.append(card);
 
         let image = document.createElement("img");
-        image.setAttribute("src", Card[i]["Image"]);
-        image.setAttribute("alt", Card[i]["alt"]);
-        image.setAttribute("width", Card[i]["width"] + "px");
+        image.setAttribute("src", data["Url"]);
+        // image.setAttribute("alt", Card[i]["alt"]);
+        image.setAttribute("width", "500px");
         card.append(image);
 
         let detail = document.createElement("div");
         detail.setAttribute("class", "detail");
         div_card.append(detail);
-
         let name = document.createElement("p");
-        name.innerText = "Name :" + Card[i]["Name"];
+        name.innerText = "Name :" + data["Name"];
         detail.append(name);
 
         let price = document.createElement("p");
-        price.innerText = "Price :" + Card[i]["Price"] + "/kg";
+        price.innerText = "Price :" + data["Price"] + "/kg";
         detail.append(price);
 
         let type = document.createElement("p");
-        type.innerText = "Type :" + Card[i]["Type"];
+        type.innerText = "Type :" + data["Type"];
         detail.append(type);
 
         let place = document.createElement("p");
-        place.innerText = "Place :" + Card[i]["Place"];
+        place.innerText = "Place :" + data["Place"];
         detail.append(place);
 
         let description = document.createElement("p");
-        description.innerText = "Description :" + Card[i]["Description"];
+        description.innerText = "Description : " + data["Description"];
         detail.append(description);
 
         let input_value = document.createElement("input");
@@ -85,6 +102,28 @@
         let cart_btn = document.createElement("button");
         cart_btn.innerText = "ADD CART";
         footer.append(cart_btn);
+
+        cart_btn.addEventListener("click", function (event) {
+          event.preventDefault();
+          let addData = JSON.parse(localStorage.getItem("added_list"));
+          let findIndex = Card.indexOf(findDetail);
+          Card[findIndex]["Qty"] = input_value.value;
+          let msg = confirm(
+            "Are you sure you want to add this product to your cart"
+          );
+          if (msg !== true) {
+            return;
+          } else {
+            if (addData === null) {
+              let array = [];
+              array.push(Card[findIndex]);
+              localStorage.setItem("added_list", JSON.stringify(array));
+            } else {
+              addData.push(Card[findIndex]);
+              localStorage.setItem("added_list", JSON.stringify(addData));
+            }
+          }
+        });
 
         document.querySelector("body").append(footer);
       }

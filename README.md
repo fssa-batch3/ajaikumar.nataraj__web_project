@@ -7,15 +7,19 @@ User Flow:https://drive.google.com/drive/folders/1sjlE22PvCJrWwvK4X6nLd-ImfY-3i6
 Wire Frame:https://drive.google.com/drive/folders/1t0aGf2JX3ZECWNzi2KCNpNYoXFcbtkx2
 Sonar Cloud:https://sonarcloud.io/project/overview?id=fssa-batch3_ajaikumar.nataraj__web_project
 
-
-
 Features:
 
 1. User CRUD (completed)
 
-2. User Story
--> Add Farming Products (Completed)
--> Farming Products list (In progres) (2 days)
--> Farming Products details (In progress) (2 days)
--> Update Farming Products (In progress) (2 days)
--> Close or Deactive the Farming Products data (Not started) (4 days)
+2. Farmer Story
+   -> Add Farming Products (Completed)
+   -> Farming Products list (Completed)
+   -> Farming Products details (Completed)
+   -> Update Farming Products (Completed)
+   -> Close or Deactive the Farming Products data (Completed)
+
+3. Buyer story
+   -> Buy Products (Completed)
+   -> Buyer lists (Add cart) (Completed)
+   -> Change delivery date (Completed)
+   -> Delete the order (Completed)

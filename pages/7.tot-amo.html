@@ -69,11 +69,11 @@
         <img src="../assets/image/profile.png" alt="profile" width="80px" />
       </nav>
     </header>
-    <button onclick="order()">Payment Page</button>
+    <button type="change" id="change" onclick="order()">Payment Page</button>
 
     <div class="details">
       <h1>Enter your delivery details:</h1>
-      <div class="detail">
+      <form class="detail" id="form">
         <input type="text" id="First_name" placeholder="Name" />
         <input
           type="tel"
@@ -83,7 +83,7 @@
         />
         <input type="text" id="Land_Address" placeholder="Address" />
         <input type="date" id="Pickup_date" placeholder="Pickup date" />
-      </div>
+      </form>
     </div>
     <main class="card_main">
       <!-- <section class="card_div">
@@ -183,15 +183,44 @@
       // to get value from registration form
       const phNo = document.getElementById("Phone_Number");
       const userName = document.getElementById("First_name");
-      // const Home_Address = document.getElementById("Home_Address");
+      const transport_DOB = document.getElementById("Pickup_date");
       const Land_Address = document.getElementById("Land_Address");
 
       // Compare the values
 
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
-      // Home_Address.value = select_user["Home_Address"];
+      transport_DOB.value = select_user["transport_DOB"];
       Land_Address.value = select_user["Land_Address"];
+
+      // to replace the values
+      const form = document.getElementById("form");
+      form.addEventListener("change", function (event) {
+        event.preventDefault();
+
+        let FullName = document.getElementById("First_name").value;
+        let Phone_number = document.getElementById("Phone_Number").value;
+        let transport_DOB = document.getElementById("Pickup_date").value;
+        let Land_Address = document.getElementById("Land_Address").value;
+
+        let newData = {
+          FullName,
+          Phone_number,
+          transport_DOB,
+          Land_Address,
+        };
+        console.log(newData);
+
+        // assign the value to
+
+        const combineData = Object.assign(select_user, newData);
+        console.log(combineData);
+        // alert("successfully changed");
+
+        let findIndex = user_info.indexOf(select_user);
+        user_info[findIndex] = combineData;
+        localStorage.setItem("user_info", JSON.stringify(user_info));
+      });
 
       function back() {
         window.location.href = "/pages/4.index.html";

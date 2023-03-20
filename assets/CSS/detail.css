@@ -8,7 +8,10 @@ body {
   display: flex;
 }
 img {
-  width: 100%;
+  width: 450px;
+  height: auto;
+  display: flex;
+  justify-content: center;
   border-radius: 10px;
   box-shadow: 2px 2px 2px 2px;
 }
@@ -29,14 +32,14 @@ button {
   width: 400px;
   height: 100px;
   font-size: 30px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: yellowgreen;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+  background-color: #2bae66ff;
   color: white;
   border: none;
   border-radius: 10px;
 }
 button:hover {
-  background-color: rgb(191, 227, 191);
+  background-color: whitesmoke;
   border: none;
   color: #2bae66ff;
 }

@@ -34,7 +34,7 @@
       <h3>Upload your products</h3>
       <input type="url" id="url" placeholder="Enter Url" />
       <input type="text" id="product" placeholder="Your Product Name" />
-      <input list="type" name="type" placeholder="Type" />
+      <input list="type" name="type" id="type" placeholder="Type" />
       <datalist id="type">
         <option value="Fruit"></option>
         <option value="Vegetable"></option>
@@ -43,13 +43,20 @@
       </datalist>
       <input type="number" id="price" placeholder="Enter Your Price" />
       <input type="number" id="qty" placeholder="Enter Your Product Quantity" />
+      <input type="text" id="place" placeholder="Enter your Pickup Address" />
+      <input
+        type="text"
+        id="description"
+        class="description"
+        placeholder="Description about your products"
+      />
       <div class="btn-card">
         <button class="btn" id="add-btn">Add</button>
         <button class="btn" type="reset" id="cancel">Cancel</button>
       </div>
     </form>
 
-    <footer class="footer">
+    <footer id="form" class="footer">
       <!-- <button id="add">Add</button> -->
 
       <button type="button" onclick="submit()">Submit</button>
@@ -64,7 +71,10 @@
       }
 
       uploadForm = document.getElementById("form");
+      let id = JSON.parse(localStorage.getItem("user_info"));
+
       document.createElement("product_details");
+
       uploadForm.addEventListener("submit", function (event) {
         event.preventDefault();
         let array = [];
@@ -72,14 +82,14 @@
           array = JSON.parse(localStorage.getItem("product_details"));
         }
 
-        // let id = JSON.parse(localStorage.getItem("user_info"));
-
         let match = false;
         const Url = document.getElementById("url").value;
         const Name = document.getElementById("product").value;
         const Type = document.getElementById("type").value;
         const Price = document.getElementById("price").value;
         const Qty = document.getElementById("qty").value;
+        const Place = document.getElementById("place").value;
+        const Description = document.getElementById("description").value;
         let ProductId = Date.now();
 
         // for (let i = 0; i < array.length; i++) {
@@ -94,7 +104,10 @@
           Type,
           Price,
           Qty,
+          Place,
+          Description,
           Product_id: ProductId,
+          id: ProductId,
         };
         // console.log(Product_id);
 

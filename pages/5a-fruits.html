@@ -211,7 +211,7 @@
       for (let i = 0; i <= Card.length; i++) {
         let findDetail = detail.find(function (event) {
           let id = event["Product_id"];
-          if (Card[i]["Product_id"] == id) {
+          if (detail[i]["Product_id"] == id) {
             return true;
           }
         });
@@ -279,6 +279,11 @@
             }
           }
         });
+
+        let info = document.createElement("a");
+        info.innerText = "more info -->";
+        info.setAttribute("href", "./detail.html?Name=" + Card[i]["Name"]);
+        div_card.append(info);
 
         document.querySelector(".card_main").append(div_card);
       }

@@ -120,8 +120,8 @@
     <table>
       <script>
         let Card = JSON.parse(localStorage.getItem("product_details"));
-
-        for (let i = 0; i <= Card.length; i++) {
+        let total = 0;
+        for (let i = 0; i < Card.length; i++) {
           let table_card = document.createElement("table");
 
           let th_tr1 = document.createElement("tr");
@@ -154,11 +154,13 @@
           td3_tr.innerText = "Rs. " + Card[i]["Price"] * Card[i]["Qty"];
           td_tr2.append(td3_tr);
 
+          total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["Qty"]);
+
           document.querySelector("table").append(table_card);
         }
       </script>
       <div class="details">
-        <h3>Your Delivery details:</h3>
+        <h3>Your Pickup details:</h3>
         <div class="detail">
           <input type="text" id="First_name" placeholder="name" />
           <input
@@ -168,11 +170,19 @@
             maxlength="10"
           />
           <input type="text" id="Land_Address" placeholder="address" />
-          <input type="date" placeholder="Pickup date" />
+          <input type="date" id="Pickup_date" placeholder="Pickup date" />
         </div>
       </div>
     </table>
-
+    <div class="amount_total">
+      <table>
+        <tr>
+          <td>Total Amount</td>
+          <td></td>
+          <td id="operoation"></td>
+        </tr>
+      </table>
+    </div>
     <footer class="footer">
       <p class="foot-p">
         <img
@@ -190,6 +200,8 @@
       </p>
     </footer>
     <script>
+      let total_value = document.getElementById("operoation");
+      total_value.append("₹" + total);
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
       const user_info = JSON.parse(localStorage.getItem("user_info"));
@@ -206,15 +218,15 @@
       // to get value from registration form
       const phNo = document.getElementById("Phone_Number");
       const userName = document.getElementById("First_name");
-      // const Home_Address = document.getElementById("Home_Address");
+      const transport_DOB = document.getElementById("Pickup_date");
       const Land_Address = document.getElementById("Land_Address");
 
       // Compare the values
 
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
-      // Home_Address.value = select_user["Home_Address"];
       Land_Address.value = select_user["Land_Address"];
+      transport_DOB.value = select_user["transport_DOB"];
     </script>
   </body>
 </html>
