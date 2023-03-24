@@ -120,6 +120,12 @@
     <table>
       <script>
         let Card = JSON.parse(localStorage.getItem("added_list"));
+        let total = 0;
+
+        let btn = document.createElement("button");
+        btn.innerText = "Place & Back";
+        btn.setAttribute("id", "submit");
+        document.querySelector("table").append(btn);
 
         for (let i = 0; i <= Card.length; i++) {
           let table_card = document.createElement("table");
@@ -154,6 +160,28 @@
           td3_tr.innerText = "Rs. " + Card[i]["Price"] * Card[i]["Qty"];
           td_tr2.append(td3_tr);
 
+          total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["Qty"]);
+
+          btn.addEventListener("click", function (event) {
+            event.preventDefault();
+            let Data = JSON.parse(localStorage.getItem("added_list"));
+            let exists = JSON.parse(localStorage.getItem("Ordered_list"));
+
+            let findIndex = Card.indexOf(Card);
+
+            if (exists === null) {
+              localStorage.setItem("Ordered_list", JSON.stringify(Data));
+            } else {
+              for (let i = 0; i < Data.length; i++) {
+                exists.push(Data[i]);
+              }
+
+              localStorage.setItem("Ordered_list", JSON.stringify(exists));
+            }
+            localStorage.removeItem("added_list");
+            window.location.href = "/pages/5a-fruits.html";
+          });
+
           document.querySelector("table").append(table_card);
         }
       </script>
@@ -173,6 +201,16 @@
       </div>
     </table>
 
+    <div class="amount_total">
+      <table>
+        <tr>
+          <td>Total Amount</td>
+          <td></td>
+          <td id="operoation"></td>
+        </tr>
+      </table>
+    </div>
+
     <footer>
       <img
         src="../assets/image/smiling-face.gif"
@@ -184,6 +222,9 @@
       We always Welcomes you!
     </footer>
     <script>
+      let total_value = document.getElementById("operoation");
+      total_value.append("₹" + total);
+
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
       const user_info = JSON.parse(localStorage.getItem("user_info"));

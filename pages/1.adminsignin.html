@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/CSS/1-sign.css" />
+    <title>Document</title>
+  </head>
+
+  <body class="body">
+    <div class="full">
+      <h1>Welcome! to Rishi Organic Market</h1>
+      <form class="form" id="form">
+        <nav>
+          <img src="../assets/image/profile.png" alt="profile" width="100px" />
+        </nav>
+        <label>Full Name:</label><br />
+        <input
+          type="text"
+          id="full_name"
+          pattern="[a-zA-Z]{1,20}"
+          autocomplete="off"
+          required
+        /><br />
+        <label>Mail id:</label><br />
+        <input
+          type="email"
+          id="email"
+          autocomplete="hgfgtyfygh"
+          required
+        /><br />
+        <label>Phone no:</label><br />
+        <input
+          type="tel"
+          id="phone_number"
+          pattern="[0-9]{10}"
+          autocomplete="hgfgtyfygh"
+          required
+        /><br />
+        <label>Password:</label><br />
+        <input
+          id="password"
+          type="password"
+          pattern="{6,12}"
+          autocomplete="hg"
+          required
+        />
+        <br />
+        <label>Confirm Password:</label><br />
+        <input
+          type="password"
+          id="conform_password"
+          pattern="{6,12}"
+          autocomplete="hg"
+          required
+        /><br />
+
+        <button class="sub" type="submit" value="submit" onclick="sign()">
+          sign up
+        </button>
+      </form>
+
+      <footer>
+        <div>
+          <button class="log" type="submit" onclick="log()">Login</button>
+
+          <small><p>If you already sign in! Please Login..</p></small>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      let signUpform = document.getElementById("form");
+      document.createElement("admin_info");
+      signUpform.addEventListener("submit", function (event) {
+        event.preventDefault();
+        let array = [];
+        if (localStorage.getItem("admin_info") != null) {
+          array = JSON.parse(localStorage.getItem("admin_info"));
+        }
+
+        let match = false;
+
+        const admin_id = Date.now();
+        console.log(id);
+        const FullName = document.getElementById("full_name").value;
+        const Email = document.getElementById("email").value.toLowerCase();
+        const Phone_number = document.getElementById("phone_number").value;
+        const Password = document.getElementById("password").value;
+        // const Gender = document.getElementById("gender").value;
+        const Confirm_Password =
+          document.getElementById("conform_password").value;
+        if (Password != Confirm_Password) {
+          alert("Password and Confirm password are not match");
+          return false;
+        } else {
+          for (let i = 0; i < array.length; i++) {
+            if (Email == array[i]["Email"]) {
+              match = true;
+            }
+          }
+        }
+
+        if (match == true) {
+          alert("Email is already Exist");
+          return false;
+        } else {
+          let userObj = {
+            FullName,
+            admin_id,
+            Email,
+            Phone_number,
+            Password,
+            Confirm_Password,
+          };
+          console.log(userObj);
+
+          array.push(userObj);
+          const str = JSON.stringify(array);
+          localStorage.setItem("admin_info", str);
+          console.log(str);
+          window.location.href = "/pages/17-admin-index.html";
+        }
+      });
+
+      function log() {
+        window.location.href = "/pages/2.admin.login.html";
+      }
+
+      // for create  user id
+      const start = Date.now();
+    </script>
+  </body>
+</html>

@@ -97,6 +97,8 @@
     <script>
       // JSON
       let Card = JSON.parse(localStorage.getItem("added_list"));
+      let total = 0;
+
       console.log(Card);
 
       const detail = JSON.parse(localStorage.getItem("added_list"));
@@ -164,8 +166,25 @@
           }
         });
 
+        total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["Qty"]);
+
         document.querySelector(".card_main").append(div_card);
       }
+    </script>
+
+    <div class="amount_total">
+      <table>
+        <tr>
+          <td>Total Amount</td>
+          <td></td>
+          <td id="operoation"></td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      let total_value = document.getElementById("operoation");
+      total_value.append("₹" + total);
 
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../assets/CSS/16-admin-home.css" />
+    <link rel="stylesheet" href="../assets/CSS/2-login.css" />
   </head>
   <body>
     <header class="header">
@@ -24,7 +25,64 @@
       <button>New Order</button>
       <button>Order Inprogress</button>
     </div>
+
     <div class="form">
+      <form class="center" id="form">
+        <nav>
+          <img src="../assets/image/profile.png" alt="profile" width="90px" />
+        </nav>
+        <label>User Mail id:</label><br />
+        <input type="text" id="Email" required="true" /><br />
+        <label>Password:</label><br />
+        <input type="password" id="Password" required="true" /> <br />
+        <button class="btn" type="submit">Sign in</button>
+      </form>
+    </div>
+
+    <script>
+      let logIn = document.getElementById("form");
+      console.log(logIn);
+
+      let arr = [];
+
+      logIn.addEventListener("submit", (event) => {
+        event.preventDefault();
+        let defaultData = JSON.parse(localStorage.getItem("admin_info"));
+        console.log(defaultData);
+
+        let Email = document.getElementById("Email").value.toLowerCase().trim();
+        let Password = document.getElementById("Password").value;
+
+        let match = false;
+
+        for (let i = 0; i < defaultData.length; i++) {
+          if (
+            Email == defaultData[i]["Email"] &&
+            Password == defaultData[i]["Password"]
+          ) {
+            match = true;
+            arr.push(defaultData[i]);
+            window.localStorage.setItem(
+              "admin_logIn",
+              JSON.stringify(arr[0]["Email"])
+            );
+            break;
+            // i = i + defaultData.length;
+          } else {
+            match = false;
+          }
+        }
+
+        if (match == true) {
+          alert("Success");
+
+          window.location.href = "/pages/17-admin-index.html";
+        } else {
+          alert("Login credentials not correct");
+        }
+      });
+    </script>
+    <!-- <div class="form">
       <label>User Name:</label>
       <input type="text" id="name" value="Shinchan" placeholder="Shinchan" />
       <label>Password:</label>
@@ -37,7 +95,7 @@
     </div>
     <div class="sign">
       <button type="button" onclick="submit()">Sign In</button>
-    </div>
+    </div> -->
     <div class="day-type">
       <h4>Today...</h4>
       <input list="Types" id="mode" value="Your work" name="Types" />

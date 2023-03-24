@@ -22,68 +22,36 @@
       <div class="profile">
         <img src="../assets/image/profile.png" alt="apple" /> <br />
         <label for="Home_Address">Home Address</label>
-        <input
-          id="Home_Address"
-          class="input"
-          placeholder="Home Address"
-          disabled
-        />
+        <input id="Home_Address" class="input" placeholder="Home Address" />
         <label for="Land Address">Land Address</label>
-        <input
-          id="Land_Address"
-          class="input"
-          placeholder="Land Address"
-          disabled
-        />
+        <input id="Land_Address" class="input" placeholder="Land Address" />
         <label for="gender">Gender</label>
-        <input
-          id="gender"
-          class="input"
-          placeholder="Gender (Male / Female)"
-          disabled
-        />
+        <input id="gender" class="input" placeholder="Gender (Male / Female)" />
         <label for="land">Land Type</label>
         <input
           id="farmer"
           class="input"
           placeholder="Farming land (Own / Tenant)"
-          disabled
         />
       </div>
       <div class="form" id="form">
         <label for="User name">User name</label> <br />
-        <input id="First_name" class="input" placeholder="User Name" disabled />
+        <input id="First_name" class="input" placeholder="User Name" />
         <label for="ph no">Phone Number</label>
-        <input
-          id="Phone_Number"
-          class="input"
-          placeholder="Phone Number"
-          disabled
-        />
+        <input id="Phone_Number" class="input" placeholder="Phone Number" />
         <label for="email">Email</label>
         <input id="Email" class="input" placeholder="Email" disabled />
         <label for="password">Password</label>
-        <input id="password" class="input" placeholder="Password" disabled />
+        <input id="password" class="input" placeholder="Password" />
         <label for="Date of Birth">Date of Birth</label>
-        <input
-          id="DOB"
-          type="date"
-          class="input"
-          placeholder="Date of Birth"
-          disabled
-        />
+        <input id="DOB" type="date" class="input" placeholder="Date of Birth" />
         <label for="aadhar number">Aadhar Number</label>
-        <input
-          id="Aadhar_number"
-          class="input"
-          placeholder="Aadhar Number"
-          disabled
-        />
+        <input id="Aadhar_number" class="input" placeholder="Aadhar Number" />
         <label for="state">State</label>
-        <input id="state" class="input" placeholder="State" disabled />
+        <input id="state" class="input" placeholder="State" />
         <label for="country">Country</label>
-        <input id="country" class="input" placeholder="Country" disabled />
-        <button type="submit" onclick="change()">EDIT</button>
+        <input id="country" class="input" placeholder="Country" />
+        <button type="submit">SUBMIT</button>
       </div>
     </form>
     <footer></footer>
@@ -117,7 +85,7 @@
       const state = document.getElementById("state");
       const country = document.getElementById("country");
 
-      // // Compare the values
+      // Compare the values
 
       email.value = select_user["Email"];
       phNo.value = select_user["Phone_number"];
@@ -138,51 +106,48 @@
       form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        //   let FullName = document.getElementById("First_name").value;
-        //   let Email = document.getElementById("Email").value;
-        //   let Phone_number = document.getElementById("Phone_Number").value;
-        //   let Password = document.getElementById("password").value;
-        //   let DOB = document.getElementById("DOB").value;
-        //   let transport_DOB = document.getElementById("DOB").value;
-        //   let Home_Address = document.getElementById("Home_Address").value;
-        //   let Land_Address = document.getElementById("Land_Address").value;
-        //   let gender = document.getElementById("gender").value;
-        //   let farmer = document.getElementById("farmer").value;
-        //   let Aadhar_number = document.getElementById("Aadhar_number").value;
-        //   let state = document.getElementById("state").value;
-        //   let country = document.getElementById("country").value;
+        let FullName = document.getElementById("First_name").value;
+        // let Email = document.getElementById("Email").value;
+        let Phone_number = document.getElementById("Phone_Number").value;
+        let Password = document.getElementById("password").value;
+        let DOB = document.getElementById("DOB").value;
+        let transport_DOB = document.getElementById("DOB").value;
+        let Home_Address = document.getElementById("Home_Address").value;
+        let Land_Address = document.getElementById("Land_Address").value;
+        let gender = document.getElementById("gender").value;
+        let farmer = document.getElementById("farmer").value;
+        let Aadhar_number = document.getElementById("Aadhar_number").value;
+        let state = document.getElementById("state").value;
+        let country = document.getElementById("country").value;
 
-        //   let newData = {
-        //     FullName,
-        //     Email,
-        //     Phone_number,
-        //     Password,
-        //     DOB,
-        //     transport_DOB,
-        //     Home_Address,
-        //     Land_Address,
-        //     gender,
-        //     farmer,
-        //     Aadhar_number,
-        //     state,
-        //     country,
-        //   };
-        //   console.log(newData);
+        let newData = {
+          FullName,
+          // Email,
+          Phone_number,
+          Password,
+          DOB,
+          transport_DOB,
+          Home_Address,
+          Land_Address,
+          gender,
+          farmer,
+          Aadhar_number,
+          state,
+          country,
+        };
+        console.log(newData);
 
-        //   // assign the value to
+        // assign the value to
 
-        //   const combineData = Object.assign(select_user, newData);
-        //   console.log(combineData);
-        //   alert("successfully changed");
+        const combineData = Object.assign(select_user, newData);
+        console.log(combineData);
+        alert("successfully changed");
 
-        //   let findIndex = user_info.indexOf(select_user);
-        //   user_info[findIndex] = combineData;
-        //   localStorage.setItem("user_info", JSON.stringify(user_info));
+        let findIndex = user_info.indexOf(select_user);
+        user_info[findIndex] = combineData;
+        localStorage.setItem("user_info", JSON.stringify(user_info));
+        window.location.href = "/pages/profile.html";
       });
-
-      function change() {
-        window.location.href = "/pages/profileedit.html";
-      }
 
       // delete option in the page
 

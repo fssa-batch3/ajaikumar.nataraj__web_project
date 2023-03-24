@@ -48,10 +48,10 @@
 
     <script>
       // JSON
-      let Card = JSON.parse(localStorage.getItem("product_details"));
+      let Card = JSON.parse(localStorage.getItem("newly_added"));
       console.log(Card);
 
-      const detail = JSON.parse(localStorage.getItem("product_details"));
+      const detail = JSON.parse(localStorage.getItem("newly_added"));
 
       // Card creating by using JavaScript
       for (let i = 0; i <= Card.length; i++) {
@@ -130,7 +130,7 @@
 
           let findIndex = detail.indexOf(findDetail);
           detail[findIndex] = assignData;
-          localStorage.setItem("product_details", JSON.stringify(detail));
+          localStorage.setItem("newly_added", JSON.stringify(detail));
           alert("Succesfully changed");
         });
         button.addEventListener("click", function (event) {
@@ -151,13 +151,13 @@
             }
 
             detail.splice(findIndex, 1);
-            localStorage.setItem("product_details", JSON.stringify(detail));
+            localStorage.setItem("newly_added", JSON.stringify(detail));
           }
         });
 
         document.querySelector(".card_main").append(div_card);
       }
-      // const product_id = JSON.parse(localStorage.getItem("product_details"));
+      // const product_id = JSON.parse(localStorage.getItem("newly_added"));
       // let id = document.getElementById("Product_id");
 
       // console.log(detail);
