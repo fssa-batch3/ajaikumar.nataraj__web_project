@@ -9,7 +9,7 @@ Sonar Cloud:https://sonarcloud.io/project/overview?id=fssa-batch3_ajaikumar.nata
 
 Features:
 
-1. User CRUD (completed)
+1. User CRUD (Buyer & Seller) (completed)
 
 2. Farmer Story
    -> Add Farming Products (Completed)
@@ -19,7 +19,13 @@ Features:
    -> Close or Deactive the Farming Products data (Completed)
 
 3. Buyer story
-   -> Buy Products (Completed)
-   -> Buyer lists (Add cart) (Completed)
-   -> Change delivery date (Completed)
+   -> Create Buy Products (Completed)
+   -> Read Buyer lists (Add cart) (Completed)
+   -> Update (Change)  (yet to complete)
    -> Delete the order (Completed)
+
+4. Admin Page
+   -> Create the details (user and product)
+   -> Read the details (user and product)
+   -> Update the availability of products, transportation details, etc,...
+   -> Delete the product customer details.
