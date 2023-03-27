@@ -25,7 +25,7 @@ Features:
    -> Delete the order (Completed)
 
 4. Admin Page
-   -> Create the details (user and product)
-   -> Read the details (user and product)
-   -> Update the availability of products, transportation details, etc,...
-   -> Delete the product customer details.
+   -> Create the details (user and product) (yet to complete)
+   -> Read the details (user and product) (yet to complete)
+   -> Update the availability of products, transportation details, etc,... (yet to complete)
+   -> Delete the product customer details. (yet to complete)
