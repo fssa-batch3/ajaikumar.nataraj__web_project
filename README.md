@@ -31,17 +31,17 @@ Features:
    -> Delete the product customer details. (yet to complete)
    
    
-   RISHI AGRI MARKET EATABLES BUYING(Customer) AND SELLING(Farmer)
-      BUYER
-      Create an account
-         Scenario 1: Successfully create an account
-             Steps:
-                Navigate to the registration page.
-                Enter the required information such as name, email, and password.
-                Click the "Sign Up" button.
-             Expected Result:
-                The Details are saved.
-                The user is redirected to the home page.
+   RISHI AGRI MARKET EATABLES BUYING(Customer) AND SELLING(Farmer)   
+      BUYER    
+      Create an account    
+         Scenario 1: Successfully create an account   
+             Steps:   
+                Navigate to the registration page.   
+                Enter the required information such as name, email, and password.   
+                Click the "Sign Up" button.   
+             Expected Result:   
+                The Details are saved.   
+                The user is redirected to the home page.   
                 
                 
       Login an account
