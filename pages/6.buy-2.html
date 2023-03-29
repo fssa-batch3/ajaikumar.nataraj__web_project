@@ -130,14 +130,14 @@
 
             console.log(detail);
 
-            let qty = document.getElementById("pQty");
+            let qty = document.getElementById(Card[i]["ProductId"]);
             console.log(qty);
 
-            // select_user["bQty"] = pQty.value;
+            // select_user["bQty"] = detail[i][ProductId].value;
 
             let qtychange = document.getElementById("div");
             console.log(qtychange);
-            let bQty = document.getElementById(Card[i]["ProductId"]).value;
+            let bQty = document.getElementById(detail[i]["ProductId"]).value;
 
             let changeData = {
               bQty,
