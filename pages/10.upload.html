@@ -32,23 +32,57 @@
 
     <form action="/action_page.php" method="get" class="full-card" id="form">
       <h3>Upload your products</h3>
-      <input type="url" id="url" placeholder="Enter Url" />
-      <input type="text" id="product" placeholder="Your Product Name" />
-      <input list="type" name="type" id="type" placeholder="Type" />
+      <input required="required" type="url" id="url" placeholder="Enter Url" />
+      <input
+        required="required"
+        type="text"
+        id="product"
+        placeholder="Your Product Name"
+      />
+      <input
+        required="required"
+        list="type"
+        name="type"
+        id="type"
+        placeholder="Type"
+      />
       <datalist id="type">
         <option value="Fruit"></option>
         <option value="Vegetable"></option>
         <option value="Coffee & Tea"></option>
         <option value="Cereals & Grains"></option>
       </datalist>
-      <input type="number" id="price" placeholder="Enter Your Price" />
-      <input type="number" id="qty" placeholder="Enter Your Product Quantity" />
-      <input type="text" id="place" placeholder="Enter your Pickup Address" />
       <input
+        required="required"
+        type="number"
+        id="price"
+        placeholder="Enter Your Price"
+      />
+      <input
+        required="required"
+        type="number"
+        id="qty"
+        placeholder="Enter Your Product Quantity"
+      />
+      <input
+        required="required"
+        type="text"
+        id="place"
+        placeholder="Enter your Pickup Address"
+      />
+      <input
+        required="required"
         type="text"
         id="description"
         class="description"
         placeholder="Description about your products"
+      />
+      <br />
+      <input
+        type="date"
+        required="required"
+        id="date"
+        placeholder="Pickup date"
       />
       <div class="btn-card">
         <button class="btn" id="add-btn">Add</button>
@@ -95,16 +129,13 @@
         const Type = document.getElementById("type").value;
         const Price = document.getElementById("price").value;
         const Qty = document.getElementById("qty").value;
+        const bQty = document.getElementById("qty").value;
         const Place = document.getElementById("place").value;
+        const Pickup_date = document.getElementById("date").value;
         const Description = document.getElementById("description").value;
         let ProductId = Date.now();
         let userId = get_obj["id"];
-
-        // for (let i = 0; i < array.length; i++) {
-        //   if (Email == array[i]["Email"]) {
-        //     match = true;
-        //   }
-        // }
+        // let date = get_obj["transport_DOB"];
 
         let inputDetails = {
           Url,
@@ -112,10 +143,13 @@
           Type,
           Price,
           Qty,
+          bQty,
           Place,
           Description,
           ProductId,
           userId,
+          Pickup_date,
+          // date,
         };
         // console.log(Product_id);
 

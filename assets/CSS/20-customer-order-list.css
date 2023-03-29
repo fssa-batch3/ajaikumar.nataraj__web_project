@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(191, 227, 191);
-  color: #2bae66ff;
+  /* background-color: rgb(191, 227, 191); */
+  /* color: #2bae66ff; */
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .header {
@@ -9,7 +9,7 @@ body {
   background-color: #2bae66ff;
   height: 100px;
   width: 100%;
-  border-radius: 50px;
+  /* border-radius: 50px; */
 }
 .header button {
   border-radius: 70px;
@@ -29,14 +29,14 @@ body {
 .table {
   font-size: 40px;
   margin-top: 30px;
-  border: solid 1px blue;
+  /* border: solid 1px blue; */
 }
-.table tr td {
+/* .table tr td {
   border: 1px solid blue;
-}
+} */
 .table button {
   font-size: 20px;
-  color: blue;
+  /* color: blue; */
   width: 120px;
   height: 40px;
   border-radius: 50px;

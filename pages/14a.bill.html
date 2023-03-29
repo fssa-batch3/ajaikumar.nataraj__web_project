@@ -1,106 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/14a-bill.css" />
-  </head>
-  <body class="body">
-    <header>
-      <div>
-        <a href="../pages/3.home.html"
-          ><img src="../assets/image/arrowback.png" alt="ab" width="20px"
-        /></a>
-      </div>
-      <div class="header">
-        <img src="../assets/image/logo.png" alt="logo" width="150px" />
-      </div>
-    </header>
-    <div class="details">
-      <h3>Your pickup details:</h3>
-      <div class="detail">
-         <input type="text" placeholder="Name" />
-        <input type="number" placeholder="Phone number" />
-        <input type="text" placeholder="Address" />
-        <input type="date" placeholder="Pickup date" /> 
-        <button class="name">Name</button>
-        <button class="phno">Phone Number</button>
-        <button class="add">Address</button>
-        <button class="pickup">Pickup Date</button>
-      </div>
-    </div>
-    <div class="main">
-      <h3>Your Product's Bill</h3>
-      <table aria-describedby="bil">
-        <tr>
-          <th>Products Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Amount</th>
-        </tr>
-        <tr>
-          <td>Banana</td>
-          <td>Rs.20 /kg</td>
-          <td>150 kg</td>
-          <td>Rs.3000</td>
-        </tr>
-        <div class="total-amount">
-          <tr>
-            <td></td>
-            <td>Total</td>
-            <td>Amount</td>
-            <td>Rs.3000</td>
-          </tr>
-        </div>
-      </table>
-    </div>
-    <div class="id">
-      <p>Order ID: 1006738360</p>
-      <p>Toll-free no:1800 123 4000</p>
-    </div>
-    <footer class="footer">
-      <p class="foot-p">
-        <img
-          src="../assets/image/smiling-face.gif"
-          alt="smiling-face"
-          width="50px"
-        />
-        Thanks for Selling your products
-        <img
-          src="../assets/image/sparkling-heart.gif"
-          alt="heart"
-          width="50px"
-        />
-        We always Welcomes you!
-      </p>
-    </footer>
-
-    <script>
-      function output() {
-        const user_name = localStorage.getItem("user_name");
-        document.getElementsByClassName("name")[0].innerHTML = user_name;
-        console.log(user_name);
-
-        const user_add = localStorage.getItem("user_add");
-        document.getElementsByClassName("add")[0].innerHTML = user_add;
-        console.log(user_add);
-
-        const user_phno = localStorage.getItem("user_phno");
-        document.getElementsByClassName("phno")[0].innerHTML = user_phno;
-        console.log(user_phno);
-
-        const user_pickup = localStorage.getItem("user_pickup");
-        document.getElementsByClassName("pickup")[0].innerHTML = user_pickup;
-        console.log(user_pickup);
-      }
-      output();
-    </script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -169,12 +66,9 @@
               event.preventDefault();
               let Data = JSON.parse(localStorage.getItem("newly_added"));
               let exists = JSON.parse(localStorage.getItem("product_details"));
+              let newproduct = JSON.parse(localStorage.getItem("new_upload"));
 
               let findIndex = Card.indexOf(Card);
-              // let msg = confirm("Are you sure you want to Update this product");
-              // if (msg !== true) {
-              //   return;
-              // } else {
               if (exists === null) {
                 localStorage.setItem("product_details", JSON.stringify(Data));
               } else {
@@ -183,6 +77,15 @@
                 }
 
                 localStorage.setItem("product_details", JSON.stringify(exists));
+              }
+              if (newproduct === null) {
+                localStorage.setItem("new_upload", JSON.stringify(Data));
+              } else {
+                for (let i = 0; i < Data.length; i++) {
+                  newproduct.push(Data[i]);
+                }
+
+                localStorage.setItem("new_upload", JSON.stringify(newproduct));
               }
               // localStorage.setItem("product_details", JSON.stringify(exists));
               localStorage.removeItem("newly_added");
@@ -205,7 +108,7 @@
             maxlength="10"
           />
           <input type="text" id="Land_Address" placeholder="address" />
-          <input type="date" id="Pickup_date" placeholder="Pickup date" />
+          <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
         </div>
       </div>
     </table>
@@ -253,7 +156,7 @@
       // to get value from registration form
       const phNo = document.getElementById("Phone_Number");
       const userName = document.getElementById("First_name");
-      const transport_DOB = document.getElementById("Pickup_date");
+      // const transport_DOB = document.getElementById("Pickup_date");
       const Land_Address = document.getElementById("Land_Address");
 
       // Compare the values
@@ -261,7 +164,7 @@
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
       Land_Address.value = select_user["Land_Address"];
-      transport_DOB.value = select_user["transport_DOB"];
+      // transport_DOB.value = select_user["transport_DOB"];
     </script>
   </body>
 </html>

@@ -1,151 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/5a-fruits.css" />
-    <link rel="stylesheet" href="../pages/6.buy-2.html" />
-  </head>
-  <body class="body">
-    <div class="logo">
-      <img src="../assets/image/logo.png" alt="logo" width="110px" />
-    </div>
-    <header>
-      <div class="header">
-        <button class="b-arrow" type="button" onclick="back()">
-          <img
-            class="before-arrow"
-            src="../assets/image/arrowback.png"
-            alt="arrow-back"
-            width="40px"
-          />
-        </button>
-        <div class="head">
-          <div class="sb">
-            <input
-              class="search-bar"
-              type="text"
-              placeholder="Search"
-              height="50px"
-            />
-          </div>
-          <button class="search-button">
-            <img
-              class="search-icon"
-              src="../assets/image/search.png"
-              alt="search"
-              width="40px"
-            />
-          </button>
-          <button class="voice-button">
-            <img
-              class="voice-icon"
-              src="../assets/image/mic.png"
-              alt="mic"
-              width="40px"
-            />
-            <br />
-          </button>
-        </div>
-      </div>
-    </header>
-    <div class="side-bar">
-      <h3>Types</h3>
-      <div class="button">
-        <button type="button" onclick="fruit()">Fruits</button>
-        <button type="button" onclick="vegetable()">Vegetables</button>
-        <button type="button" onclick="coffee()">Coffee</button>
-        <button type="button" onclick="grain()">Grains</button>
-      </div>
-    </div>
-    <main class="f-main">
-      <section class="main-1"></section>
-    </main>
-    <footer class="footer">
-      <button type="button" onclick="okay()">Okay</button>
-    </footer>
-
-    <script src="../pages/details.js"></script> -->
-<!-- <script>
-      // JSON
-      let Card;
-
-      Card = JSON.parse(localStorage.getItem("product_details"));
-
-      // Card creating by using JavaScript
-
-      for (let i = 0; i <= Card.length; i++) {
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "full_card");
-        div_card.setAttribute("type", "button");
-        div_card.setAttribute("onclick", "card()");
-
-        let image = document.createElement("img");
-        image.setAttribute("src", Card[i]["Image"]);
-        image.setAttribute("alt", Card[i]["alt"]);
-        image.setAttribute("width", Card[i]["width"] + "px");
-        image.setAttribute("id", "Url");
-        div_card.append(image);
-
-        let fruit_name = document.createElement("p");
-        fruit_name.innerText = Card[i]["Name"];
-        fruit_name.setAttribute("id", "Name");
-        div_card.append(fruit_name);
-
-        let rupees = document.createElement("p");
-        rupees.innerText = Card[i]["Price"];
-        rupees.setAttribute("id", "Price");
-        div_card.append(rupees);
-
-        let input_value = document.createElement("input");
-        input_value.setAttribute("class", "bar");
-        input_value.setAttribute("type", "number");
-        input_value.setAttribute("width", "10px");
-        input_value.setAttribute("id", "Qty");
-        div_card.append(input_value);
-
-        const a = document.createElement("a");
-        a.setAttribute("href", "../pages/6.buy-2.html?Name" + Card[i]["Name"]);
-        div_card.append(a);
-
-        let buttons = document.createElement("button");
-        buttons.setAttribute("class", "button");
-        buttons.innerText = "ADD CART";
-        a.append(buttons);
-
-        document.querySelector("section.main-1").append(div_card);
-      }
-
-      function fruit() {
-        window.location.href = "/pages/5a-fruits.html";
-      }
-      function vegetable() {
-        window.location.href = "";
-      }
-      function coffee() {
-        window.location.href = "";
-      }
-      function grain() {
-        window.location.href = "";
-      }
-
-      function card() {
-        window.location.href = "/pages/detail.html";
-      }
-
-      function back() {
-        window.location.href = "/pages/4.index.html";
-      }
-
-      function okay() {
-        window.location.href = "/pages/6.buy-2.html";
-      }
-    </script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -181,9 +33,25 @@
         <img src="../assets/image/profile.png" alt="profile" width="80px" />
       </nav>
     </header>
-    <button onclick="cart()">Go to Cart</button>
+    <div class="nav">
+      <!-- <nav>
+         <img
+          src="../assets/image/search.png"
+          alt="search_bar"
+          height="35px"
+          style="margin-top: 20px"
+        />
+        <input type="text" placeholder="search hear" /> 
+        <input type="text" id="search-input" placeholder="Search..." />
+        <button id="search-button">Search</button>
+        <ul id="search-results"></ul>
+      </nav> -->
+      <button onclick="cart()">Go to Cart</button>
+    </div>
 
-    <main class="card_main">
+    <section class="button"></section>
+
+    <main id="form" class="card_main">
       <!-- <section class="card_div">
         <input type="image" />
         <input type="text" />
@@ -191,17 +59,54 @@
         <input type="number" />
       </section> -->
     </main>
-    <!-- <form>
-      First Number<br />
-      <input id="num1" type="number" name="num1" />
-      <br />
-      Second Number:<br />
-      <input id="num2" type="number" name="num2" />
-      <br /><br />
-      <input type="button" value="Do Maths" onclick="doMath();" />
-    </form> -->
 
     <script>
+      // for search bar.........
+      let nav = document.createElement("nav");
+
+      let input = document.createElement("input");
+      input.setAttribute("type", "text");
+      input.setAttribute("id", "search-input");
+      input.setAttribute("placeholder", "Search here...");
+      nav.append(input);
+
+      let btn = document.createElement("button");
+      btn.setAttribute("id", "search-input");
+      btn.innerText = "search";
+      nav.append(btn);
+
+      let list = document.createElement("ul");
+      list.setAttribute("id", "search-results");
+      nav.append(list);
+
+      document.querySelector(".nav").append(nav);
+
+      // for types bar........
+
+      let bar = document.createElement("nav");
+
+      let fruit = document.createElement("button");
+      fruit.innerText = "Fruits";
+      fruit.setAttribute("onclick", "fruit()");
+      bar.append(fruit);
+
+      let vegetable = document.createElement("button");
+      vegetable.innerText = "Vegetables";
+      vegetable.setAttribute("onclick", "vegetable()");
+      bar.append(vegetable);
+
+      let grains = document.createElement("button");
+      grains.innerText = "Cereals & Grains";
+      grains.setAttribute("onclick", "grains()");
+      bar.append(grains);
+
+      let tea = document.createElement("button");
+      tea.innerText = "Tea & Coffee";
+      tea.setAttribute("onclick", "tea()");
+      bar.append(tea);
+
+      document.querySelector(".button").append(bar);
+
       // JSON
       let Card = JSON.parse(localStorage.getItem("product_details"));
 
@@ -209,17 +114,17 @@
 
       // Card creating by using JavaScript
       for (let i = 0; i <= Card.length; i++) {
-        let findDetail = detail.find(function (event) {
-          let id = event["Product_id"];
-          if (detail[i]["Product_id"] == id) {
-            return true;
-          }
-        });
+        // let findDetail = Card.find(function (event) {
+        //   let id = event["ProductId"];
+        //   if (detail[i]["ProductId"] == id) {
+        //     return true;
+        //   }
+        // });
 
         let div_card = document.createElement("div");
         div_card.setAttribute("class", "card_div");
         div_card.setAttribute("type", "button");
-        div_card.setAttribute("id", "div");
+        div_card.setAttribute("id", "form");
         // div_card.setAttribute("id", Card[i]["id"]);
         // div_card.setAttribute("onclick", "card(this.id)");
 
@@ -242,27 +147,40 @@
         rupees.setAttribute("name", "num1");
         div_card.append(rupees);
 
-        let input_value = document.createElement("input");
+        // let input_value = document.createElement("input");
         // input_value.setAttribute("value", Card[i]["Qty"]);
-        input_value.setAttribute("type", "number");
-        input_value.setAttribute("placeholder", "       kg");
-        input_value.setAttribute("width", "10px");
-        input_value.setAttribute("pattern", "[0-9]{10}");
-        input_value.setAttribute("id", "Qty");
-        input_value.setAttribute("name", "num2");
-        div_card.append(input_value);
+        // input_value.setAttribute("type", "number");
+        // input_value.setAttribute("placeholder", "       kg");
+        // input_value.setAttribute("width", "10px");
+        // // input_value.setAttribute("pattern", "[0-9]{10}");
+        // input_value.setAttribute("id", "Qty");
+        // // input_value.setAttribute("name", "num2");
+        // div_card.append(input_value);
 
         let button = document.createElement("button");
         button.innerText = "Add Cart";
-        button.setAttribute("id", "delete");
-        button.setAttribute("value", "delete");
+        button.setAttribute("id", "submit");
+        button.setAttribute("value", "submit");
+        button.setAttribute("onclick", `addProdect(${Card[i]["ProductId"]})`);
         // button.setAttribute("onclick", multiply());
         div_card.append(button);
-        button.addEventListener("click", function (event) {
+
+        function addProdect(product_id) {
           event.preventDefault();
+
           let addData = JSON.parse(localStorage.getItem("added_list"));
-          let findIndex = detail.indexOf(findDetail);
-          Card[findIndex]["Qty"] = input_value.value;
+          console.log(detail);
+          console.log(product_id);
+          let findedObject = detail.find((F) => F.ProductId == product_id);
+          console.log(findedObject);
+          let findIndex = detail.indexOf(findedObject);
+          console.log(findIndex);
+
+          //  old code for push bQty
+          let arr = [];
+          Card[findIndex]["bQty"] = "1";
+          arr.push(Card[findIndex]);
+
           let msg = confirm(
             "Are you sure you want to add this product to your cart"
           );
@@ -278,7 +196,7 @@
               localStorage.setItem("added_list", JSON.stringify(addData));
             }
           }
-        });
+        }
 
         let info = document.createElement("a");
         info.innerText = "more info -->";
@@ -287,6 +205,24 @@
 
         document.querySelector(".card_main").append(div_card);
       }
+
+      const items = Card[i][Name];
+
+      const searchInput = document.getElementById("search-input");
+      const searchButton = document.getElementById("search-button");
+      const searchResults = document.getElementById("search-results");
+
+      searchButton.addEventListener("click", () => {
+        const searchTerm = searchInput.value;
+        const filteredItems = items.filter((Name) => item.includes(searchTerm));
+
+        searchResults.innerHTML = "";
+        filteredItems.forEach((Name) => {
+          const li = document.createElement("li");
+          li.innerText = Name;
+          searchResults.appendChild(li);
+        });
+      });
 
       function cart() {
         window.location.href = "/pages/6.buy-2.html";

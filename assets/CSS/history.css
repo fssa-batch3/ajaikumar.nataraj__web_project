@@ -8,6 +8,15 @@ header {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
 }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav nav {
+  display: flex;
+}
 .card_div {
   padding: 40px 40px 40px 60px;
   width: 330px;
@@ -29,10 +38,13 @@ button:hover {
   color: #2bae66ff;
   background-color: whitesmoke;
 }
-/* .card_div:hover {
-  box-shadow: 3px 3px 3px 4px rgb(96, 237, 145);
-  scale: 1.1; 
-}*/
+.button nav {
+  display: flex;
+  justify-content: space-around;
+}
+.button button {
+  width: 250px;
+}
 .card_main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

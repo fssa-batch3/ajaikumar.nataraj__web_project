@@ -1,96 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/6-buy-2.css" />
-  </head>
-  <body class="body">
-    <header>
-      <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="110px" />
-      </div>
-      <div class="header">
-        <a href="../pages/5a-fruits.html">
-          <button type="button" onclick="back()">
-            <img
-              class="before-arrow"
-              src="../assets/image/arrowback.png"
-              alt="arrow-back"
-              width="40px"
-            />
-          </button>
-        </a>
-        <div class="sb">
-          <input
-            class="search-bar"
-            type="text"
-            placeholder="Search"
-            height="50px"
-          />
-        </div>
-        <button class="search-button">
-          <img
-            class="search-icon"
-            src="../assets/image/search.png"
-            alt="search"
-            width="40px"
-          />
-        </button>
-        <button class="voice-button">
-          <img class="voice-icon" src="../assets/image/mic.png" alt="mic" width="40px" />
-          <br />
-        </button>
-      </div>
-      
-    </header>
-    <table aria-describedby="buyn" class="table">
-      <tr class="main">
-        <th>
-          Name
-        </th>
-        <th>
-          Quantity
-        </th>
-        <th>
-          Amount
-        </th>
-        <th>
-          Decline
-        </th>
-      </tr>
-      <tr class="main-1">
-        <td>
-          Apple
-        <td>
-        1 Kg
-        <td>
-          Rs.150
-        </td>
-        <td>
-          <button>cancel</button>
-        </td>
-      </div>
-    </table>
-    <footer class="footer">
-       <button type="button" onclick="order()">Place Order</button>
-    </footer>
-
-
-    <script>
-      function order() {
-        window.location.href = "/pages/7.tot-amo.html";
-      }
-
-      function back() {
-        window.location.href = "/pages/5a-fruits.html";
-      }
-    </script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -145,10 +52,10 @@
       const detail = JSON.parse(localStorage.getItem("added_list"));
 
       // Card creating by using JavaScript
-      for (let i = 0; i < Card.length; i++) {
+      for (let i = 0; i <= Card.length; i++) {
         let findDetail = detail.find(function (event) {
-          let id = event["Product_id"];
-          if (Card[i]["Product_id"] == id) {
+          let id = event["ProductId"];
+          if (Card[i]["ProductId"] == id) {
             return true;
           }
         });
@@ -157,6 +64,7 @@
         div_card.setAttribute("class", "card_div");
         div_card.setAttribute("type", "button");
         div_card.setAttribute("id", "div");
+        div_card.setAttribute("value", "submit");
         // div_card.setAttribute("id", Card[i]["id"]);
         // div_card.setAttribute("onclick", "card(this.id)");
 
@@ -179,52 +87,72 @@
         div_card.append(rupees);
 
         let input_value = document.createElement("input");
-        input_value.setAttribute("value", Card[i]["Qty"] + " kg");
-        // input_value.setAttribute("type", "number");
+        input_value.setAttribute("value", Card[i]["bQty"]);
+        input_value.setAttribute("type", "number");
         input_value.setAttribute("width", "10px");
-        // input_value.setAttribute("id", "pQty");
+        input_value.setAttribute("id", Card[i]["ProductId"]);
         div_card.append(input_value);
 
-        // let button = document.createElement("button");
-        // button.innerText = "Add Cart";
-        // button.setAttribute("id", "delete");
-        // button.setAttribute("value", "delete");
-        // // button.setAttribute("onclick", deleteProduct());
-        // div_card.append(button);
-
         let edit = document.createElement("button");
-        edit.innerText = "Cancel";
-        // edit.setAttribute("id", Card[i]["id"]);
-        // edit.setAttribute("onclick", "productEdit(this.id)");
-        // edit.setAttribute("onclick", "edit(/pages/10.product_edit_page.html)");
-        // edit.setAttribute(
-        //   "href",
-        //   "../pages/10.product_edit_page.html?Product_id=" +
-        //     Card[i]["Product_id"]
-        // );
-        edit.setAttribute("id", "submit");
+        edit.innerText = "Add qty";
+        edit.setAttribute("id", "click");
         edit.setAttribute("type", "submit");
         div_card.append(edit);
+
+        let cancel = document.createElement("button");
+        cancel.innerText = "Cancel";
+        cancel.setAttribute("id", "submit");
+        cancel.setAttribute("type", "submit");
+        div_card.append(cancel);
 
         // edit.addEventListener("click", function (event) {
         //   event.preventDefault();
 
-        //   let changeData = {
-        //     // Url: image.value,
-        //     Name: fruit_name.value,
-        //     Price: rupees.value,
-        //     Qty: input_value.value,
-        //   };
-        //   console.log(changeData);
-
-        //   const assignData = Object.assign(findDetail, changeData);
-
-        //   let findIndex = detail.indexOf(findDetail);
-        //   detail[findIndex] = assignData;
-        //   localStorage.setItem("added_list", JSON.stringify(detail));
-        //   alert("Succesfully changed");
+        //   Card[i]["bQty"] = input_value.value;
         // });
+
         edit.addEventListener("click", function (event) {
+          event.preventDefault();
+          // console.log();
+
+          console.log();
+
+          // let findId = detail.findIndex(detail[i]["ProductId"]);
+          if (detail[i]["ProductId"] == Card[i]["ProductId"]) {
+            // findIndex("ProductId");
+            const user_info = JSON.parse(localStorage.getItem("added_list"));
+            let select_user = user_info.findIndex(function (event) {
+              let customerEmail = event["ProductId"];
+              if (user_info["ProductId"] == customerEmail) {
+                console.log(user_info["product_id"]);
+              }
+            });
+
+            console.log(detail);
+
+            let qty = document.getElementById("pQty");
+            console.log(qty);
+
+            // select_user["bQty"] = pQty.value;
+
+            let qtychange = document.getElementById("div");
+            console.log(qtychange);
+            let bQty = document.getElementById(Card[i]["ProductId"]).value;
+
+            let changeData = {
+              bQty,
+            };
+            console.log(changeData);
+
+            const assignData = Object.assign(findDetail, changeData);
+
+            let findIndex = detail.indexOf(findDetail);
+            detail[findIndex] = assignData;
+            localStorage.setItem("added_list", JSON.stringify(detail));
+            alert("Succesfully changed");
+          }
+        });
+        cancel.addEventListener("click", function (event) {
           event.preventDefault();
           let addData = JSON.parse(localStorage.getItem("added_list"));
           let findIndex = detail.indexOf(findDetail);
@@ -241,36 +169,6 @@
 
         document.querySelector(".card_main").append(div_card);
       }
-      // const product_id = JSON.parse(localStorage.getItem("added_list"));
-      // let id = document.getElementById("Product_id");
-
-      // console.log(detail);
-      // const url = document.getElementById("pUrl");
-      // const pname = document.getElementById("pName");
-      // const price = document.getElementById("pPrice");
-      // const qty = document.getElementById("pQty");
-
-      // // url.value = detail["Url"];
-      // pname.value = detail["Name"];
-      // price.value = detail["Price"];
-      // qty.value = detail["Qty"];
-
-      // const div = document.getElementById("div");
-      // div.addEventListener("submit", function (event) {
-      //   event.preventDefault();
-      //   // let Url = document.getElementById("pUrl").value;
-      //   let Name = document.getElementById("pName").value;
-      //   let Price = document.getElementById("pPrice").value;
-      //   let Qty = document.getElementById("pQty").value;
-
-      //   let changeData = {
-      //     // Url,
-      //     Name,
-      //     Price,
-      //     Qty,
-      //   };
-      //   // console.log(changeData);
-      // });
 
       function back() {
         window.location.href = "/pages/5a-fruits.html";
@@ -278,10 +176,6 @@
 
       function order() {
         window.location.href = "/pages/7.tot-amo.html";
-      }
-
-      function back() {
-        window.location.href = "/pages/5a-fruits.html";
       }
     </script>
   </body>

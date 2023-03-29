@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -81,5 +81,267 @@
         </div>
       </footer>
     </div>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn</title>
+    <link rel="stylesheet" href="../assets/css/learn.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,600&family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <div class="navbar">
+        <img
+          class="nav-logo"
+          src="../assets/images/Screenshot 2023-02-11 021952.png"
+          alt=""
+        />
+        <input
+          class="search"
+          type="text"
+          placeholder="Search for courses,videos & Blogs"
+          id="searchbar"
+        />
+        <div class="notification">
+          <img
+            class="notificationimg"
+            onclick="profile1()"
+            src="../assets/images/icons8-notification-50.png"
+            alt=""
+          />
+        </div>
+        <div id="google_translate_element"></div>
+        <div class="google-remover"></div>
+        <!-- <div class="notification">
+        <div class="dropdown">
+          <img class="notificationimg" onclick="profile1()" src="../assets/images/icons8-translator-50.png" alt="">
+          <div class="dropdown-content-lang"><br>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; English </a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; France</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Italy</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Arabic</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Espanol</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Algeria</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Albania</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Japanese</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Hindi</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Tamil</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Portuguese</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Spanish</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Russian</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; German</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Korean</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Telugu</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Turkish</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Ukranian</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Malayalam</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp; Kannada</a>
+            <a href="#"><img class="user-dropdown" src="../assets/images/icons8-translator-50.png">&nbsp;
+              Chinese</a><br>
+          </div>
+        </div>
+      </div> -->
+        <div class="notification">
+          <div class="dropdown">
+            <img
+              class="notificationimg"
+              onclick="profile1()"
+              src="../assets/images/icons8-online-support-50.png"
+              alt=""
+            />
+            <div class="dropdown-content">
+              <br />
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-group-50.png"
+                />&nbsp; Connect With Us</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-group-message-50.png"
+                />&nbsp; Chat With Us</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-invite-50.png"
+                />&nbsp; Write a Mail</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-online-support-50.png"
+                />&nbsp; Support Center</a
+              ><br />
+            </div>
+          </div>
+        </div>
+        <div class="notification">
+          <div class="dropdown" id="dropuser">
+            <div class="dropdown-content">
+              <br />
+              <a href="../pages/userprofile.html"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-group-50.png"
+                />&nbsp; Accounts</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-logout-rounded-50.png"
+                />&nbsp; Personal Details</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-invite-50.png"
+                />&nbsp; Invite & Earn</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-membership-card-30.png"
+                />&nbsp; Membership</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-light-mode-78.png"
+                />&nbsp; Appearance : Light</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-translator-50.png"
+                />&nbsp; Language : English</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-user-location-30.png"
+                />&nbsp; Location : India</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-gears-30.png"
+                />&nbsp; Settings</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-online-support-50.png"
+                />&nbsp; Help</a
+              >
+              <a href="#"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-group-50.png"
+                />&nbsp; Send feedback</a
+              >
+              <a href="signin.html"
+                ><img
+                  class="user-dropdown"
+                  src="../assets/images/icons8-logout-rounded-50 (1).png"
+                />&nbsp; Log Out</a
+              ><br />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab">
+        <button class="tablinks active" id="tab-courses" onclick="homeon()">
+          All Courses
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'free-courses')">
+          Free Courses
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'live-courses')">
+          Live Courses
+        </button>
+        <svg height="100" width="100" class="blinking">
+          <circle cx="50" cy="50" r="10" fill="red" />
+        </svg>
+        <!-- <button class="tablinks" onclick="openCity(event, 'Indices')"></button> -->
+        <!-- <button class="tablinks" onclick="openCity(event, 'Futures')"></button> -->
+        <button class="tablinks" onclick="openCity(event, 'latest-courses')">
+          &emsp;Latest Courses
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'my-courses')">
+          My Courses
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'blogs')">
+          Blogs
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'youtube-videos')">
+          Youtube Videos
+        </button>
+        <button class="tablinks" onclick="openCity(event, 'bookmarks')">
+          Bookmarks
+        </button>
+        <!-- <button class="tablinks" onclick="openCity(event, 'budget-saving')"> &emsp;Profit Calculator</button> -->
+      </div>
+    </nav>
+    <main>
+      <div class="bread-crumb">
+        <div>
+          <span class="slash">=></span>
+          <a class="bread-crumb1" href="#">Home</a>
+        </div>
+        <span class="slash">/</span>
+        <div><a class="bread-crumb1" href="#">Dashboard</a></div>
+        <span class="slash">/</span>
+        <div><a class="bread-crumb1">Learn</a></div>
+      </div>
+
+      <div id="default">
+        <!-- <h1 class="home-news-h1" >All News</h1> -->
+
+        <div class="course-selection-div">
+          <h1 class="course-category">
+            <br />&emsp;&emsp;Grow Your Money with Our Courses
+          </h1>
+          <p class="course-desc">
+            Take one of NSE's range of Our Latest courses and learn how to trade
+            using this incredibly useful tips. Its simple logic and readability
+            makes trading perfect for Stocks, forex, futures, and
+            Crytocurrencies. You'll learn how to trade in all assets and markets
+            with using these courses...
+          </p>
+          <button class="course-btn">Explore All Courses</button>
+
+          <div class="scroll-courses-div-stocks"></div>
+        </div>
+      </div>
+
+      <div id="live-courses" class="tabcontent">
+        <div class="course-selection-div-videos">
+          <h1 class="course-category">
+            <br />&emsp;&emsp;Explore Our Variety of Youtube Videos Posted By
+            Proffessional Traders
+          </h1>
+          <p class="course-desc">
+            Take one of NSE's range of Market Trading Videos and learn how to
+            trade using this incredibly us...
+          </p>
+        </div>
+      </div>
+    </main>
   </body>
 </html>

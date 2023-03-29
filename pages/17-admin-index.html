@@ -19,18 +19,17 @@
     </header>
     <div class="side-bar">
       <h3>Member's List</h3>
-      <p>Customer's</p>
-      <p>Hotel Customers</p>
-      <p>Vendors</p>
+      <p onclick="customer()">Mr. Buyer</p>
+      <!-- <p>Hotel Customers</p> -->
+      <p onclick="seller()">Mr. Vendors</p>
     </div>
     <div class="btn">
-      <div class="btn-1">
-        <button class="no">New Order</button>
-        <div class="no-dw">
-          <a href="../pages/18-hotel-order-list.html"> Hotels</a>
-          <a href="../pages/20-customer-order-list.html"> Small Customers</a>
-        </div>
-      </div>
+      <a href="../pages/20-customer-order-list.html">
+        <button>New Order</button></a
+      >
+      <a href="../pages/21-new-upload.html">
+        <button class="nu">New Upload</button></a
+      >
       <div class="btn-1">
         <button class="no">Completed Order</button>
         <div class="no-dw">
@@ -41,18 +40,14 @@
       <a href="../pages/24-inprogress-orders.html">
         <button class="oi">Order Inprogress</button></a
       >
-      <a href="../pages/21-new-upload.html">
-        <button class="nu">New Upload</button></a
-      >
     </div>
 
     <script>
-      function submitForm() {
-        const user_name = localStorage.getItem("user_name");
-
-        document.getElementsByClassName("pro")[0].innerHTML = user_name;
-
-        console.log(user_name);
+      function customer() {
+        window.location.href = "/pages/buyer.html";
+      }
+      function seller() {
+        window.location.href = "/pages/seller.html";
       }
     </script>
   </body>

@@ -1,74 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/12-bill.css" />
-  </head>
-  <body>
-    <div class="FullName">
-      <div class="details">
-        <h2>
-          Thanks for uploading your Products and Your product's bill is here
-        </h2>
-
-        <table aria-describedby="bill">
-          <tr>
-            <th>Name</th>
-            <th>Amount</th>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="Banana" /></td>
-            <td><input type="number" placeholder="Rs.3000" /></td>
-          </tr>
-          <tr class="tr">
-            <td>Total Amount</td>
-            <td>Rs.3000</td>
-          </tr>
-        </table>
-      </div>
-      <script></script>
-
-      <div class="details">
-        <h3>Fill your pickup details here:</h3>
-
-        <div class="detail">
-          <input type="text" id="name" placeholder="name" />
-          <input type="number" id="phno" placeholder="Phone number" />
-          <input type="text" id="add" placeholder="address" />
-          <input type="date" id="pickup" placeholder="Pickup date" />
-        </div>
-      </div>
-    </div>
-    <footer class="footer">
-      <button type="button" onclick="payment()">Go to Payment Page</button>
-    </footer>
-
-    <script>
-      function payment() {
-        // const name = document.getElementById("name").value;
-        // const address = document.getElementById("add").value;
-        // const phoneno = document.getElementById("phno").value;
-        // const pickup = document.getElementById("pickup").value;
-
-        // console.log(name);
-        // console.log(address);
-        // console.log(phoneno);
-        // console.log(pickup);
-
-        // localStorage.setItem("user_name", name);
-        // localStorage.setItem("user_add", address);
-        // localStorage.setItem("user_phno", phoneno);
-        // localStorage.setItem("user_pickup", pickup);
-
-        window.location.href = "/pages/13.Acct.detail.html";
-      }
-    </script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -103,8 +32,12 @@
           th2_tr.innerText = "Quantity";
           th_tr1.append(th2_tr);
 
+          let th4_tr = document.createElement("th");
+          th4_tr.innerText = "Price";
+          th_tr1.append(th4_tr);
+
           let th3_tr = document.createElement("th");
-          th3_tr.innerText = "Amount";
+          th3_tr.innerText = "Total Amount";
           th_tr1.append(th3_tr);
 
           let td_tr2 = document.createElement("tr");
@@ -118,6 +51,10 @@
           let td2_tr = document.createElement("td");
           td2_tr.innerText = Card[i]["Qty"] + " kg";
           td_tr2.append(td2_tr);
+
+          let td4_tr = document.createElement("td");
+          td4_tr.innerText = "Rs." + Card[i]["Price"];
+          td_tr2.append(td4_tr);
 
           let td3_tr = document.createElement("td");
           td3_tr.innerText = "Rs. " + Card[i]["Price"] * Card[i]["Qty"];
@@ -139,7 +76,7 @@
             maxlength="10"
           />
           <input type="text" id="Land_Address" placeholder="address" />
-          <input type="date" id="Pickup_date" placeholder="Pickup date" />
+          <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
         </form>
         <button type="submit">Save</button>
       </div>
@@ -183,14 +120,14 @@
       // to get value from registration form
       const phNo = document.getElementById("Phone_Number");
       const userName = document.getElementById("First_name");
-      const transport_DOB = document.getElementById("Pickup_date");
+      // const transport_DOB = document.getElementById("Pickup_date");
       const Land_Address = document.getElementById("Land_Address");
 
       // Compare the values
 
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
-      transport_DOB.value = select_user["transport_DOB"];
+      // transport_DOB.value = select_user["transport_DOB"];
       Land_Address.value = select_user["Land_Address"];
 
       // to replace the values
@@ -200,13 +137,13 @@
 
         let FullName = document.getElementById("First_name").value;
         let Phone_number = document.getElementById("Phone_Number").value;
-        let transport_DOB = document.getElementById("Pickup_date").value;
+        // let transport_DOB = document.getElementById("Pickup_date").value;
         let Land_Address = document.getElementById("Land_Address").value;
 
         let newData = {
           FullName,
           Phone_number,
-          transport_DOB,
+          // transport_DOB,
           Land_Address,
         };
         console.log(newData);

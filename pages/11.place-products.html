@@ -82,13 +82,13 @@
         div_card.append(fruit_name);
 
         let rupees = document.createElement("input");
-        rupees.setAttribute("value", Card[i]["Price"] + " kg");
+        rupees.setAttribute("value", Card[i]["Price"]);
         rupees.setAttribute("id", "pPrice");
         rupees.setAttribute("type", "text");
         div_card.append(rupees);
 
         let input_value = document.createElement("input");
-        input_value.setAttribute("value", Card[i]["Qty"] + " /kg");
+        input_value.setAttribute("value", Card[i]["Qty"]);
         // input_value.setAttribute("type", "number");
         input_value.setAttribute("width", "10px");
         input_value.setAttribute("id", "pQty");
