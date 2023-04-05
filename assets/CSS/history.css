@@ -25,6 +25,10 @@ header {
   box-shadow: 1px 1px 1px 3px rgb(199, 237, 199);
   border-radius: 6px;
 }
+.same {
+  color: #2bae66ff;
+  background-color: whitesmoke;
+}
 button {
   font-size: 20px;
   width: 140px;

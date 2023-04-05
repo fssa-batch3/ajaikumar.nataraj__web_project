@@ -24,7 +24,7 @@
       <div class="logo">
         <img src="../assets/image/logo.png" alt="logo" width="130px" />
       </div>
-      <button id="profile" placeholder="Shin Chan">Shin chan</button>
+      <input type="text" id="profile" onclick="profile()" />
     </header>
     <main class="img-1">
       <nav>
@@ -63,10 +63,21 @@
     </main>
 
     <script>
-      let BIO = JSON.parse(localStorage.getItem("BIO"));
-      console.log(BIO);
+      const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
-      document.getElementById("profile").innerHTML = BIO[0]["FN"];
+      const user_info = JSON.parse(localStorage.getItem("user_info"));
+      let select_user = user_info.find(function (event) {
+        let customerEmail = event["Email"];
+        if (user_info == customerEmail) {
+          return true;
+        } else if (oneUser == customerEmail) {
+          return true;
+        }
+      });
+
+      const name = document.getElementById("profile");
+
+      name.value = select_user["FullName"];
 
       submitForm();
       function submit() {
@@ -76,13 +87,13 @@
         window.location.href = "/pages/5a-fruits.html";
       }
       function veg() {
-        window.location.href = "/pages/5b-vegetable.html";
+        window.location.href = "/pages/5b-vegetables.html";
       }
       function coffee() {
         window.location.href = "/pages/5c-tea.html";
       }
       function grain() {
-        window.location.href = "/pages/5d-cereals.html";
+        window.location.href = "/pages/5d-grain.html";
       }
     </script>
   </body>

@@ -26,13 +26,31 @@
         <label for="Land Address">Land Address</label>
         <input id="Land_Address" class="input" placeholder="Land Address" />
         <label for="gender">Gender</label>
-        <input id="gender" class="input" placeholder="Gender (Male / Female)" />
+        <input
+          id="gender"
+          list="genders"
+          name="type"
+          class="input"
+          autocomplete="off"
+          placeholder="Gender (Male / Female)"
+        />
+        <datalist id="genders">
+          <option value="Male"></option>
+          <option value="Female"></option>
+        </datalist>
         <label for="land">Land Type</label>
         <input
           id="farmer"
+          name="type"
           class="input"
+          list="land"
+          autocomplete="off"
           placeholder="Farming land (Own / Tenant)"
         />
+        <datalist id="land">
+          <option value="Own"></option>
+          <option value="Tenant"></option>
+        </datalist>
       </div>
       <div class="form" id="form">
         <label for="User name">User name</label> <br />

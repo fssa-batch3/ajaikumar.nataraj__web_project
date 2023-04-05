@@ -18,11 +18,7 @@
         <div class="logo">
           <img src="../assets/image/logo.png" alt="logo" width="100px" />
         </div>
-        <button
-          id="profile"
-          value="Card[i][FullName]"
-          onclick="profile()"
-        ></button>
+        <input type="text" id="profile" onclick="profile()" />
         <img
           onclick="profile()"
           src="../assets/image/profile.png"
@@ -48,10 +44,21 @@
     </div>
 
     <script>
-      let BIO = JSON.parse(localStorage.getItem("logIn"));
-      console.log(BIO);
+      const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
-      // document.getElementById("profile").innerHTML = user_info[0]["FullName"];
+      const user_info = JSON.parse(localStorage.getItem("user_info"));
+      let select_user = user_info.find(function (event) {
+        let customerEmail = event["Email"];
+        if (user_info == customerEmail) {
+          return true;
+        } else if (oneUser == customerEmail) {
+          return true;
+        }
+      });
+
+      const name = document.getElementById("profile");
+
+      name.value = select_user["FullName"];
 
       function buyer() {
         window.location.href = "/pages/4.index.html";

@@ -11,7 +11,7 @@ button {
 button:hover {
   color: white;
   background-color: #2bae66ff;
-  scale: 1.1;
+  /* scale: 1.1; */
 }
 img {
   width: 300px;
@@ -46,9 +46,7 @@ input {
   box-shadow: 1px 1px 1px 1px rgb(159, 223, 159);
   border: none;
 }
-input:hover {
-  scale: 1.1;
-}
+
 .form {
   width: 410px;
 }

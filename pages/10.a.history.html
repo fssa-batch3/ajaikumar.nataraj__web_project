@@ -13,6 +13,7 @@
         <img
           src="../assets/image/arrowback.png"
           alt="arrow"
+          onclick="back()"
           style="
             border-radius: 50px;
             padding: 10px 10px 10px 10px;
@@ -53,98 +54,113 @@
       // Card creating by using JavaScript
       for (let i = 0; i <= Card.length; i++) {
         // let findDetail = detail.find(function (event) {
-        //   let id = event["Product_id"];
-        //   if (Card[i]["Product_id"] == id) {
+        //   let id = event["ProductId"];
+        //   if (Card[i]["ProductId"] == id) {
         //     return true;
         //   }
         // });
-        // console.log(Card[i]["Url"]);
-        let div_card = document.createElement("div");
-        div_card.setAttribute("class", "card_div");
-        div_card.setAttribute("type", "button");
-        div_card.setAttribute("id", "div");
-        // div_card.setAttribute("id", Card[i]["id"]);
-        // div_card.setAttribute("onclick", "card(this.id)");
 
-        let image = document.createElement("img");
-        // console.log(Card[i]);
-        image.setAttribute("src", Card[i]["Url"]);
-        image.setAttribute("alt", "image");
-        image.setAttribute("id", "pUrl");
-        div_card.append(image);
+        let id = JSON.parse(localStorage.getItem("user_info"));
+        console.log(id);
 
-        let fruit_name = document.createElement("input");
-        fruit_name.setAttribute("value", Card[i]["Name"]);
-        fruit_name.setAttribute("id", "pName");
-        div_card.append(fruit_name);
+        let login_id = JSON.parse(localStorage.getItem("logIn"));
+        console.log(login_id);
 
-        let rupees = document.createElement("input");
-        rupees.setAttribute("value", Card[i]["Price"] + " /kg");
-        rupees.setAttribute("id", "pPrice");
-        rupees.setAttribute("type", "text");
-        div_card.append(rupees);
+        const get_obj = id.find((e) => e.Email === login_id);
+        console.log(get_obj);
 
-        let input_value = document.createElement("input");
-        input_value.setAttribute("value", Card[i]["Qty"] + " kg");
-        // input_value.setAttribute("type", "number");
-        input_value.setAttribute("width", "10px");
-        input_value.setAttribute("id", "pQty");
-        div_card.append(input_value);
+        if (get_obj.id == Card[i].userId) {
+          // console.log(Card[i]["Url"]);
+          let div_card = document.createElement("div");
+          div_card.setAttribute("class", "card_div");
+          div_card.setAttribute("type", "button");
+          div_card.setAttribute("id", "div");
+          // div_card.setAttribute("id", Card[i]["id"]);
+          // div_card.setAttribute("onclick", "card(this.id)");
 
-        let edit = document.createElement("button");
-        edit.innerText = "Edit";
-        edit.setAttribute("id", "submit");
-        edit.setAttribute("type", "submit");
-        div_card.append(edit);
+          let image = document.createElement("img");
+          // console.log(Card[i]);
+          image.setAttribute("src", Card[i]["Url"]);
+          image.setAttribute("alt", "image");
+          image.setAttribute("id", "pUrl");
+          div_card.append(image);
 
-        let button = document.createElement("button");
-        button.innerText = "Delete";
-        button.setAttribute("id", "delete");
-        button.setAttribute("value", "delete");
-        // button.setAttribute("onclick", deleteProduct());
-        div_card.append(button);
+          let fruit_name = document.createElement("input");
+          fruit_name.setAttribute("value", Card[i]["Name"]);
+          fruit_name.setAttribute("id", "pName");
+          div_card.append(fruit_name);
 
-        edit.addEventListener("click", function (event) {
-          event.preventDefault();
+          let rupees = document.createElement("input");
+          rupees.setAttribute("value", Card[i]["Price"] + " /kg");
+          rupees.setAttribute("id", "pPrice");
+          rupees.setAttribute("type", "text");
+          div_card.append(rupees);
 
-          let changeData = {
-            // Url: image.value,
-            Name: fruit_name.value,
-            Price: rupees.value,
-            Qty: input_value.value,
-          };
-          console.log(changeData);
+          let input_value = document.createElement("input");
+          input_value.setAttribute("value", Card[i]["Qty"] + " kg");
+          // input_value.setAttribute("type", "number");
+          input_value.setAttribute("width", "10px");
+          input_value.setAttribute("id", "pQty");
+          div_card.append(input_value);
 
-          const assignData = Object.assign(findDetail, changeData);
+          let edit = document.createElement("button");
+          edit.innerText = "Edit";
+          edit.setAttribute("id", "submit");
+          edit.setAttribute("type", "submit");
+          div_card.append(edit);
 
-          let findIndex = detail.indexOf(findDetail);
-          detail[findIndex] = assignData;
-          localStorage.setItem("product_details", JSON.stringify(detail));
-          alert("Succesfully changed");
-        });
-        button.addEventListener("click", function (event) {
-          event.preventDefault();
-          let deleteData = JSON.parse(localStorage.getItem("deleted_list"));
-          let findIndex = detail.indexOf(findDetail);
-          let msg = confirm("Are you sure you want to delete this product");
-          if (msg !== true) {
-            return;
-          } else {
-            if (deleteData === null) {
-              let array = [];
-              array.push(Card[findIndex]);
-              localStorage.setItem("deleted_list", JSON.stringify(array));
-            } else {
-              deleteData.push(Card[findIndex]);
-              localStorage.setItem("deleted_list", JSON.stringify(deleteData));
-            }
+          let button = document.createElement("button");
+          button.innerText = "Delete";
+          button.setAttribute("id", "delete");
+          button.setAttribute("value", "delete");
+          // button.setAttribute("onclick", deleteProduct());
+          div_card.append(button);
 
-            detail.splice(findIndex, 1);
+          edit.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            let changeData = {
+              // Url: image.value,
+              Name: fruit_name.value,
+              Price: rupees.value,
+              Qty: input_value.value,
+            };
+            console.log(changeData);
+
+            const assignData = Object.assign(findDetail, changeData);
+
+            let findIndex = detail.indexOf(findDetail);
+            detail[findIndex] = assignData;
             localStorage.setItem("product_details", JSON.stringify(detail));
-          }
-        });
+            alert("Succesfully changed");
+          });
+          button.addEventListener("click", function (event) {
+            event.preventDefault();
+            let deleteData = JSON.parse(localStorage.getItem("deleted_list"));
+            let findIndex = detail.indexOf(findDetail);
+            let msg = confirm("Are you sure you want to delete this product");
+            if (msg !== true) {
+              return;
+            } else {
+              if (deleteData === null) {
+                let array = [];
+                array.push(Card[findIndex]);
+                localStorage.setItem("deleted_list", JSON.stringify(array));
+              } else {
+                deleteData.push(Card[findIndex]);
+                localStorage.setItem(
+                  "deleted_list",
+                  JSON.stringify(deleteData)
+                );
+              }
 
-        document.querySelector(".card_main").append(div_card);
+              detail.splice(findIndex, 1);
+              localStorage.setItem("product_details", JSON.stringify(detail));
+            }
+          });
+
+          document.querySelector(".card_main").append(div_card);
+        }
       }
       // const product_id = JSON.parse(localStorage.getItem("product_details"));
       // let id = document.getElementById("Product_id");
@@ -179,6 +195,9 @@
 
       function deleted() {
         window.location.href = "/pages/10.deleted_list.html";
+      }
+      function back() {
+        window.location.href = "/pages/10.upload.html";
       }
     </script>
   </body>

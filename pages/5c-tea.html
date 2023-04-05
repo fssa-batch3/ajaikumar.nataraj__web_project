@@ -28,7 +28,7 @@
           width="100px"
         />
       </nav>
-      <nav><h2>Fruits Shop</h2></nav>
+      <nav><h2>Coffee & Tea Shop</h2></nav>
       <nav>
         <img src="../assets/image/profile.png" alt="profile" width="80px" />
       </nav>
@@ -73,7 +73,6 @@
 
       let fruit = document.createElement("button");
       fruit.innerText = "Fruits";
-      fruit.setAttribute("class", "same");
       fruit.setAttribute("onclick", "fruits()");
       bar.append(fruit);
 
@@ -89,6 +88,7 @@
 
       let tea = document.createElement("button");
       tea.innerText = "Tea & Coffee";
+      tea.setAttribute("class", "same");
       tea.setAttribute("onclick", "coffee()");
       bar.append(tea);
 
@@ -107,7 +107,7 @@
         //   }
         // });
 
-        if (Card[i].Type == "Fruit") {
+        if (Card[i].Type == "Coffee & Tea") {
           let div_card = document.createElement("div");
           div_card.setAttribute("class", "card_div");
           div_card.setAttribute("type", "button");
@@ -186,11 +186,11 @@
       function back() {
         window.location.href = "/pages/4.index.html";
       }
+      function fruits() {
+        window.location.href = "/pages/5a-fruits.html";
+      }
       function vegetables() {
         window.location.href = "/pages/5b-vegetables.html";
-      }
-      function coffee() {
-        window.location.href = "/pages/5c-tea.html";
       }
       function pulses() {
         window.location.href = "/pages/5d-grain.html";

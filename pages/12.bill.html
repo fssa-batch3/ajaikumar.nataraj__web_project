@@ -18,28 +18,28 @@
       <script>
         let Card = JSON.parse(localStorage.getItem("newly_added"));
         let total = 0;
+        let table_card = document.createElement("table");
+
+        let th_tr1 = document.createElement("tr");
+        table_card.append(th_tr1);
+
+        let th1_tr = document.createElement("th");
+        th1_tr.innerText = "Products Name";
+        th_tr1.append(th1_tr);
+
+        let th2_tr = document.createElement("th");
+        th2_tr.innerText = "Quantity";
+        th_tr1.append(th2_tr);
+
+        let th4_tr = document.createElement("th");
+        th4_tr.innerText = "Price";
+        th_tr1.append(th4_tr);
+
+        let th3_tr = document.createElement("th");
+        th3_tr.innerText = "Total Amount";
+        th_tr1.append(th3_tr);
+
         for (let i = 0; i < Card.length; i++) {
-          let table_card = document.createElement("table");
-
-          let th_tr1 = document.createElement("tr");
-          table_card.append(th_tr1);
-
-          let th1_tr = document.createElement("th");
-          th1_tr.innerText = "Products Name";
-          th_tr1.append(th1_tr);
-
-          let th2_tr = document.createElement("th");
-          th2_tr.innerText = "Quantity";
-          th_tr1.append(th2_tr);
-
-          let th4_tr = document.createElement("th");
-          th4_tr.innerText = "Price";
-          th_tr1.append(th4_tr);
-
-          let th3_tr = document.createElement("th");
-          th3_tr.innerText = "Total Amount";
-          th_tr1.append(th3_tr);
-
           let td_tr2 = document.createElement("tr");
           table_card.append(td_tr2);
 

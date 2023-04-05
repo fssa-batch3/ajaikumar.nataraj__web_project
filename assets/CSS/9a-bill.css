@@ -1,91 +1,3 @@
-/* .body {
-  font-size: 30px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: rgb(191, 227, 191);
-}
-.head {
-  display: flex;
-  width: 100%;
-  height: 100px;
-}
-.head img {
-  border-radius: 50px;
-}
-header {
-  justify-content: space-around;
-  align-content: space-around;
-}
-.header {
-  text-align: center;
-  background-color: #2bae66ff;
-  display: flex;
-}
-.detail {
-  width: 100px;
-}
-.details {
-  width: 500px;
-  margin-left: 100px;
-}
-.detail button {
-  width: 400px;
-  height: 50px;
-  font-size: 30px;
-  color: #2bae66ff;
-  background-color: rgb(191, 227, 191);
-  border: 1.5px solid #2bae66ff;
-}
-input {
-  font-size: 30px;
-  background-color: rgb(191, 227, 191);
-}
-.footer {
-  text-align: center;
-  top: 775px;
-  background-color: #2bae66ff;
-  color: white;
-  height: 120px;
-  position: fixed;
-  width: 1500px;
-}
-.id {
-  top: 700px;
-  display: flex;
-  position: fixed;
-}
-.foot-p {
-  margin-top: 10px;
-  font-family: "Times New Roman", Times, serif;
-}
-p img {
-  margin-top: 10px;
-}
-
-/*media query*/
-
-/*  @media screen and (max-width: 600px) {
-  .body {
-    width: 600px;
-  }
-  .details {
-    margin-top: 80px;
-  }
-  .footer {
-    width: 600px;
-    height: 150px;
-  }
-  .foot-p {
-    width: 385px;
-    margin-left: 100px;
-  }
-  .logo img {
-    width: 70px;
-  }
-  .before-arrow {
-    border-radius: 50px;
-  }
-} */
-
 body {
   font-size: 30px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -96,6 +8,15 @@ header {
   display: flex;
   justify-content: space-between;
   background-color: rgb(191, 227, 191);
+}
+button {
+  font-size: 25px;
+  width: 240px;
+  margin: 10px 0px 0px 10px;
+  background-color: #2bae66ff;
+  border: none;
+  color: white;
+  border-radius: 4px;
 }
 
 footer {

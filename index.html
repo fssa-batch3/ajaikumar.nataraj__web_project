@@ -20,8 +20,21 @@
       <div class="head">
         <p>Home</p>
         <p onclick="about()">About us</p>
-        <p onclick="sign()">Register</p>
-        <p onclick="customer()">Log In</p>
+        <div class="dropdown">
+          <p class="dropbtn">Register</p>
+          <div class="dropdown-content">
+            <a onclick="buy_sign()">as Buyer</a>
+            <a onclick="sell_sign()">as Seller</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <p class="dropbtn">Log in</p>
+          <div class="dropdown-content">
+            <a onclick="buy_login()">as Buyer</a>
+            <a onclick="sell_login()">as Seller</a>
+          </div>
+        </div>
+        <!-- <p onclick="customer()">Log In</p> -->
       </div>
       <div>
         <img src="./assets/image/profile.png" alt="profile" width="100px" />
@@ -46,8 +59,8 @@
         <img src="./assets/image/card_fruits.jpg" alt="Fruits" width="275px" />
 
         <b>Fruits</b>
-        <button>Buy Now</button>
-        <button>Sell Now</button>
+        <button onclick="fruitbuy()">Buy Now</button>
+        <button onclick="sell()">Sell Now</button>
       </div>
       <div class="card_div">
         <img
@@ -56,20 +69,20 @@
           width="275px"
         />
         <b>Vegetables</b>
-        <button>Buy Now</button>
-        <button>Sell Now</button>
+        <button onclick="vegbuy()">Buy Now</button>
+        <button onclick="sell()">Sell Now</button>
       </div>
       <div class="card_div">
         <img src="./assets/image/card_tea.jpg" alt="tea" width="275px" />
         <b>Tea and Coffee</b>
-        <button>Buy Now</button>
-        <button>Sell Now</button>
+        <button onclick="teabuy()">Buy Now</button>
+        <button onclick="sell()">Sell Now</button>
       </div>
       <div class="card_div">
         <img src="./assets/image/card_grain.jpg" alt="grain" width="275px" />
         <b>Cereals and Grains</b>
-        <button>Buy Now</button>
-        <button>Sell Now</button>
+        <button onclick="grainbuy()">Buy Now</button>
+        <button onclick="sell()">Sell Now</button>
       </div>
     </main>
 
@@ -119,6 +132,16 @@
       </div>
     </main>
 
+    <section class="img_slide">
+      <h1>Our Products</h1>
+      <div>
+        <img src="./assets/image/home-fruit.jpg" alt="fruit_img" />
+        <img src="./assets/image/home-vegetable.jpg" alt="vegetable_img" />
+        <img src="./assets/image/home-tea.jpg" alt="tea_img" />
+        <img src="./assets/image/home-grain.jpg" alt="grain_img" />
+      </div>
+    </section>
+
     <main class="buy_sell_main">
       <div class="buy_sell_div">
         <img
@@ -138,11 +161,12 @@
     </main>
 
     <section class="img_slide">
+      <h1>Our Future Products</h1>
       <div>
-        <img src="./assets/image/home-fruit.jpg" alt="fruit_img" />
-        <img src="./assets/image/home-vegetable.jpg" alt="vegetable_img" />
-        <img src="./assets/image/home-tea.jpg" alt="tea_img" />
-        <img src="./assets/image/home-grain.jpg" alt="grain_img" />
+        <img src="./assets/image/honey.jpg" alt="honey_img" />
+        <img src="./assets/image/juice.jpg" alt="juice_img" />
+        <img src="./assets/image/milk_products.jpg" alt="milk_img" />
+        <img src="./assets/image/nuts.jpg" alt="nuts_img" />
       </div>
     </section>
 
@@ -225,17 +249,38 @@
     </nav>
 
     <script>
-      function sign() {
+      function sell_sign() {
         window.location.href = "/pages/1.signin.html";
       }
-      function customer() {
+      function sell_login() {
         window.location.href = "/pages/2.Login.html";
+      }
+      function buy_sign() {
+        window.location.href = "/pages/1.buy-signin.html";
+      }
+      function buy_login() {
+        window.location.href = "/pages/2.buy-login.html";
       }
       function admin() {
         window.location.href = "/pages/16-admin-home.html";
       }
       function about() {
         window.location.href = "/pages/Aboutus.html";
+      }
+      function sell() {
+        window.location.href = "/pages/10.upload.html";
+      }
+      function fruitbuy() {
+        window.location.href = "/pages/5a-fruits.html";
+      }
+      function vegbuy() {
+        window.location.href = "/pages/5b-vegetables.html";
+      }
+      function grainbuy() {
+        window.location.href = "/pages/5d-grain.html";
+      }
+      function teabuy() {
+        window.location.href = "/pages/5c-tea.html";
       }
     </script>
   </body>

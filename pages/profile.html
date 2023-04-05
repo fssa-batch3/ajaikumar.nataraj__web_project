@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -13,6 +18,9 @@
   </head>
   <body>
     <header>
+      <button onclick="back()">
+        <i class="fa fa-angle-double-left"></i>Go back
+      </button>
       <button id="delete">Delete</button>
       <button id="logout" click="logout" type="button">
         <span class="glyphicon glyphicon-log-out"></span> Log out
@@ -212,6 +220,10 @@
           window.location.href = "/pages/2.Login.html";
         }
       });
+
+      function back() {
+        window.location.href = "/pages/3.home.html";
+      }
     </script>
   </body>
 </html>

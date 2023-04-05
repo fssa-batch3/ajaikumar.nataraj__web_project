@@ -28,7 +28,7 @@
           width="100px"
         />
       </nav>
-      <nav><h2>Fruits Shop</h2></nav>
+      <nav><h2>Vegetables Shop</h2></nav>
       <nav>
         <img src="../assets/image/profile.png" alt="profile" width="80px" />
       </nav>
@@ -36,8 +36,6 @@
     <div class="nav">
       <nav>
         <input type="search" id="searchbar" placeholder="Search..." />
-        <!-- <button id="search-button">Search</button> -->
-        <!-- <ul id="search-results"></ul> -->
       </nav>
       <button onclick="cart()">Go to Cart</button>
     </div>
@@ -73,12 +71,12 @@
 
       let fruit = document.createElement("button");
       fruit.innerText = "Fruits";
-      fruit.setAttribute("class", "same");
       fruit.setAttribute("onclick", "fruits()");
       bar.append(fruit);
 
       let vegetable = document.createElement("button");
       vegetable.innerText = "Vegetables";
+      vegetable.setAttribute("class", "same");
       vegetable.setAttribute("onclick", "vegetables()");
       bar.append(vegetable);
 
@@ -107,7 +105,7 @@
         //   }
         // });
 
-        if (Card[i].Type == "Fruit") {
+        if (Card[i].Type == "Vegetable") {
           let div_card = document.createElement("div");
           div_card.setAttribute("class", "card_div");
           div_card.setAttribute("type", "button");
@@ -186,8 +184,8 @@
       function back() {
         window.location.href = "/pages/4.index.html";
       }
-      function vegetables() {
-        window.location.href = "/pages/5b-vegetables.html";
+      function fruits() {
+        window.location.href = "/pages/5a-fruits.html";
       }
       function coffee() {
         window.location.href = "/pages/5c-tea.html";

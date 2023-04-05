@@ -19,16 +19,23 @@ button {
 }
 .head {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: space-around;
   background-color: #2bae66ff;
   color: white;
   height: 130px;
-  box-shadow: 2.5px 5px 15px rgba(0, 0, 0, 0.525);
+}
+input {
+  width: 200px;
+  height: 40px;
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+  color: #2bae66ff;
 }
 .before-arrow {
   border-radius: 50px;
-  margin-top: 15px;
-  height: 40px;
+  width: 4%;
 }
 .img-1 {
   display: flex;
@@ -40,7 +47,7 @@ button {
   border-radius: 20px;
 }
 .img-1 img:hover {
-  box-shadow: 2.5px 5px 15px rgba(0, 0, 0, 0.525);
+  box-shadow: 2.5px 5px 15px #2bae66ff;
 }
 
 .img-1 button {
@@ -48,8 +55,13 @@ button {
   background-color: #2bae66ff;
   color: white;
   font-size: 24px;
-  border: 1px solid #2bae66ff;
+  border: none;
   border-radius: 10px;
+}
+.img-1 button:hover {
+  color: #2bae66ff;
+  background-color: white;
+  box-shadow: 1px 1px 1px 5px #2bae66ff;
 }
 
 /* Media query*/

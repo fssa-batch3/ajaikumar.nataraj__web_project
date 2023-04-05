@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/CSS/8-payment.css" />
+    <link rel="stylesheet" href="../assets/CSS/13-acct-detail.css" />
     <title>payment-page</title>
   </head>
   <body>
@@ -46,16 +46,14 @@
       </nav>
     </section> -->
 
-    <button type="submit" value="submit" onclick="bill()">Bill</button>
-
     <!-- <main>
       <div id="card" class="topic">
         <h2>Choose Your Best Payment Method</h2>
       </div>
     </main> -->
     <div id="account"></div>
-    <h2 class="topic_t2">Fill Account Details here</h2>
-    <main class="detail_main1">
+    <h2 class="topic">Fill Account Details here</h2>
+    <main class="detail_main">
       <form id="form" class="section-detail">
         <label for="card_no">Enter Your Card No</label> <br />
         <input
@@ -93,7 +91,10 @@
           pattern="[a-zA-Z]{1,20}"
           autocomplete="off"
         /><br />
+        <!-- <div class="btn"> -->
         <button type="submit">Save</button>
+        <button type="submit" value="submit" onclick="bill()">Bill</button>
+        <!-- </div> -->
       </form>
     </main>
 
