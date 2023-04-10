@@ -65,12 +65,23 @@
             let exists = JSON.parse(localStorage.getItem("Ordered_list"));
 
             let findIndex = Card.indexOf(Card);
+            let eachorder = [];
 
             if (exists === null) {
               localStorage.setItem("Ordered_list", JSON.stringify(Data));
-            } else {
+            }
+            //  else if (eachorder == []) {
+            //   eachorder.push(Data[i]);
+            //   exists.push(eachorder);
+
+            //   localStorage.setItem("Ordered_list", JSON.stringify(exists));
+            // }
+            else {
               for (let i = 0; i < Data.length; i++) {
-                exists.push(Data[i]);
+                // eachorder.push(Data[i]);
+                // exists.push(eachorder);
+
+                exists.push(Data);
               }
 
               localStorage.setItem("Ordered_list", JSON.stringify(exists));

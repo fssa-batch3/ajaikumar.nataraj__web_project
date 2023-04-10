@@ -11,8 +11,9 @@
   align-content: center;
   border: 1px solid #2bae66ff;
   box-shadow: 3px 3px 3px 3px rgb(217, 244, 217);
-  height: 400px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
+  border-radius: 10px;
 }
 .center input {
   border-radius: 8px;
@@ -36,6 +37,10 @@ input:invalid {
   box-shadow: 2px 2px 2px rgb(217, 244, 217);
   border-radius: 5px;
 }
+button:hover {
+  color: #2bae66ff;
+  background-color: whitesmoke;
+}
 .form {
   display: flex;
   align-content: center;
@@ -49,21 +54,9 @@ input:invalid {
   font-size: 30px;
 }
 .footer {
-  margin-top: 100px;
+  margin-top: 90px;
   text-align: center;
   padding: 30px auto;
-}
-.footer button {
-  border-radius: 50px;
-  background-color: #2bae66ff;
-  color: white;
-  width: 200px;
-}
-button {
-  font-size: 30px;
-}
-.footer button:hover {
-  transform: scaleY(1.5);
 }
 
 /* Media query*/

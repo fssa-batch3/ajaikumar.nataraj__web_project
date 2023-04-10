@@ -13,7 +13,7 @@
     <div class="form">
       <form class="center" id="form">
         <nav>
-          <img src="../assets/image/profile.png" alt="profile" width="90px" />
+          <img src="../assets/image/login.png" alt="profile" width="350px" />
         </nav>
         <label>User Mail id:</label><br />
         <input type="text" id="Email" required="true" /><br />
@@ -22,7 +22,7 @@
         <button class="btn" type="submit">Sign in</button>
       </form>
     </div>
-
+    <p>If you don't have an account! <a href="#" onclick="sign()">signin</a></p>
     <footer class="footer">Toll-Free no:1800 123 100</footer>
 
     <script>
@@ -67,6 +67,10 @@
           alert("Login credentials not correct");
         }
       });
+
+      function sign() {
+        window.location.href = "/pages/1.buy-signin.html";
+      }
     </script>
   </body>
 </html>
