@@ -100,12 +100,12 @@
 
       // Card creating by using JavaScript
       for (let i = 0; i <= Card.length; i++) {
-        // let findDetail = Card.find(function (event) {
-        //   let id = event["Type"];
-        //   if (detail[i]["Fruit"] == id[i]["Fruit"]) {
-        //     return true;
-        //   }
-        // });
+        let findDetail = Card.find(function (event) {
+          let id = event["Type"];
+          if (detail[i]["Fruit"] == id[i]["Fruit"]) {
+            return true;
+          }
+        });
 
         if (Card[i].Type == "Coffee & Tea") {
           let div_card = document.createElement("div");

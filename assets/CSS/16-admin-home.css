@@ -7,6 +7,56 @@ body {
 .header {
   display: flex;
 }
+.center {
+  display: block;
+  justify-content: space-between;
+  align-content: center;
+  text-align: center;
+  align-items: center;
+  border: 1px solid #2bae66ff;
+  box-shadow: 3px 3px 3px 3px rgb(217, 244, 217);
+  height: 300px;
+  width: 400px;
+  border-radius: 10px;
+}
+.center input {
+  border-radius: 8px;
+}
+.center label {
+  margin-top: 30px;
+}
+input:valid {
+  border: 2px solid rgb(15, 232, 15);
+}
+input:invalid {
+  border: 2px solid red;
+}
+.btn {
+  font-size: 30px;
+  width: 300px;
+  margin-top: 20px;
+  background-color: #2bae66ff;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 2px rgb(217, 244, 217);
+  border-radius: 5px;
+}
+button:hover {
+  color: #2bae66ff;
+  background-color: whitesmoke;
+}
+.form {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.form input {
+  font-size: 30px;
+}
 .head {
   display: flex;
   align-content: center;

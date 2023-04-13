@@ -117,9 +117,7 @@
 
           console.log();
 
-          // let findId = detail.findIndex(detail[i]["ProductId"]);
           if (detail[i]["ProductId"] == Card[i]["ProductId"]) {
-            // findIndex("ProductId");
             const user_info = JSON.parse(localStorage.getItem("added_list"));
             let select_user = user_info.findIndex(function (event) {
               let customerEmail = event["ProductId"];

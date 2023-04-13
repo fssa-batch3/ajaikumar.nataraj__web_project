@@ -100,12 +100,12 @@
 
       // Card creating by using JavaScript
       for (let i = 0; i <= Card.length; i++) {
-        // let findDetail = Card.find(function (event) {
-        //   let id = event["Type"];
-        //   if (detail[i]["Fruit"] == id[i]["Fruit"]) {
-        //     return true;
-        //   }
-        // });
+        let findDetail = Card.find(function (event) {
+          let id = event["Type"];
+          if (detail[i]["Fruit"] == id[i]["Fruit"]) {
+            return true;
+          }
+        });
 
         if (Card[i].Type == "Fruit") {
           let div_card = document.createElement("div");
@@ -134,10 +134,10 @@
           button.innerText = "Add Cart";
           button.setAttribute("id", "submit");
           button.setAttribute("value", "submit");
-          button.setAttribute("onclick", `addProdect(${Card[i]["ProductId"]})`);
+          button.setAttribute("onclick", `addProduct(${Card[i]["ProductId"]})`);
           div_card.append(button);
 
-          function addProdect(product_id) {
+          function addProduct(product_id) {
             event.preventDefault();
 
             let addData = JSON.parse(localStorage.getItem("added_list"));

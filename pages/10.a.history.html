@@ -53,12 +53,12 @@
 
       // Card creating by using JavaScript
       for (let i = 0; i <= Card.length; i++) {
-        // let findDetail = detail.find(function (event) {
-        //   let id = event["ProductId"];
-        //   if (Card[i]["ProductId"] == id) {
-        //     return true;
-        //   }
-        // });
+        let findDetail = detail.find(function (event) {
+          let id = event["ProductId"];
+          if (Card[i]["ProductId"] == id) {
+            return true;
+          }
+        });
 
         let id = JSON.parse(localStorage.getItem("user_info"));
         console.log(id);
@@ -69,7 +69,7 @@
         const get_obj = id.find((e) => e.Email === login_id);
         console.log(get_obj);
 
-        if (get_obj.id == Card[i].userId) {
+        if (get_obj.id == Card[i]["userId"]) {
           // console.log(Card[i]["Url"]);
           let div_card = document.createElement("div");
           div_card.setAttribute("class", "card_div");

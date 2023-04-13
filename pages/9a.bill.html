@@ -15,84 +15,6 @@
     </header>
 
     <table>
-      <script>
-        let Card = JSON.parse(localStorage.getItem("added_list"));
-        let total = 0;
-
-        let btn = document.createElement("button");
-        btn.innerText = "Place & Back";
-        btn.setAttribute("id", "submit");
-        document.querySelector("table").append(btn);
-
-        let table_card = document.createElement("table");
-
-        let th_tr1 = document.createElement("tr");
-        table_card.append(th_tr1);
-
-        let th1_tr = document.createElement("th");
-        th1_tr.innerText = "Products Name";
-        th_tr1.append(th1_tr);
-
-        let th2_tr = document.createElement("th");
-        th2_tr.innerText = "Quantity";
-        th_tr1.append(th2_tr);
-
-        let th3_tr = document.createElement("th");
-        th3_tr.innerText = "Amount";
-        th_tr1.append(th3_tr);
-
-        for (let i = 0; i <= Card.length; i++) {
-          let td_tr2 = document.createElement("tr");
-          table_card.append(td_tr2);
-
-          let td1_tr = document.createElement("td");
-          td1_tr.innerText = Card[i]["Name"];
-          td_tr2.append(td1_tr);
-
-          let td2_tr = document.createElement("td");
-          td2_tr.innerText = Card[i]["bQty"] + " kg";
-          td_tr2.append(td2_tr);
-
-          let td3_tr = document.createElement("td");
-          td3_tr.innerText = "Rs. " + Card[i]["Price"] * Card[i]["bQty"];
-          td_tr2.append(td3_tr);
-
-          total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["bQty"]);
-
-          btn.addEventListener("click", function (event) {
-            event.preventDefault();
-            let Data = JSON.parse(localStorage.getItem("added_list"));
-            let exists = JSON.parse(localStorage.getItem("Ordered_list"));
-
-            let findIndex = Card.indexOf(Card);
-            let eachorder = [];
-
-            if (exists === null) {
-              localStorage.setItem("Ordered_list", JSON.stringify(Data));
-            }
-            //  else if (eachorder == []) {
-            //   eachorder.push(Data[i]);
-            //   exists.push(eachorder);
-
-            //   localStorage.setItem("Ordered_list", JSON.stringify(exists));
-            // }
-            else {
-              for (let i = 0; i < Data.length; i++) {
-                // eachorder.push(Data[i]);
-                // exists.push(eachorder);
-
-                exists.push(Data);
-              }
-
-              localStorage.setItem("Ordered_list", JSON.stringify(exists));
-            }
-            localStorage.removeItem("added_list");
-            window.location.href = "/pages/5a-fruits.html";
-          });
-
-          document.querySelector("table").append(table_card);
-        }
-      </script>
       <div class="details">
         <h3>Your Delivery details:</h3>
         <div class="detail">
@@ -129,6 +51,107 @@
       <img src="../assets/image/sparkling-heart.gif" alt="heart" width="50px" />
       We always Welcomes you!
     </footer>
+
+    <script>
+      let Card = JSON.parse(localStorage.getItem("added_list"));
+      let total = 0;
+
+      let btn = document.createElement("button");
+      btn.innerText = "Place & Back";
+      btn.setAttribute("id", "submit");
+      document.querySelector("table").append(btn);
+
+      let table_card = document.createElement("table");
+
+      let th_tr1 = document.createElement("tr");
+      table_card.append(th_tr1);
+
+      let th1_tr = document.createElement("th");
+      th1_tr.innerText = "Products Name";
+      th_tr1.append(th1_tr);
+
+      let th2_tr = document.createElement("th");
+      th2_tr.innerText = "Quantity";
+      th_tr1.append(th2_tr);
+
+      let th3_tr = document.createElement("th");
+      th3_tr.innerText = "Amount";
+      th_tr1.append(th3_tr);
+
+      for (let i = 0; i < Card.length; i++) {
+        let td_tr2 = document.createElement("tr");
+        table_card.append(td_tr2);
+
+        let td1_tr = document.createElement("td");
+        td1_tr.innerText = Card[i]["Name"];
+        td_tr2.append(td1_tr);
+
+        let td2_tr = document.createElement("td");
+        td2_tr.innerText = Card[i]["bQty"] + " kg";
+        td_tr2.append(td2_tr);
+
+        let td3_tr = document.createElement("td");
+        td3_tr.innerText = "Rs. " + Card[i]["Price"] * Card[i]["bQty"];
+        td_tr2.append(td3_tr);
+
+        total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["bQty"]);
+
+        document.querySelector("table").append(table_card);
+      }
+
+      let id = JSON.parse(localStorage.getItem("buyer_info"));
+      console.log(id);
+
+      let login_id = JSON.parse(localStorage.getItem("buyer_logIn"));
+      console.log(login_id);
+
+      const get_obj = id.find((e) => e.Email === login_id);
+      console.log(get_obj);
+
+      document
+        .getElementById("submit")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          let Data = JSON.parse(localStorage.getItem("added_list"));
+          let exists = JSON.parse(localStorage.getItem("Ordered_list"));
+          let orderedData = [];
+          let billId = Date.now();
+          let buyer_id = get_obj["id"];
+
+          let order = {
+            products: Data,
+            billId: billId,
+            buyer_id,
+          };
+
+          orderedData.push(order);
+
+          console.log(orderedData);
+
+          // console.log(order);
+          if (exists != null) {
+            orderedData = JSON.parse(localStorage.getItem("Ordered_list"));
+
+            orderedData.push(order);
+
+            localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
+          } else {
+            let orderedData = [];
+
+            let order = {
+              products: Data,
+              billId: billId,
+              buyer_id,
+            };
+
+            orderedData.push(order);
+            localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
+          }
+
+          localStorage.removeItem("added_list");
+          window.location.href = "/pages/5a-fruits.html";
+        });
+    </script>
     <script>
       let total_value = document.getElementById("operoation");
       total_value.append("₹" + total);

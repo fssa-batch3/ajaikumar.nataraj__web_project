@@ -1,4 +1,4 @@
-body {
+/* body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
   background-color: rgb(191, 227, 191);
@@ -51,7 +51,7 @@ button {
 
 /*media query*/
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .body {
     width: 600px;
   }
@@ -65,4 +65,32 @@ button {
   p {
     font-size: 20px;
   }
+} */
+
+.form {
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(223, 241, 213);
+  width: 400px;
+  border-radius: 5px;
+  color: #2bae66ff;
+  font-size: 20px;
+  align-content: center;
+  align-items: center;
+  /* text-align: center; */
+}
+.bill {
+  display: flex;
+  justify-content: space-between;
+}
+.date {
+  display: flex;
+  justify-content: space-between;
+}
+.ul {
+  /* align-items: center; */
+  /* align-content: center; */
+  /* text-align: center; */
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(161, 193, 145);
+  width: 300px;
+  border-radius: 5px;
+  margin-left: 50px;
 }
