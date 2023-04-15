@@ -69,7 +69,7 @@ button {
 
 .form {
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(223, 241, 213);
-  width: 400px;
+  /* width: 400px; */
   border-radius: 5px;
   color: #2bae66ff;
   font-size: 20px;
@@ -86,9 +86,6 @@ button {
   justify-content: space-between;
 }
 .ul {
-  /* align-items: center; */
-  /* align-content: center; */
-  /* text-align: center; */
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(161, 193, 145);
   width: 300px;
   border-radius: 5px;

@@ -47,7 +47,7 @@
     <main id="form" class="card_main"></main>
 
     <script>
-      let Card = JSON.parse(localStorage.getItem("product_details"));
+      let Card = JSON.parse(localStorage.getItem("newUploadList"));
 
       let searchbar = document.getElementById("searchbar");
       let cards = document.getElementsByClassName("card_div");
@@ -96,86 +96,94 @@
 
       // JSON
 
-      const detail = JSON.parse(localStorage.getItem("product_details"));
+      const detail = JSON.parse(localStorage.getItem("newUploadList"));
 
-      // Card creating by using JavaScript
-      for (let i = 0; i <= Card.length; i++) {
-        let findDetail = Card.find(function (event) {
-          let id = event["Type"];
-          if (detail[i]["Fruit"] == id[i]["Fruit"]) {
+      // Data creating by using JavaScript
+      for (let i = 0; i < Card.length; i++) {
+        let Data = Card[i]["newUploadProducts"];
+        console.log(Data);
+
+        let findDetail = Data.find(function (event) {
+          let id = Data[i]["Type"];
+          if (Data[i]["Coffee & Tea"] == id) {
             return true;
           }
         });
 
-        if (Card[i].Type == "Coffee & Tea") {
-          let div_card = document.createElement("div");
-          div_card.setAttribute("class", "card_div");
-          div_card.setAttribute("type", "button");
-          div_card.setAttribute("id", "form");
+        for (let j = 0; j < Data.length; j++) {
+          if (Data[j].Type == "Coffee & Tea") {
+            let div_card = document.createElement("div");
+            div_card.setAttribute("class", "card_div");
+            div_card.setAttribute("type", "button");
+            div_card.setAttribute("id", "form");
 
-          let image = document.createElement("img");
-          image.setAttribute("src", Card[i]["Url"]);
-          image.setAttribute("alt", "image");
-          image.setAttribute("id", "pUrl");
-          div_card.append(image);
+            let image = document.createElement("img");
+            image.setAttribute("src", Data[j]["Url"]);
+            image.setAttribute("alt", "image");
+            image.setAttribute("id", "pUrl");
+            div_card.append(image);
 
-          let fruit_name = document.createElement("input");
-          fruit_name.setAttribute("value", Card[i]["Name"]);
-          fruit_name.setAttribute("id", "pName");
-          div_card.append(fruit_name);
+            let fruit_name = document.createElement("input");
+            fruit_name.setAttribute("value", Data[j]["Name"]);
+            fruit_name.setAttribute("id", "pName");
+            div_card.append(fruit_name);
 
-          let rupees = document.createElement("input");
-          rupees.setAttribute("value", Card[i]["Price"] + " /kg");
-          rupees.setAttribute("id", "pPrice");
-          rupees.setAttribute("type", "text");
-          div_card.append(rupees);
+            let rupees = document.createElement("input");
+            rupees.setAttribute("value", Data[j]["Price"] + " /kg");
+            rupees.setAttribute("id", "pPrice");
+            rupees.setAttribute("type", "text");
+            div_card.append(rupees);
 
-          let button = document.createElement("button");
-          button.innerText = "Add Cart";
-          button.setAttribute("id", "submit");
-          button.setAttribute("value", "submit");
-          button.setAttribute("onclick", `addProdect(${Card[i]["ProductId"]})`);
-          div_card.append(button);
-
-          function addProdect(product_id) {
-            event.preventDefault();
-
-            let addData = JSON.parse(localStorage.getItem("added_list"));
-            console.log(detail);
-            console.log(product_id);
-            let findedObject = detail.find((F) => F.ProductId == product_id);
-            console.log(findedObject);
-            let findIndex = detail.indexOf(findedObject);
-            console.log(findIndex);
-
-            //  old code for push bQty
-            let arr = [];
-            Card[findIndex]["bQty"] = "1";
-            arr.push(Card[findIndex]);
-
-            let msg = confirm(
-              "Are you sure you want to add this product to your cart"
+            let button = document.createElement("button");
+            button.innerText = "Add Cart";
+            button.setAttribute("id", "submit");
+            button.setAttribute("value", "submit");
+            button.setAttribute(
+              "onclick",
+              `addProdect(${Data[j]["ProductId"]})`
             );
-            if (msg !== true) {
-              return;
-            } else {
-              if (addData === null) {
-                let array = [];
-                array.push(Card[findIndex]);
-                localStorage.setItem("added_list", JSON.stringify(array));
+            div_card.append(button);
+
+            function addProdect(product_id) {
+              event.preventDefault();
+
+              let addData = JSON.parse(localStorage.getItem("added_list"));
+              console.log(detail);
+              console.log(product_id);
+              let findedObject = Data.find((F) => F.ProductId == product_id);
+              console.log(findedObject);
+              let findIndex = Data.indexOf(findedObject);
+              console.log(findIndex);
+
+              //  old code for push bQty
+              let arr = [];
+              Data[findIndex]["bQty"] = "1";
+              arr.push(Data[findIndex]);
+
+              let msg = confirm(
+                "Are you sure you want to add this product to your cart"
+              );
+              if (msg !== true) {
+                return;
               } else {
-                addData.push(Card[findIndex]);
-                localStorage.setItem("added_list", JSON.stringify(addData));
+                if (addData === null) {
+                  let array = [];
+                  array.push(Data[findIndex]);
+                  localStorage.setItem("added_list", JSON.stringify(array));
+                } else {
+                  addData.push(Data[findIndex]);
+                  localStorage.setItem("added_list", JSON.stringify(addData));
+                }
               }
             }
+
+            let info = document.createElement("a");
+            info.innerText = "more info -->";
+            info.setAttribute("href", "./detail.html?Name=" + Data[i]["Name"]);
+            div_card.append(info);
+
+            document.querySelector(".card_main").append(div_card);
           }
-
-          let info = document.createElement("a");
-          info.innerText = "more info -->";
-          info.setAttribute("href", "./detail.html?Name=" + Card[i]["Name"]);
-          div_card.append(info);
-
-          document.querySelector(".card_main").append(div_card);
         }
       }
 

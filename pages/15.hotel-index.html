@@ -59,7 +59,7 @@
         bill_div.append(p1);
 
         let p2 = document.createElement("p");
-        p2.innerText = Card[i]["billId"];
+        p2.innerText = "Order Id : " + Card[i]["billId"];
         bill_div.append(p2);
 
         let p3 = document.createElement("img");
@@ -69,15 +69,15 @@
         p3.setAttribute("height", "50px");
         bill_div.append(p3);
 
+        let buy_div = document.createElement("div");
+        buy_div.setAttribute("class", "buy");
+        form.append(buy_div);
+
+        let p4 = document.createElement("p");
+        p4.innerText = "Buyer Id : " + Card[i]["buyer_id"];
+        buy_div.append(p4);
+
         for (let j = 0; j < data.length; j++) {
-          let buy_div = document.createElement("div");
-          buy_div.setAttribute("class", "buy");
-          form.append(buy_div);
-
-          let p4 = document.createElement("p");
-          p4.setAttribute("value", "");
-          buy_div.append(p4);
-
           let ul_div = document.createElement("div");
           ul_div.setAttribute("class", "ul");
           form.append(ul_div);
