@@ -48,7 +48,6 @@
 
     <script>
       let Card = JSON.parse(localStorage.getItem("newUploadList"));
-
       let searchbar = document.getElementById("searchbar");
       let cards = document.getElementsByClassName("card_div");
 
@@ -103,13 +102,6 @@
         let Data = Card[i]["newUploadProducts"];
         console.log(Data);
 
-        let findDetail = Data.find(function (event) {
-          let id = Data[i]["Type"];
-          if (Data[i]["Coffee & Tea"] == id) {
-            return true;
-          }
-        });
-
         for (let j = 0; j < Data.length; j++) {
           if (Data[j].Type == "Coffee & Tea") {
             let div_card = document.createElement("div");
@@ -138,27 +130,35 @@
             button.innerText = "Add Cart";
             button.setAttribute("id", "submit");
             button.setAttribute("value", "submit");
-            button.setAttribute(
-              "onclick",
-              `addProdect(${Data[j]["ProductId"]})`
-            );
+            button.setAttribute("id", Data[j]["ProductId"]);
+            button.setAttribute("onclick", "addProduct(this.id)");
             div_card.append(button);
 
-            function addProdect(product_id) {
+            function addProduct(ProductId) {
               event.preventDefault();
 
               let addData = JSON.parse(localStorage.getItem("added_list"));
-              console.log(detail);
-              console.log(product_id);
-              let findedObject = Data.find((F) => F.ProductId == product_id);
-              console.log(findedObject);
-              let findIndex = Data.indexOf(findedObject);
-              console.log(findIndex);
+              console.log(addData);
+
+              let currentProduct;
+
+              for (let i = 0; i < Card.length; i++) {
+                for (let j = 0; j < Card[i]["newUploadProducts"].length; j++) {
+                  if (
+                    Card[i]["newUploadProducts"][j]["ProductId"] == ProductId
+                  ) {
+                    currentProduct = Card[i]["newUploadProducts"][j];
+                  }
+                }
+              }
+
+              console.log(currentProduct);
 
               //  old code for push bQty
               let arr = [];
-              Data[findIndex]["bQty"] = "1";
-              arr.push(Data[findIndex]);
+              console.log(arr);
+              currentProduct["bQty"] = "1";
+              arr.push(currentProduct["bQty"]);
 
               let msg = confirm(
                 "Are you sure you want to add this product to your cart"
@@ -168,10 +168,10 @@
               } else {
                 if (addData === null) {
                   let array = [];
-                  array.push(Data[findIndex]);
+                  array.push(currentProduct);
                   localStorage.setItem("added_list", JSON.stringify(array));
                 } else {
-                  addData.push(Data[findIndex]);
+                  addData.push(currentProduct);
                   localStorage.setItem("added_list", JSON.stringify(addData));
                 }
               }
@@ -179,7 +179,7 @@
 
             let info = document.createElement("a");
             info.innerText = "more info -->";
-            info.setAttribute("href", "./detail.html?Name=" + Data[i]["Name"]);
+            info.setAttribute("href", "./detail.html?Name=" + Data[j]["Name"]);
             div_card.append(info);
 
             document.querySelector(".card_main").append(div_card);

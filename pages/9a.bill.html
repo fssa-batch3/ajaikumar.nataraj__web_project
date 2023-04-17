@@ -113,7 +113,7 @@
         .addEventListener("click", function (event) {
           event.preventDefault();
           let Data = JSON.parse(localStorage.getItem("added_list"));
-          let exists = JSON.parse(localStorage.getItem("Ordered_list"));
+          let newData = JSON.parse(localStorage.getItem("Ordered_list"));
           let orderedData = [];
           let billId = Date.now();
           let buyer_id = get_obj["id"];
@@ -129,7 +129,7 @@
           console.log(orderedData);
 
           // console.log(order);
-          if (exists != null) {
+          if (newData != null) {
             orderedData = JSON.parse(localStorage.getItem("Ordered_list"));
 
             orderedData.push(order);

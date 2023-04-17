@@ -32,59 +32,99 @@
 
     <form method="get" class="full-card" id="form">
       <h3>Upload your products</h3>
-      <input required="required" type="url" id="url" placeholder="Enter Url" />
-      <input
-        required="required"
-        type="text"
-        id="product"
-        placeholder="Your Product Name"
-      />
-      <input
-        required="required"
-        list="Types"
-        name="type"
-        id="type"
-        placeholder="Type"
-        autocomplete="off"
-      />
-      <datalist id="Types">
-        <option value="Fruit"></option>
-        <option value="Vegetable"></option>
-        <option value="Coffee & Tea"></option>
-        <option value="Cereals & Grains"></option>
-      </datalist>
-      <input
-        required="required"
-        type="number"
-        id="price"
-        placeholder="Enter Your Price"
-      />
-      <input
-        required="required"
-        type="number"
-        id="qty"
-        placeholder="Enter Your Product Quantity"
-      />
-      <input
-        required="required"
-        type="text"
-        id="place"
-        placeholder="Enter your Pickup Address"
-      />
-      <input
-        required="required"
-        type="text"
-        id="description"
-        class="description"
-        placeholder="Description about your products"
-      />
-      <br />
-      <input
-        type="date"
-        required="required"
-        id="date"
-        placeholder="Pickup date"
-      />
+      <div class="full_list">
+        <div class="list">
+          <nav>
+            <label for="url">Enter Your Url</label>
+            <input
+              required="required"
+              type="url"
+              id="url"
+              placeholder="Enter Url"
+            />
+          </nav>
+          <nav>
+            <label for="name">Enter Your Product Name</label>
+            <input
+              required="required"
+              type="text"
+              id="product"
+              placeholder="Your Product Name"
+            />
+          </nav>
+          <nav>
+            <label for="type">Enter Your Product Type</label>
+            <input
+              required="required"
+              list="Types"
+              name="type"
+              id="type"
+              placeholder="Type"
+              autocomplete="off"
+            />
+            <datalist id="Types">
+              <option value="Fruit"></option>
+              <option value="Vegetable"></option>
+              <option value="Coffee & Tea"></option>
+              <option value="Cereals & Grains"></option>
+            </datalist>
+          </nav>
+        </div>
+        <div class="list">
+          <nav>
+            <label for="price">Enter Your Price</label>
+            <input
+              required="required"
+              type="number"
+              id="price"
+              placeholder="Enter Your Price"
+            />
+          </nav>
+          <nav>
+            <label for="qty">Enter Your Quantity</label>
+            <input
+              required="required"
+              type="number"
+              id="qty"
+              placeholder="Enter Your Product Quantity"
+            />
+          </nav>
+          <nav>
+            <label for="place">Enter your Pickup Address</label>
+            <input
+              required="required"
+              type="text"
+              id="place"
+              placeholder="Enter your Pickup Address"
+            />
+          </nav>
+        </div>
+      </div>
+      <div class="full_list">
+        <nav>
+          <label for="date">Select Your Pickup Date</label><br />
+          <input
+            type="date"
+            required="required"
+            id="date"
+            placeholder="Pickup date"
+          />
+        </nav>
+        <br />
+        <nav>
+          <label for="description">
+            Type description about your products
+          </label>
+          <br />
+          <input
+            required="required"
+            type="text"
+            id="description"
+            class="description"
+            placeholder="Description about your products"
+          />
+        </nav>
+      </div>
       <div class="btn-card">
         <button class="btn" id="add-btn">Add</button>
         <!-- <button class="btn" type="reset" id="cancel">Cancel</button> -->
