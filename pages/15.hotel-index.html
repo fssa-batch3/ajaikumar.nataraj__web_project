@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <form class="form" action="bill">
+    <!- <form class="form" action="bill">
       <div class="bill">
         <p>Cancel</p>
         <p>Bill Id</p>
@@ -35,7 +35,7 @@
         <p>Delivery Date =</p>
       </div>
     </form> -->
-    <!-- <img src="../assets/image/wrong.png" alt="" /> -->
+<!-- <img src="../assets/image/wrong.png" alt="" /> --
     <script>
       let Card = JSON.parse(localStorage.getItem("Ordered_list"));
       let total = 0;
@@ -117,6 +117,297 @@
       }
       let total_value = document.getElementById("operation");
       total_value.append("₹" + total);
+    </script>
+  </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../assets/CSS/index-1.css" />
+    <link rel="stylesheet" href="../assets/CSS/head.css" />
+    <link rel="stylesheet" href="../assets/CSS/15-hotel-index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" href="./assets/details.js" /> -->
+  </head>
+  <body>
+    <header>
+      <div>
+        <img src="../assets/image/RISHIMARKET (1).png" alt="logo" width="50%" />
+      </div>
+      <div class="head">
+        <p>Home</p>
+        <p onclick="about()">About us</p>
+        <div class="dropdown">
+          <p class="dropbtn">Register</p>
+          <div class="dropdown-content">
+            <a onclick="buy_sign()">as Buyer</a>
+            <a onclick="sell_sign()">as Seller</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <p class="dropbtn">Log in</p>
+          <div class="dropdown-content">
+            <a onclick="buy_login()">as Buyer</a>
+            <a onclick="sell_login()">as Seller</a>
+          </div>
+        </div>
+        <!-- <p onclick="customer()">Log In</p> -->
+      </div>
+      <div>
+        <img src="../assets/image/profile.png" alt="profile" width="100px" />
+      </div>
+    </header>
+    <form class="enter_comment">
+      <input type="text" placeholder="Enter Your Name" />
+      <textarea
+        name="Comment"
+        id="comment"
+        cols="30"
+        rows="10"
+        placeholder="Write Your Valuable Comment here........."
+      ></textarea>
+      <button>Save</button>
+    </form>
+    <main class="full_comment">
+      <section class="own_comment">
+        <nav>
+          <nav class="button">
+            <img src="../assets/image/delete.png" alt="delete" />
+            <img src="../assets/image/edit.png" alt="edit" />
+          </nav>
+          <textarea type="text" id="others" class="others"></textarea>>
+        </nav>
+        <img
+          class="profile"
+          src="../assets/image/profile.png"
+          alt="pro"
+          width="100px"
+          height="100px"
+        />
+      </section>
+      <section class="others_comment">
+        <!--  <nav>
+          <nav class="button">
+            <div id="thumbs-up-button" class="thumbs_up">
+              <img src="../assets/image/thumbs_up.png" alt="Thumbs Up" />
+              <span id="thumbs-up-count">0</span>
+            </div>
+            <div id="thumbs-down-button" class="thumbs_down">
+              <img src="../assets/image/thumbs_down.png" alt="Thumbs Up" />
+              <span id="thumbs-down-count">0</span>
+            </div>
+          </nav>
+          <textarea
+            type="text"
+            row="10"
+            coloumn="10"
+            id="others"
+            class="others"
+          ></textarea>
+        </nav>
+        <img
+          class="profile"
+          src="../assets/image/profile.png"
+          alt="pro"
+          width="100px"
+          height="100px"
+        /> -->
+      </section>
+    </main>
+
+    <footer id="foot">
+      <div class="foot-img">
+        <img src="../assets/image/logo (2).png" alt="logo" width="130px" />
+      </div>
+      <div class="foot-1">
+        <h4>Contact us</h4>
+        <ul>
+          <i
+            class="fa fa-phone"
+            style="font-size: 24px; color: rgb(49, 49, 176)"
+          ></i>
+          9876543210
+        </ul>
+        <ul>
+          <i
+            class="fa fa-envelope"
+            style="font-size: 24px; color: rgb(245, 11, 11)"
+          ></i>
+          Rishi-market@agri.com
+        </ul>
+        <ul>
+          <i class="fa fa-whatsapp" style="font-size: 24px; color: green"></i>
+          8967452301
+        </ul>
+        <ul>
+          <i class="fa fa-home" style="font-size: 24px; color: green"></i>
+          Rishi office, Global Infocity,<br />
+          Perungudi, Chennai 600096
+        </ul>
+      </div>
+      <div class="foot-2">
+        <h4>Follow us on</h4>
+        <div class="follow">
+          <ul>
+            <i
+              class="fa fa-youtube-play"
+              style="font-size: 24px; color: rgb(254, 4, 4)"
+            ></i>
+            You Tube
+          </ul>
+          <ul class="fb">
+            <i
+              class="fa fa-facebook-f"
+              style="font-size: 24px; color: blue"
+            ></i>
+            Face book
+          </ul>
+          <ul>
+            <i
+              class="fa fa-twitter"
+              style="font-size: 24px; color: skyblue"
+            ></i>
+            Twitter
+          </ul>
+          <ul>
+            <i class="fa fa-instagram" style="font-size: 24px; color: red"></i>
+            Instagram
+          </ul>
+        </div>
+      </div>
+      <div class="foot-3">
+        <h4>Help & Info</h4>
+        <ul>
+          Customer service
+        </ul>
+        <ul></ul>
+        <ul>
+          Privacy Policy
+        </ul>
+        <ul>
+          Terms and Conditions
+        </ul>
+        <ul>
+          Reviews
+        </ul>
+        <ul onclick="admin()">
+          Admin
+        </ul>
+      </div>
+    </footer>
+    <nav class="copyright">
+      @ copyright 2022 RISHI AGRI MARKET | All rights reserved
+    </nav>
+
+    <script>
+      let other_section = document.createElement("section");
+      other_section.setAttribute("class", "other_comment");
+
+      let full_nav = document.createElement("nav");
+      other_section.append(full_nav);
+
+      let btn_nav = document.createElement("nav");
+      btn_nav.setAttribute("class", "button");
+      full_nav.append(btn_nav);
+
+      let thumbs_up_div = document.createElement("div");
+      thumbs_up_div.setAttribute("id", "thumbs-up-button");
+      thumbs_up_div.setAttribute("class", "thumbs-up");
+      btn_nav.append(thumbs_up_div);
+
+      let thumbs_up_img = document.createElement("img");
+      thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
+      thumbs_up_img.setAttribute("alt", "Thumbs up");
+      thumbs_up_div.append(thumbs_up_img);
+
+      let thumbs_up_span = document.createElement("span");
+      thumbs_up_span.setAttribute("id", "thumbs-up-count");
+      thumbs_up_span.innerHTML = 0;
+      thumbs_up_div.append(thumbs_up_span);
+
+      let thumbs_down_div = document.createElement("div");
+      thumbs_down_div.setAttribute("id", "thumbs-down-button");
+      thumbs_down_div.setAttribute("class", "thumbs-down");
+      btn_nav.append(thumbs_down_div);
+
+      let thumbs_down_img = document.createElement("img");
+      thumbs_down_img.setAttribute("src", "../assets/image/thumbs_down.png");
+      thumbs_down_img.setAttribute("alt", "Thumbs down");
+      thumbs_down_div.append(thumbs_down_img);
+
+      let thumbs_down_span = document.createElement("span");
+      thumbs_down_span.setAttribute("id", "thumbs-down-count");
+      thumbs_down_span.innerHTML = 0;
+      thumbs_down_div.append(thumbs_down_span);
+
+      let command_area = document.createElement("textarea");
+      command_area.setAttribute("type", "text");
+      command_area.setAttribute("row", "10");
+      command_area.setAttribute("coloumn", "10");
+      command_area.setAttribute("id", "others");
+      command_area.setAttribute("class", "others");
+      full_nav.append(command_area);
+
+      let profile_img = document.createElement("img");
+      profile_img.setAttribute("src", "../assets/image/profile.png");
+      profile_img.setAttribute("alt", "pro");
+      profile_img.setAttribute("width", "100px");
+      profile_img.setAttribute("height", "100px");
+      profile_img.setAttribute("class", "profile");
+      full_nav.append(profile_img);
+
+      document.querySelector(".others_comment").append(other_section);
+
+      const thumbsUpButton = document.querySelector("#thumbs-up-button");
+      const thumbsUpCount = document.querySelector("#thumbs-up-count");
+
+      let up_count = 0;
+
+      thumbsUpButton.addEventListener("click", () => {
+        up_count++;
+        thumbsUpCount.innerText = up_count;
+      });
+
+      const thumbsDownButton = document.querySelector("#thumbs-down-button");
+      const thumbsDownCount = document.querySelector("#thumbs-down-count");
+
+      let down_count = 0;
+
+      thumbsDownButton.addEventListener("click", () => {
+        down_count++;
+        thumbsDownCount.innerText = down_count;
+      });
+
+      function sell_sign() {
+        window.location.href = "/pages/1.signin.html";
+      }
+      function sell_login() {
+        window.location.href = "/pages/2.Login.html";
+      }
+      function buy_sign() {
+        window.location.href = "/pages/1.buy-signin.html";
+      }
+      function buy_login() {
+        window.location.href = "/pages/2.buy-login.html";
+      }
+      function admin() {
+        window.location.href = "/pages/16.adminsignin.html";
+      }
+      function about() {
+        window.location.href = "/pages/Aboutus.html";
+      }
     </script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-/* body {
+/* /* body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
   background-color: rgb(191, 227, 191);
@@ -65,17 +65,17 @@ button {
   p {
     font-size: 20px;
   }
-} */
+} 
 
 .form {
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(223, 241, 213);
-  /* width: 400px; */
+  /* width: 400px; 
   border-radius: 5px;
   color: #2bae66ff;
   font-size: 20px;
   align-content: center;
   align-items: center;
-  /* text-align: center; */
+  /* text-align: center; *
 }
 .bill {
   display: flex;
@@ -90,4 +90,70 @@ button {
   width: 300px;
   border-radius: 5px;
   margin-left: 50px;
+} */
+
+.full_comment {
+  margin-top: 100px;
+  width: 1440px;
 }
+.full_comment section {
+  margin-top: 100px;
+}
+
+.own_comment {
+  display: flex;
+  margin-left: 20px;
+  width: 1000px;
+  height: 170px;
+  border: none;
+  box-shadow: 3px 3px 3px 3px rgb(137, 216, 137);
+  border-radius: 10px;
+  margin-left: 450px;
+}
+.other_comment {
+  display: flex;
+  margin-left: 20px;
+  width: 1000px;
+  height: 170px;
+  border: none;
+  box-shadow: 3px 3px 3px 3px rgb(137, 216, 137);
+  border-radius: 10px;
+}
+.profile {
+  margin-top: 25px;
+  margin-left: 5px;
+}
+textarea {
+  font-size: 30px;
+  width: 890px;
+  height: 130px;
+  border: none;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(137, 216, 137);
+  border-radius: 10px;
+}
+.button {
+  display: flex;
+  justify-content: space-around;
+}
+.button img {
+  width: 38px;
+}
+button {
+  font-size: 30px;
+  width: 250px;
+  height: 50px;
+  background-color: #2bae66ff;
+  color: white;
+  border-radius: 5px;
+  border: #2bae66ff;
+}
+button:hover {
+  color: #2bae66ff;
+  background-color: white;
+}
+/* .thumbs_up img:hover {
+  background-color: #2bae66ff;
+}
+.thumbs_down img:hover {
+  background-color: red;
+} */

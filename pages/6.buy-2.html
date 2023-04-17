@@ -148,6 +148,8 @@
             detail[findIndex] = assignData;
             localStorage.setItem("added_list", JSON.stringify(detail));
             alert("Succesfully changed");
+            document.getElementById("div");
+            window.reload();
           }
         });
         cancel.addEventListener("click", function (event) {
@@ -163,6 +165,8 @@
             detail.splice(findIndex, 1);
             localStorage.setItem("added_list", JSON.stringify(detail));
           }
+          document.getElementById("div");
+          window.reload();
         });
 
         document.querySelector(".card_main").append(div_card);
