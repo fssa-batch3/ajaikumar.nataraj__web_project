@@ -147,7 +147,7 @@
         <img src="../assets/image/RISHIMARKET (1).png" alt="logo" width="50%" />
       </div>
       <div class="head">
-        <p>Home</p>
+        <p onclick="home()">Home</p>
         <p onclick="about()">About us</p>
         <div class="dropdown">
           <p class="dropbtn">Register</p>
@@ -169,18 +169,24 @@
         <img src="../assets/image/profile.png" alt="profile" width="100px" />
       </div>
     </header>
-    <form class="enter_comment">
-      <input type="text" placeholder="Enter Your Name" />
-      <textarea
-        name="Comment"
-        id="comment"
-        cols="30"
-        rows="10"
-        placeholder="Write Your Valuable Comment here........."
-      ></textarea>
-      <button>Save</button>
+    <form id="form" class="enter_comment">
+      <nav>
+        <input id="name" type="text" placeholder="Enter Your Name" />
+      </nav>
+      <nav>
+        <textarea
+          name="Comment"
+          id="comment"
+          cols="30"
+          rows="10"
+          placeholder="Write Your Valuable Comment here........."
+        ></textarea>
+      </nav>
+      <nav>
+        <button id="submit" type="submit" value="submit">Save</button>
+      </nav>
     </form>
-    <main class="full_comment">
+    <main id="form" class="full_comment">
       <section class="own_comment">
         <nav>
           <nav class="button">
@@ -312,63 +318,79 @@
     </nav>
 
     <script>
-      let other_section = document.createElement("section");
-      other_section.setAttribute("class", "other_comment");
+      let description = JSON.parse(localStorage.getItem("review"));
 
-      let full_nav = document.createElement("nav");
-      other_section.append(full_nav);
+      for (i = 0; i < description.length; i++) {
+        let findDetail = description.find(function (event) {
+          let id = event["commentId"];
+          if (description[i]["commentId"] == id) {
+            return true;
+          }
+        });
 
-      let btn_nav = document.createElement("nav");
-      btn_nav.setAttribute("class", "button");
-      full_nav.append(btn_nav);
+        let other_section = document.createElement("section");
+        other_section.setAttribute("class", "other_comment");
 
-      let thumbs_up_div = document.createElement("div");
-      thumbs_up_div.setAttribute("id", "thumbs-up-button");
-      thumbs_up_div.setAttribute("class", "thumbs-up");
-      btn_nav.append(thumbs_up_div);
+        let full_nav = document.createElement("nav");
+        other_section.append(full_nav);
 
-      let thumbs_up_img = document.createElement("img");
-      thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
-      thumbs_up_img.setAttribute("alt", "Thumbs up");
-      thumbs_up_div.append(thumbs_up_img);
+        let btn_nav = document.createElement("nav");
+        btn_nav.setAttribute("class", "button");
+        full_nav.append(btn_nav);
 
-      let thumbs_up_span = document.createElement("span");
-      thumbs_up_span.setAttribute("id", "thumbs-up-count");
-      thumbs_up_span.innerHTML = 0;
-      thumbs_up_div.append(thumbs_up_span);
+        let thumbs_up_div = document.createElement("div");
+        thumbs_up_div.setAttribute("id", "thumbs-up-button");
+        thumbs_up_div.setAttribute("class", "thumbs-up");
+        btn_nav.append(thumbs_up_div);
 
-      let thumbs_down_div = document.createElement("div");
-      thumbs_down_div.setAttribute("id", "thumbs-down-button");
-      thumbs_down_div.setAttribute("class", "thumbs-down");
-      btn_nav.append(thumbs_down_div);
+        let thumbs_up_img = document.createElement("img");
+        thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
+        thumbs_up_img.setAttribute("alt", "Thumbs up");
+        thumbs_up_div.append(thumbs_up_img);
 
-      let thumbs_down_img = document.createElement("img");
-      thumbs_down_img.setAttribute("src", "../assets/image/thumbs_down.png");
-      thumbs_down_img.setAttribute("alt", "Thumbs down");
-      thumbs_down_div.append(thumbs_down_img);
+        let thumbs_up_span = document.createElement("span");
+        thumbs_up_span.setAttribute("id", "thumbs-up-count");
+        thumbs_up_span.innerHTML = 0;
+        thumbs_up_div.append(thumbs_up_span);
 
-      let thumbs_down_span = document.createElement("span");
-      thumbs_down_span.setAttribute("id", "thumbs-down-count");
-      thumbs_down_span.innerHTML = 0;
-      thumbs_down_div.append(thumbs_down_span);
+        let thumbs_down_div = document.createElement("div");
+        thumbs_down_div.setAttribute("id", "thumbs-down-button");
+        thumbs_down_div.setAttribute("class", "thumbs-down");
+        btn_nav.append(thumbs_down_div);
 
-      let command_area = document.createElement("textarea");
-      command_area.setAttribute("type", "text");
-      command_area.setAttribute("row", "10");
-      command_area.setAttribute("coloumn", "10");
-      command_area.setAttribute("id", "others");
-      command_area.setAttribute("class", "others");
-      full_nav.append(command_area);
+        let thumbs_down_img = document.createElement("img");
+        thumbs_down_img.setAttribute("src", "../assets/image/thumbs_down.png");
+        thumbs_down_img.setAttribute("alt", "Thumbs down");
+        thumbs_down_div.append(thumbs_down_img);
 
-      let profile_img = document.createElement("img");
-      profile_img.setAttribute("src", "../assets/image/profile.png");
-      profile_img.setAttribute("alt", "pro");
-      profile_img.setAttribute("width", "100px");
-      profile_img.setAttribute("height", "100px");
-      profile_img.setAttribute("class", "profile");
-      full_nav.append(profile_img);
+        let thumbs_down_span = document.createElement("span");
+        thumbs_down_span.setAttribute("id", "thumbs-down-count");
+        thumbs_down_span.innerHTML = 0;
+        thumbs_down_div.append(thumbs_down_span);
 
-      document.querySelector(".others_comment").append(other_section);
+        let name = document.createElement("p");
+        name.innerText = description[i]["Name"];
+        full_nav.append(name);
+
+        let command_area = document.createElement("textarea");
+        command_area.setAttribute("type", "text");
+        command_area.setAttribute("row", "10");
+        command_area.setAttribute("coloumn", "10");
+        command_area.setAttribute("id", "others");
+        command_area.setAttribute("class", "others");
+        command_area.innerText = description[i]["Description"];
+        full_nav.append(command_area);
+
+        let profile_img = document.createElement("img");
+        profile_img.setAttribute("src", "../assets/image/profile.png");
+        profile_img.setAttribute("alt", "pro");
+        profile_img.setAttribute("width", "100px");
+        profile_img.setAttribute("height", "100px");
+        profile_img.setAttribute("class", "profile");
+        full_nav.append(profile_img);
+
+        document.querySelector(".others_comment").append(other_section);
+      }
 
       const thumbsUpButton = document.querySelector("#thumbs-up-button");
       const thumbsUpCount = document.querySelector("#thumbs-up-count");
@@ -390,6 +412,41 @@
         thumbsDownCount.innerText = down_count;
       });
 
+      let detail = document.getElementById("form");
+      document.createElement("review");
+      detail.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const Name = document.getElementById("name").value;
+        const Description = document.getElementById("comment").value;
+        const thumbs_up = document.getElementById("thumbs-up-count").value;
+        const thumbs_down = document.getElementById("thumbs-down-count").value;
+        const commentId = Date.now();
+        // const Time = Date.Time();
+        // const Minutes = Date.Minutes();
+
+        let array = [];
+
+        if (localStorage.getItem("review") != null) {
+          array = JSON.parse(localStorage.getItem("review"));
+        }
+
+        let value = {
+          Name,
+          Description,
+          commentId,
+          thumbs_up,
+          thumbs_down,
+          down_count,
+          up_count,
+          // Time,
+          // Minutes,
+        };
+        array.push(value);
+
+        localStorage.setItem("review", JSON.stringify(array));
+      });
+
       function sell_sign() {
         window.location.href = "/pages/1.signin.html";
       }
@@ -407,6 +464,9 @@
       }
       function about() {
         window.location.href = "/pages/Aboutus.html";
+      }
+      function home() {
+        window.location.href = "/index.html";
       }
     </script>
   </body>
