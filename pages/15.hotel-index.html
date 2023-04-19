@@ -1,126 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../assets/CSS/15-hotel-index.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <!- <form class="form" action="bill">
-      <div class="bill">
-        <p>Cancel</p>
-        <p>Bill Id</p>
-        <p>ok</p>
-      </div>
-      <div class="buy"><p>Buyer Name</p></div>
-      <div class="ul">
-        <ul>
-          Product_Name
-        </ul>
-        <ul>
-          Product_Qty
-        </ul>
-        <ul>
-          Product_Price
-        </ul>
-        <ul>
-          Total Amount
-        </ul>
-      </div>
-
-      <div class="date">
-        <p>Total Amount=</p>
-        <p>Delivery Date =</p>
-      </div>
-    </form> -->
-<!-- <img src="../assets/image/wrong.png" alt="" /> --
-    <script>
-      let Card = JSON.parse(localStorage.getItem("Ordered_list"));
-      let total = 0;
-
-      for (let i = 0; i < Card.length; i++) {
-        let data = Card[i]["products"];
-
-        let form = document.createElement("form");
-        form.setAttribute("class", "form");
-        form.setAttribute("action", "bill");
-
-        let bill_div = document.createElement("div");
-        bill_div.setAttribute("class", "bill");
-        form.append(bill_div);
-
-        let p1 = document.createElement("img");
-        p1.setAttribute("src", "../assets/image/wrong.png");
-        p1.setAttribute("class", "cancel_img");
-        p1.setAttribute("width", "50px");
-        p1.setAttribute("height", "50px");
-        bill_div.append(p1);
-
-        let p2 = document.createElement("p");
-        p2.innerText = "Order Id : " + Card[i]["billId"];
-        bill_div.append(p2);
-
-        let p3 = document.createElement("img");
-        p3.setAttribute("src", "../assets/image/tick_green.jpg");
-        p3.setAttribute("class", "add_img");
-        p3.setAttribute("width", "50px");
-        p3.setAttribute("height", "50px");
-        bill_div.append(p3);
-
-        let buy_div = document.createElement("div");
-        buy_div.setAttribute("class", "buy");
-        form.append(buy_div);
-
-        let p4 = document.createElement("p");
-        p4.innerText = "Buyer Id : " + Card[i]["buyer_id"];
-        buy_div.append(p4);
-
-        for (let j = 0; j < data.length; j++) {
-          let ul_div = document.createElement("div");
-          ul_div.setAttribute("class", "ul");
-          form.append(ul_div);
-
-          let ul1 = document.createElement("ul");
-          ul1.innerText = data[j]["Name"];
-          ul_div.append(ul1);
-
-          let ul2 = document.createElement("ul");
-          ul2.innerText = data[j]["bQty"] + " kg";
-          ul_div.append(ul2);
-
-          let ul3 = document.createElement("ul");
-          ul3.innerText = "Rs." + data[j]["Price"];
-          ul_div.append(ul3);
-
-          let ul4 = document.createElement("ul");
-          ul4.innerHTML = data[j]["Price"] * data[j]["bQty"];
-          ul_div.append(ul4);
-        }
-
-        let date_div = document.createElement("div");
-        date_div.setAttribute("class", "date");
-        form.append(date_div);
-
-        let p5 = document.createElement("p");
-        p5.setAttribute("id", "operation");
-        date_div.append(p5);
-
-        let p6 = document.createElement("p");
-        p6.innerText = data[i]["Pickup_date"];
-        date_div.append(p6);
-
-        total += parseInt(data[i]["Price"]) * parseInt(data[i]["bQty"]);
-
-        document.querySelector("body").append(form);
-      }
-      let total_value = document.getElementById("operation");
-      total_value.append("₹" + total);
-    </script>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -169,69 +46,52 @@
         <img src="../assets/image/profile.png" alt="profile" width="100px" />
       </div>
     </header>
-    <form id="form" class="enter_comment">
-      <nav>
-        <input id="name" type="text" placeholder="Enter Your Name" />
-      </nav>
-      <nav>
-        <textarea
-          name="Comment"
-          id="comment"
-          cols="30"
-          rows="10"
-          placeholder="Write Your Valuable Comment here........."
-        ></textarea>
-      </nav>
-      <nav>
-        <button id="submit" type="submit" value="submit">Save</button>
-      </nav>
-    </form>
-    <main id="form" class="full_comment">
-      <section class="own_comment">
-        <nav>
-          <nav class="button">
-            <img src="../assets/image/delete.png" alt="delete" />
-            <img src="../assets/image/edit.png" alt="edit" />
-          </nav>
-          <textarea type="text" id="others" class="others"></textarea>>
-        </nav>
-        <img
-          class="profile"
-          src="../assets/image/profile.png"
-          alt="pro"
-          width="100px"
-          height="100px"
-        />
-      </section>
-      <section class="others_comment">
-        <!--  <nav>
-          <nav class="button">
-            <div id="thumbs-up-button" class="thumbs_up">
-              <img src="../assets/image/thumbs_up.png" alt="Thumbs Up" />
-              <span id="thumbs-up-count">0</span>
-            </div>
-            <div id="thumbs-down-button" class="thumbs_down">
-              <img src="../assets/image/thumbs_down.png" alt="Thumbs Up" />
-              <span id="thumbs-down-count">0</span>
-            </div>
-          </nav>
-          <textarea
-            type="text"
-            row="10"
-            coloumn="10"
-            id="others"
-            class="others"
-          ></textarea>
-        </nav>
-        <img
-          class="profile"
-          src="../assets/image/profile.png"
-          alt="pro"
-          width="100px"
-          height="100px"
-        /> -->
-      </section>
-    </main>
+    <table aria-describedby="order" class="table"></table>
+    <script>
+      let Card = JSON.parse(localStorage.getItem("user_info"));
+      let table_card = document.createElement("table");
+
+      let th_tr1 = document.createElement("tr");
+      table_card.append(th_tr1);
+
+      let th1_tr = document.createElement("th");
+      th1_tr.innerText = "Rank";
+      th_tr1.append(th1_tr);
+
+      let th2_tr = document.createElement("th");
+      th2_tr.innerText = "User ID";
+      th_tr1.append(th2_tr);
+
+      let th3_tr = document.createElement("th");
+      th3_tr.innerText = "Name";
+      th_tr1.append(th3_tr);
+
+      let th4_tr = document.createElement("th");
+      th4_tr.innerText = "Phone Number";
+      th_tr1.append(th4_tr);
+      for (let i = 0; i < Card.length; i++) {
+        let td_tr2 = document.createElement("tr");
+        table_card.append(td_tr2);
+
+        let td1_tr = document.createElement("td");
+        td1_tr.innerText = Card[i]["FullName"];
+        td_tr2.append(td1_tr);
+
+        let td2_tr = document.createElement("td");
+        td2_tr.innerText = Card[i]["id"];
+        td_tr2.append(td2_tr);
+
+        let td3_tr = document.createElement("td");
+        td3_tr.innerText = Card[i]["FullName"];
+        td_tr2.append(td3_tr);
+
+        let td4_tr = document.createElement("td");
+        td4_tr.innerText = Card[i]["Phone_number"];
+        td_tr2.append(td4_tr);
+
+        document.querySelector(".table").append(table_card);
+      }
+    </script>
 
     <footer id="foot">
       <div class="foot-img">
@@ -316,158 +176,5 @@
     <nav class="copyright">
       @ copyright 2022 RISHI AGRI MARKET | All rights reserved
     </nav>
-
-    <script>
-      let description = JSON.parse(localStorage.getItem("review"));
-
-      for (i = 0; i < description.length; i++) {
-        let findDetail = description.find(function (event) {
-          let id = event["commentId"];
-          if (description[i]["commentId"] == id) {
-            return true;
-          }
-        });
-
-        let other_section = document.createElement("section");
-        other_section.setAttribute("class", "other_comment");
-
-        let full_nav = document.createElement("nav");
-        other_section.append(full_nav);
-
-        let btn_nav = document.createElement("nav");
-        btn_nav.setAttribute("class", "button");
-        full_nav.append(btn_nav);
-
-        let thumbs_up_div = document.createElement("div");
-        thumbs_up_div.setAttribute("id", "thumbs-up-button");
-        thumbs_up_div.setAttribute("class", "thumbs-up");
-        btn_nav.append(thumbs_up_div);
-
-        let thumbs_up_img = document.createElement("img");
-        thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
-        thumbs_up_img.setAttribute("alt", "Thumbs up");
-        thumbs_up_div.append(thumbs_up_img);
-
-        let thumbs_up_span = document.createElement("span");
-        thumbs_up_span.setAttribute("id", "thumbs-up-count");
-        thumbs_up_span.innerHTML = 0;
-        thumbs_up_div.append(thumbs_up_span);
-
-        let thumbs_down_div = document.createElement("div");
-        thumbs_down_div.setAttribute("id", "thumbs-down-button");
-        thumbs_down_div.setAttribute("class", "thumbs-down");
-        btn_nav.append(thumbs_down_div);
-
-        let thumbs_down_img = document.createElement("img");
-        thumbs_down_img.setAttribute("src", "../assets/image/thumbs_down.png");
-        thumbs_down_img.setAttribute("alt", "Thumbs down");
-        thumbs_down_div.append(thumbs_down_img);
-
-        let thumbs_down_span = document.createElement("span");
-        thumbs_down_span.setAttribute("id", "thumbs-down-count");
-        thumbs_down_span.innerHTML = 0;
-        thumbs_down_div.append(thumbs_down_span);
-
-        let name = document.createElement("p");
-        name.innerText = description[i]["Name"];
-        full_nav.append(name);
-
-        let command_area = document.createElement("textarea");
-        command_area.setAttribute("type", "text");
-        command_area.setAttribute("row", "10");
-        command_area.setAttribute("coloumn", "10");
-        command_area.setAttribute("id", "others");
-        command_area.setAttribute("class", "others");
-        command_area.innerText = description[i]["Description"];
-        full_nav.append(command_area);
-
-        let profile_img = document.createElement("img");
-        profile_img.setAttribute("src", "../assets/image/profile.png");
-        profile_img.setAttribute("alt", "pro");
-        profile_img.setAttribute("width", "100px");
-        profile_img.setAttribute("height", "100px");
-        profile_img.setAttribute("class", "profile");
-        full_nav.append(profile_img);
-
-        document.querySelector(".others_comment").append(other_section);
-      }
-
-      const thumbsUpButton = document.querySelector("#thumbs-up-button");
-      const thumbsUpCount = document.querySelector("#thumbs-up-count");
-
-      let up_count = 0;
-
-      thumbsUpButton.addEventListener("click", () => {
-        up_count++;
-        thumbsUpCount.innerText = up_count;
-      });
-
-      const thumbsDownButton = document.querySelector("#thumbs-down-button");
-      const thumbsDownCount = document.querySelector("#thumbs-down-count");
-
-      let down_count = 0;
-
-      thumbsDownButton.addEventListener("click", () => {
-        down_count++;
-        thumbsDownCount.innerText = down_count;
-      });
-
-      let detail = document.getElementById("form");
-      document.createElement("review");
-      detail.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const Name = document.getElementById("name").value;
-        const Description = document.getElementById("comment").value;
-        const thumbs_up = document.getElementById("thumbs-up-count").value;
-        const thumbs_down = document.getElementById("thumbs-down-count").value;
-        const commentId = Date.now();
-        // const Time = Date.Time();
-        // const Minutes = Date.Minutes();
-
-        let array = [];
-
-        if (localStorage.getItem("review") != null) {
-          array = JSON.parse(localStorage.getItem("review"));
-        }
-
-        let value = {
-          Name,
-          Description,
-          commentId,
-          thumbs_up,
-          thumbs_down,
-          down_count,
-          up_count,
-          // Time,
-          // Minutes,
-        };
-        array.push(value);
-
-        localStorage.setItem("review", JSON.stringify(array));
-      });
-
-      function sell_sign() {
-        window.location.href = "/pages/1.signin.html";
-      }
-      function sell_login() {
-        window.location.href = "/pages/2.Login.html";
-      }
-      function buy_sign() {
-        window.location.href = "/pages/1.buy-signin.html";
-      }
-      function buy_login() {
-        window.location.href = "/pages/2.buy-login.html";
-      }
-      function admin() {
-        window.location.href = "/pages/16.adminsignin.html";
-      }
-      function about() {
-        window.location.href = "/pages/Aboutus.html";
-      }
-      function home() {
-        window.location.href = "/index.html";
-      }
-    </script>
   </body>
 </html>

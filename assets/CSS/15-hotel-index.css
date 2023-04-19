@@ -1,98 +1,4 @@
-/* /* body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 30px;
-  background-color: rgb(191, 227, 191);
-}
-.body {
-  font-size: 30px;
-  color: white;
-}
-.logo {
-  text-align: center;
-}
-.center {
-  text-align: start;
-  justify-content: space-between;
-  color: white;
-}
-
-.sub {
-  margin-top: 20px;
-}
-
-.bottom {
-  align-items: baseline;
-  display: inline-block;
-}
-
-.form input {
-  font-size: 25px;
-}
-.full {
-  margin-left: 20%;
-  margin-top: -100px;
-  color: #2bae66ff;
-}
-label {
-  color: #2bae66ff;
-}
-.log {
-  margin-top: 50px;
-}
-
-button {
-  font-size: 30px;
-}
-.h {
-  font-size: 30px;
-  margin-top: -10px;
-  display: flex;
-}
-
-/*media query*/
-
-/* @media screen and (max-width: 600px) {
-  .body {
-    width: 600px;
-  }
-  h1 {
-    font-size: 30px;
-    width: 500px;
-  }
-  .log {
-    margin-top: 10px;
-  }
-  p {
-    font-size: 20px;
-  }
-} 
-
-.form {
-  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(223, 241, 213);
-  /* width: 400px; 
-  border-radius: 5px;
-  color: #2bae66ff;
-  font-size: 20px;
-  align-content: center;
-  align-items: center;
-  /* text-align: center; *
-}
-.bill {
-  display: flex;
-  justify-content: space-between;
-}
-.date {
-  display: flex;
-  justify-content: space-between;
-}
-.ul {
-  box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(161, 193, 145);
-  width: 300px;
-  border-radius: 5px;
-  margin-left: 50px;
-} */
-
-body {
+/* body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -108,14 +14,14 @@ body {
   display: flex;
   margin-left: 20px;
   width: 1000px;
-  height: 170px;
+  height: 300px;
   border: none;
   box-shadow: 3px 3px 3px 3px rgb(137, 216, 137);
   border-radius: 10px;
   margin-left: 450px;
 }
 .enter_comment {
-  margin-top: 100px;
+  margin-top: 150px;
   justify-content: center;
 }
 input {
@@ -125,17 +31,20 @@ input {
   display: flex;
   margin-left: 20px;
   width: 1000px;
-  height: 200px;
+  height: 300px;
   border: none;
   box-shadow: 3px 3px 3px 3px rgb(137, 216, 137);
   border-radius: 10px;
+}
+.text_div {
+  display: flex;
 }
 p {
   font-size: 30px;
   margin-top: 00px;
 }
 .profile {
-  margin-top: 20px;
+  margin-top: 00px;
   margin-left: 8px;
 }
 textarea {
@@ -145,6 +54,9 @@ textarea {
   border: none;
   box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(137, 216, 137);
   border-radius: 10px;
+}
+.name_time {
+  display: flex;
 }
 .button {
   display: flex;
@@ -172,3 +84,20 @@ button:hover {
 .thumbs_down img:hover {
   background-color: red;
 } */
+
+.table {
+  font-size: 30px;
+  margin-top: 150px;
+  border: solid 1px #2bae66ff;
+}
+.table tr td {
+  border: 1px solid #2bae66ff;
+}
+.table button {
+  font-size: 20px;
+  /* color: blue; */
+  width: 120px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: #2bae66ff;
+}
