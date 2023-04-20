@@ -353,40 +353,43 @@
 
           let btn_nav = document.createElement("nav");
           btn_nav.setAttribute("class", "button");
+          btn_nav.setAttribute("id", "btn");
           full_nav.append(btn_nav);
 
-          // let thumbs_up_div = document.createElement("div");
-          // thumbs_up_div.setAttribute("id", "thumbs-up-button");
-          // thumbs_up_div.setAttribute("class", "thumbs-up");
-          // btn_nav.append(thumbs_up_div);
+          let thumbs_up_div = document.createElement("div");
+          thumbs_up_div.setAttribute("id", "like-button");
+          thumbs_up_div.setAttribute("class", "thumbs-up");
+          btn_nav.append(thumbs_up_div);
 
-          // let thumbs_up_img = document.createElement("img");
-          // thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
-          // thumbs_up_img.setAttribute("alt", "Thumbs up");
-          // thumbs_up_div.append(thumbs_up_img);
+          let thumbs_up_img = document.createElement("img");
+          thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
+          thumbs_up_img.setAttribute("alt", "Thumbs up");
+          thumbs_up_div.append(thumbs_up_img);
 
-          // let thumbs_up_span = document.createElement("span");
-          // thumbs_up_span.setAttribute("id", "thumbs-up-count");
-          // thumbs_up_span.innerText = review[i]["up_count"];
-          // thumbs_up_div.append(thumbs_up_span);
+          let thumbs_up_span = document.createElement("span");
+          thumbs_up_span.setAttribute("id", "like-count");
+          thumbs_up_span.innerText = review[i]["up_count"];
+          // thumbs_up_span.setAttribute("id", review[i]["count"]);
+          thumbs_up_div.append(thumbs_up_span);
 
-          // let thumbs_down_div = document.createElement("div");
-          // thumbs_down_div.setAttribute("id", "thumbs-down-button");
-          // thumbs_down_div.setAttribute("class", "thumbs-down");
-          // btn_nav.append(thumbs_down_div);
+          let thumbs_down_div = document.createElement("div");
+          thumbs_down_div.setAttribute("id", "dislike-button");
+          thumbs_down_div.setAttribute("class", "thumbs-down");
+          btn_nav.append(thumbs_down_div);
 
-          // let thumbs_down_img = document.createElement("img");
-          // thumbs_down_img.setAttribute(
-          //   "src",
-          //   "../assets/image/thumbs_down.png"
-          // );
-          // thumbs_down_img.setAttribute("alt", "Thumbs down");
-          // thumbs_down_div.append(thumbs_down_img);
+          let thumbs_down_img = document.createElement("img");
+          thumbs_down_img.setAttribute(
+            "src",
+            "../assets/image/thumbs_down.png"
+          );
+          thumbs_down_img.setAttribute("alt", "Thumbs down");
+          thumbs_down_div.append(thumbs_down_img);
 
-          // let thumbs_down_span = document.createElement("span");
-          // thumbs_down_span.setAttribute("id", "thumbs-down-count");
-          // thumbs_down_span.innerText = review[i]["down_count"];
-          // thumbs_down_div.append(thumbs_down_span);
+          let thumbs_down_span = document.createElement("span");
+          thumbs_down_span.setAttribute("id", "dislike-count");
+          thumbs_down_span.innerText = review[i]["down_count"];
+          thumbs_down_div.append(thumbs_down_span);
+          console.log(review[i]["down_count"]);
 
           let name = document.createElement("p");
           name.innerText = review[i]["Name"] + " " + review[i]["currentTime"];
@@ -413,29 +416,115 @@
           command_area.innerText = review[i]["Description"];
           text_div.append(command_area);
 
+          const likeButton = document.querySelector("#like-button");
+          const dislikeButton = document.querySelector("#dislike-button");
+          const likeCount = document.querySelector("#like-count");
+          const dislikeCount = document.querySelector("#dislike-count");
+
+          let up_count = parseInt(localStorage.getItem("up_count")) || 0;
+          let down_count = parseInt(localStorage.getItem("down_count")) || 0;
+
+          // likeCount.innerText = up_count;
+          // dislikeCount.innerText = down_count;
+
+          thumbs_up_div.addEventListener("click", function (event) {
+            event.preventDefault();
+            up_count++;
+            // likeCount.innerText = up_count;
+            localStorage.setItem("up_count", JSON.stringify(review));
+          });
+
+          thumbs_down_div.addEventListener("click", function (event) {
+            event.preventDefault();
+            down_count++;
+            // dislikeCount.innerText = down_count;
+            localStorage.setItem("down_count", JSON.stringify(review));
+          });
+
+          thumbs_up_div.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            up_count++;
+
+            let new_desc = {
+              up_count,
+            };
+            console.log(new_desc);
+
+            let change_desc = Object.assign(findDetail, new_desc);
+
+            alert("successfully changed");
+            let findIndex = review.indexOf(findDetail);
+            review[findIndex] = change_desc;
+            localStorage.setItem("review", JSON.stringify(review));
+          });
+
+          thumbs_down_div.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            down_count++;
+
+            let new_desc = {
+              down_count,
+            };
+            console.log(new_desc);
+
+            let change_desc = Object.assign(findDetail, new_desc);
+
+            alert("successfully changed");
+            let findIndex = review.indexOf(findDetail);
+            review[findIndex] = change_desc;
+            localStorage.setItem("review", JSON.stringify(review));
+          });
+
           document.querySelector(".others_comment").append(other_section);
         }
       }
 
-      const thumbsUpButton = document.querySelector("#thumbs-up-button");
-      const thumbsUpCount = document.querySelector("#thumbs-up-count");
+      // const likeButton = document.querySelector("#like-button");
+      // const dislikeButton = document.querySelector("#dislike-button");
+      // const likeCount = document.querySelector("#like-count");
+      // const dislikeCount = document.querySelector("#dislike-count");
 
-      let up_count = 0;
+      // let up_count = parseInt(localStorage.getItem("up_count")) || 0;
+      // let down_count = parseInt(localStorage.getItem("down_count")) || 0;
 
-      thumbsUpButton.addEventListener("click", () => {
-        up_count++;
-        thumbsUpCount.innerText = up_count;
-      });
+      // likeCount.innerText = up_count;
+      // dislikeCount.innerText = down_count;
 
-      const thumbsDownButton = document.querySelector("#thumbs-down-button");
-      const thumbsDownCount = document.querySelector("#thumbs-down-count");
+      // likeButton.addEventListener("click", function (event) {
+      //   event.preventDefault();
+      //   up_count++;
+      //   likeCount.innerText = up_count;
+      //   localStorage.setItem("up_count", JSON.stringify(review));
+      // });
 
-      let down_count = 0;
+      // dislikeButton.addEventListener("click", function (event) {
+      //   event.preventDefault();
+      //   down_count++;
+      //   dislikeCount.innerText = down_count;
+      //   localStorage.setItem("down_count", JSON.stringify(review));
+      // });
 
-      thumbsDownButton.addEventListener("click", () => {
-        down_count++;
-        thumbsDownCount.innerText = down_count;
-      });
+      // const thumbsUpButton = document.querySelector("#thumbs-up-button");
+      // const thumbsUpCount = document.querySelector("#thumbs-up-count");
+
+      // let up_count = 0;
+
+      // thumbsUpButton.addEventListener("click", () => {
+      //   up_count++;
+      //   thumbsUpCount.innerText = up_count;
+      // });
+
+      // const thumbsDownButton = document.querySelector("#thumbs-down-button");
+      // const thumbsDownCount = document.querySelector("#thumbs-down-count");
+
+      // let down_count = 0;
+
+      // thumbsDownButton.addEventListener("click", () => {
+      //   down_count++;
+      //   thumbsDownCount.innerText = down_count;
+      // });
 
       let detail = document.getElementById("form");
 
