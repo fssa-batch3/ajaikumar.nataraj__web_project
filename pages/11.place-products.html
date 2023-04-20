@@ -29,7 +29,12 @@
       </nav>
       <nav><h2>Your Order List</h2></nav>
       <nav>
-        <img src="../assets/image/profile.png" alt="profile" width="80px" />
+        <img
+          src="../assets/image/profile.png"
+          alt="profile"
+          width="80px"
+          onclick="profile()"
+        />
       </nav>
     </header>
 
@@ -193,6 +198,9 @@
       }
       function bill() {
         window.location.href = "/pages/12.bill.html";
+      }
+      function profile() {
+        window.location.href = "/pages/profile.html";
       }
     </script>
   </body>

@@ -11,7 +11,12 @@
     <header>
       <img src="../assets/image/logo (2).png" alt="logo" width="130px" />
       <h4>Your Product's Bill</h4>
-      <img src="../assets/image/profile.png" alt="profile" width="110px" />
+      <img
+        src="../assets/image/profile.png"
+        alt="profile"
+        width="110px"
+        onclick="profile()"
+      />
     </header>
     <button onclick="account()">Account Detail</button>
     <table>
@@ -128,7 +133,7 @@
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
       // transport_DOB.value = select_user["transport_DOB"];
-      Land_Address.value = select_user["Land_Address"];
+      Land_Address.value = select_user["Land_Address"] || "";
 
       // to replace the values
       const form = document.getElementById("form");
@@ -161,6 +166,9 @@
 
       function account() {
         window.location.href = "/pages/13.Acct.detail.html";
+      }
+      function profile() {
+        window.location.href = "/pages/profile.html";
       }
     </script>
   </body>

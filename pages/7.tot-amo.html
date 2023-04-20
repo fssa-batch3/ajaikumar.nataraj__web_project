@@ -30,7 +30,12 @@
       </nav>
       <!-- <nav><h2>Your history</h2></nav> -->
       <nav>
-        <img src="../assets/image/profile.png" alt="profile" width="80px" />
+        <img
+          src="../assets/image/profile.png"
+          alt="profile"
+          width="80px"
+          onclick="profile()"
+        />
       </nav>
     </header>
     <button type="change" id="change" onclick="order()">Payment Page</button>
@@ -150,9 +155,9 @@
       let total_value = document.getElementById("operoation");
       total_value.append("₹" + total);
 
-      const oneUser = JSON.parse(localStorage.getItem("logIn"));
+      const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
-      const user_info = JSON.parse(localStorage.getItem("user_info"));
+      const user_info = JSON.parse(localStorage.getItem("buyer_info"));
       let select_user = user_info.find(function (event) {
         let customerEmail = event["Email"];
         if (user_info == customerEmail) {
@@ -202,7 +207,7 @@
 
         let findIndex = user_info.indexOf(select_user);
         user_info[findIndex] = combineData;
-        localStorage.setItem("user_info", JSON.stringify(user_info));
+        localStorage.setItem("buyer_info", JSON.stringify(user_info));
       });
 
       function order() {
@@ -211,6 +216,9 @@
 
       function back() {
         window.location.href = "/pages/6.buy-2.html";
+      }
+      function profile() {
+        window.location.href = "/pages/profile_buy.html";
       }
     </script>
   </body>

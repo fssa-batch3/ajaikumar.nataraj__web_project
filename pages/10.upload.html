@@ -23,6 +23,13 @@
       </div>
       <div class="title"><h2>Hi Farmer...</h2></div>
       <button onclick="history()">History</button>
+      <img
+        src="../assets/image/profile.png"
+        alt="profile"
+        onclick="profile()"
+        width="80px"
+        height="80px"
+      />
     </header>
 
     <section class="output_section"></section>
@@ -239,6 +246,9 @@
         document.getElementById("form").reset();
       });
 
+      function profile() {
+        window.location.href = "/pages/profile.html";
+      }
       // const start = Date.now();
     </script>
   </body>

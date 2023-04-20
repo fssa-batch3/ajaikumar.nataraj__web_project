@@ -11,7 +11,12 @@
     <header>
       <img src="../assets/image/logo (2).png" alt="logo" width="130px" />
       <h4>Your Product's Bill</h4>
-      <img src="../assets/image/profile.png" alt="profile" width="110px" />
+      <img
+        src="../assets/image/profile.png"
+        alt="profile"
+        width="110px"
+        onclick="profile()"
+      />
     </header>
 
     <table>
@@ -181,6 +186,10 @@
       userName.value = select_user["FullName"];
       Land_Address.value = select_user["Land_Address"];
       // transport_DOB.value = select_user["transport_DOB"];
+
+      function profile() {
+        window.location.href = "/pages/profile_buy.html";
+      }
     </script>
   </body>
 </html>

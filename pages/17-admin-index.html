@@ -15,7 +15,7 @@
       <div class="logo">
         <img src="../assets/image/logo.png" alt="logo" width="110px" />
       </div>
-      <button class="pro" placeholder="Shin Chan">Shin chan</button>
+      <input type="text" id="profile" class="pro" placeholder="Shin Chan" />
     </header>
     <div class="side-bar">
       <h3>Member's List</h3>
@@ -43,6 +43,22 @@
     </div>
 
     <script>
+      const oneUser = JSON.parse(localStorage.getItem("admin_logIn"));
+
+      const user_info = JSON.parse(localStorage.getItem("admin_info"));
+      let select_user = user_info.find(function (event) {
+        let customerEmail = event["Email"];
+        if (user_info == customerEmail) {
+          return true;
+        } else if (oneUser == customerEmail) {
+          return true;
+        }
+      });
+
+      const name = document.getElementById("profile");
+
+      name.value = select_user["FullName"];
+
       function customer() {
         window.location.href = "/pages/buyer.html";
       }
