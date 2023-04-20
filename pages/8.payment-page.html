@@ -182,8 +182,8 @@
       // Compare the values
 
       Card_no.value = select_user["Bank_Card_no"];
-      holder_name.value = select_user["Account_holder_name"];
-      ifsc.value = select_user["IFSC_Code"];
+      holder_name.value = select_user["Account_holder_name"] || " ";
+      ifsc.value = select_user["IFSC_Code"] || " ";
       cvv_no.value = select_user["CVV_No"];
       exp_date.value = select_user["Card_Expiry_Date"];
 

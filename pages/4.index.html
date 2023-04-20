@@ -13,18 +13,20 @@
   </head>
   <body>
     <header class="head">
-      <button type="button" onclick="submit()" class="before-arrow">
-        <img
-          src="../assets/image/arrowback.png"
-          alt="arrow-back"
-          width="40px"
-        />
-      </button>
-
       <div class="logo">
         <img src="../assets/image/logo.png" alt="logo" width="130px" />
       </div>
-      <input type="text" id="profile" onclick="profile()" />
+      <div>
+        <input type="text" id="profile" onclick="profile()" />
+      </div>
+      <div>
+        <img
+          onclick="profile()"
+          src="../assets/image/profile.png"
+          alt="profile"
+          width="100px"
+        />
+      </div>
     </header>
     <main class="img-1">
       <nav>
@@ -94,6 +96,9 @@
       }
       function grain() {
         window.location.href = "/pages/5d-grain.html";
+      }
+      function profile() {
+        window.location.href = "/pages/profile.html";
       }
     </script>
   </body>

@@ -111,13 +111,13 @@
       password.value = select_user["Password"];
       DOB.value = select_user["DOB"];
       transport_DOB.value = select_user["DOB"];
-      Home_Address.value = select_user["Home_Address"];
-      Land_Address.value = select_user["Land_Address"];
-      gender.value = select_user["gender"];
-      farmer.value = select_user["farmer"];
-      Aadhar_number.value = select_user["Aadhar_number"];
-      state.value = select_user["state"];
-      country.value = select_user["country"];
+      Home_Address.value = select_user["Home_Address"] || "";
+      Land_Address.value = select_user["Land_Address"] || "";
+      gender.value = select_user["gender"] || "";
+      farmer.value = select_user["farmer"] || "";
+      Aadhar_number.value = select_user["Aadhar_number"] || "";
+      state.value = select_user["state"] || "";
+      country.value = select_user["country"] || "";
 
       // to replace the values
       const form = document.getElementById("form");
