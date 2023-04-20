@@ -25,10 +25,16 @@ Features:
    -> Delete the order (Completed)
 
 4. Admin Page
-   -> Create the details (user and product) (yet to complete)
-   -> Read the details (user and product) (yet to complete)
+   -> Create the details (user and product) (Completed)
+   -> Read the details (user and product) (completed)
    -> Update the availability of products, transportation details, etc,... (yet to complete)
    -> Delete the product customer details. (yet to complete)
+   
+5. Comment crud
+   -> Create the comment (Completed)
+   -> Read the comment (Completed)
+   -> Update the comment (Completed)
+   -> Delete the comment (Completed)
    
    
    RISHI AGRI MARKET EATABLES BUYING(Customer) AND SELLING(Farmer)   
@@ -180,5 +186,49 @@ Features:
            Expected Result:            
                The product details are updated.            
                
+               
+   
+    COMMENT                                                                       
+      Create an comment         
+         Scenario 1: Successfully create an account         
+            Steps:                                  
+               Navigate to the comment page.           
+               Enter the required information such as feedback.          
+               Click the "Submit" button.              
+            Expected Result:                            
+               The review is stored in the storage area.            
+               
+               
+      Read comment             
+         Scenario 1: Successfully view comment      
+            Steps:                 
+               Log in as a user.              
+               Navigate to the comment page.                                              
+               View your comment and also others comment.     
+            Expected Result:                     
+               The user can view their comment and also others comment.     
+               
+               
+      Edit comment                           
+         Scenario 1: Successfully edit comment          
+            Steps:                   
+               Log in as a user.              
+               Navigate to the comment page.          
+               Update the alternate comment.         
+               Click the "Edit" symbol.          
+            Expected Result:                            
+               The user's comment's are updated.        
+                   
+               
+               
+     Delete comment                           
+         Scenario 1: Successfully delete comment          
+            Steps:                   
+               Log in as a user.              
+               Navigate to the comment page.          
+               Delete the unwanted comment.         
+               Click the "Delete" symbol.          
+            Expected Result:                            
+               The user's comment is deleted.   
                
   
