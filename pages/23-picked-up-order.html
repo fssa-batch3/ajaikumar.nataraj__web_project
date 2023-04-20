@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/23-pickup-order.css" />
+    <link rel="stylesheet" href="../assets/CSS/20-customer-order-list.css" />
   </head>
   <body>
     <header class="header">
@@ -17,64 +17,109 @@
             width="50px"
           /></button
       ></a>
-      <div class="hol">Picked Up Orders...</div>
+
+      <div class="hol">Upload Product's List..</div>
+      <div class="logo">
+        <img src="../assets/image/logo.png" alt="logo" width="110px" />
+      </div>
     </header>
-    <div class="side-bar">
-      <h3>Member's List</h3>
-      <p>Customer's</p>
-      <p>Hotel Customers</p>
-      <p>Vendors</p>
-    </div>
-    <table aria-describedby="pick" class="table">
-      <tr>
-        <th>Name/ID</th>
-        <th>Products</th>
-        <th>Quantity</th>
-        <th>Picked up Date</th>
-        <th>Picked Up Place</th>
-      </tr>
-      <tr>
-        <td>
-          Motu <br />
-          MT 23456 <br />
-          Order Id-100123456
-        </td>
-        <td>Tomato <br />Pumpkin <br />Banana <br />Brinjal <br />Coconut</td>
-        <td>
-          20 kg <br />100 pieces <br />200 kg <br />100 kg <br />1000 shells
-        </td>
-        <td>10/12/2022</td>
-        <td>Coimbatore</td>
-      </tr>
-      <hr />
-      <tr>
-        <td>
-          Patlu <br />
-          PT 65432 <br />
-          Order Id-100213456
-        </td>
-        <td>
-          Cucumber <br />Bitter Gourd <br />Drumsticks <br />Watermelon
-          <br />Onion
-        </td>
-        <td>100 kg <br />80 kg <br />100 kg <br />80 kg <br />100 kg</td>
-        <td>1/12/2022</td>
-        <td>Tenkasi</td>
-      </tr>
-      <tr>
-        <td>
-          Bheem <br />
-          BH 65432 <br />
-          Order Id-100313456
-        </td>
-        <td>Orange<br />Mango <br />Strawberry <br />Almond <br />Cashew</td>
-        <td>30 kg <br />90 kg <br />50 kg <br />30 kg <br />25 kg</td>
-        <td>1/12/2022</td>
-        <td>Coimbatore</td>
-      </tr>
-    </table>
-    <footer class="f-btn">
-      <a href="../pages/23-store.html"> <button>Go to Store</button></a>
-    </footer>
+
+    <button class="btn" onclick="store()">Go to Store</button>
+
+    <!-- <table aria-describedby="order" class="table"></table> -->
+    <hr />
+    <!-- <footer class="f-btn">
+      <a href="../pages/19a-store.html"><button>Go to Store</button></a>
+    </footer> -->
+
+    <script>
+      let Card = JSON.parse(localStorage.getItem("newUploadList"));
+
+      for (let i = 0; i < Card.length; i++) {
+        let data = Card[i]["newUploadProducts"];
+        let total = 0;
+
+        let form = document.createElement("form");
+        form.setAttribute("class", "form");
+        form.setAttribute("action", "bill");
+
+        let bill_div = document.createElement("div");
+        bill_div.setAttribute("class", "bill");
+        form.append(bill_div);
+
+        let p1 = document.createElement("img");
+        p1.setAttribute("src", "../assets/image/wrong.png");
+        p1.setAttribute("class", "img");
+        bill_div.append(p1);
+
+        let p2 = document.createElement("p");
+        p2.innerText = "Order Id : " + Card[i]["billId"];
+        bill_div.append(p2);
+
+        let p3 = document.createElement("img");
+        p3.setAttribute("src", "../assets/image/tick_green.jpg");
+        p3.setAttribute("class", "img");
+        bill_div.append(p3);
+
+        let buy_div = document.createElement("div");
+        buy_div.setAttribute("class", "buy");
+        form.append(buy_div);
+
+        let p4 = document.createElement("p");
+        p4.innerText = "Seller Id : " + Card[i]["seller_id"];
+        buy_div.append(p4);
+
+        let ful_div = document.createElement("div");
+        ful_div.setAttribute("class", "ful");
+        form.append(ful_div);
+
+        for (let j = 0; j < data.length; j++) {
+          let ul_div = document.createElement("div");
+          ul_div.setAttribute("class", "ul");
+          ful_div.append(ul_div);
+
+          let ul1 = document.createElement("ul");
+          ul1.innerText = "Name : " + data[j]["Name"];
+          ul_div.append(ul1);
+
+          let ul2 = document.createElement("ul");
+          ul2.innerText = "Qty   : " + data[j]["bQty"] + " kg";
+          ul_div.append(ul2);
+
+          let ul3 = document.createElement("ul");
+          ul3.innerText = "Rs." + data[j]["Price"] + " / kg";
+          ul_div.append(ul3);
+
+          let ul4 = document.createElement("ul");
+          ul4.innerHTML =
+            "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
+          ul_div.append(ul4);
+
+          total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
+        }
+
+        let date_div = document.createElement("div");
+        date_div.setAttribute("class", "date");
+
+        form.append(date_div);
+
+        let p5 = document.createElement("p");
+        p5.setAttribute("id", "operation");
+        p5.innerHTML = " Total Amount : ₹" + total;
+        date_div.append(p5);
+
+        let p6 = document.createElement("p");
+        p6.innerText = "Pickup Date : " + data[i]["Pickup_date"];
+        date_div.append(p6);
+        console.log(data[i]["Price"]);
+        console.log(data[i]["bQty"]);
+
+        document.querySelector("body").append(form);
+      }
+
+      function store() {
+        window.location.href = "/pages/19a-store.html";
+      }
+    </script>
   </body>
 </html>
