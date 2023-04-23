@@ -47,7 +47,14 @@
     <table aria-describedby="order" class="table"></table>
     <script>
       let Card = JSON.parse(localStorage.getItem("user_info"));
+
+      Card.sort((a, b) => a.points - b.points);
+
+      // Create leaderboard HTML
+      // let leaderboardHTML = "<ol>";
+      // for (let i = 0; i < Card.length; i++) {
       let table_card = document.createElement("table");
+      table_card.setAttribute("id", "leaderboard");
 
       let th_tr1 = document.createElement("tr");
       table_card.append(th_tr1);
@@ -55,6 +62,10 @@
       let th1_tr = document.createElement("th");
       th1_tr.innerText = "Rank";
       th_tr1.append(th1_tr);
+
+      let th5_tr = document.createElement("th");
+      th5_tr.innerText = "Points";
+      th_tr1.append(th5_tr);
 
       let th2_tr = document.createElement("th");
       th2_tr.innerText = "User ID";
@@ -71,8 +82,12 @@
         let td_tr2 = document.createElement("tr");
         table_card.append(td_tr2);
 
+        let td0_tr = document.createElement("td");
+        td0_tr.innerText += "ol";
+        td_tr2.append(td0_tr);
+
         let td1_tr = document.createElement("td");
-        td1_tr.innerText = Card[i]["FullName"];
+        td1_tr.innerText = Card[i]["points"] || "0";
         td_tr2.append(td1_tr);
 
         let td2_tr = document.createElement("td");
@@ -89,6 +104,21 @@
 
         document.querySelector(".table").append(table_card);
       }
+      // }
+
+      // Sort players by score in descending order
+      // Card.sort((a, b) => b.points - a.points);
+
+      // // Create leaderboard HTML
+      let leaderboardHTML = "<ol>";
+      // for (let i = 0; i < Card.length; i++) {
+      // leaderboardHTML += `<td>${Card[i].FullName}: ${Card[i].points}</td>`;
+      // }
+      leaderboardHTML += "</ol>";
+
+      // Update leaderboard element
+      // const leaderboardElement = document.getElementById("leaderboard");
+      // leaderboardElement.innerHTML = leaderboardHTML;
     </script>
 
     <footer id="foot">
@@ -163,7 +193,7 @@
         <ul>
           Terms and Conditions
         </ul>
-        <ul>
+        <ul onclick="review()">
           Reviews
         </ul>
         <ul onclick="admin()">
@@ -174,6 +204,32 @@
     <nav class="copyright">
       @ copyright 2022 RISHI AGRI MARKET | All rights reserved
     </nav>
+    <script>
+      function sell_sign() {
+        window.location.href = "/pages/1.signin.html";
+      }
+      function sell_login() {
+        window.location.href = "/pages/2.Login.html";
+      }
+      function buy_sign() {
+        window.location.href = "/pages/1.buy-signin.html";
+      }
+      function buy_login() {
+        window.location.href = "/pages/2.buy-login.html";
+      }
+      function home() {
+        window.location.href = "/index.html";
+      }
+      function admin() {
+        window.location.href = "/pages/16.adminsignin.html";
+      }
+      function review() {
+        window.location.href = "/pages/review.html";
+      }
+      function about() {
+        window.location.href = "/pages/Aboutus.html";
+      }
+    </script>
   </body>
 </html>
 -

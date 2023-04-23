@@ -1,109 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/24-inprogress-order.css" />
-  </head>
-  <body>
-    <header class="header">
-      <a href="../pages/17-admin-index.html">
-        <button>
-          <img
-            class="before-arrow"
-            src="../assets/image/arrowback.png"
-            alt="arrow-back"
-            width="50px"
-          /></button
-      ></a>
-      <div class="hol">Inprogress Orders Details...</div>
-    </header>
-    <div class="side-bar">
-      <h3>Member's List</h3>
-      <p>Buyer's</p>
-      <p>Vendor's</p>
-    </div>
-    <div>
-      <table aria-describedby="inprogress" class="table">
-        <tr>
-          <th>Order Id</th>
-          <th>Pickup Date</th>
-          <th>Pickup Location</th>
-          <th>Delivery Date</th>
-          <th>Delivery Location</th>
-          <th>Navigation</th>
-          <th>Detail</th>
-        </tr>
-        <tr>
-          <td>B100123456</td>
-          <td>03/12/2022</td>
-          <td>Tenkasi</td>
-          <td>05/12/2022</td>
-          <td>Chennai</td>
-          <td>Thiruchirapalli</td>
-          <td><button>more</button></td>
-        </tr>
-        <tr>
-          <td>B100125436</td>
-          <td>03/12/2022</td>
-          <td>Ramanathapuram</td>
-          <td>05/12/2022</td>
-          <td>Chennai</td>
-          <td>Cuddalore</td>
-          <td><button>more</button></td>
-        </tr>
-        <tr>
-          <td>B100154326</td>
-          <td>04/12/2022</td>
-          <td>Thiruppur</td>
-          <td>05/12/2022</td>
-          <td>Chennai</td>
-          <td>Kallakurichi</td>
-          <td><button>more</button></td>
-        </tr>
-        <tr>
-          <td>B100126543</td>
-          <td>04/12/2022</td>
-          <td>Thiruvarur</td>
-          <td>05/12/2022</td>
-          <td>Nilagiri</td>
-          <td>Namakkal</td>
-          <td><button>more</button></td>
-        </tr>
-        <tr>
-          <td>B100543216</td>
-          <td>04/12/2022</td>
-          <td>Chennai</td>
-          <td>05/12/2022</td>
-          <td>Thothukudi</td>
-          <td>Pudhukottai</td>
-          <td><button>more</button></td>
-        </tr>
-      </table>
-    </div>
-    <footer class="foot">
-      <h3>Transportation Details</h3>
-      <table aria-describedby="footer">
-        <tr>
-          <th>Driver name</th>
-          <th>Phone no</th>
-          <th>Vehicle no</th>
-          <th>Map</th>
-        </tr>
-        <tr>
-          <td>Jack</td>
-          <td>9876543210</td>
-          <td>TN 01 AB 0998</td>
-          <td>
-            <a href="./24-a-map.html"> <button>Map</button></a>
-          </td>
-        </tr>
-      </table>
-    </footer>
-  </body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -219,13 +113,23 @@
     <script>
       let Card = JSON.parse(localStorage.getItem("Ordered_list"));
 
+      let presentDate = new Date().getDate();
+      let presentMonth = new Date().getMonth();
+      let presentYear = new Date().getFullYear();
+
+      let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
+
+      console.log(presentDate);
+      console.log(presentMonth);
+      console.log(presentYear);
+
+      console.log(currentDate);
+
       for (let i = 0; i < Card.length; i++) {
         let data = Card[i]["products"];
         let total = 0;
 
-        currentDate = new Date().getDate();
-
-        if ((currentDate) => data[i]["Pickup_date"]) {
+        if ((currentDate = data[i]["Pickup_date"])) {
           let form = document.createElement("form");
           form.setAttribute("class", "form");
           form.setAttribute("action", "bill");

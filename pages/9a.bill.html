@@ -30,7 +30,12 @@
             placeholder="Phone number"
             maxlength="10"
           />
-          <input type="text" id="Land_Address" placeholder="address" />
+          <input
+            type="text"
+            id="Land_Address"
+            required
+            placeholder="Delivery Address"
+          />
           <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
         </div>
       </div>
@@ -153,8 +158,10 @@
             localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
           }
 
-          localStorage.removeItem("added_list");
-          window.location.href = "/pages/5a-fruits.html";
+          get_obj["points"] = 1;
+
+          // localStorage.removeItem("added_list");
+          // window.location.href = "/pages/5a-fruits.html";
         });
     </script>
     <script>
@@ -184,7 +191,7 @@
 
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
-      Land_Address.value = select_user["Land_Address"];
+      Land_Address.value = select_user["Land_Address"] || " ";
       // transport_DOB.value = select_user["transport_DOB"];
 
       function profile() {
