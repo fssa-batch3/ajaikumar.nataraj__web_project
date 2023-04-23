@@ -73,9 +73,9 @@ input {
   text-align: center;
   align-items: center;
   align-content: center;
-  /* margin-top: 40px; */
-  top: 820px;
-  position: fixed;
+  margin-top: 20px;
+  /* top: 820px; */
+  /* position: fixed; */
 }
 .footer button {
   width: 200px;
@@ -156,6 +156,11 @@ input {
   text-align: center;
   float: right;
   border-radius: 10px;
+}
+.steps {
+  margin-top: 300px;
+  margin-bottom: 440px;
+  margin-left: 100px;
 }
 
 /* media query*/

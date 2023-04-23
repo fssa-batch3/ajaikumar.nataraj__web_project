@@ -199,13 +199,13 @@
       const review = JSON.parse(localStorage.getItem("review"));
 
       let id = JSON.parse(localStorage.getItem("user_info"));
-      console.log(id);
+      // console.log(id);
 
       let login_id = JSON.parse(localStorage.getItem("logIn"));
-      console.log(login_id);
+      // console.log(login_id);
 
       const get_obj = id.find((e) => e.Email === login_id);
-      console.log(get_obj);
+      // console.log(get_obj);
 
       for (i = 0; i < review.length; i++) {
         let select_comment = review.find(function (event) {
@@ -214,7 +214,7 @@
             return true;
           }
         });
-        console.log(select_comment);
+        // console.log(select_comment);
         if (review[i]["userId"] == get_obj["id"]) {
           let other_section = document.createElement("section");
           other_section.setAttribute("class", "own_comment");
@@ -301,7 +301,7 @@
 
             const desc = document.getElementById("feedback").value;
 
-            console.log(desc);
+            // console.log(desc);
 
             desc.value = select_comment["Description"];
 
@@ -311,7 +311,7 @@
             let new_desc = {
               Description,
             };
-            console.log(new_desc);
+            // console.log(new_desc);
 
             let change_desc = Object.assign(select_comment, new_desc);
 
@@ -361,43 +361,48 @@
           btn_nav.setAttribute("id", "btn");
           full_nav.append(btn_nav);
 
-          let thumbs_up_div = document.createElement("div");
-          thumbs_up_div.setAttribute("id", "like-button");
-          thumbs_up_div.setAttribute("class", "thumbs-up");
-          btn_nav.append(thumbs_up_div);
+          // let thumbs_up_div = document.createElement("div");
+          // thumbs_up_div.setAttribute("id", "like_button");
+          // thumbs_up_div.setAttribute("class", "thumbs-up");
+          // btn_nav.append(thumbs_up_div);
 
-          let thumbs_up_img = document.createElement("img");
-          thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
-          thumbs_up_img.setAttribute("alt", "Thumbs up");
-          thumbs_up_div.append(thumbs_up_img);
+          // let thumbs_up_img = document.createElement("img");
+          // thumbs_up_img.setAttribute("src", "../assets/image/thumbs_up.png");
+          // thumbs_up_img.setAttribute("alt", "Thumbs up");
+          // thumbs_up_div.append(thumbs_up_img);
 
-          let thumbs_up_span = document.createElement("span");
-          thumbs_up_span.setAttribute("id", "like-count");
-          thumbs_up_span.innerText = review[i]["up_count"];
-          // thumbs_up_span.setAttribute("id", review[i]["count"]);
-          thumbs_up_div.append(thumbs_up_span);
+          // let thumbs_up_span = document.createElement("span");
+          // thumbs_up_span.setAttribute("id", "like_count");
+          // thumbs_up_span.innerText = review[i]["up_count"];
+          // // thumbs_up_span.setAttribute("id", review[i]["count"]);
+          // thumbs_up_div.append(thumbs_up_span);
 
-          let thumbs_down_div = document.createElement("div");
-          thumbs_down_div.setAttribute("id", "dislike-button");
-          thumbs_down_div.setAttribute("class", "thumbs-down");
-          btn_nav.append(thumbs_down_div);
+          // let thumbs_down_div = document.createElement("div");
+          // thumbs_down_div.setAttribute("id", "dislike-button");
+          // thumbs_down_div.setAttribute("class", "thumbs-down");
+          // btn_nav.append(thumbs_down_div);
 
-          let thumbs_down_img = document.createElement("img");
-          thumbs_down_img.setAttribute(
-            "src",
-            "../assets/image/thumbs_down.png"
-          );
-          thumbs_down_img.setAttribute("alt", "Thumbs down");
-          thumbs_down_div.append(thumbs_down_img);
+          // let thumbs_down_img = document.createElement("img");
+          // thumbs_down_img.setAttribute(
+          //   "src",
+          //   "../assets/image/thumbs_down.png"
+          // );
+          // thumbs_down_img.setAttribute("alt", "Thumbs down");
+          // thumbs_down_div.append(thumbs_down_img);
 
-          let thumbs_down_span = document.createElement("span");
-          thumbs_down_span.setAttribute("id", "dislike-count");
-          thumbs_down_span.innerText = review[i]["down_count"];
-          thumbs_down_div.append(thumbs_down_span);
-          console.log(review[i]["down_count"]);
+          // let thumbs_down_span = document.createElement("span");
+          // thumbs_down_span.setAttribute("id", "dislike-count");
+          // thumbs_down_span.innerText = review[i]["down_count"];
+          // thumbs_down_div.append(thumbs_down_span);
+          // console.log(review[i]["down_count"]);
 
           let name = document.createElement("p");
-          name.innerText = review[i]["Name"] + " " + review[i]["currentTime"];
+          name.innerText =
+            review[i]["Name"] +
+            " " +
+            review[i]["currentDate"] +
+            " " +
+            review[i]["currentTime"];
           full_nav.append(name);
 
           let text_div = document.createElement("div");
@@ -421,13 +426,18 @@
           command_area.innerText = review[i]["Description"];
           text_div.append(command_area);
 
-          thumbs_up_div.addEventListener("click", function (event) {
-            event.preventDefault();
-          });
+          // thumbs_up_div.addEventListener("click", function (event) {
+          //   event.preventDefault();
+          //   let detail = JSON.parse(localStorage.getItem("review"));
 
-          thumbs_down_div.addEventListener("click", function (event) {
-            event.preventDefault();
-          });
+          //   const like = document.getElementById("like_count");
+          //   console.log(like);
+
+          //   let count = {
+          //     up_count: like.value,
+          //   };
+          //   localStorage.setItem("review", JSON.stringify(count));
+          // });
 
           document.querySelector(".others_comment").append(other_section);
         }
