@@ -233,67 +233,80 @@ Features:
                
      PRODUCT                                                                      
       Create a product          
-         Scenario 1: Successfully create an account         
+         Scenario 1: Successfully create a product         
             Steps:                                  
-               Navigate to the registration page.           
-               Enter the required information such as name, email, password, home address, land address, and farmer type.          
-               Click the "Sign up" button.              
+               Navigate to the product registration page.           
+               Enter the required information such as name, img, type, pickup address, price, and qty.          
+               Click the "Add" button.
+               After adding all your products
+               Click the "Submit" button.              
             Expected Result:                            
-               The user is redirected to the login page.           
+               All added products are shown in upload's page.           
                
                
       View account details             
-         Scenario 1: Successfully view account details       
+         Scenario 1: Successfully view product details       
             Steps:                 
-               Log in as a seller.              
-               Navigate to the profile page.                                              
-               View the account details such as name, email, phone number, and address.     
+               Log in as a buyer.              
+               Navigate to the products card page.                                              
+               View the different types of products.     
             Expected Result:                     
-               The user can view their details.     
+               The user can view the different types of products.     
                
                
-      Edit account details                            
+      Edit product details                            
          Scenario 1: Successfully edit account details          
             Steps:                   
                Log in as a seller.              
-               Navigate to the account page.          
-               Click the "Edit" button.          
-               Update the account details.         
-               Click the "Submit" button.           
+               Navigate to the products history page.          
+               Update the product details.         
+               Click the "Edit" button.           
             Expected Result:                            
-               The user's account details are updated.        
+               The user's product details are updated.              
                
                
-      Create a new product to sell                   
-         Scenario 1: Successfully create a new product to sell       
-            Steps:                    
-               Log in as a seller.                
-               Navigate to the product creation page.           
-               Enter the product details such as name, price, description, type, pickup_date, image, and Qty.          
-               Upload product images.         
-               Click the "Add" button.           
-            Expected Result:              
-               The new product is created and added to the seller's list of products.           
-               
-               
-     View list of products        
-        Scenario 1: Successfully view list of products        
-           Steps:         
-               Log in as a seller.        
-               Navigate to the products page.          
-               View the list of products.          
-           Expected Result:            
-               The seller can view their list of products.         
-               
-               
-    Edit product details            
-       Scenario 1: Successfully edit product details           
+    Delete product details            
+       Scenario 1: Successfully delete product details           
            Steps:           
                Log in as a seller.        
                Navigate to the products page.              
-               Select a product to edit.         
-               Click the "Edit" button.            
-               Update the product details.       
-               Click the "Save" button.        
+               Select a product to delete.               
+               Click the "Delete" button.        
            Expected Result:            
-               The product details are updated.  
+               The product details are deleted.  
+               
+               
+               
+     ADMIN 
+         Scenario 1: Go to New Upload page
+            Steps: 
+                  Login as a Admin
+                  Navigate to the New Upload page.
+                  See the New Upload details in the page.
+            Expected Result:
+                  New upload products are shown.
+                  
+          Scenario 2: Go to New Order page
+            Steps: 
+                  Login as a Admin
+                  Navigate to the New Order page.
+                  See the New Order details in the page.
+            Expected Result:
+                  New Order details are shown
+                  
+          Scenario 3: Go to Completed order page
+            Steps: 
+                  Login as a Admin
+                  Navigate to the Completed order page.
+                  See the New Completed order in the page.
+            Expected Result:
+                  Completed order products are shown
+
+
+          Scenario 4: Go to Order Inprogress page
+            Steps: 
+                  Login as a Admin
+                  Navigate to the Order Inprogress page.
+                  See the New Order Inprogress in the page.
+            Expected Result:
+                  Order Inprogress products are shown
