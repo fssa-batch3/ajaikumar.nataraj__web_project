@@ -113,9 +113,24 @@
     <script>
       let Card = JSON.parse(localStorage.getItem("Ordered_list"));
 
+      let presentDate = new Date().getDate();
+      let presentMonth = new Date().getMonth();
+      let presentYear = new Date().getFullYear();
+
+      let currentDate = `${presentYear}-0${presentMonth}-${presentDate}`;
+
+      console.log(presentDate);
+      console.log(presentMonth);
+      console.log(presentYear);
+
+      console.log(currentDate);
+
       for (let i = 0; i < Card.length; i++) {
         let data = Card[i]["products"];
         let total = 0;
+
+        console.log(currentDate);
+        console.log(data[i]["Pickup_date"]);
 
         let form = document.createElement("form");
         form.setAttribute("class", "form");

@@ -119,7 +119,10 @@
 
         currentDate = new Date().getDate();
 
-        if ((currentDate) => data[i]["Pickup_date"]) {
+        console.log(data[i]["Pickup_date"]);
+        console.log(currentDate);
+
+        if (currentDate == data[i]["Pickup_date"]) {
           let form = document.createElement("form");
           form.setAttribute("class", "form");
           form.setAttribute("action", "bill");
