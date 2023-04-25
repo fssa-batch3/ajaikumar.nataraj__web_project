@@ -24,24 +24,15 @@
       <p onclick="seller()">Mr. Vendors</p>
     </div>
     <div class="btn">
-      <a href="../pages/20-customer-order-list.html">
-        <button>New Order</button></a
-      >
-      <a href="../pages/21-new-upload.html">
+      <a href="../pages/worker_new_order.html"> <button>New Order</button></a>
+      <a href="../pages/worker_new_upload.html">
         <button class="nu">New Upload</button></a
       >
       <div class="btn-1">
-        <button class="no">Completed Order</button>
-        <div class="no-dw">
-          <a href="../pages/22-com-ord.html"> Delivered Orders</a>
-          <a href="../pages/23-picked-up-order.html"> Picked Up Orders</a>
-        </div>
-      </div>
-      <div class="btn-1">
         <button class="no">Order Inprogress</button>
         <div class="no-dw">
-          <a href="../pages/24-inprogress-orders.html"> Deliver Orders</a>
-          <a href="../pages/23-picked-up-order.html"> Pick Up Orders</a>
+          <a href="../pages/worker_order_inprogress.html"> Deliver Orders</a>
+          <a href="../pages/worker_pickup_inprogress.html"> Pick Up Orders</a>
         </div>
       </div>
       <!-- <a href="../pages/24-inprogress-orders.html">
@@ -49,9 +40,9 @@
     </div>
 
     <script>
-      const oneUser = JSON.parse(localStorage.getItem("admin_logIn"));
+      const oneUser = JSON.parse(localStorage.getItem("worker_login"));
 
-      const user_info = JSON.parse(localStorage.getItem("admin_info"));
+      const user_info = JSON.parse(localStorage.getItem("worker_info"));
       let select_user = user_info.find(function (event) {
         let customerEmail = event["Email"];
         if (user_info == customerEmail) {

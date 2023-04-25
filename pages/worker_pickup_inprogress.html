@@ -33,7 +33,7 @@
     </footer> -->
 
     <script>
-      let Ordered_list = JSON.parse(localStorage.getItem("Ordered_list"));
+      let newUploadList = JSON.parse(localStorage.getItem("newUploadList"));
 
       const today = new Date();
       const year = today.getFullYear();
@@ -53,15 +53,15 @@
 
       console.log(currentDate);
 
-      for (let i = 0; i < Ordered_list.length; i++) {
-        let data = Ordered_list[i]["products"];
+      for (let i = 0; i < newUploadList.length; i++) {
+        let data = newUploadList[i]["newUploadProducts"];
         let total = 0;
         console.log(currentDate);
         // console.log(data[i]);
 
-        let select_id = Ordered_list.find(function (event) {
+        let select_id = newUploadList.find(function (event) {
           let BillId = event["billId"];
-          if (Ordered_list[i]["billId"] == BillId) {
+          if (newUploadList[i]["billId"] == BillId) {
             return true;
           }
         });
@@ -83,7 +83,7 @@
           bill_div.append(p1);
 
           let p2 = document.createElement("p");
-          p2.innerText = "Order Id : " + Ordered_list[i]["billId"];
+          p2.innerText = "Order Id : " + newUploadList[i]["billId"];
           bill_div.append(p2);
 
           let p3 = document.createElement("img");
@@ -98,7 +98,7 @@
           form.append(buy_div);
 
           let p4 = document.createElement("p");
-          p4.innerText = "Buyer Id : " + Ordered_list[i]["buyer_id"];
+          p4.innerText = "Buyer Id : " + newUploadList[i]["buyer_id"];
           buy_div.append(p4);
 
           let ful_div = document.createElement("div");
@@ -148,74 +148,74 @@
 
           p1.addEventListener("click", function (event) {
             event.preventDefault();
-            let indexFind = Ordered_list.indexOf(select_id);
+            let indexDel = newUploadList.indexOf(select_id);
             let msg = confirm(
-              "Are you sure you want to delete this Product Ordered_list"
+              "Are you sure you want to delete this Product newUploadList"
             );
             if (msg !== true) {
               return;
             } else {
-              Ordered_list.splice(indexFind, 1);
-              console.log(Ordered_list);
+              newUploadList.splice(indexDel, 1);
+              console.log(newUploadList);
               localStorage.setItem(
-                "Ordered_list",
-                JSON.stringify(Ordered_list)
+                "newUploadList",
+                JSON.stringify(newUploadList)
               );
             }
           });
 
           p3.addEventListener("click", function (event) {
             event.preventDefault();
-            let indexFind = Ordered_list.indexOf(select_id);
-            let Data = JSON.parse(localStorage.getItem("Ordered_list"));
-            let newData = JSON.parse(localStorage.getItem("owner_order_list"));
+            let indexFind = newUploadList.indexOf(select_id);
+            let Data = JSON.parse(localStorage.getItem("newUploadList"));
+            let newData = JSON.parse(localStorage.getItem("owner_upload_list"));
             let owner_data = [];
 
             let new_data = {
-              new_owner_data: Data[i]["products"],
+              new_owner_data: Data[i]["newUploadProducts"],
               billId: Data[i]["billId"],
-              buyer_id: Data[i]["buyer_id"],
+              seller_id: Data[i]["seller_id"],
             };
 
             owner_data.push(new_data);
 
             let msg = confirm(
-              "Are you sure you want to add this Product Ordered_list"
+              "Are you sure you want to add this Product newUploadList"
             );
             if (msg !== true) {
               return;
             } else {
               if (newData != null) {
                 owner_data = JSON.parse(
-                  localStorage.getItem("owner_order_list")
+                  localStorage.getItem("owner_upload_list")
                 );
 
                 owner_data.push(new_data);
 
                 localStorage.setItem(
-                  "owner_order_list",
+                  "owner_upload_list",
                   JSON.stringify(owner_data)
                 );
               } else {
                 let owner_data = [];
 
                 let new_data = {
-                  new_owner_data: Data[i]["products"],
+                  new_owner_data: Data[i]["newUploadProducts"],
                   billId: Data[i]["billId"],
-                  buyer_id: Data[i]["buyer_id"],
+                  seller_id: Data[i]["seller_id"],
                 };
 
                 owner_data.push(new_data);
 
                 localStorage.setItem(
-                  "owner_order_list",
+                  "owner_upload_list",
                   JSON.stringify(owner_data)
                 );
               }
             }
-            Ordered_list.splice(indexFind, 1);
-            console.log(Ordered_list);
-            localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
+            // newUploadList.splice(indexFind, 1);
+            // console.log(newUploadList);
+            // localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
           });
 
           document.querySelector("body").append(form);
