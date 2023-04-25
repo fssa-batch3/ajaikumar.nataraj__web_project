@@ -121,23 +121,77 @@
         console.log(data[i]["Price"]);
         console.log(data[i]["bQty"]);
 
-        p1.addEventListener("click", function (event) {
-          event.preventDefault();
-          let indexDel = newUploadList.indexOf(select_id);
-          let msg = confirm(
-            "Are you sure you want to delete this Product newUploadList"
-          );
-          if (msg !== true) {
-            return;
-          } else {
-            newUploadList.splice(indexDel, 1);
-            console.log(newUploadList);
-            localStorage.setItem(
-              "newUploadList",
-              JSON.stringify(newUploadList)
-            );
-          }
-        });
+        // p1.addEventListener("click", function (event) {
+        //   event.preventDefault();
+        //   let indexDel = newUploadList.indexOf(select_id);
+        //   let msg = confirm(
+        //     "Are you sure you want to delete this Product newUploadList"
+        //   );
+        //   if (msg !== true) {
+        //     return;
+        //   } else {
+        //     newUploadList.splice(indexDel, 1);
+        //     console.log(newUploadList);
+        //     localStorage.setItem(
+        //       "newUploadList",
+        //       JSON.stringify(newUploadList)
+        //     );
+        //   }
+        // });
+
+        // p3.addEventListener("click", function (event) {
+        //   event.preventDefault();
+        //   let indexFind = newUploadList.indexOf(select_id);
+        //   let Data = JSON.parse(localStorage.getItem("newUploadList"));
+        //   let newData = JSON.parse(localStorage.getItem("owner_upload_list"));
+        //   let owner_data = [];
+
+        //   let new_data = {
+        //     new_owner_data: Data[i]["newUploadProducts"],
+        //     billId: Data[i]["billId"],
+        //     seller_id: Data[i]["seller_id"],
+        //   };
+
+        //   owner_data.push(new_data);
+
+        //   let msg = confirm(
+        //     "Are you sure you want to add this Product newUploadList"
+        //   );
+        //   if (msg !== true) {
+        //     return;
+        //   } else {
+        //     if (newData != null) {
+        //       owner_data = JSON.parse(
+        //         localStorage.getItem("owner_upload_list")
+        //       );
+
+        //       owner_data.push(new_data);
+
+        //       localStorage.setItem(
+        //         "owner_upload_list",
+        //         JSON.stringify(owner_data)
+        //       );
+        //     } else {
+        //       let owner_data = [];
+
+        //       let new_data = {
+        //         new_owner_data: Data[i]["newUploadProducts"],
+        //         billId: Data[i]["billId"],
+        //         seller_id: Data[i]["seller_id"],
+        //       };
+
+        //       owner_data.push(new_data);
+
+        //       localStorage.setItem(
+        //         "owner_upload_list",
+        //         JSON.stringify(owner_data)
+        //       );
+        //     }
+        //   }
+        //   // newUploadList.splice(indexFind, 1);
+        //   // console.log(newUploadList);
+        //   // localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
+        // });
 
         document.querySelector("body").append(form);
       }

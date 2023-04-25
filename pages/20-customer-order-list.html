@@ -238,65 +238,72 @@
 
         // let delete_user = document.getElementById("delete");
         // delete_user.addEventListener("click", function (event) {
-        p1.addEventListener("click", function (event) {
-          event.preventDefault();
-          let indexFind = Ordered_list.indexOf(select_id);
-          let msg = confirm(
-            "Are you sure you want to delete this Product Ordered_list"
-          );
-          if (msg !== true) {
-            return;
-          } else {
-            Ordered_list.splice(indexFind, 1);
-            console.log(Ordered_list);
-            localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
-          }
-        });
+        // p1.addEventListener("click", function (event) {
+        //   event.preventDefault();
+        //   let indexFind = Ordered_list.indexOf(select_id);
+        //   let msg = confirm(
+        //     "Are you sure you want to delete this Product Ordered_list"
+        //   );
+        //   if (msg !== true) {
+        //     return;
+        //   } else {
+        //     Ordered_list.splice(indexFind, 1);
+        //     console.log(Ordered_list);
+        //     localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
+        //   }
+        // });
 
-        p3.addEventListener("click", function (event) {
-          event.preventDefault();
-          let indexFind = Ordered_list.indexOf(select_id);
-          let Data = JSON.parse(localStorage.getItem("Ordered_list"));
-          let newData = JSON.parse(localStorage.getItem("owner_order_list"));
-          let owner_data = [];
+        // p3.addEventListener("click", function (event) {
+        //   event.preventDefault();
+        //   let indexFind = Ordered_list.indexOf(select_id);
+        //   let Data = JSON.parse(localStorage.getItem("Ordered_list"));
+        //   let newData = JSON.parse(localStorage.getItem("owner_order_list"));
+        //   let owner_data = [];
 
-          let new_data = {
-            new_owner_data: Data[i],
-          };
+        //   let new_data = {
+        //     new_owner_data: Data[i]["products"],
+        //     billId: Data[i]["billId"],
+        //     buyer_id: Data[i]["buyer_id"],
+        //   };
 
-          owner_data.push(new_data);
+        //   owner_data.push(new_data);
 
-          let msg = confirm(
-            "Are you sure you want to add this Product Ordered_list"
-          );
-          if (msg !== true) {
-            return;
-          } else {
-            if (newData != null) {
-              owner_data = JSON.parse(localStorage.getItem("owner_order_list"));
+        //   let msg = confirm(
+        //     "Are you sure you want to add this Product Ordered_list"
+        //   );
+        //   if (msg !== true) {
+        //     return;
+        //   } else {
+        //     if (newData != null) {
+        //       owner_data = JSON.parse(localStorage.getItem("owner_order_list"));
 
-              owner_data.push(new_data);
+        //       owner_data.push(new_data);
 
-              localStorage.setItem(
-                "owner_order_list",
-                JSON.stringify(owner_data)
-              );
-            } else {
-              let owner_data = [];
+        //       localStorage.setItem(
+        //         "owner_order_list",
+        //         JSON.stringify(owner_data)
+        //       );
+        //     } else {
+        //       let owner_data = [];
 
-              let new_data = {
-                new_owner_data: Data[i],
-              };
+        //       let new_data = {
+        //         new_owner_data: Data[i]["products"],
+        //         billId: Data[i]["billId"],
+        //         buyer_id: Data[i]["buyer_id"],
+        //       };
 
-              owner_data.push(new_data);
+        //       owner_data.push(new_data);
 
-              localStorage.setItem(
-                "owner_order_list",
-                JSON.stringify(owner_data)
-              );
-            }
-          }
-        });
+        //       localStorage.setItem(
+        //         "owner_order_list",
+        //         JSON.stringify(owner_data)
+        //       );
+        //     }
+        //   }
+        //   Ordered_list.splice(indexFind, 1);
+        //   console.log(Ordered_list);
+        //   localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
+        // });
 
         document.querySelector("body").append(form);
       }
