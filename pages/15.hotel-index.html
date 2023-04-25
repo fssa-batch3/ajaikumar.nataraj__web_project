@@ -48,7 +48,7 @@
     <script>
       let Card = JSON.parse(localStorage.getItem("user_info"));
 
-      Card.sort((a, b) => a.points - b.points);
+      Card.sort((a, b) => b.points - a.points);
 
       // Create leaderboard HTML
       // let leaderboardHTML = "<ol>";

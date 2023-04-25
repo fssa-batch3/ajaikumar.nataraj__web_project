@@ -24,13 +24,13 @@
       <script>
         let Card = JSON.parse(localStorage.getItem("newly_added"));
 
-        let id = JSON.parse(localStorage.getItem("user_info"));
-        console.log(id);
+        let user_info = JSON.parse(localStorage.getItem("user_info"));
+        console.log(user_info);
 
         let login_id = JSON.parse(localStorage.getItem("logIn"));
         console.log(login_id);
 
-        const get_obj = id.find((e) => e.Email === login_id);
+        const get_obj = user_info.find((e) => e.Email === login_id);
         console.log(get_obj);
 
         let total = 0;
@@ -74,74 +74,74 @@
           td_tr2.append(td3_tr);
 
           total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["Qty"]);
+
+          let user_point = document.getElementById("submit");
+          user_point.addEventListener("click", function (event) {
+            event.preventDefault();
+            // let count = 0;
+            // count += 2;
+            console.log(get_obj);
+            let count = (get_obj.points += 1);
+            console.log(get_obj);
+            let user_point = get_obj["points"];
+            // console.log(user_point);
+            let change_value = Object.assign(count, user_point);
+            console.log(change_value);
+            localStorage.setItem("user_info", JSON.stringify(user_info));
+          });
+
+          document.querySelector("table").append(table_card);
         }
 
-        let user_point = document.getElementById("submit");
-        user_point.addEventListener("click", function (event) {
-          event.preventDefault();
-          // let count = 0;
-          // count += 2;
-          console.log(get_obj);
-          let count = (get_obj.points += 1);
-          console.log(get_obj);
-          let user_point = get_obj["points"];
-          // console.log(user_point);
-          let change_value = Object.assign(count, user_point);
-          console.log(change_value);
-          localStorage.setItem("id", JSON.stringify(get_obj));
-        });
+        document
+          .getElementById("submit")
+          .addEventListener("click", function (event) {
+            event.preventDefault();
+            let Data = JSON.parse(localStorage.getItem("newly_added"));
+            let exists = JSON.parse(localStorage.getItem("newUploadList"));
+            let orderedData = [];
+            let billId = Date.now();
+            let seller_id = get_obj["id"];
 
-        document.querySelector("table").append(table_card);
+            let order = {
+              newUploadProducts: Data,
+              billId: billId,
+              seller_id,
+            };
 
-        // document
-        //   .getElementById("submit")
-        //   .addEventListener("click", function (event) {
-        //     event.preventDefault();
-        //     let Data = JSON.parse(localStorage.getItem("newly_added"));
-        //     let exists = JSON.parse(localStorage.getItem("newUploadList"));
-        //     let orderedData = [];
-        //     let billId = Date.now();
-        //     let seller_id = get_obj["id"];
+            orderedData.push(order);
 
-        //     let order = {
-        //       newUploadProducts: Data,
-        //       billId: billId,
-        //       seller_id,
-        //     };
+            console.log(orderedData);
 
-        //     orderedData.push(order);
+            // console.log(order);
+            if (exists != null) {
+              orderedData = JSON.parse(localStorage.getItem("newUploadList"));
 
-        //     console.log(orderedData);
+              orderedData.push(order);
 
-        //     // console.log(order);
-        //     if (exists != null) {
-        //       orderedData = JSON.parse(localStorage.getItem("newUploadList"));
+              localStorage.setItem(
+                "newUploadList",
+                JSON.stringify(orderedData)
+              );
+            } else {
+              let orderedData = [];
 
-        //       orderedData.push(order);
+              let order = {
+                newUploadProducts: Data,
+                billId: billId,
+                seller_id,
+              };
 
-        //       localStorage.setItem(
-        //         "newUploadList",
-        //         JSON.stringify(orderedData)
-        //       );
-        //     } else {
-        //       let orderedData = [];
+              orderedData.push(order);
+              localStorage.setItem(
+                "newUploadList",
+                JSON.stringify(orderedData)
+              );
+            }
 
-        //       let order = {
-        //         newUploadProducts: Data,
-        //         billId: billId,
-        //         seller_id,
-        //       };
-
-        //       orderedData.push(order);
-        //       localStorage.setItem(
-        //         "newUploadList",
-        //         JSON.stringify(orderedData)
-        //       );
-        //     }
-
-        //     localStorage.removeItem("newly_added");
-        //     window.location.href = "/pages/10.upload.html";
-        //   });
+            localStorage.removeItem("newly_added");
+            window.location.href = "/pages/10.upload.html";
+          });
       </script>
       <div class="details">
         <h3>Your Pickup details:</h3>
@@ -188,10 +188,10 @@
       total_value.append("₹" + total);
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
-      const user_info = JSON.parse(localStorage.getItem("user_info"));
-      let select_user = user_info.find(function (event) {
+      const info = JSON.parse(localStorage.getItem("user_info"));
+      let select_user = info.find(function (event) {
         let customerEmail = event["Email"];
-        if (user_info == customerEmail) {
+        if (info == customerEmail) {
           return true;
         } else if (oneUser == customerEmail) {
           return true;

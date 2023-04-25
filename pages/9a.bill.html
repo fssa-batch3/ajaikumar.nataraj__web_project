@@ -64,6 +64,16 @@
 
     <script>
       let Card = JSON.parse(localStorage.getItem("added_list"));
+
+      let buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
+      console.log(buyer_info);
+
+      let login_id = JSON.parse(localStorage.getItem("buyer_logIn"));
+      console.log(login_id);
+
+      const get_obj = buyer_info.find((e) => e.Email === login_id);
+      console.log(get_obj);
+
       let total = 0;
 
       let btn = document.createElement("button");
@@ -106,17 +116,23 @@
 
         total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["bQty"]);
 
+        let user_point = document.getElementById("submit");
+        user_point.addEventListener("click", function (event) {
+          event.preventDefault();
+          // let count = 0;
+          // count += 2;
+          console.log(get_obj);
+          let count = (get_obj.points += 1);
+          console.log(get_obj);
+          let user_point = get_obj["points"];
+          // console.log(user_point);
+          let change_value = Object.assign(count, user_point);
+          console.log(change_value);
+          localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
+        });
+
         document.querySelector("table").append(table_card);
       }
-
-      let id = JSON.parse(localStorage.getItem("buyer_info"));
-      console.log(id);
-
-      let login_id = JSON.parse(localStorage.getItem("buyer_logIn"));
-      console.log(login_id);
-
-      const get_obj = id.find((e) => e.Email === login_id);
-      console.log(get_obj);
 
       document
         .getElementById("submit")
@@ -158,22 +174,20 @@
             localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
           }
 
-          get_obj["points"] = 1;
-
-          // localStorage.removeItem("added_list");
-          // window.location.href = "/pages/5a-fruits.html";
+          localStorage.removeItem("added_list");
+          window.location.href = "/pages/5a-fruits.html";
         });
     </script>
     <script>
       let total_value = document.getElementById("operoation");
       total_value.append("₹" + total);
 
-      const oneUser = JSON.parse(localStorage.getItem("logIn"));
+      const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
-      const user_info = JSON.parse(localStorage.getItem("user_info"));
-      let select_user = user_info.find(function (event) {
+      const info = JSON.parse(localStorage.getItem("buyer_info"));
+      let select_user = info.find(function (event) {
         let customerEmail = event["Email"];
-        if (user_info == customerEmail) {
+        if (info == customerEmail) {
           return true;
         } else if (oneUser == customerEmail) {
           return true;
