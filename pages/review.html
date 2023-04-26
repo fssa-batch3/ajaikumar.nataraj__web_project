@@ -341,7 +341,7 @@
         }
       }
 
-      for (i = 0; i < review.length; i++) {
+      for (i = 0; i <= review.length; i++) {
         let findDetail = review.find(function (event) {
           let id = event["commentId"];
           if (review[i]["commentId"] == id) {
