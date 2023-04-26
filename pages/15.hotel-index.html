@@ -44,15 +44,19 @@
         <img src="../assets/image/profile.png" alt="profile" width="100px" />
       </div>
     </header>
-    <table aria-describedby="order" class="table"></table>
+    <h1>Buyer's Leaderboard</h1>
+    <div class="full_table">
+      <div class="sidebar">
+        <button class="same">Buyer</button><br />
+        <button>Seller</button>
+      </div>
+      <table aria-describedby="order" class="table"></table>
+    </div>
     <script>
       let Card = JSON.parse(localStorage.getItem("user_info"));
 
       Card.sort((a, b) => b.points - a.points);
 
-      // Create leaderboard HTML
-      // let leaderboardHTML = "<ol>";
-      // for (let i = 0; i < Card.length; i++) {
       let table_card = document.createElement("table");
       table_card.setAttribute("id", "leaderboard");
 
@@ -105,21 +109,10 @@
 
         document.querySelector(".table").append(table_card);
       }
-      // }
 
-      // Sort players by score in descending order
-      // Card.sort((a, b) => b.points - a.points);
-
-      // // Create leaderboard HTML
       let leaderboardHTML = "<ol>";
-      // for (let i = 0; i < Card.length; i++) {
-      // leaderboardHTML += `<td>${Card[i].FullName}: ${Card[i].points}</td>`;
-      // }
-      leaderboardHTML += "</ol>";
 
-      // Update leaderboard element
-      // const leaderboardElement = document.getElementById("leaderboard");
-      // leaderboardElement.innerHTML = leaderboardHTML;
+      leaderboardHTML += "</ol>";
     </script>
 
     <footer id="foot">
@@ -200,6 +193,9 @@
         <ul onclick="admin()">
           Admin
         </ul>
+        <ul onclick="worker()">
+          Worker
+        </ul>
       </div>
     </footer>
     <nav class="copyright">
@@ -229,6 +225,9 @@
       }
       function about() {
         window.location.href = "/pages/Aboutus.html";
+      }
+      function worker() {
+        window.location.href = "/pages/worker_login.html";
       }
     </script>
   </body>

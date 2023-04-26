@@ -250,14 +250,22 @@
         <ul onclick="review()">
           Reviews
         </ul>
-        <ul onclick="admin()">
+        <!-- <ul onclick="admin()">
           Admin
         </ul>
         <ul onclick="worker()">
           Worker
         </ul>
+        <ul onclick="leader_board()">
+          Leader Board
+        </ul> -->
       </div>
     </footer>
+    <div class="own">
+      <p onclick="admin()">Admin</p>
+      <p onclick="worker()">Worker</p>
+      <p onclick="leader_board()">Leader Board</p>
+    </div>
     <nav class="copyright">
       @ copyright 2022 RISHI AGRI MARKET | All rights reserved
     </nav>
@@ -301,6 +309,9 @@
       }
       function worker() {
         window.location.href = "/pages/worker_login.html";
+      }
+      function leader_board() {
+        window.location.href = "/pages/leaderboard_seller.html";
       }
     </script>
     <!-- <a href="./pages/review.html"></a> -->
