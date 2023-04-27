@@ -105,12 +105,12 @@
         let Data = Card[i]["newUploadProducts"];
         console.log(Data);
 
-        let findDetail = Data.find(function (event) {
-          let id = Data[i]["Type"];
-          if (Data[i]["Cereals & Grains"] == id) {
-            return true;
-          }
-        });
+        // let findDetail = Data.find(function (event) {
+        //   let id = Data[i]["Type"];
+        //   if (Data[i]["Cereals & Grains"] == id) {
+        //     return true;
+        //   }
+        // });
 
         for (let j = 0; j < Data.length; j++) {
           if (Data[j]["Type"] == "Cereals & Grains") {
