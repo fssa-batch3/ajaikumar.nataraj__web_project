@@ -149,9 +149,7 @@
           p1.addEventListener("click", function (event) {
             event.preventDefault();
             let indexFind = Ordered_list.indexOf(select_id);
-            let msg = confirm(
-              "Are you sure you want to delete this Product Ordered_list"
-            );
+            let msg = confirm("Are you sure you delete this Product");
             if (msg !== true) {
               return;
             } else {
@@ -179,9 +177,7 @@
 
             owner_data.push(new_data);
 
-            let msg = confirm(
-              "Are you sure you want to add this Product Ordered_list"
-            );
+            let msg = confirm("Are you sure you Delievered this Account");
             if (msg !== true) {
               return;
             } else {
