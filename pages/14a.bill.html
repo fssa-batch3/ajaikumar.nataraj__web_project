@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
   </head>
   <body>
-    <header>
+    <header class="btn">
       <img src="../assets/image/logo.png" alt="logo" width="110px" />
       <h4>Your Product's Bill</h4>
       <img
@@ -19,6 +19,8 @@
         onclick="profile()"
       />
     </header>
+
+    <button class="btn" onclick="download()">download the Bill</button>
 
     <table>
       <script>
@@ -38,6 +40,7 @@
         let btn = document.createElement("button");
         btn.innerText = "Save & Upload";
         btn.setAttribute("id", "submit");
+        btn.setAttribute("class", "btn");
         document.querySelector("table").append(btn);
 
         let table_card = document.createElement("table");
@@ -154,7 +157,13 @@
             maxlength="10"
             disabled
           />
-          <input type="text" id="Land_Address" placeholder="address" disabled />
+          <input
+            class="address_input"
+            type="text"
+            id="Land_Address"
+            placeholder="address"
+            disabled
+          />
         </div>
       </div>
     </table>
@@ -167,7 +176,7 @@
         </tr>
       </table>
     </div>
-    <footer class="footer">
+    <footer class="btn" class="footer">
       <p class="foot-p">
         <img
           src="../assets/image/smiling-face.gif"
@@ -212,6 +221,9 @@
 
       function profile() {
         window.location.href = "/pages/profile.html";
+      }
+      function download() {
+        window.print();
       }
     </script>
   </body>

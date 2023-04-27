@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
   </head>
   <body>
-    <header>
+    <header class="btn">
       <img src="../assets/image/logo (2).png" alt="logo" width="130px" />
       <h4>Your Product's Bill</h4>
       <img
@@ -18,6 +18,8 @@
         onclick="profile()"
       />
     </header>
+
+    <button class="btn" onclick="download()">download the Bill</button>
 
     <table>
       <div class="details">
@@ -31,6 +33,7 @@
             maxlength="10"
           />
           <input
+            class="address_input"
             type="text"
             id="Land_Address"
             required
@@ -51,7 +54,7 @@
       </table>
     </div>
 
-    <footer>
+    <footer class="btn">
       <img
         src="../assets/image/smiling-face.gif"
         alt="smiling-face"
@@ -79,6 +82,7 @@
       let btn = document.createElement("button");
       btn.innerText = "Place & Back";
       btn.setAttribute("id", "submit");
+      btn.setAttribute("class", "btn");
       document.querySelector("table").append(btn);
 
       let table_card = document.createElement("table");
@@ -208,6 +212,9 @@
       Land_Address.value = select_user["Land_Address"] || " ";
       // transport_DOB.value = select_user["transport_DOB"];
 
+      function download() {
+        window.print();
+      }
       function profile() {
         window.location.href = "/pages/profile_buy.html";
       }

@@ -19,10 +19,11 @@
         <input type="text" id="Email" required="true" /><br />
         <label>Password:</label><br />
         <input type="password" id="Password" required="true" /> <br />
-        <button class="btn" type="submit">Sign in</button>
+        <button class="btn" type="submit">Log in</button>
       </form>
     </div>
 
+    <button class="btn" onclick="sign()">Go to sign</button>
     <footer class="footer">Toll-Free no:1800 123 100</footer>
 
     <script>
@@ -67,6 +68,9 @@
           alert("Login credentials not correct");
         }
       });
+      function sign() {
+        window.location.href = "/pages/16.adminsignin.html";
+      }
     </script>
   </body>
 </html>

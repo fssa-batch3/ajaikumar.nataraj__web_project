@@ -41,4 +41,20 @@ table {
 }
 input {
   font-size: 30px;
+  width: 200px;
+}
+.address_input {
+  width: 450px;
+}
+
+@media print {
+  .btn {
+    display: none;
+  }
+  .head {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
 }
