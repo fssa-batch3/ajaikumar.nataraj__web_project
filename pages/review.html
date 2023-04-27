@@ -196,6 +196,55 @@
     </nav>
 
     <script>
+      let detail = document.getElementById("form");
+
+      document.createElement("review");
+      detail.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let array = [];
+
+        if (localStorage.getItem("review") != null) {
+          array = JSON.parse(localStorage.getItem("review"));
+
+          location.reload();
+        }
+
+        // let match = false;
+
+        // const Name = document.getElementById("name").value;
+        const Description = document.getElementById("comment").value;
+        // const thumbs_up = document.getElementById("thumbs-up-count").value;
+        // const thumbs_down = document.getElementById("thumbs-down-count").value;
+        const commentId = Date.now();
+        const Time = new Date().getHours();
+        const Minutes = new Date().getMinutes();
+        const currentTime = `${Time}:${Minutes}`;
+        const userId = get_obj["id"];
+        const Name = get_obj["FullName"];
+        let presentDate = new Date().getDate();
+        let presentMonth = new Date().getMonth();
+        let presentYear = new Date().getFullYear();
+
+        let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
+
+        let value = {
+          // Name,
+          Description,
+          commentId,
+          // thumbs_up,
+          // thumbs_down,
+          // down_count,
+          // up_count,
+          currentTime,
+          userId,
+          Name,
+          currentDate,
+        };
+        array.push(value);
+        localStorage.setItem("review", JSON.stringify(array));
+      });
+
       const review = JSON.parse(localStorage.getItem("review"));
 
       let id = JSON.parse(localStorage.getItem("user_info"));
@@ -320,6 +369,8 @@
             let findIndex = review.indexOf(select_comment);
             review[findIndex] = change_desc;
             localStorage.setItem("review", JSON.stringify(review));
+
+            location.reload();
           });
 
           // let delete_comment = document.getElementById("delete");
@@ -335,13 +386,15 @@
               review.splice(comment_delete, 1);
               localStorage.setItem("review", JSON.stringify(review));
             }
+
+            location.reload();
           });
 
           document.querySelector(".others_comment").append(other_section);
         }
       }
 
-      for (i = 0; i <= review.length; i++) {
+      for (i = 0; i < review.length; i++) {
         let findDetail = review.find(function (event) {
           let id = event["commentId"];
           if (review[i]["commentId"] == id) {
@@ -442,52 +495,6 @@
           document.querySelector(".others_comment").append(other_section);
         }
       }
-
-      let detail = document.getElementById("form");
-
-      document.createElement("review");
-      detail.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        // const Name = document.getElementById("name").value;
-        const Description = document.getElementById("comment").value;
-        // const thumbs_up = document.getElementById("thumbs-up-count").value;
-        // const thumbs_down = document.getElementById("thumbs-down-count").value;
-        const commentId = Date.now();
-        const Time = new Date().getHours();
-        const Minutes = new Date().getMinutes();
-        const currentTime = `${Time}:${Minutes}`;
-        const userId = get_obj["id"];
-        const Name = get_obj["FullName"];
-        let presentDate = new Date().getDate();
-        let presentMonth = new Date().getMonth();
-        let presentYear = new Date().getFullYear();
-
-        let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
-
-        let array = [];
-
-        if (localStorage.getItem("review") != null) {
-          array = JSON.parse(localStorage.getItem("review"));
-        }
-
-        let value = {
-          // Name,
-          Description,
-          commentId,
-          // thumbs_up,
-          // thumbs_down,
-          // down_count,
-          // up_count,
-          currentTime,
-          userId,
-          Name,
-          currentDate,
-        };
-        array.push(value);
-
-        localStorage.setItem("review", JSON.stringify(array));
-      });
 
       function sell_sign() {
         window.location.href = "/pages/1.signin.html";
