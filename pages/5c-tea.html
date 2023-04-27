@@ -108,7 +108,7 @@
         console.log(Data);
 
         for (let j = 0; j < Data.length; j++) {
-          if (Data[j].Type == "Coffee & Tea") {
+          if (Data[j]["Type"] == "Coffee & Tea") {
             let div_card = document.createElement("div");
             div_card.setAttribute("class", "card_div");
             div_card.setAttribute("type", "button");
