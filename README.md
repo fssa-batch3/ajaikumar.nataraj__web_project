@@ -9,11 +9,10 @@ Sonar Cloud:https://sonarcloud.io/project/overview?id=fssa-batch3_ajaikumar.nata
 
 Features:
 
-1. User CRUD (Buyer & Seller) (completed)
+1. User CRUD (Buyer & Seller & Admin & Worker) (completed)
 
 2. Farmer Story
    -> Add Farming Products (Completed)
-   -> Farming Products list (Completed)
    -> Farming Products details (Completed)
    -> Update Farming Products (Completed)
    -> Close or Deactive the Farming Products data (Completed)
@@ -27,8 +26,8 @@ Features:
 4. Admin Page
    -> Create the details (user and product) (Completed)
    -> Read the details (user and product) (completed)
-   -> Update the availability of products, transportation details, etc,... (yet to complete)
-   -> Delete the product customer details. (yet to complete)
+   -> Update the availability of products, transportation details, etc,... (Completed)
+   -> Delete the product customer details. (Completed)
    
 5. Comment crud
    -> Create the comment (Completed)
@@ -36,6 +35,18 @@ Features:
    -> Update the comment (Completed)
    -> Delete the comment (Completed)
    
+   
+6. Leader Board
+   -> Create the Leader Board (Completed)
+   -> Read the Leader Board (Completed)
+   -> Update the Leader Board (Completed)
+   -> Delete the Leader Board (Completed)
+   
+7. Worker Crud
+   -> Create the products (Completed)
+   -> Read the products (Completed)
+   -> Update the products (Completed)
+   -> Delete the products (Completed)
    
    RISHI AGRI MARKET EATABLES BUYING(Customer) AND SELLING(Farmer)   
       BUYER    
@@ -310,3 +321,84 @@ Features:
                   See the New Order Inprogress in the page.
             Expected Result:
                   Order Inprogress products are shown
+                  
+                  
+      WORKER
+          Scenario 1: Go to New Upload page
+            Steps: 
+                  Login as a Worker
+                  Navigate to the New Upload page.
+                  See the New Upload details in the page.
+            Expected Result:
+                  New upload products are shown.
+                  
+          Scenario 2: Go to New Order page
+            Steps: 
+                  Login as a Worker
+                  Navigate to the New Order page.
+                  See the New Order details in the page.
+            Expected Result:
+                  New Order details are shown
+                  
+          Scenario 3: Go to Completed order page
+            Steps: 
+                  Login as a Worker
+                  Navigate to the Completed order page.
+                  See the New Completed order in the page.
+            Expected Result:
+                  Completed order products are shown
+
+
+          Scenario 4: Go to Order Inprogress page
+            Steps: 
+                  Login as a Worker
+                  Navigate to the Order Inprogress page.
+                  See the New Order Inprogress in the page.
+                  You are able to approve by clicking "Tick" symbol
+                  You are able to delete by clicking "X" symbol
+            Expected Result:
+                  Order Inprogress products are shown
+                  
+                  
+                  
+    Leader Board
+      Create a Leader Board         
+         Scenario 1: Successfully create a Leader Board Points         
+            Steps:
+               Login as User
+               Navigate to the  Leader Board  page.           
+               Click the "Submit" button.              
+            Expected Result:                            
+               The review is stored in the storage area.            
+               
+               
+      Read  Leader Board              
+         Scenario 1: Successfully view  Leader Board       
+            Steps:                 
+               Log in as a user.              
+               Navigate to the  Leader Board  page.                                              
+               View your Buyer Leader Board  and also seller  Leader Board .     
+            Expected Result:                     
+               The user can view both  Leader Board Points.     
+               
+               
+      Edit  Leader Board                            
+         Scenario 1: Successfully edit  Leader Board           
+            Steps:                   
+               Log in as a user.              
+               Navigate to the  Leader Board  page. 
+               If buyer buy some products some points will add to their account.
+               If seller sell some products some points will add to their account.
+            Expected Result:                            
+               The user's  Leader Board Point's are updated.        
+                   
+               
+               
+     Delete  Leader Board                            
+         Scenario 1: Successfully delete Name from Leader Board.          
+            Steps:                   
+               Log in as a user.              
+               Navigate to the Leader Board  page.          
+               If user delete their account his/her name delete from the table.        
+            Expected Result:                            
+               The user's name from the Leader Board  is deleted.   
