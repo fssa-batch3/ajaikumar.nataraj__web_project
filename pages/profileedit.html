@@ -164,7 +164,8 @@
         let findIndex = user_info.indexOf(select_user);
         user_info[findIndex] = combineData;
         localStorage.setItem("user_info", JSON.stringify(user_info));
-        window.location.href = "/pages/profile.html";
+        // window.location.href = "/pages/profile.html";
+        window.history.back();
       });
 
       // delete option in the page

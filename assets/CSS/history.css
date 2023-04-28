@@ -11,40 +11,46 @@ header {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  /* box-shadow: 1px 1px 1px 3px rgb(145, 232, 184); */
+  margin-top: 10px;
+  border-radius: 5px;
 }
 
 .nav nav {
   display: flex;
 }
+
 .card_div {
   padding: 40px 40px 40px 60px;
   width: 330px;
-  /* height: 360px; */
   margin-top: 70px;
   box-shadow: 1px 1px 1px 3px rgb(199, 237, 199);
   border-radius: 6px;
 }
 .same {
-  color: #2bae66ff;
-  background-color: whitesmoke;
+  color: white;
+  background-color: #2bae66ff;
 }
 button {
   font-size: 20px;
   width: 140px;
   margin: 10px 0px 0px 10px;
-  background-color: #55aa1c;
+  background-color: white;
   border: none;
-  color: white;
+  color: #2bae66ff;
   border-radius: 4px;
 }
 button:hover {
-  color: #2bae66ff;
-  background-color: whitesmoke;
+  color: white;
+  background-color: #2bae66ff;
 }
 .button nav {
   display: flex;
   justify-content: space-around;
+  box-shadow: 1.5px 1px 1px 3px rgb(173, 229, 198);
+  margin-top: 20px;
+  border-radius: 5px;
 }
 .button button {
   width: 250px;
