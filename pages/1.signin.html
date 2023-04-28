@@ -24,7 +24,7 @@
           <input
             type="text"
             id="full_name"
-            pattern="[a-zA-Z]{1,20}"
+            pattern="[a-zA-Z]+\s[a-zA-Z]+"
             autocomplete="off"
             required
           /><br />
@@ -40,11 +40,19 @@
             type="tel"
             id="phone_number"
             pattern="[0-9]{10}"
+            maxlength="10"
+            minlength="10"
             autocomplete="hgfgtyfygh"
             required
           /><br />
           <label>Password:</label><br />
-          <input id="password" type="password" autocomplete="hg" required />
+          <input
+            id="password"
+            pattern="[a-zA-Z]{8,16}[@]"
+            type="password"
+            autocomplete="hg"
+            required
+          />
           <br />
           <label>Confirm Password:</label><br />
           <input

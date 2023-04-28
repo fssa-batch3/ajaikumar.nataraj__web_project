@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
   </head>
   <body>
-    <header class="btn">
+    <header>
       <img src="../assets/image/logo.png" alt="logo" width="110px" />
-      <h4>Your Product's Bill</h4>
+      <h4 class="btn">Your Product's Bill</h4>
       <img
+        class="btn"
         src="../assets/image/profile.png"
         alt="profile"
         width="90px"
@@ -147,7 +148,7 @@
           });
       </script>
       <div class="details">
-        <h3>Your Pickup details:</h3>
+        <h3 class="btn">Your Pickup details:</h3>
         <div class="detail">
           <input type="text" id="First_name" placeholder="name" disabled />
           <input
@@ -157,6 +158,7 @@
             maxlength="10"
             disabled
           />
+
           <input
             class="address_input"
             type="text"
@@ -176,6 +178,9 @@
         </tr>
       </table>
     </div>
+
+    <input disabled id="seller_id" type="number" />
+
     <footer class="btn" class="footer">
       <p class="foot-p">
         <img
@@ -209,12 +214,14 @@
 
       console.log(select_user);
       // to get value from registration form
+      const id = document.getElementById("seller_id");
       const phNo = document.getElementById("Phone_Number");
       const userName = document.getElementById("First_name");
       const Land_Address = document.getElementById("Land_Address");
 
       // Compare the values
 
+      id.value = select_user["id"];
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
       Land_Address.value = select_user["Land_Address"] || "";
