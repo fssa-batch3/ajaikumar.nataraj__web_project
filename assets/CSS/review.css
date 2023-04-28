@@ -10,6 +10,9 @@ body {
   margin-top: 100px;
 }
 
+.topic {
+  margin-top: 150px;
+}
 .own_comment {
   display: flex;
   margin-left: 20px;
@@ -21,7 +24,7 @@ body {
   margin-left: 450px;
 }
 .enter_comment {
-  margin-top: 150px;
+  margin-top: 50px;
   justify-content: center;
 }
 input {
@@ -67,12 +70,16 @@ textarea {
 }
 button {
   font-size: 30px;
-  width: 250px;
+  width: 300px;
   height: 50px;
   background-color: #2bae66ff;
   color: white;
   border-radius: 5px;
   border: #2bae66ff;
+}
+.different {
+  color: #2bae66ff;
+  background-color: white;
 }
 button:hover {
   color: #2bae66ff;
