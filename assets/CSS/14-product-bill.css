@@ -14,6 +14,7 @@ button {
 }
 .btn button {
   background-color: #2bae66ff;
+  color: white;
   border: none;
   width: 300px;
   height: 50px;
