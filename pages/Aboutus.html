@@ -171,11 +171,13 @@
         <ul onclick="review()">
           Reviews
         </ul>
-        <ul onclick="admin()">
-          Admin
-        </ul>
       </div>
     </footer>
+    <div class="own">
+      <p onclick="admin()">Admin</p>
+      <p onclick="worker()">Worker</p>
+      <p onclick="leader_board()">Leader Board</p>
+    </div>
     <nav class="copyright">
       @ copyright 2022 RISHI AGRI MARKET | All rights reserved
     </nav>
@@ -201,6 +203,12 @@
       }
       function review() {
         window.location.href = "/pages/review.html";
+      }
+      function worker() {
+        window.location.href = "/pages/worker_login.html";
+      }
+      function leader_board() {
+        window.location.href = "/pages/leaderboard_seller.html";
       }
     </script>
   </body>
