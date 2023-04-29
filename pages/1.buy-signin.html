@@ -49,6 +49,16 @@
             required
           />
           <br />
+          <label for="address">Address</label> <br />
+          <textarea
+            required
+            pattern="[a-zA-Z]"
+            name="address"
+            id="address"
+            cols="45"
+            rows="5"
+          ></textarea>
+          <br />
           <label>Confirm Password:</label><br />
           <input
             type="password"
@@ -91,7 +101,7 @@
         const Email = document.getElementById("email").value.toLowerCase();
         const Phone_number = document.getElementById("phone_number").value;
         const Password = document.getElementById("password").value;
-        // const Gender = document.getElementById("gender").value;
+        const Home_Address = document.getElementById("address").value;
         const Confirm_Password =
           document.getElementById("conform_password").value;
         if (Password != Confirm_Password) {
@@ -115,8 +125,9 @@
             Email,
             Phone_number,
             Password,
+            Home_Address,
             Confirm_Password,
-            points: 1,
+            points: 0,
           };
           console.log(userObj);
 

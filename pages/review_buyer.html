@@ -219,7 +219,7 @@
       const get_obj = id.find((e) => e.Email === login_id);
       console.log(get_obj);
 
-      for (i = 0; i <= buyer_review.length; i++) {
+      for (i = 0; i < buyer_review.length; i++) {
         let select_comment = buyer_review.find(function (event) {
           let id = event["commentId"];
           if (buyer_review[i]["commentId"] == id) {

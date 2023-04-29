@@ -9,22 +9,21 @@
   </head>
   <body>
     <header class="header">
-      <a href="../pages/17-admin-index.html">
-        <button>
-          <img
-            src="../assets/image/arrowback.png"
-            alt="arrow-back"
-            width="50px"
-          /></button
-      ></a>
-
+      <div class="img_div">
+        <img
+          src="../assets/image/arrowback.png"
+          alt="arrow-back"
+          class="img"
+          onclick="back()"
+        />
+      </div>
       <div class="hol">Your History</div>
       <div class="logo">
         <img src="../assets/image/logo.png" alt="logo" width="110px" />
       </div>
     </header>
 
-    <button class="btn" onclick="store()">Go to Store</button>
+    <!-- <button class="btn" onclick="store()">Go to Store</button> -->
 
     <!-- <table aria-describedby="order" class="table"></table> -->
     <hr />
@@ -157,9 +156,9 @@
           buy_div.setAttribute("class", "buy");
           form.append(buy_div);
 
-          let p4 = document.createElement("p");
-          p4.innerText = "Buyer Id : " + Card[i]["seller_id"];
-          buy_div.append(p4);
+          // let p4 = document.createElement("p");
+          // p4.innerText = "Buyer Id : " + Card[i]["seller_id"];
+          // buy_div.append(p4);
 
           let ful_div = document.createElement("div");
           ful_div.setAttribute("class", "ful");
@@ -188,30 +187,33 @@
             ul_div.append(ul4);
 
             total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
+
+            let date_div = document.createElement("div");
+            date_div.setAttribute("class", "date");
+
+            form.append(date_div);
+
+            let p5 = document.createElement("p");
+            p5.setAttribute("id", "operation");
+            p5.innerHTML = " Total Amount : ₹" + total;
+            date_div.append(p5);
+
+            let p6 = document.createElement("p");
+            p6.innerText = "Picked up Date : " + data[j]["Pickup_date"];
+            date_div.append(p6);
+            // console.log(data[i]["Price"]);
+            // console.log(data[i]["bQty"]);
+
+            document.querySelector("body").append(form);
           }
-
-          let date_div = document.createElement("div");
-          date_div.setAttribute("class", "date");
-
-          form.append(date_div);
-
-          let p5 = document.createElement("p");
-          p5.setAttribute("id", "operation");
-          p5.innerHTML = " Total Amount : ₹" + total;
-          date_div.append(p5);
-
-          let p6 = document.createElement("p");
-          p6.innerText = "Delivery Date : " + data[i]["Pickup_date"];
-          date_div.append(p6);
-          console.log(data[i]["Price"]);
-          console.log(data[i]["bQty"]);
-
-          document.querySelector("body").append(form);
         }
       }
 
-      function store() {
-        window.location.href = "/pages/19a-store.html";
+      // function store() {
+      //   window.location.href = "/pages/19a-store.html";
+      // }
+      function back() {
+        window.history.back();
       }
     </script>
   </body>

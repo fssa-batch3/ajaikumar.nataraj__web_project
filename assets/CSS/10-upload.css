@@ -33,7 +33,7 @@ button:hover {
 }
 .head img {
   border-radius: 5px;
-  background-color: #2bae66ff;
+  /* background-color: #2bae66ff; */
   color: aliceblue;
 }
 .title {

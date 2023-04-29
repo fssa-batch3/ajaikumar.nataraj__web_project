@@ -13,12 +13,8 @@
         <img
           src="../assets/image/arrowback.png"
           alt="arrow"
+          width="50px"
           onclick="back()"
-          style="
-            border-radius: 50px;
-            padding: 10px 10px 10px 10px;
-            background-color: #2bae66ff;
-          "
         />
       </nav>
       <nav>
@@ -186,6 +182,9 @@
       }
       function profile() {
         window.location.href = "/pages/profile.html";
+      }
+      function back() {
+        window.history.back();
       }
     </script>
   </body>
