@@ -26,12 +26,13 @@ button {
   height: 130px;
 }
 input {
-  width: 200px;
+  width: 300px;
   height: 40px;
   font-size: 30px;
   display: flex;
   text-align: center;
   color: #2bae66ff;
+  background-color: white;
 }
 .before-arrow {
   border-radius: 50px;

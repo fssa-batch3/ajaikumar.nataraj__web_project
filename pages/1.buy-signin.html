@@ -20,7 +20,7 @@
           <input
             type="text"
             id="full_name"
-            pattern="[a-zA-Z]{1,20}"
+            pattern="[a-zA-Z]+\s[a-zA-Z]+"
             autocomplete="off"
             required
           /><br />
@@ -33,7 +33,7 @@
           /><br />
           <label>Phone no:</label><br />
           <input
-            type="number"
+            type="tel"
             id="phone_number"
             pattern="[0-9]{10}"
             autocomplete="hgfgtyfygh"
@@ -44,7 +44,7 @@
           <input
             id="password"
             type="password"
-            pattern="{6,12}"
+            pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             autocomplete="hg"
             required
           />
@@ -53,7 +53,7 @@
           <input
             type="password"
             id="conform_password"
-            pattern="{6,12}"
+            pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             autocomplete="hg"
             required
           /><br />

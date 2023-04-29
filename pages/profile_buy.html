@@ -36,11 +36,11 @@
           placeholder="Home Address"
           disabled
         />
-        <label for="Land Address">Land Address</label>
+        <label for="aadhar number">Aadhar Number</label>
         <input
-          id="Land_Address"
+          id="Aadhar_number"
           class="input"
-          placeholder="Land Address"
+          placeholder="Aadhar Number"
           disabled
         />
         <label for="gender">Gender</label>
@@ -80,11 +80,12 @@
           placeholder="Date of Birth"
           disabled
         />
-        <label for="aadhar number">Aadhar Number</label>
+
+        <label for="district">District</label>
         <input
-          id="Aadhar_number"
+          id="District"
           class="input"
-          placeholder="Aadhar Number"
+          placeholder="Land Address"
           disabled
         />
         <label for="state">State</label>
@@ -118,7 +119,7 @@
       const DOB = document.getElementById("DOB");
       const transport_DOB = document.getElementById("DOB");
       const Home_Address = document.getElementById("Home_Address");
-      const Land_Address = document.getElementById("Land_Address");
+      const District = document.getElementById("District");
       const gender = document.getElementById("gender");
       const farmer = document.getElementById("farmer");
       const Aadhar_number = document.getElementById("Aadhar_number");
@@ -134,7 +135,7 @@
       DOB.value = select_user["DOB"];
       transport_DOB.value = select_user["DOB"];
       Home_Address.value = select_user["Home_Address"] || "";
-      Land_Address.value = select_user["Land_Address"] || "";
+      District.value = select_user["District"] || "";
       gender.value = select_user["gender"] || "";
       farmer.value = select_user["farmer"] || "";
       Aadhar_number.value = select_user["Aadhar_number"] || "";
@@ -153,7 +154,7 @@
         //   let DOB = document.getElementById("DOB").value;
         //   let transport_DOB = document.getElementById("DOB").value;
         //   let Home_Address = document.getElementById("Home_Address").value;
-        //   let Land_Address = document.getElementById("Land_Address").value;
+        //   let District = document.getElementById("District").value;
         //   let gender = document.getElementById("gender").value;
         //   let farmer = document.getElementById("farmer").value;
         //   let Aadhar_number = document.getElementById("Aadhar_number").value;
@@ -168,7 +169,7 @@
         //     DOB,
         //     transport_DOB,
         //     Home_Address,
-        //     Land_Address,
+        //     District,
         //     gender,
         //     farmer,
         //     Aadhar_number,

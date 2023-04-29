@@ -48,7 +48,7 @@
           <label>Password:</label><br />
           <input
             id="password"
-            pattern="[a-zA-Z]{8,16}[@]"
+            pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             type="password"
             autocomplete="hg"
             required
@@ -59,6 +59,7 @@
             type="password"
             id="conform_password"
             autocomplete="hg"
+            pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             required
           /><br />
 
