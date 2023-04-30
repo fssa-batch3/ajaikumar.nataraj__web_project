@@ -28,9 +28,6 @@
 
     <!-- <table aria-describedby="order" class="table"></table> -->
     <hr />
-    <!-- <footer class="f-btn">
-      <a href="../pages/19a-store.html"><button>Go to Store</button></a>
-    </footer> -->
 
     <script>
       let Card = JSON.parse(localStorage.getItem("Ordered_list"));
@@ -59,7 +56,7 @@
         console.log(currentDate);
         console.log(data[i]["Pickup_date"]);
 
-        if (currentDate == data[i]["Pickup_date"]) {
+        if (currentDate == Card[i]["Delivery_date"]) {
           let form = document.createElement("form");
           form.setAttribute("class", "form");
           form.setAttribute("action", "bill");

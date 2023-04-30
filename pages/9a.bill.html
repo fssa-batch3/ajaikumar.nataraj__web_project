@@ -125,23 +125,50 @@
 
         total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["bQty"]);
 
-        let user_point = document.getElementById("submit");
-        user_point.addEventListener("click", function (event) {
-          event.preventDefault();
-          // let count = 0;
-          // count += 2;
-          console.log(get_obj);
-          let count = (get_obj.points += 1);
-          console.log(get_obj);
-          let user_point = get_obj["points"];
-          // console.log(user_point);
-          let change_value = Object.assign(count, user_point);
-          console.log(change_value);
-          localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
-        });
+        // let user_point = document.getElementById("submit");
+        // user_point.addEventListener("click", function (event) {
+        //   event.preventDefault();
+        //   // let count = 0;
+        //   // count += 2;
+        //   console.log(get_obj);
+        //   let count = (get_obj.points += 1);
+        //   console.log(get_obj);
+        //   let user_point = get_obj["points"];
+        //   // console.log(user_point);
+        //   let change_value = Object.assign(count, user_point);
+        //   console.log(change_value);
+        //   localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
+        // });
 
         document.querySelector("table").append(table_card);
       }
+
+      const today = new Date();
+      const year = today.getFullYear();
+      let month = today.getMonth() + 1;
+      let day = today.getDate();
+
+      if (day <= 28) {
+        day = day + 2;
+      }
+
+      if (day > 28) {
+        day = 30 - 28;
+        month = month + 1;
+      }
+
+      // add leading zero if month or day is a single digit
+      if (month < 10) {
+        month = "0" + month;
+      }
+
+      if (day < 10) {
+        day = "0" + day;
+      }
+
+      const currentDate = `${year}-${month}-${day}`;
+
+      console.log(currentDate);
 
       document
         .getElementById("submit")
@@ -152,11 +179,13 @@
           let orderedData = [];
           let billId = Date.now();
           let buyer_id = get_obj["id"];
+          let Delivery_date = currentDate;
 
           let order = {
             products: Data,
             billId: billId,
             buyer_id,
+            Delivery_date,
           };
 
           orderedData.push(order);
@@ -177,14 +206,15 @@
               products: Data,
               billId: billId,
               buyer_id,
+              Delivery_date,
             };
 
             orderedData.push(order);
             localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
           }
 
-          localStorage.removeItem("added_list");
-          window.location.href = "/pages/5a-fruits.html";
+          // localStorage.removeItem("added_list");
+          // window.location.href = "/pages/5a-fruits.html";
         });
     </script>
     <script>
