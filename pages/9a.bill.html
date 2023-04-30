@@ -125,20 +125,20 @@
 
         total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["bQty"]);
 
-        // let user_point = document.getElementById("submit");
-        // user_point.addEventListener("click", function (event) {
-        //   event.preventDefault();
-        //   // let count = 0;
-        //   // count += 2;
-        //   console.log(get_obj);
-        //   let count = (get_obj.points += 1);
-        //   console.log(get_obj);
-        //   let user_point = get_obj["points"];
-        //   // console.log(user_point);
-        //   let change_value = Object.assign(count, user_point);
-        //   console.log(change_value);
-        //   localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
-        // });
+        let user_point = document.getElementById("submit");
+        user_point.addEventListener("click", function (event) {
+          event.preventDefault();
+          // let count = 0;
+          // count += 2;
+          console.log(get_obj);
+          let count = (get_obj.points += 1);
+          console.log(get_obj);
+          let user_point = get_obj["points"];
+          // console.log(user_point);
+          let change_value = Object.assign(count, user_point);
+          console.log(change_value);
+          localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
+        });
 
         document.querySelector("table").append(table_card);
       }
@@ -213,8 +213,8 @@
             localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
           }
 
-          // localStorage.removeItem("added_list");
-          // window.location.href = "/pages/5a-fruits.html";
+          localStorage.removeItem("added_list");
+          window.location.href = "/pages/5a-fruits.html";
         });
     </script>
     <script>

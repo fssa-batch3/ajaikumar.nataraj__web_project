@@ -109,15 +109,6 @@
         </div>
       </div>
       <div class="full_list">
-        <nav>
-          <label for="date">Select Your Pickup Date</label><br />
-          <input
-            type="date"
-            required="required"
-            id="date"
-            placeholder="Pickup date"
-          />
-        </nav>
         <br />
         <nav>
           <label for="description">
@@ -233,7 +224,6 @@
         const Qty = document.getElementById("qty").value;
         const bQty = document.getElementById("qty").value;
         const Place = document.getElementById("place").value;
-        const Pickup_date = document.getElementById("date").value;
         const Description = document.getElementById("description").value;
         let ProductId = Date.now();
         let userId = get_obj["id"];
@@ -250,7 +240,6 @@
           Description,
           ProductId,
           userId,
-          Pickup_date,
           // date,
         };
         // console.log(Product_id);
