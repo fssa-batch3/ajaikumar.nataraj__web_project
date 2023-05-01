@@ -25,8 +25,10 @@
 
     <table>
       <script>
+        // get the values from the local storage
         let Card = JSON.parse(localStorage.getItem("newly_added"));
 
+        // get the user's data by comparing login email id
         let user_info = JSON.parse(localStorage.getItem("user_info"));
         console.log(user_info);
 
@@ -38,12 +40,14 @@
 
         let total = 0;
 
+        // to create the button for place the order
         let btn = document.createElement("button");
         btn.innerText = "Save & Upload";
         btn.setAttribute("id", "submit");
         btn.setAttribute("class", "btn");
         document.querySelector("table").append(btn);
 
+        // for creating table by add cart details..
         let table_card = document.createElement("table");
 
         let th_tr1 = document.createElement("tr");
@@ -79,6 +83,7 @@
 
           total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["Qty"]);
 
+          // for add the points based on their selling qty
           let user_point = document.getElementById("submit");
           user_point.addEventListener("click", function (event) {
             event.preventDefault();
@@ -95,6 +100,7 @@
           document.querySelector("table").append(table_card);
         }
 
+        // set pickup date
         const today = new Date();
         const year = today.getFullYear();
         let month = today.getMonth() + 1;
@@ -122,6 +128,7 @@
 
         console.log(currentDate);
 
+        // code for place the order and add to the another local storage for admin
         document
           .getElementById("submit")
           .addEventListener("click", function (event) {
@@ -226,8 +233,11 @@
       </p>
     </footer>
     <script>
+      // for total amount
       let total_value = document.getElementById("operoation");
       total_value.append("₹" + total);
+
+      // to get details of the users for delivery ..
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
       const info = JSON.parse(localStorage.getItem("user_info"));

@@ -152,44 +152,6 @@
     </div>
 
     <script>
-      // let Card = JSON.parse(localStorage.getItem("newly_added"));
-
-      // let table_card = document.createElement("table");
-
-      // let th_tr1 = document.createElement("tr");
-      // table_card.append(th_tr1);
-
-      // let th1_tr = document.createElement("th");
-      // th1_tr.innerText = "Products Name";
-      // th_tr1.append(th1_tr);
-
-      // let th2_tr = document.createElement("th");
-      // th2_tr.innerText = "Quantity";
-      // th_tr1.append(th2_tr);
-
-      // let th4_tr = document.createElement("th");
-      // th4_tr.innerText = "Price";
-      // th_tr1.append(th4_tr);
-
-      // for (let i = 0; i <= Card.length; i++) {
-      //   let td_tr2 = document.createElement("tr");
-      //   table_card.append(td_tr2);
-
-      //   let td1_tr = document.createElement("td");
-      //   td1_tr.innerText = Card[i]["Name"];
-      //   td_tr2.append(td1_tr);
-      //   console.log(Card);
-
-      //   let td2_tr = document.createElement("td");
-      //   td2_tr.innerText = Card[i]["Qty"] + " kg";
-      //   td_tr2.append(td2_tr);
-
-      //   let td4_tr = document.createElement("td");
-      //   td4_tr.innerText = "Rs." + Card[i]["Price"];
-      //   td_tr2.append(td4_tr);
-
-      //   document.querySelector(".add_detail").append(table_card);
-      // }
       function submit() {
         window.location.href = "/pages/11.place-products.html";
       }
@@ -197,6 +159,7 @@
         window.location.href = "/pages/10.a.history.html";
       }
 
+      // compare the user's detail from the login email to get details of uploader
       uploadForm = document.getElementById("form");
       let id = JSON.parse(localStorage.getItem("user_info"));
       console.log(id);
@@ -209,6 +172,7 @@
 
       document.createElement("newly_added");
 
+      // to get details of the products from the form by id and store in the new array
       uploadForm.addEventListener("submit", function (event) {
         event.preventDefault();
         let array = [];
@@ -216,7 +180,9 @@
           array = JSON.parse(localStorage.getItem("newly_added"));
         }
 
-        let match = false;
+        // let match = false;
+
+        // to set the details by object in an array
         const Url = document.getElementById("url").value;
         const Name = document.getElementById("product").value;
         const Type = document.getElementById("type").value;

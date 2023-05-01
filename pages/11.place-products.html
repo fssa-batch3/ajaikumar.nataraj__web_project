@@ -44,7 +44,7 @@
     </footer>
 
     <script>
-      // JSON
+      // to get the upload details from the local storage
       let Card = JSON.parse(localStorage.getItem("newly_added"));
       console.log(Card);
 
@@ -94,14 +94,6 @@
 
         let edit = document.createElement("button");
         edit.innerText = "Edit";
-        // edit.setAttribute("id", Card[i]["id"]);
-        // edit.setAttribute("onclick", "productEdit(this.id)");
-        // edit.setAttribute("onclick", "edit(/pages/10.product_edit_page.html)");
-        // edit.setAttribute(
-        //   "href",
-        //   "../pages/10.product_edit_page.html?Product_id=" +
-        //     Card[i]["Product_id"]
-        // );
         edit.setAttribute("id", "submit");
         edit.setAttribute("type", "submit");
         div_card.append(edit);
@@ -110,14 +102,13 @@
         button.innerText = "Delete";
         button.setAttribute("id", "delete");
         button.setAttribute("value", "delete");
-        // button.setAttribute("onclick", deleteProduct());
         div_card.append(button);
 
+        // edit the price or qty for the products
         edit.addEventListener("click", function (event) {
           event.preventDefault();
 
           let changeData = {
-            // Url: image.value,
             Name: fruit_name.value,
             Price: rupees.value,
             Qty: input_value.value,
@@ -131,6 +122,8 @@
           localStorage.setItem("newly_added", JSON.stringify(detail));
           alert("Succesfully changed");
         });
+
+        // to delete the product by clicking the delete button
         button.addEventListener("click", function (event) {
           event.preventDefault();
           let deleteData = JSON.parse(localStorage.getItem("deleted_list"));
@@ -155,16 +148,12 @@
 
         document.querySelector(".card_main").append(div_card);
       }
-      // const product_id = JSON.parse(localStorage.getItem("newly_added"));
-      // let id = document.getElementById("Product_id");
 
-      // console.log(detail);
-      // const url = document.getElementById("pUrl");
+      // set the edited details in the individual object
       const pname = document.getElementById("pName");
       const price = document.getElementById("pPrice");
       const qty = document.getElementById("pQty");
 
-      // url.value = detail["Url"];
       pname.value = detail["Name"];
       price.value = detail["Price"];
       qty.value = detail["Qty"];
@@ -172,18 +161,15 @@
       const div = document.getElementById("div");
       div.addEventListener("submit", function (event) {
         event.preventDefault();
-        // let Url = document.getElementById("pUrl").value;
         let Name = document.getElementById("pName").value;
         let Price = document.getElementById("pPrice").value;
         let Qty = document.getElementById("pQty").value;
 
         let changeData = {
-          // Url,
           Name,
           Price,
           Qty,
         };
-        // console.log(changeData);
       });
 
       function deleted() {
