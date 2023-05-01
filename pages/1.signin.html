@@ -89,8 +89,12 @@
     </div>
 
     <script>
+      // create an array and get the detail from form
+
       let signUpform = document.getElementById("form");
       document.createElement("user_info");
+      // code for the process while click the sign up button
+
       signUpform.addEventListener("submit", function (event) {
         event.preventDefault();
         let array = [];
@@ -99,6 +103,8 @@
         }
 
         let match = false;
+
+        // to get the value from form by their ID
 
         const id = Date.now();
         console.log(id);
@@ -109,6 +115,8 @@
         const Home_Address = document.getElementById("address").value;
         const Confirm_Password =
           document.getElementById("conform_password").value;
+
+        // code for check password and confirm password are same or not
         if (Password != Confirm_Password) {
           alert("Password and Confirm password are not match");
           return false;
@@ -120,6 +128,7 @@
           }
         }
 
+        // code for create the user details in an array by object
         if (match == true) {
           alert("Email is already Exist");
           return false;

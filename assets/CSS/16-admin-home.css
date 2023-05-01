@@ -16,7 +16,7 @@ body {
   border: 1px solid #2bae66ff;
   box-shadow: 3px 3px 3px 3px rgb(217, 244, 217);
   height: 300px;
-  width: 400px;
+  width: 600px;
   border-radius: 10px;
 }
 .center input {
@@ -33,7 +33,7 @@ input:invalid {
 }
 .btn {
   font-size: 30px;
-  width: 300px;
+  /* width: 300px; */
   margin-top: 20px;
   background-color: #2bae66ff;
   color: white;
@@ -83,11 +83,11 @@ button:hover {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #2bae66ff;
 }
-.form {
+/* .form {
   width: 200px;
   margin-top: 150px;
   margin-left: 500px;
-}
+} */
 .form input {
   font-size: 25px;
   color: #2bae66ff;

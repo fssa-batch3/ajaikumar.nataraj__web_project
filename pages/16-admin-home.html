@@ -15,7 +15,7 @@
       </div>
       <div class="head">
         <img src="../assets/image/waving-hand.gif" alt="hand" width="80px" />
-        <h1>Happy Morning Buddy!</h1>
+        <h1 id="wish">Happy Morning Buddy!</h1>
         <img src="../assets/image/smiling-face.gif" alt="smile" width="80px" />
       </div>
     </header>
@@ -40,6 +40,25 @@
     </div>
 
     <script>
+      let hour = new Date().getHours();
+      let min = new Date().getMinutes();
+
+      if (min < 10) {
+        min = "0" + min;
+      }
+      const currentTime = `${hour}:${min}`;
+
+      console.log(currentTime);
+      if (currentTime < "10:00") {
+        console.log("Good Morning Buddy");
+      } else if (currentTime < "12:00") {
+        console.log("Good Afternoon Buddy");
+      } else if (currentTime < "16:00") {
+        console.log("Good Evening Buddy");
+      } else if (currentTime < "19:00") {
+        console.log("Good Morning Buddy");
+      }
+
       let logIn = document.getElementById("form");
       console.log(logIn);
 
@@ -98,7 +117,7 @@
     </div> -->
     <div class="day-type">
       <h4>Today...</h4>
-      <input list="Types" id="mode" value="Your work" name="Types" />
+      <input list="Types" id="mode" autocomplete="off" name="Types" />
       <datalist id="Types">
         <option value="Hurry! You have more work!"></option>
         <option value="Relax! You have less work!"></option>
