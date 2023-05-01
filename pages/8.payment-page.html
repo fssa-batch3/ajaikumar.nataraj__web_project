@@ -92,12 +92,7 @@
         />
         <br />
         <label for="card_name">Enter Your Card Holder Name</label> <br />
-        <input
-          type="text"
-          id="holder_name"
-          pattern="[a-zA-Z]{1,20}"
-          autocomplete="off"
-        /><br />
+        <input type="text" id="holder_name" autocomplete="off" /><br />
         <label for="card_ifsc_no">Enter Your IFSC Code</label> <br />
         <input
           type="text"
@@ -160,12 +155,18 @@
     </footer>
 
     <script>
-      const oneUser = JSON.parse(localStorage.getItem("logIn"));
+      let inputDate = document.getElementById("card_exp_date");
+      let today = new Date();
+      today.setDate(today.getDate() + 10);
+      let minDate = today.toISOString().split("T")[0];
+      inputDate.setAttribute("min", minDate);
 
-      const user_info = JSON.parse(localStorage.getItem("user_info"));
-      let select_user = user_info.find(function (event) {
+      const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
+
+      const buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
+      let select_user = buyer_info.find(function (event) {
         let customerEmail = event["Email"];
-        if (user_info == customerEmail) {
+        if (buyer_info == customerEmail) {
           return true;
         } else if (oneUser == customerEmail) {
           return true;
@@ -214,9 +215,9 @@
         console.log(combineData);
         // alert("successfully changed");
 
-        let findIndex = user_info.indexOf(select_user);
-        user_info[findIndex] = combineData;
-        localStorage.setItem("user_info", JSON.stringify(user_info));
+        let findIndex = buyer_info.indexOf(select_user);
+        buyer_info[findIndex] = combineData;
+        localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
       });
 
       function bill() {

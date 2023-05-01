@@ -123,6 +123,12 @@
     <footer></footer>
 
     <script>
+      const inputDate = document.getElementById("DOB");
+      const today = new Date();
+      today.setFullYear(today.getFullYear() - 18);
+      const minDate = today.toISOString().split("T")[0];
+      inputDate.setAttribute("max", minDate);
+
       // const countryArr = document.getElementById("countries");
       // const stateArr = document.getElementById("state");
       // const districtArr = document.getElementById("district");

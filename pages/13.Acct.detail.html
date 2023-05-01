@@ -118,6 +118,12 @@
     </footer>
 
     <script>
+      let inputDate = document.getElementById("card_exp_date");
+      let today = new Date();
+      today.setDate(today.getDate() + 10);
+      let minDate = today.toISOString().split("T")[0];
+      inputDate.setAttribute("min", minDate);
+
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
       const user_info = JSON.parse(localStorage.getItem("user_info"));

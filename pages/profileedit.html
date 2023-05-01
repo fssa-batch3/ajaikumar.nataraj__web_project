@@ -23,8 +23,8 @@
         <img src="../assets/image/profile.png" alt="apple" /> <br />
         <label for="Home_Address">Home Address</label>
         <input id="Home_Address" class="input" placeholder="Home Address" />
-        <label for="aadhar number">Aadhar Number</label>
-        <input id="Aadhar_number" class="input" placeholder="Aadhar Number" />
+        <label for="Land_Address">Land Address</label>
+        <input id="Land_Address" class="input" placeholder="Land Address" />
         <label for="gender">Gender</label>
         <input
           id="gender"
@@ -64,8 +64,8 @@
         <input id="password" class="input" placeholder="Password" />
         <label for="Date of Birth">Date of Birth</label>
         <input id="DOB" type="date" class="input" placeholder="Date of Birth" />
-        <label for="district">District</label>
-        <input type="text" id="District" placeholder="Enter your District" />
+        <label for="aadhar number">Aadhar Number</label>
+        <input id="Aadhar_number" class="input" placeholder="Aadhar Number" />
         <label for="state">State</label>
         <input
           type="text"
@@ -122,6 +122,12 @@
     <footer></footer>
 
     <script>
+      const inputDate = document.getElementById("DOB");
+      const today = new Date();
+      today.setFullYear(today.getFullYear() - 18);
+      const minDate = today.toISOString().split("T")[0];
+      inputDate.setAttribute("max", minDate);
+
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
       const user_info = JSON.parse(localStorage.getItem("user_info"));
