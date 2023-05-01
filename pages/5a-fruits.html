@@ -48,10 +48,13 @@
     <main id="form" class="card_main"></main>
 
     <script>
+      // get the object from local storage
       let Card = JSON.parse(localStorage.getItem("newUploadList"));
+      // get the searching name by id and classname
       let searchbar = document.getElementById("searchbar");
       let cards = document.getElementsByClassName("card_div");
 
+      // compare the values from search bar and name from each card
       searchbar.addEventListener("input", () => {
         for (let i = 0; i < cards.length; i++) {
           const element = cards[i];
@@ -94,17 +97,18 @@
 
       document.querySelector(".button").append(bar);
 
-      // JSON
-
+      // get the product details from localstorage
       const detail = JSON.parse(localStorage.getItem("newUploadList"));
 
-      // Data creating by using JavaScript
+      // Card creating by using JavaScript
       for (let i = 0; i < Card.length; i++) {
         let Data = Card[i]["newUploadProducts"];
         console.log(Data);
 
         for (let j = 0; j < Data.length; j++) {
           console.log(j);
+
+          // code for compare the types from local storage, if types are same show in the page
           if (Data[j]["Type"] == "Fruit") {
             let div_card = document.createElement("div");
             div_card.setAttribute("class", "card_div");
@@ -138,6 +142,7 @@
             button.setAttribute("onclick", "addProduct(this.id)");
             div_card.append(button);
 
+            // code for add the selected items to add cart page
             function addProduct(ProductId) {
               event.preventDefault();
               console.log(ProductId);
@@ -161,12 +166,13 @@
 
               console.log(currentProduct);
 
-              //  old code for push bQty
+              //  code for set the automatic qty for user as 1kg and it stores in local storage
               let arr = [];
               console.log(arr);
               currentProduct["bQty"] = "1";
               arr.push(currentProduct["bQty"]);
 
+              // msg for confirm to add to cart
               let msg = confirm(
                 "Are you sure you want to add this product to your cart"
               );
@@ -184,6 +190,7 @@
               }
             }
 
+            // url params code for passing the selected product details
             let info = document.createElement("a");
             info.innerText = "more info -->";
             info.setAttribute("href", "./detail.html?Name=" + Data[j]["Name"]);
@@ -194,10 +201,10 @@
         }
       }
 
+      // code for redirection of page
       function cart() {
         window.location.href = "/pages/6.buy-2.html";
       }
-
       function back() {
         window.location.href = "/pages/4.index.html";
       }
