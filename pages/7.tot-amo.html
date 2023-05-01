@@ -60,7 +60,7 @@
     </main>
 
     <script>
-      // JSON
+      // get detail from add to cart stored data
       let Card = JSON.parse(localStorage.getItem("added_list"));
       let total = 0;
 
@@ -113,14 +113,14 @@
         image.setAttribute("disabled", " ");
         div_card.append(image);
 
-        let edit = document.createElement("button");
-        edit.innerText = "Cancel";
+        let delete_product = document.createElement("button");
+        delete_product.innerText = "Cancel";
+        delete_product.setAttribute("id", "submit");
+        delete_product.setAttribute("type", "submit");
+        div_card.append(delete_product);
 
-        edit.setAttribute("id", "submit");
-        edit.setAttribute("type", "submit");
-        div_card.append(edit);
-
-        edit.addEventListener("click", function (event) {
+        // code for delete the product
+        delete_product.addEventListener("click", function (event) {
           event.preventDefault();
           let addData = JSON.parse(localStorage.getItem("added_list"));
           let findIndex = detail.indexOf(findDetail);
@@ -135,6 +135,7 @@
           }
         });
 
+        // for total amount
         total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["bQty"]);
 
         document.querySelector(".card_main").append(div_card);
@@ -152,9 +153,11 @@
     </div>
 
     <script>
+      // set place for show total amount
       let total_value = document.getElementById("operoation");
       total_value.append("₹" + total);
 
+      // to get details of the users for delivery ..
       const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
       const user_info = JSON.parse(localStorage.getItem("buyer_info"));
@@ -168,17 +171,15 @@
       });
 
       console.log(select_user);
-      // to get value from registration form
+      // to get value from delivery form
       const phNo = document.getElementById("Phone_Number");
       const userName = document.getElementById("First_name");
-      // const transport_DOB = document.getElementById("Pickup_date");
       const Land_Address = document.getElementById("Land_Address");
 
       // Compare the values
 
       phNo.value = select_user["Phone_number"];
       userName.value = select_user["FullName"];
-      // transport_DOB.value = select_user["transport_DOB"];
       Land_Address.value = select_user["Land_Address"] || " ";
 
       // to replace the values
@@ -188,22 +189,18 @@
 
         let FullName = document.getElementById("First_name").value;
         let Phone_number = document.getElementById("Phone_Number").value;
-        // let transport_DOB = document.getElementById("Pickup_date").value;
         let Land_Address = document.getElementById("Land_Address").value;
 
         let newData = {
           FullName,
           Phone_number,
-          // transport_DOB,
           Land_Address,
         };
         console.log(newData);
 
-        // assign the value to
-
+        // code for change the delivery address
         const combineData = Object.assign(select_user, newData);
         console.log(combineData);
-        // alert("successfully changed");
 
         let findIndex = user_info.indexOf(select_user);
         user_info[findIndex] = combineData;

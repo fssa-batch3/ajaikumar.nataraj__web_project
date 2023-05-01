@@ -47,12 +47,13 @@
 
     <script>
       // JSON
+      // get detail from add to cart stored data
       let Card = JSON.parse(localStorage.getItem("added_list"));
       console.log(Card);
 
       const detail = JSON.parse(localStorage.getItem("added_list"));
 
-      // Card creating by using JavaScript
+      // Card creating by using JavaScript by for loop
       for (let i = 0; i <= Card.length; i++) {
         let findDetail = detail.find(function (event) {
           let id = event["ProductId"];
@@ -108,18 +109,12 @@
         cancel.setAttribute("type", "submit");
         div_card.append(cancel);
 
-        // edit.addEventListener("click", function (event) {
-        //   event.preventDefault();
-
-        //   Card[i]["bQty"] = input_value.value;
-        // });
-
+        // edit value of the card while click the "edit" button
         edit.addEventListener("click", function (event) {
           event.preventDefault();
           // console.log();
 
-          console.log();
-
+          // to find the index of the card while click the button
           if (detail[i]["ProductId"] == Card[i]["ProductId"]) {
             const user_info = JSON.parse(localStorage.getItem("added_list"));
             let select_user = user_info.findIndex(function (event) {
@@ -145,8 +140,10 @@
             };
             console.log(changeData);
 
+            // assign or change the edited value
             const assignData = Object.assign(findDetail, changeData);
 
+            // to set the changed value in the object
             let findIndex = detail.indexOf(findDetail);
             detail[findIndex] = assignData;
             localStorage.setItem("added_list", JSON.stringify(detail));
@@ -155,6 +152,8 @@
             window.reload();
           }
         });
+
+        // to delete the product in the add to cart page
         cancel.addEventListener("click", function (event) {
           event.preventDefault();
           let addData = JSON.parse(localStorage.getItem("added_list"));

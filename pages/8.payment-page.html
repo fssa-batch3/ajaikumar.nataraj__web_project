@@ -159,14 +159,15 @@
     </footer>
 
     <script>
+      // code for set the date for future days for card expiry date
       let inputDate = document.getElementById("card_exp_date");
       let today = new Date();
       today.setDate(today.getDate() + 10);
       let minDate = today.toISOString().split("T")[0];
       inputDate.setAttribute("min", minDate);
 
+      // to get details of the users for delivery ..
       const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
-
       const buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
       let select_user = buyer_info.find(function (event) {
         let customerEmail = event["Email"];
@@ -178,7 +179,7 @@
       });
 
       console.log(select_user);
-      // to get value from registration form
+      // to get value from delivery form
       const Card_no = document.getElementById("Bank_Card_no");
       const holder_name = document.getElementById("holder_name");
       const ifsc = document.getElementById("ifsc_code");
@@ -214,7 +215,6 @@
         console.log(newData);
 
         // assign the value to
-
         const combineData = Object.assign(select_user, newData);
         console.log(combineData);
         // alert("successfully changed");
