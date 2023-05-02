@@ -64,3 +64,42 @@ function log() {
 
 // for create  user id
 const start = Date.now();
+
+// to show and hide password
+const togglePassword = document.querySelector("#togglePassword");
+
+const password = document.querySelector("#password");
+
+togglePassword.addEventListener("click", () => {
+  const type =
+    password.getAttribute("type") === "password" ? "text" : "password";
+
+  password.setAttribute("type", type);
+
+  this.classList.toggle("bi-eye");
+});
+
+// to show and hide confirm password
+const toggleConformPassword = document.querySelector("#toggleConformPassword");
+
+const conform_password = document.querySelector("#conform_password");
+
+toggleConformPassword.addEventListener("click", () => {
+  const type =
+    conform_password.getAttribute("type") === "password" ? "text" : "password";
+
+  conform_password.setAttribute("type", type);
+
+  this.classList.toggle("bi-eye");
+});
+
+// const passwordInput = document.getElementById("password");
+// const showPasswordCheckbox = document.getElementById("togglePassword");
+
+// showPasswordCheckbox.addEventListener("change", function () {
+//   if (showPasswordCheckbox.checked) {
+//     passwordInput.type = "text";
+//   } else {
+//     passwordInput.type = "password";
+//   }
+// });

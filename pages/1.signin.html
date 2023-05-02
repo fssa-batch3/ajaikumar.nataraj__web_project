@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/1-sign.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
     <title>Document</title>
   </head>
 
@@ -52,7 +56,7 @@
             type="password"
             autocomplete="hg"
             required
-          />
+          /><i class="bi bi-eye-slash" id="togglePassword"></i>
           <br />
           <label for="address">Address</label> <br />
           <textarea
@@ -71,7 +75,7 @@
             autocomplete="hg"
             pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             required
-          /><br />
+          /><i class="bi bi-eye-slash" id="toggleConformPassword"></i><br />
 
           <button class="sub" type="submit" value="submit" onclick="sign()">
             sign up
@@ -89,78 +93,5 @@
     </div>
 
     <script src="../assets/JavaScript/seller_signup.js"></script>
-    <script>
-      //   // create an array and get the detail from form
-      //   let signUpform = document.getElementById("form");
-      //   document.createElement("user_info");
-      //   // code for the process while click the sign up button
-
-      //   signUpform.addEventListener("submit", function (event) {
-      //     event.preventDefault();
-      //     let array = [];
-      //     if (localStorage.getItem("user_info") != null) {
-      //       array = JSON.parse(localStorage.getItem("user_info"));
-      //     }
-
-      //     let match = false;
-
-      //     // to get the value from form by their ID
-
-      //     const id = Date.now();
-      //     console.log(id);
-      //     const FullName = document.getElementById("full_name").value;
-      //     const Email = document.getElementById("email").value.toLowerCase();
-      //     const Phone_number = document.getElementById("phone_number").value;
-      //     const Password = document.getElementById("password").value;
-      //     const Home_Address = document.getElementById("address").value;
-      //     const Confirm_Password =
-      //       document.getElementById("conform_password").value;
-
-      //     // code for check password and confirm password are same or not
-      //     if (Password != Confirm_Password) {
-      //       alert("Password and Confirm password are not match");
-      //       return false;
-      //     } else {
-      //       for (let i = 0; i < array.length; i++) {
-      //         if (Email == array[i]["Email"]) {
-      //           match = true;
-      //         }
-      //       }
-      //     }
-
-      //     // code for create the user details in an array by object
-      //     if (match == true) {
-      //       alert("Email is already Exist");
-      //       return false;
-      //     } else {
-      //       let userObj = {
-      //         FullName,
-      //         id,
-      //         Email,
-      //         Phone_number,
-      //         Password,
-      //         Home_Address,
-      //         Confirm_Password,
-      //         points: 0,
-      //       };
-      //       console.log(userObj);
-
-      //       array.push(userObj);
-      //       const str = JSON.stringify(array);
-      //       localStorage.setItem("user_info", str);
-      //       console.log(str);
-      //       alert("You created your account successfully");
-      //       window.location.href = "/pages/2.Login.html";
-      //     }
-      //   });
-
-      //   function log() {
-      //     window.location.href = "/pages/2.Login.html";
-      //   }
-
-      //   // for create  user id
-      //   const start = Date.now();
-      //
-    </script>
   </body>
 </html>

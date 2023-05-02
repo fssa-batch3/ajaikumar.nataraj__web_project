@@ -74,25 +74,25 @@ for (let i = 0; i < Card.length; i++) {
       ul_div.append(ul4);
 
       total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
-
-      let date_div = document.createElement("div");
-      date_div.setAttribute("class", "date");
-
-      form.append(date_div);
-
-      let p5 = document.createElement("p");
-      p5.setAttribute("id", "operation");
-      p5.innerHTML = " Total Amount : ₹" + total;
-      date_div.append(p5);
-
-      let p6 = document.createElement("p");
-      p6.innerText = "Picked up Date : " + Card[i]["Pickup_date"];
-      date_div.append(p6);
-      // console.log(data[i]["Price"]);
-      // console.log(data[i]["bQty"]);
-
-      document.querySelector("body").append(form);
     }
+
+    let date_div = document.createElement("div");
+    date_div.setAttribute("class", "date");
+
+    form.append(date_div);
+
+    let p5 = document.createElement("p");
+    p5.setAttribute("id", "operation");
+    p5.innerHTML = " Total Amount : ₹" + total;
+    date_div.append(p5);
+
+    let p6 = document.createElement("p");
+    p6.innerText = "Picked up Date : " + Card[i]["Pickup_date"];
+    date_div.append(p6);
+    // console.log(data[i]["Price"]);
+    // console.log(data[i]["bQty"]);
+
+    document.querySelector("body").append(form);
   }
 }
 

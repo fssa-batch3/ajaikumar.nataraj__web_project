@@ -39,7 +39,7 @@ textarea:invalid {
   align-content: center;
   border: 1px solid #2bae66ff;
   box-shadow: 3px 3px 3px 3px rgb(217, 244, 217);
-  width: 900px;
+  width: 950px;
   height: 600px;
   margin-top: 50px;
   border-radius: 6px;
@@ -77,6 +77,11 @@ button:hover {
   scale: 1.1;
 }
 
+/* for password eye symbol */
+form i {
+  margin-left: -30px;
+  cursor: pointer;
+}
 /* Media query*/
 @media screen and (max-width: 600px) {
   * {

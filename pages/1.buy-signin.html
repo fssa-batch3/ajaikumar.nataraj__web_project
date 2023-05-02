@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../assets/CSS/1-sign.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
     <title>Document</title>
   </head>
 
@@ -47,7 +51,7 @@
             pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             autocomplete="hg"
             required
-          />
+          /><i class="bi bi-eye-slash" id="togglePassword"></i>
           <br />
           <label for="address">Address</label> <br />
           <textarea
@@ -66,7 +70,8 @@
             pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             autocomplete="hg"
             required
-          /><br />
+          /><i class="bi bi-eye-slash" id="toggleConformPassword"></i>
+          <br />
 
           <button class="sub" type="submit" value="submit" onclick="sign()">
             sign up

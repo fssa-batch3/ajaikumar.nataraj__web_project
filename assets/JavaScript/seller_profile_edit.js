@@ -125,3 +125,16 @@ logout_user.addEventListener("click", function (event) {
     window.location.href = "/pages/2.Login.html";
   }
 });
+
+// to show and hide password
+const togglePassword = document.querySelector("#togglePassword");
+
+const change = document.querySelector("#password");
+
+togglePassword.addEventListener("click", () => {
+  const type = change.getAttribute("type") === "password" ? "text" : "password";
+
+  change.setAttribute("type", type);
+
+  this.classList.toggle("bi-eye");
+});
