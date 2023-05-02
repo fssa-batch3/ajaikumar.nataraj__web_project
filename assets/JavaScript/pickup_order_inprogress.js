@@ -1,4 +1,4 @@
-let Card = JSON.parse(localStorage.getItem("newUploadList"));
+let newUploadList = JSON.parse(localStorage.getItem("newUploadList"));
 
 const today = new Date();
 const year = today.getFullYear();
@@ -18,13 +18,13 @@ const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
 
-for (let i = 0; i < Card.length; i++) {
-  let data = Card[i]["newUploadProducts"];
+for (let i = 0; i < newUploadList.length; i++) {
+  let data = newUploadList[i]["newUploadProducts"];
   let total = 0;
   console.log(currentDate);
   console.log(data[i]["Pickup_date"]);
 
-  if (currentDate == Card[i]["Pickup_date"]) {
+  if (currentDate == newUploadList[i]["Pickup_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
     form.setAttribute("action", "bill");
@@ -41,7 +41,7 @@ for (let i = 0; i < Card.length; i++) {
     bill_div.append(p1);
 
     let p2 = document.createElement("p");
-    p2.innerText = "Order Id : " + Card[i]["billId"];
+    p2.innerText = "Order Id : " + newUploadList[i]["billId"];
     bill_div.append(p2);
 
     let p3 = document.createElement("img");
@@ -56,7 +56,7 @@ for (let i = 0; i < Card.length; i++) {
     form.append(buy_div);
 
     let p4 = document.createElement("p");
-    p4.innerText = "Buyer Id : " + Card[i]["buyer_id"];
+    p4.innerText = "Seller Id : " + newUploadList[i]["seller_id"];
     buy_div.append(p4);
 
     let ful_div = document.createElement("div");
@@ -98,7 +98,7 @@ for (let i = 0; i < Card.length; i++) {
     date_div.append(p5);
 
     let p6 = document.createElement("p");
-    p6.innerText = "Delivery Date : " + data[i]["Pickup_date"];
+    p6.innerText = "Pickup Date : " + newUploadList[i]["Pickup_date"];
     date_div.append(p6);
     console.log(data[i]["Price"]);
     console.log(data[i]["bQty"]);

@@ -63,7 +63,7 @@ for (let i = 0; i < newUploadList.length; i++) {
     form.append(buy_div);
 
     let p4 = document.createElement("p");
-    p4.innerText = "Buyer Id : " + newUploadList[i]["buyer_id"];
+    p4.innerText = "Seller Id : " + newUploadList[i]["seller_id"];
     buy_div.append(p4);
 
     let ful_div = document.createElement("div");
@@ -105,7 +105,7 @@ for (let i = 0; i < newUploadList.length; i++) {
     date_div.append(p5);
 
     let p6 = document.createElement("p");
-    p6.innerText = "Delivery Date : " + data[i]["Pickup_date"];
+    p6.innerText = "Pickup Date : " + newUploadList[i]["Pickup_date"];
     date_div.append(p6);
     console.log(data[i]["Price"]);
     console.log(data[i]["bQty"]);
