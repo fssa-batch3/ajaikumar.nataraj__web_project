@@ -134,6 +134,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
         new_owner_data: Data[i]["products"],
         billId: Data[i]["billId"],
         buyer_id: Data[i]["buyer_id"],
+        Delivery_date: Data[i]["Delivery_date"],
       };
 
       owner_data.push(new_data);
@@ -155,6 +156,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
             new_owner_data: Data[i]["products"],
             billId: Data[i]["billId"],
             buyer_id: Data[i]["buyer_id"],
+            Delivery_date: Data[i]["Delivery_date"],
           };
 
           owner_data.push(new_data);

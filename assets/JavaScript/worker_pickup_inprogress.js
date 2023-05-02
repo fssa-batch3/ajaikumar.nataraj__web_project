@@ -136,6 +136,7 @@ for (let i = 0; i < newUploadList.length; i++) {
         new_owner_data: Data[i]["newUploadProducts"],
         billId: Data[i]["billId"],
         seller_id: Data[i]["seller_id"],
+        Pickup_date: Data[i]["Pickup_date"],
       };
 
       owner_data.push(new_data);
@@ -157,6 +158,7 @@ for (let i = 0; i < newUploadList.length; i++) {
             new_owner_data: Data[i]["newUploadProducts"],
             billId: Data[i]["billId"],
             seller_id: Data[i]["seller_id"],
+            Pickup_date: Data[i]["Pickup_date"],
           };
 
           owner_data.push(new_data);
