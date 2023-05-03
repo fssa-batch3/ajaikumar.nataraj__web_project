@@ -1,5 +1,23 @@
 let newUploadList = JSON.parse(localStorage.getItem("newUploadList"));
 
+// get the searching name by id and classname
+let searchbar = document.getElementById("searchbar");
+let cards = document.getElementsByClassName("form");
+
+// compare the values from search bar and name from each card
+searchbar.addEventListener("input", () => {
+  for (let i = 0; i < cards.length; i++) {
+    const element = cards[i];
+    if (
+      element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
+    ) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
+});
+
 for (let i = 0; i < newUploadList.length; i++) {
   let data = newUploadList[i]["newUploadProducts"];
   let total = 0;

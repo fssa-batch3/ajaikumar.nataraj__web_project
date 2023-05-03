@@ -129,12 +129,13 @@ function back() {
 // to show and hide password
 const togglePassword = document.querySelector("#togglePassword");
 
-const change = document.querySelector("#password");
+const changePassword = document.querySelector("#password");
 
 togglePassword.addEventListener("click", () => {
-  const type = change.getAttribute("type") === "password" ? "text" : "password";
+  const type =
+    changePassword.getAttribute("type") === "password" ? "text" : "password";
 
-  change.setAttribute("type", type);
+  changePassword.setAttribute("type", type);
 
-  this.classList.toggle("bi-eye");
+  // this.classList.toggle("bi-eye");
 });
