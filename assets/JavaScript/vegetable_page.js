@@ -1,5 +1,5 @@
 // get the object from local storage
-let Card = JSON.parse(localStorage.getItem("newUploadList"));
+let Card = JSON.parse(localStorage.getItem("owner_upload_list"));
 // get the searching name by id and classname
 let searchbar = document.getElementById("searchbar");
 let cards = document.getElementsByClassName("card_div");
@@ -46,11 +46,11 @@ bar.append(tea);
 document.querySelector(".button").append(bar);
 
 // get the product details from localstorage
-const detail = JSON.parse(localStorage.getItem("newUploadList"));
+const detail = JSON.parse(localStorage.getItem("owner_upload_list"));
 
 // Data creating by using JavaScript
 for (let i = 0; i < Card.length; i++) {
-  let Data = Card[i]["newUploadProducts"];
+  let Data = Card[i]["new_owner_data"];
   console.log(Data);
 
   for (let j = 0; j < Data.length; j++) {
@@ -98,9 +98,9 @@ for (let i = 0; i < Card.length; i++) {
         let currentProduct;
 
         for (let i = 0; i < Card.length; i++) {
-          for (let j = 0; j < Card[i]["newUploadProducts"].length; j++) {
-            if (Card[i]["newUploadProducts"][j]["ProductId"] == ProductId) {
-              currentProduct = Card[i]["newUploadProducts"][j];
+          for (let j = 0; j < Card[i]["new_owner_data"].length; j++) {
+            if (Card[i]["new_owner_data"][j]["ProductId"] == ProductId) {
+              currentProduct = Card[i]["new_owner_data"][j];
             }
           }
         }

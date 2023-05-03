@@ -21,7 +21,6 @@ const transport_DOB = document.getElementById("DOB");
 const Home_Address = document.getElementById("Home_Address");
 const District = document.getElementById("District");
 const gender = document.getElementById("gender");
-const farmer = document.getElementById("farmer");
 const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
 const country = document.getElementById("country");
@@ -32,12 +31,11 @@ email.value = select_user["Email"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
 password.value = select_user["Password"];
-DOB.value = select_user["DOB"];
-transport_DOB.value = select_user["DOB"];
+DOB.value = select_user["DOB"] || "";
+transport_DOB.value = select_user["DOB"] || "";
 Home_Address.value = select_user["Home_Address"] || "";
 District.value = select_user["District"] || "";
 gender.value = select_user["gender"] || "";
-farmer.value = select_user["farmer"] || "";
 Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
 country.value = select_user["country"] || "";
@@ -129,12 +127,13 @@ function back() {
 // to show and hide password
 const togglePassword = document.querySelector("#togglePassword");
 
-const change = document.querySelector("#password");
+const changePassword = document.querySelector("#password");
 
 togglePassword.addEventListener("click", () => {
-  const type = change.getAttribute("type") === "password" ? "text" : "password";
+  const type =
+    changePassword.getAttribute("type") === "password" ? "text" : "password";
 
-  change.setAttribute("type", type);
+  changePassword.setAttribute("type", type);
 
   this.classList.toggle("bi-eye");
 });
