@@ -25,7 +25,7 @@ detail.addEventListener("submit", function (event) {
   const userId = get_obj["id"];
   const Name = get_obj["FullName"];
   let presentDate = new Date().getDate();
-  let presentMonth = new Date().getMonth();
+  let presentMonth = new Date().getMonth() + 1;
   let presentYear = new Date().getFullYear();
 
   let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
