@@ -116,7 +116,7 @@ for (let i = 0; i < Card.length; i++) {
     date_div.append(p5);
 
     let p6 = document.createElement("p");
-    p6.innerText = "Delivery Date : " + data[i]["Pickup_date"];
+    p6.innerText = "Delivery Date : " + Card[i]["Delivery_date"];
     date_div.append(p6);
     console.log(data[i]["Price"]);
     console.log(data[i]["bQty"]);

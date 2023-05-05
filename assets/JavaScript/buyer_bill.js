@@ -86,7 +86,7 @@ if (day <= 28) {
 }
 
 if (day > 28) {
-  day = 30 - 28;
+  day = 33 - day;
   month = month + 1;
 }
 
