@@ -98,6 +98,7 @@ for (let i = 0; i <= Card.length; i++) {
       detail.splice(findIndex, 1);
       localStorage.setItem("newly_added", JSON.stringify(detail));
     }
+    location.reload();
   });
 
   document.querySelector(".card_main").append(div_card);

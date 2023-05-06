@@ -141,6 +141,7 @@ for (let i = 0; i < newUploadList.length; i++) {
         console.log(newUploadList);
         localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
       }
+      location.reload();
     });
 
     p3.addEventListener("click", function (event) {
@@ -187,6 +188,7 @@ for (let i = 0; i < newUploadList.length; i++) {
       newUploadList.splice(indexFind, 1);
       console.log(newUploadList);
       localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
+      location.reload();
     });
 
     document.querySelector("body").append(form);

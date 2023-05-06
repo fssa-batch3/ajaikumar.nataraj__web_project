@@ -49,5 +49,5 @@ for (let i = 0; i < Card.length; i++) {
   // creating the total amount by price and qty
   total += parseInt(Card[i]["Price"]) * parseInt(Card[i]["Qty"]);
 
-  document.querySelector("table").append(table_card);
+  document.querySelector(".table").append(table_card);
 }

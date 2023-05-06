@@ -18,7 +18,7 @@ let btn = document.createElement("button");
 btn.innerText = "Save & Upload";
 btn.setAttribute("id", "submit");
 btn.setAttribute("class", "btn");
-document.querySelector("table").append(btn);
+document.querySelector(".table").append(btn);
 
 // for creating table by add cart details..
 let table_card = document.createElement("table");
@@ -70,7 +70,7 @@ for (let i = 0; i < Card.length; i++) {
     localStorage.setItem("user_info", JSON.stringify(user_info));
   });
 
-  document.querySelector("table").append(table_card);
+  document.querySelector(".table").append(table_card);
 }
 
 // set pickup date

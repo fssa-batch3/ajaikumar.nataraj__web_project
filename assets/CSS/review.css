@@ -15,13 +15,13 @@ body {
 }
 .own_comment {
   display: flex;
-  margin-left: 20px;
+  margin-left: 470px;
   width: 1000px;
   height: 300px;
   border: none;
   box-shadow: 3px 3px 3px 3px rgb(137, 216, 137);
   border-radius: 10px;
-  margin-left: 450px;
+  /* margin-left: 450px; */
 }
 .enter_comment {
   margin-top: 50px;

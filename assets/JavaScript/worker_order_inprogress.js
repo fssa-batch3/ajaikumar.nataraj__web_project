@@ -139,6 +139,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
         console.log(Ordered_list);
         localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
       }
+      location.reload();
     });
 
     p3.addEventListener("click", function (event) {
@@ -185,6 +186,8 @@ for (let i = 0; i < Ordered_list.length; i++) {
       Ordered_list.splice(indexFind, 1);
       console.log(Ordered_list);
       localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
+
+      location.reload();
     });
 
     document.querySelector("body").append(form);
