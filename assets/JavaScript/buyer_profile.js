@@ -2,11 +2,13 @@ const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
 const buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
 let select_user = buyer_info.find(function (event) {
-  let customerEmail = event["Email"];
-  if (buyer_info == customerEmail) {
-    return true;
-  } else if (oneUser == customerEmail) {
-    return true;
+  try {
+    let customerEmail = event["Email"];
+    if (buyer_info == customerEmail) {
+      return true;
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
 
@@ -25,8 +27,7 @@ const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
 const country = document.getElementById("country");
 
-// // Compare the values
-
+// Compare the values
 email.value = select_user["Email"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
@@ -40,53 +41,6 @@ Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
 country.value = select_user["country"] || "";
 
-// to replace the values
-const form = document.getElementById("form");
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-
-  //   let FullName = document.getElementById("First_name").value;
-  //   let Email = document.getElementById("Email").value;
-  //   let Phone_number = document.getElementById("Phone_Number").value;
-  //   let Password = document.getElementById("password").value;
-  //   let DOB = document.getElementById("DOB").value;
-  //   let transport_DOB = document.getElementById("DOB").value;
-  //   let Home_Address = document.getElementById("Home_Address").value;
-  //   let District = document.getElementById("District").value;
-  //   let gender = document.getElementById("gender").value;
-  //   let farmer = document.getElementById("farmer").value;
-  //   let Aadhar_number = document.getElementById("Aadhar_number").value;
-  //   let state = document.getElementById("state").value;
-  //   let country = document.getElementById("country").value;
-
-  //   let newData = {
-  //     FullName,
-  //     Email,
-  //     Phone_number,
-  //     Password,
-  //     DOB,
-  //     transport_DOB,
-  //     Home_Address,
-  //     District,
-  //     gender,
-  //     farmer,
-  //     Aadhar_number,
-  //     state,
-  //     country,
-  //   };
-  //   console.log(newData);
-
-  //   // assign the value to
-
-  //   const combineData = Object.assign(select_user, newData);
-  //   console.log(combineData);
-  //   alert("successfully changed");
-
-  //   let findIndex = buyer_info.indexOf(select_user);
-  //   buyer_info[findIndex] = combineData;
-  //   localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
-});
-
 function change() {
   window.location.href = "/pages/profileedit_buy.html";
 }
@@ -96,27 +50,35 @@ function change() {
 let delete_user = document.getElementById("delete");
 delete_user.addEventListener("click", function (event) {
   event.preventDefault();
-  let indexDel = buyer_info.indexOf(select_user);
-  let msg = confirm("Are you sure you want to delete this account");
-  if (msg !== true) {
-    return;
-  } else {
-    buyer_info.splice(indexDel, 1);
-    console.log(buyer_info);
-    localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
-    window.location.href = "/pages/1.signin.html";
+  try {
+    let indexDel = buyer_info.indexOf(select_user);
+    let msg = confirm("Are you sure you want to delete this account");
+    if (msg !== true) {
+      return;
+    } else {
+      buyer_info.splice(indexDel, 1);
+      console.log(buyer_info);
+      localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
+      window.location.href = "/pages/1.signin.html";
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
 
 let logout_user = document.getElementById("logout");
 logout_user.addEventListener("click", function (event) {
   event.preventDefault();
-  let indexDel = buyer_info.indexOf(select_user);
-  let msg = confirm("Are you sure you want to logout this account");
-  if (msg !== true) {
-    return;
-  } else {
-    window.location.href = "/pages/2.Login.html";
+  try {
+    let indexDel = buyer_info.indexOf(select_user);
+    let msg = confirm("Are you sure you want to logout this account");
+    if (msg !== true) {
+      return;
+    } else {
+      window.location.href = "/pages/2.Login.html";
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
 

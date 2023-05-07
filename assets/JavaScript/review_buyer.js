@@ -6,45 +6,49 @@ document.createElement("buyer_review");
 detail.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let array = [];
+  try {
+    let array = [];
 
-  if (localStorage.getItem("buyer_review") != null) {
-    array = JSON.parse(localStorage.getItem("buyer_review"));
+    if (localStorage.getItem("buyer_review") != null) {
+      array = JSON.parse(localStorage.getItem("buyer_review"));
 
-    location.reload();
+      location.reload();
+    }
+
+    // get the details for store the data in an array
+    const Description = document.getElementById("comment").value;
+    // const thumbs_up = document.getElementById("thumbs-up-count").value;
+    // const thumbs_down = document.getElementById("thumbs-down-count").value;
+    const commentId = Date.now();
+    const Time = new Date().getHours();
+    const Minutes = new Date().getMinutes();
+    const currentTime = `${Time}:${Minutes}`;
+    const userId = get_obj["id"];
+    const Name = get_obj["FullName"];
+    let presentDate = new Date().getDate();
+    let presentMonth = new Date().getMonth() + 1;
+    let presentYear = new Date().getFullYear();
+
+    let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
+
+    let value = {
+      // Name,
+      Description,
+      commentId,
+      // thumbs_up,
+      // thumbs_down,
+      // down_count,
+      // up_count,
+      currentTime,
+      userId,
+      Name,
+      currentDate,
+    };
+    array.push(value);
+    localStorage.setItem("buyer_review", JSON.stringify(array));
+  } catch (error) {
+    console.error(error);
   }
-
-  // get the details for store the data in an array
-  const Description = document.getElementById("comment").value;
-  // const thumbs_up = document.getElementById("thumbs-up-count").value;
-  // const thumbs_down = document.getElementById("thumbs-down-count").value;
-  const commentId = Date.now();
-  const Time = new Date().getHours();
-  const Minutes = new Date().getMinutes();
-  const currentTime = `${Time}:${Minutes}`;
-  const userId = get_obj["id"];
-  const Name = get_obj["FullName"];
-  let presentDate = new Date().getDate();
-  let presentMonth = new Date().getMonth() + 1;
-  let presentYear = new Date().getFullYear();
-
-  let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
-
-  let value = {
-    // Name,
-    Description,
-    commentId,
-    // thumbs_up,
-    // thumbs_down,
-    // down_count,
-    // up_count,
-    currentTime,
-    userId,
-    Name,
-    currentDate,
-  };
-  array.push(value);
-  localStorage.setItem("buyer_review", JSON.stringify(array));
 });
 
 // get the login details
@@ -61,9 +65,13 @@ console.log(get_obj);
 
 for (i = 0; i < buyer_review.length; i++) {
   let select_comment = buyer_review.find(function (event) {
-    let id = event["commentId"];
-    if (buyer_review[i]["commentId"] == id) {
-      return true;
+    try {
+      let id = event["commentId"];
+      if (buyer_review[i]["commentId"] == id) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
   // console.log(select_comment);
@@ -149,44 +157,52 @@ for (i = 0; i < buyer_review.length; i++) {
 
       // console.log(edit_comment);
 
-      const desc = document.getElementById("feedback").value;
+      try {
+        const desc = document.getElementById("feedback").value;
 
-      // console.log(desc);
+        // console.log(desc);
 
-      desc.value = select_comment["Description"];
+        desc.value = select_comment["Description"];
 
-      let Description = document.getElementById("feedback").value;
-      console.log(Description);
+        let Description = document.getElementById("feedback").value;
+        console.log(Description);
 
-      let new_desc = {
-        Description,
-      };
-      // console.log(new_desc);
+        let new_desc = {
+          Description,
+        };
+        // console.log(new_desc);
 
-      let change_desc = Object.assign(select_comment, new_desc);
+        let change_desc = Object.assign(select_comment, new_desc);
 
-      alert("successfully changed");
+        alert("successfully changed");
 
-      let findIndex = buyer_review.indexOf(select_comment);
-      buyer_review[findIndex] = change_desc;
-      localStorage.setItem("buyer_review", JSON.stringify(buyer_review));
+        let findIndex = buyer_review.indexOf(select_comment);
+        buyer_review[findIndex] = change_desc;
+        localStorage.setItem("buyer_review", JSON.stringify(buyer_review));
 
-      location.reload();
+        location.reload();
+      } catch (error) {
+        console.error(error);
+      }
     });
 
     // for delete the login user's review
     thumbs_up_img.addEventListener("click", function (event) {
       event.preventDefault();
-      let comment_delete = buyer_review.indexOf(select_comment);
-      let msg = confirm("Are you sure you want to delete this comment");
-      if (msg !== true) {
-        return;
-      } else {
-        buyer_review.splice(comment_delete, 1);
-        localStorage.setItem("buyer_review", JSON.stringify(buyer_review));
-      }
+      try {
+        let comment_delete = buyer_review.indexOf(select_comment);
+        let msg = confirm("Are you sure you want to delete this comment");
+        if (msg !== true) {
+          return;
+        } else {
+          buyer_review.splice(comment_delete, 1);
+          localStorage.setItem("buyer_review", JSON.stringify(buyer_review));
+        }
 
-      location.reload();
+        location.reload();
+      } catch (error) {
+        console.error(error);
+      }
     });
 
     document.querySelector(".others_comment").append(other_section);
@@ -196,9 +212,13 @@ for (i = 0; i < buyer_review.length; i++) {
 // show the other user's comments
 for (i = 0; i < buyer_review.length; i++) {
   let findDetail = buyer_review.find(function (event) {
-    let id = event["commentId"];
-    if (buyer_review[i]["commentId"] == id) {
-      return true;
+    try {
+      let id = event["commentId"];
+      if (buyer_review[i]["commentId"] == id) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
 

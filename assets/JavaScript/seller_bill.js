@@ -61,13 +61,17 @@ for (let i = 0; i < Card.length; i++) {
   user_point.addEventListener("click", function (event) {
     event.preventDefault();
 
-    console.log(get_obj);
-    let count = (get_obj.points += 1);
-    console.log(get_obj);
-    let user_point = get_obj["points"];
-    let change_value = Object.assign(count, user_point);
-    console.log(change_value);
-    localStorage.setItem("user_info", JSON.stringify(user_info));
+    try {
+      console.log(get_obj);
+      let count = (get_obj.points += 1);
+      console.log(get_obj);
+      let user_point = get_obj["points"];
+      let change_value = Object.assign(count, user_point);
+      console.log(change_value);
+      localStorage.setItem("user_info", JSON.stringify(user_info));
+    } catch (error) {
+      console.error(error);
+    }
   });
 
   document.querySelector(".table").append(table_card);
@@ -104,34 +108,13 @@ console.log(currentDate);
 // code for place the order and add to the another local storage for admin
 document.getElementById("submit").addEventListener("click", function (event) {
   event.preventDefault();
-  let Data = JSON.parse(localStorage.getItem("newly_added"));
-  let exists = JSON.parse(localStorage.getItem("newUploadList"));
-  let orderedData = [];
-  let billId = Date.now();
-  let seller_id = get_obj["id"];
-  let Pickup_date = currentDate;
-
-  let order = {
-    newUploadProducts: Data,
-    billId: billId,
-    seller_id,
-    Pickup_date,
-  };
-
-  // push the data from user's to admin
-  orderedData.push(order);
-
-  console.log(orderedData);
-
-  // console.log(order);
-  if (exists != null) {
-    orderedData = JSON.parse(localStorage.getItem("newUploadList"));
-
-    orderedData.push(order);
-
-    localStorage.setItem("newUploadList", JSON.stringify(orderedData));
-  } else {
+  try {
+    let Data = JSON.parse(localStorage.getItem("newly_added"));
+    let exists = JSON.parse(localStorage.getItem("newUploadList"));
     let orderedData = [];
+    let billId = Date.now();
+    let seller_id = get_obj["id"];
+    let Pickup_date = currentDate;
 
     let order = {
       newUploadProducts: Data,
@@ -140,11 +123,36 @@ document.getElementById("submit").addEventListener("click", function (event) {
       Pickup_date,
     };
 
+    // push the data from user's to admin
     orderedData.push(order);
-    localStorage.setItem("newUploadList", JSON.stringify(orderedData));
-  }
 
-  // remove the details from user's storage
-  localStorage.removeItem("newly_added");
-  window.location.href = "/pages/10.upload.html";
+    console.log(orderedData);
+
+    // console.log(order);
+    if (exists != null) {
+      orderedData = JSON.parse(localStorage.getItem("newUploadList"));
+
+      orderedData.push(order);
+
+      localStorage.setItem("newUploadList", JSON.stringify(orderedData));
+    } else {
+      let orderedData = [];
+
+      let order = {
+        newUploadProducts: Data,
+        billId: billId,
+        seller_id,
+        Pickup_date,
+      };
+
+      orderedData.push(order);
+      localStorage.setItem("newUploadList", JSON.stringify(orderedData));
+    }
+
+    // remove the details from user's storage
+    localStorage.removeItem("newly_added");
+    window.location.href = "/pages/10.upload.html";
+  } catch (error) {
+    console.error(error);
+  }
 });

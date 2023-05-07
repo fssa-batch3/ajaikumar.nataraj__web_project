@@ -59,38 +59,42 @@
 
 // function to send comment and to set in the local storage
 function send() {
-  const msginput = document.getElementById("msg").value;
-  const coverpic = user_id["user_pic"];
-  const hours = new Date().getHours();
-  const minutes = new Date().getMinutes();
-  const currentTime = `${hours}:${minutes}`;
+  try {
+    const msginput = document.getElementById("msg").value;
+    const coverpic = user_id["user_pic"];
+    const hours = new Date().getHours();
+    const minutes = new Date().getMinutes();
+    const currentTime = `${hours}:${minutes}`;
 
-  const Userid = user_id["userid"];
+    const Userid = user_id["userid"];
 
-  const username = user_id["user_name"];
+    const username = user_id["user_name"];
 
-  const fundraiseid = fundraiseDetails["product_id"];
+    const fundraiseid = fundraiseDetails["product_id"];
 
-  const commentid = Date.now();
+    const commentid = Date.now();
 
-  if (msginput == "" || msginput == null) {
-    alert("You can't send empty comment");
-    return;
-  } else {
-    let commentObj = {
-      userpic: coverpic,
-      userName: username,
-      user_ID: Userid,
-      fundraiseId: fundraiseid,
-      commentId: commentid,
-      time: currentTime,
-      msg: msginput,
-    };
-    console.log(commentObj);
-    commentArr.push(commentObj);
-    window.localStorage.setItem("commentmain", JSON.stringify(commentArr));
+    if (msginput == "" || msginput == null) {
+      alert("You can't send empty comment");
+      return;
+    } else {
+      let commentObj = {
+        userpic: coverpic,
+        userName: username,
+        user_ID: Userid,
+        fundraiseId: fundraiseid,
+        commentId: commentid,
+        time: currentTime,
+        msg: msginput,
+      };
+      console.log(commentObj);
+      commentArr.push(commentObj);
+      window.localStorage.setItem("commentmain", JSON.stringify(commentArr));
+    }
+    location.reload();
+  } catch (error) {
+    console.error(error);
   }
-  location.reload();
 }
 
 // not to get value replace in the comment main array in the local storage

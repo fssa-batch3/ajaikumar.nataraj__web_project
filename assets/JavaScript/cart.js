@@ -7,9 +7,13 @@ const detail = JSON.parse(localStorage.getItem("added_list"));
 // Card creating by using JavaScript by for loop
 for (let i = 0; i <= Card.length; i++) {
   let findDetail = detail.find(function (event) {
-    let id = event["ProductId"];
-    if (Card[i]["ProductId"] == id) {
-      return true;
+    try {
+      let id = event["ProductId"];
+      if (Card[i]["ProductId"] == id) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
   // console.log(Card[i]["Url"]);
@@ -63,63 +67,76 @@ for (let i = 0; i <= Card.length; i++) {
   // edit value of the card while click the "edit" button
   edit.addEventListener("click", function (event) {
     event.preventDefault();
-    // console.log();
 
-    // to find the index of the card while click the button
-    if (detail[i]["ProductId"] == Card[i]["ProductId"]) {
-      const user_info = JSON.parse(localStorage.getItem("added_list"));
-      let select_user = user_info.findIndex(function (event) {
-        let customerEmail = event["ProductId"];
-        if (user_info["ProductId"] == customerEmail) {
-          console.log(user_info["product_id"]);
-        }
-      });
+    try {
+      // console.log();
 
-      console.log(detail);
+      // to find the index of the card while click the button
+      if (detail[i]["ProductId"] == Card[i]["ProductId"]) {
+        const user_info = JSON.parse(localStorage.getItem("added_list"));
+        let select_user = user_info.findIndex(function (event) {
+          try {
+            let customerEmail = event["ProductId"];
+            if (user_info["ProductId"] == customerEmail) {
+              console.log(user_info["product_id"]);
+            }
+          } catch (error) {
+            console.error(error);
+          }
+        });
 
-      let qty = document.getElementById(Card[i]["ProductId"]);
-      console.log(qty);
+        console.log(detail);
 
-      // select_user["bQty"] = detail[i][ProductId].value;
+        let qty = document.getElementById(Card[i]["ProductId"]);
+        console.log(qty);
 
-      let qtychange = document.getElementById("div");
-      console.log(qtychange);
-      let bQty = document.getElementById(detail[i]["ProductId"]).value;
+        // select_user["bQty"] = detail[i][ProductId].value;
 
-      let changeData = {
-        bQty,
-      };
-      console.log(changeData);
+        let qtychange = document.getElementById("div");
+        console.log(qtychange);
+        let bQty = document.getElementById(detail[i]["ProductId"]).value;
 
-      // assign or change the edited value
-      const assignData = Object.assign(findDetail, changeData);
+        let changeData = {
+          bQty,
+        };
+        console.log(changeData);
 
-      // to set the changed value in the object
-      let findIndex = detail.indexOf(findDetail);
-      detail[findIndex] = assignData;
-      localStorage.setItem("added_list", JSON.stringify(detail));
-      alert("Succesfully changed");
-      document.getElementById("div");
-      window.reload();
+        // assign or change the edited value
+        const assignData = Object.assign(findDetail, changeData);
+
+        // to set the changed value in the object
+        let findIndex = detail.indexOf(findDetail);
+        detail[findIndex] = assignData;
+        localStorage.setItem("added_list", JSON.stringify(detail));
+        alert("Succesfully changed");
+        document.getElementById("div");
+        window.reload();
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
 
   // to delete the product in the add to cart page
   cancel.addEventListener("click", function (event) {
     event.preventDefault();
-    let addData = JSON.parse(localStorage.getItem("added_list"));
-    let findIndex = detail.indexOf(findDetail);
-    let msg = confirm(
-      "Are you sure you want to remove this product from your cart"
-    );
-    if (msg !== true) {
-      return;
-    } else {
-      detail.splice(findIndex, 1);
-      localStorage.setItem("added_list", JSON.stringify(detail));
+    try {
+      let addData = JSON.parse(localStorage.getItem("added_list"));
+      let findIndex = detail.indexOf(findDetail);
+      let msg = confirm(
+        "Are you sure you want to remove this product from your cart"
+      );
+      if (msg !== true) {
+        return;
+      } else {
+        detail.splice(findIndex, 1);
+        localStorage.setItem("added_list", JSON.stringify(detail));
+      }
+      document.getElementById("div");
+      window.reload();
+    } catch (error) {
+      console.error(error);
     }
-    document.getElementById("div");
-    window.reload();
   });
 
   document.querySelector(".card_main").append(div_card);

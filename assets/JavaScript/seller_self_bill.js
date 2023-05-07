@@ -6,11 +6,15 @@ total_value.append("₹" + total);
 const oneUser = JSON.parse(localStorage.getItem("logIn"));
 const user_info = JSON.parse(localStorage.getItem("user_info"));
 let select_user = user_info.find(function (event) {
-  let customerEmail = event["Email"];
-  if (user_info == customerEmail) {
-    return true;
-  } else if (oneUser == customerEmail) {
-    return true;
+  try {
+    let customerEmail = event["Email"];
+    if (user_info == customerEmail) {
+      return true;
+    } else if (oneUser == customerEmail) {
+      return true;
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
 
@@ -31,28 +35,31 @@ Land_Address.value = select_user["Land_Address"] || "";
 const form = document.getElementById("form");
 form.addEventListener("change", function (event) {
   event.preventDefault();
+  try {
+    let FullName = document.getElementById("First_name").value;
+    let Phone_number = document.getElementById("Phone_Number").value;
+    // let transport_DOB = document.getElementById("Pickup_date").value;
+    let Land_Address = document.getElementById("Land_Address").value;
 
-  let FullName = document.getElementById("First_name").value;
-  let Phone_number = document.getElementById("Phone_Number").value;
-  // let transport_DOB = document.getElementById("Pickup_date").value;
-  let Land_Address = document.getElementById("Land_Address").value;
+    let newData = {
+      FullName,
+      Phone_number,
+      // transport_DOB,
+      Land_Address,
+    };
+    console.log(newData);
 
-  let newData = {
-    FullName,
-    Phone_number,
-    // transport_DOB,
-    Land_Address,
-  };
-  console.log(newData);
+    // assign the changed value
+    const combineData = Object.assign(select_user, newData);
+    console.log(combineData);
+    // alert("successfully changed");
 
-  // assign the changed value
-  const combineData = Object.assign(select_user, newData);
-  console.log(combineData);
-  // alert("successfully changed");
-
-  let findIndex = user_info.indexOf(select_user);
-  user_info[findIndex] = combineData;
-  localStorage.setItem("user_info", JSON.stringify(user_info));
+    let findIndex = user_info.indexOf(select_user);
+    user_info[findIndex] = combineData;
+    localStorage.setItem("user_info", JSON.stringify(user_info));
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 function account() {

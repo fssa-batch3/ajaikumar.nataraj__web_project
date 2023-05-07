@@ -54,9 +54,13 @@ for (let i = 0; i < owner_upload_list.length; i++) {
   let total = 0;
 
   let select_id = owner_upload_list.find(function (event) {
-    let BillId = event["billId"];
-    if (owner_upload_list[i]["billId"] == BillId) {
-      return true;
+    try {
+      let BillId = event["billId"];
+      if (owner_upload_list[i]["billId"] == BillId) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
   console.log(currentDate);

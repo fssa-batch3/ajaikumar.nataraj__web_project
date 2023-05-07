@@ -7,11 +7,15 @@ const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
 const user_info = JSON.parse(localStorage.getItem("buyer_info"));
 let select_user = user_info.find(function (event) {
-  let customerEmail = event["Email"];
-  if (user_info == customerEmail) {
-    return true;
-  } else if (oneUser == customerEmail) {
-    return true;
+  try {
+    let customerEmail = event["Email"];
+    if (user_info == customerEmail) {
+      return true;
+    } else if (oneUser == customerEmail) {
+      return true;
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
 
@@ -31,25 +35,28 @@ Land_Address.value = select_user["Land_Address"] || " ";
 const form = document.getElementById("form");
 form.addEventListener("change", function (event) {
   event.preventDefault();
+  try {
+    let FullName = document.getElementById("First_name").value;
+    let Phone_number = document.getElementById("Phone_Number").value;
+    let Land_Address = document.getElementById("Land_Address").value;
 
-  let FullName = document.getElementById("First_name").value;
-  let Phone_number = document.getElementById("Phone_Number").value;
-  let Land_Address = document.getElementById("Land_Address").value;
+    let newData = {
+      FullName,
+      Phone_number,
+      Land_Address,
+    };
+    console.log(newData);
 
-  let newData = {
-    FullName,
-    Phone_number,
-    Land_Address,
-  };
-  console.log(newData);
+    // code for change the delivery address
+    const combineData = Object.assign(select_user, newData);
+    console.log(combineData);
 
-  // code for change the delivery address
-  const combineData = Object.assign(select_user, newData);
-  console.log(combineData);
-
-  let findIndex = user_info.indexOf(select_user);
-  user_info[findIndex] = combineData;
-  localStorage.setItem("buyer_info", JSON.stringify(user_info));
+    let findIndex = user_info.indexOf(select_user);
+    user_info[findIndex] = combineData;
+    localStorage.setItem("buyer_info", JSON.stringify(user_info));
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 function order() {

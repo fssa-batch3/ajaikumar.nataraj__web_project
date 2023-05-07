@@ -9,9 +9,13 @@ const detail = JSON.parse(localStorage.getItem("added_list"));
 // Card creating by using JavaScript
 for (let i = 0; i <= Card.length; i++) {
   let findDetail = detail.find(function (event) {
-    let id = event["ProductId"];
-    if (Card[i]["ProductId"] == id) {
-      return true;
+    try {
+      let id = event["ProductId"];
+      if (Card[i]["ProductId"] == id) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
   // console.log(Card[i]["Url"]);
@@ -60,16 +64,20 @@ for (let i = 0; i <= Card.length; i++) {
   // code for delete the product
   delete_product.addEventListener("click", function (event) {
     event.preventDefault();
-    let addData = JSON.parse(localStorage.getItem("added_list"));
-    let findIndex = detail.indexOf(findDetail);
-    let msg = confirm(
-      "Are you sure you want to remove this product from your cart"
-    );
-    if (msg !== true) {
-      return;
-    } else {
-      detail.splice(findIndex, 1);
-      localStorage.setItem("added_list", JSON.stringify(detail));
+    try {
+      let addData = JSON.parse(localStorage.getItem("added_list"));
+      let findIndex = detail.indexOf(findDetail);
+      let msg = confirm(
+        "Are you sure you want to remove this product from your cart"
+      );
+      if (msg !== true) {
+        return;
+      } else {
+        detail.splice(findIndex, 1);
+        localStorage.setItem("added_list", JSON.stringify(detail));
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
 

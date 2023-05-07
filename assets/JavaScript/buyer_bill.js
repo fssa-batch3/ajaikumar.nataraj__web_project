@@ -60,16 +60,20 @@ for (let i = 0; i < Card.length; i++) {
   let user_point = document.getElementById("submit");
   user_point.addEventListener("click", function (event) {
     event.preventDefault();
-    // let count = 0;
-    // count += 2;
-    console.log(get_obj);
-    let count = (get_obj.points += 1);
-    console.log(get_obj);
-    let user_point = get_obj["points"];
-    // console.log(user_point);
-    let change_value = Object.assign(count, user_point);
-    console.log(change_value);
-    localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
+    try {
+      // let count = 0;
+      // count += 2;
+      console.log(get_obj);
+      let count = (get_obj.points += 1);
+      console.log(get_obj);
+      let user_point = get_obj["points"];
+      // console.log(user_point);
+      let change_value = Object.assign(count, user_point);
+      console.log(change_value);
+      localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
+    } catch (error) {
+      console.log(error);
+    }
   });
 
   document.querySelector("table").append(table_card);
@@ -106,33 +110,13 @@ console.log(currentDate);
 // code for place the order and add to the another local storage for admin
 document.getElementById("submit").addEventListener("click", function (event) {
   event.preventDefault();
-  let Data = JSON.parse(localStorage.getItem("added_list"));
-  let newData = JSON.parse(localStorage.getItem("Ordered_list"));
-  let orderedData = [];
-  let billId = Date.now();
-  let buyer_id = get_obj["id"];
-  let Delivery_date = currentDate;
-
-  let order = {
-    products: Data,
-    billId: billId,
-    buyer_id,
-    Delivery_date,
-  };
-
-  orderedData.push(order);
-
-  console.log(orderedData);
-
-  // console.log(order);
-  if (newData != null) {
-    orderedData = JSON.parse(localStorage.getItem("Ordered_list"));
-
-    orderedData.push(order);
-
-    localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
-  } else {
+  try {
+    let Data = JSON.parse(localStorage.getItem("added_list"));
+    let newData = JSON.parse(localStorage.getItem("Ordered_list"));
     let orderedData = [];
+    let billId = Date.now();
+    let buyer_id = get_obj["id"];
+    let Delivery_date = currentDate;
 
     let order = {
       products: Data,
@@ -142,11 +126,35 @@ document.getElementById("submit").addEventListener("click", function (event) {
     };
 
     orderedData.push(order);
-    localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
-  }
 
-  localStorage.removeItem("added_list");
-  window.location.href = "/pages/5a-fruits.html";
+    console.log(orderedData);
+
+    // console.log(order);
+    if (newData != null) {
+      orderedData = JSON.parse(localStorage.getItem("Ordered_list"));
+
+      orderedData.push(order);
+
+      localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
+    } else {
+      let orderedData = [];
+
+      let order = {
+        products: Data,
+        billId: billId,
+        buyer_id,
+        Delivery_date,
+      };
+
+      orderedData.push(order);
+      localStorage.setItem("Ordered_list", JSON.stringify(orderedData));
+    }
+
+    localStorage.removeItem("added_list");
+    window.location.href = "/pages/5a-fruits.html";
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 // for total amount
@@ -158,11 +166,15 @@ const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
 const info = JSON.parse(localStorage.getItem("buyer_info"));
 let select_user = info.find(function (event) {
-  let customerEmail = event["Email"];
-  if (info == customerEmail) {
-    return true;
-  } else if (oneUser == customerEmail) {
-    return true;
+  try {
+    let customerEmail = event["Email"];
+    if (info == customerEmail) {
+      return true;
+    } else if (oneUser == customerEmail) {
+      return true;
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
 

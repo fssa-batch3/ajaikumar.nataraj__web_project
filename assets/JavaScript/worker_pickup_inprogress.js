@@ -46,9 +46,13 @@ for (let i = 0; i < newUploadList.length; i++) {
   // console.log(data[i]);
 
   let select_id = newUploadList.find(function (event) {
-    let BillId = event["billId"];
-    if (newUploadList[i]["billId"] == BillId) {
-      return true;
+    try {
+      let BillId = event["billId"];
+      if (newUploadList[i]["billId"] == BillId) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
 
@@ -135,68 +139,82 @@ for (let i = 0; i < newUploadList.length; i++) {
     // to delete the order for some reason
     p1.addEventListener("click", function (event) {
       event.preventDefault();
-      let indexDel = newUploadList.indexOf(select_id);
-      let msg = confirm(
-        "Are you sure you want to delete this Product newUploadList"
-      );
-      if (msg !== true) {
-        return;
-      } else {
-        newUploadList.splice(indexDel, 1);
-        console.log(newUploadList);
-        localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
+      try {
+        let indexDel = newUploadList.indexOf(select_id);
+        let msg = confirm(
+          "Are you sure you want to delete this Product newUploadList"
+        );
+        if (msg !== true) {
+          return;
+        } else {
+          newUploadList.splice(indexDel, 1);
+          console.log(newUploadList);
+          localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
+        }
+        location.reload();
+      } catch (error) {
+        console.error(error);
       }
-      location.reload();
     });
 
     // while click order completed order store in the completed list
     p3.addEventListener("click", function (event) {
       event.preventDefault();
-      let indexFind = newUploadList.indexOf(select_id);
-      let Data = JSON.parse(localStorage.getItem("newUploadList"));
-      let newData = JSON.parse(localStorage.getItem("owner_upload_list"));
-      let owner_data = [];
+      try {
+        let indexFind = newUploadList.indexOf(select_id);
+        let Data = JSON.parse(localStorage.getItem("newUploadList"));
+        let newData = JSON.parse(localStorage.getItem("owner_upload_list"));
+        let owner_data = [];
 
-      // to store the required details
-      let new_data = {
-        new_owner_data: Data[i]["newUploadProducts"],
-        billId: Data[i]["billId"],
-        seller_id: Data[i]["seller_id"],
-        Pickup_date: Data[i]["Pickup_date"],
-      };
+        // to store the required details
+        let new_data = {
+          new_owner_data: Data[i]["newUploadProducts"],
+          billId: Data[i]["billId"],
+          seller_id: Data[i]["seller_id"],
+          Pickup_date: Data[i]["Pickup_date"],
+        };
 
-      owner_data.push(new_data);
+        owner_data.push(new_data);
 
-      let msg = confirm("Are you sure you Picked Up those Products");
-      if (msg !== true) {
-        return;
-      } else {
-        if (newData != null) {
-          owner_data = JSON.parse(localStorage.getItem("owner_upload_list"));
-
-          owner_data.push(new_data);
-
-          localStorage.setItem("owner_upload_list", JSON.stringify(owner_data));
+        let msg = confirm("Are you sure you Picked Up those Products");
+        if (msg !== true) {
+          return;
         } else {
-          let owner_data = [];
+          if (newData != null) {
+            owner_data = JSON.parse(localStorage.getItem("owner_upload_list"));
 
-          let new_data = {
-            new_owner_data: Data[i]["newUploadProducts"],
-            billId: Data[i]["billId"],
-            seller_id: Data[i]["seller_id"],
-            Pickup_date: Data[i]["Pickup_date"],
-          };
+            owner_data.push(new_data);
 
-          owner_data.push(new_data);
+            localStorage.setItem(
+              "owner_upload_list",
+              JSON.stringify(owner_data)
+            );
+          } else {
+            let owner_data = [];
 
-          localStorage.setItem("owner_upload_list", JSON.stringify(owner_data));
+            let new_data = {
+              new_owner_data: Data[i]["newUploadProducts"],
+              billId: Data[i]["billId"],
+              seller_id: Data[i]["seller_id"],
+              Pickup_date: Data[i]["Pickup_date"],
+            };
+
+            owner_data.push(new_data);
+
+            localStorage.setItem(
+              "owner_upload_list",
+              JSON.stringify(owner_data)
+            );
+          }
         }
+        // to delete the completed orders list
+        newUploadList.splice(indexFind, 1);
+        console.log(newUploadList);
+        localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
+        location.reload();
+      } catch (error) {
+        console.error(error);
       }
-      // to delete the completed orders list
-      newUploadList.splice(indexFind, 1);
-      console.log(newUploadList);
-      localStorage.setItem("newUploadList", JSON.stringify(newUploadList));
-      location.reload();
     });
 
     document.querySelector("body").append(form);

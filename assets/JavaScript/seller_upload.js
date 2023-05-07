@@ -21,46 +21,50 @@ document.createElement("newly_added");
 // to get details of the products from the form by id and store in the new array
 uploadForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  let array = [];
-  if (localStorage.getItem("newly_added") != null) {
-    array = JSON.parse(localStorage.getItem("newly_added"));
+  try {
+    let array = [];
+    if (localStorage.getItem("newly_added") != null) {
+      array = JSON.parse(localStorage.getItem("newly_added"));
+    }
+
+    // let match = false;
+
+    // to set the details by object in an array
+    const Url = document.getElementById("url").value;
+    const Name = document.getElementById("product").value;
+    const Type = document.getElementById("type").value;
+    const Price = document.getElementById("price").value;
+    const Qty = document.getElementById("qty").value;
+    const bQty = document.getElementById("qty").value;
+    // const Place = document.getElementById("place").value;
+    const Description = document.getElementById("description").value;
+    let ProductId = Date.now();
+    let userId = get_obj["id"];
+    // let date = get_obj["transport_DOB"];
+
+    let inputDetails = {
+      Url,
+      Name,
+      Type,
+      Price,
+      Qty,
+      bQty,
+      // Place,
+      Description,
+      ProductId,
+      userId,
+      // date,
+    };
+    // console.log(Product_id);
+
+    array.push(inputDetails);
+    const str = JSON.stringify(array);
+    localStorage.setItem("newly_added", str);
+    console.log(str);
+    document.getElementById("form").reset();
+  } catch (error) {
+    console.error(error);
   }
-
-  // let match = false;
-
-  // to set the details by object in an array
-  const Url = document.getElementById("url").value;
-  const Name = document.getElementById("product").value;
-  const Type = document.getElementById("type").value;
-  const Price = document.getElementById("price").value;
-  const Qty = document.getElementById("qty").value;
-  const bQty = document.getElementById("qty").value;
-  // const Place = document.getElementById("place").value;
-  const Description = document.getElementById("description").value;
-  let ProductId = Date.now();
-  let userId = get_obj["id"];
-  // let date = get_obj["transport_DOB"];
-
-  let inputDetails = {
-    Url,
-    Name,
-    Type,
-    Price,
-    Qty,
-    bQty,
-    // Place,
-    Description,
-    ProductId,
-    userId,
-    // date,
-  };
-  // console.log(Product_id);
-
-  array.push(inputDetails);
-  const str = JSON.stringify(array);
-  localStorage.setItem("newly_added", str);
-  console.log(str);
-  document.getElementById("form").reset();
 });
 
 function profile() {

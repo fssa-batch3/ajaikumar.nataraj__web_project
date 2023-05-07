@@ -9,11 +9,15 @@ inputDate.setAttribute("min", minDate);
 const oneUser = JSON.parse(localStorage.getItem("logIn"));
 const user_info = JSON.parse(localStorage.getItem("user_info"));
 let select_user = user_info.find(function (event) {
-  let customerEmail = event["Email"];
-  if (user_info == customerEmail) {
-    return true;
-  } else if (oneUser == customerEmail) {
-    return true;
+  try {
+    let customerEmail = event["Email"];
+    if (user_info == customerEmail) {
+      return true;
+    } else if (oneUser == customerEmail) {
+      return true;
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
 
@@ -37,29 +41,33 @@ const form = document.getElementById("form");
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  let Bank_Card_no = document.getElementById("Bank_Card_no").value;
-  let Account_holder_name = document.getElementById("holder_name").value;
-  let IFSC_Code = document.getElementById("ifsc_code").value;
-  let CVV_No = document.getElementById("cvv_no").value;
-  let Card_Expiry_Date = document.getElementById("card_exp_date").value;
+  try {
+    let Bank_Card_no = document.getElementById("Bank_Card_no").value;
+    let Account_holder_name = document.getElementById("holder_name").value;
+    let IFSC_Code = document.getElementById("ifsc_code").value;
+    let CVV_No = document.getElementById("cvv_no").value;
+    let Card_Expiry_Date = document.getElementById("card_exp_date").value;
 
-  let newData = {
-    Bank_Card_no,
-    Account_holder_name,
-    IFSC_Code,
-    CVV_No,
-    Card_Expiry_Date,
-  };
-  console.log(newData);
+    let newData = {
+      Bank_Card_no,
+      Account_holder_name,
+      IFSC_Code,
+      CVV_No,
+      Card_Expiry_Date,
+    };
+    console.log(newData);
 
-  // assign the value to
-  const combineData = Object.assign(select_user, newData);
-  console.log(combineData);
-  alert("successfully changed");
+    // assign the value to
+    const combineData = Object.assign(select_user, newData);
+    console.log(combineData);
+    alert("successfully changed");
 
-  let findIndex = user_info.indexOf(select_user);
-  user_info[findIndex] = combineData;
-  localStorage.setItem("user_info", JSON.stringify(user_info));
+    let findIndex = user_info.indexOf(select_user);
+    user_info[findIndex] = combineData;
+    localStorage.setItem("user_info", JSON.stringify(user_info));
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 function bill() {

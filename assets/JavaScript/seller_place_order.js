@@ -7,9 +7,13 @@ const detail = JSON.parse(localStorage.getItem("newly_added"));
 // Card creating by using JavaScript
 for (let i = 0; i <= Card.length; i++) {
   let findDetail = detail.find(function (event) {
-    let id = event["ProductId"];
-    if (Card[i]["ProductId"] == id) {
-      return true;
+    try {
+      let id = event["ProductId"];
+      if (Card[i]["ProductId"] == id) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
   // console.log(Card[i]["Url"]);
@@ -62,43 +66,51 @@ for (let i = 0; i <= Card.length; i++) {
   edit.addEventListener("click", function (event) {
     event.preventDefault();
 
-    let changeData = {
-      Name: fruit_name.value,
-      Price: rupees.value,
-      Qty: input_value.value,
-    };
-    console.log(changeData);
+    try {
+      let changeData = {
+        Name: fruit_name.value,
+        Price: rupees.value,
+        Qty: input_value.value,
+      };
+      console.log(changeData);
 
-    const assignData = Object.assign(findDetail, changeData);
+      const assignData = Object.assign(findDetail, changeData);
 
-    let findIndex = detail.indexOf(findDetail);
-    detail[findIndex] = assignData;
-    localStorage.setItem("newly_added", JSON.stringify(detail));
-    alert("Succesfully changed");
+      let findIndex = detail.indexOf(findDetail);
+      detail[findIndex] = assignData;
+      localStorage.setItem("newly_added", JSON.stringify(detail));
+      alert("Succesfully changed");
+    } catch (error) {
+      console.error(error);
+    }
   });
 
   // to delete the product by clicking the delete button
   button.addEventListener("click", function (event) {
     event.preventDefault();
-    let deleteData = JSON.parse(localStorage.getItem("deleted_list"));
-    let findIndex = detail.indexOf(findDetail);
-    let msg = confirm("Are you sure you want to delete this product");
-    if (msg !== true) {
-      return;
-    } else {
-      if (deleteData === null) {
-        let array = [];
-        array.push(Card[findIndex]);
-        localStorage.setItem("deleted_list", JSON.stringify(array));
+    try {
+      let deleteData = JSON.parse(localStorage.getItem("deleted_list"));
+      let findIndex = detail.indexOf(findDetail);
+      let msg = confirm("Are you sure you want to delete this product");
+      if (msg !== true) {
+        return;
       } else {
-        deleteData.push(Card[findIndex]);
-        localStorage.setItem("deleted_list", JSON.stringify(deleteData));
-      }
+        if (deleteData === null) {
+          let array = [];
+          array.push(Card[findIndex]);
+          localStorage.setItem("deleted_list", JSON.stringify(array));
+        } else {
+          deleteData.push(Card[findIndex]);
+          localStorage.setItem("deleted_list", JSON.stringify(deleteData));
+        }
 
-      detail.splice(findIndex, 1);
-      localStorage.setItem("newly_added", JSON.stringify(detail));
+        detail.splice(findIndex, 1);
+        localStorage.setItem("newly_added", JSON.stringify(detail));
+      }
+      location.reload();
+    } catch (error) {
+      console.error(error);
     }
-    location.reload();
   });
 
   document.querySelector(".card_main").append(div_card);
@@ -116,15 +128,19 @@ qty.value = detail["Qty"];
 const div = document.getElementById("div");
 div.addEventListener("submit", function (event) {
   event.preventDefault();
-  let Name = document.getElementById("pName").value;
-  let Price = document.getElementById("pPrice").value;
-  let Qty = document.getElementById("pQty").value;
+  try {
+    let Name = document.getElementById("pName").value;
+    let Price = document.getElementById("pPrice").value;
+    let Qty = document.getElementById("pQty").value;
 
-  let changeData = {
-    Name,
-    Price,
-    Qty,
-  };
+    let changeData = {
+      Name,
+      Price,
+      Qty,
+    };
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 function deleted() {

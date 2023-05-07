@@ -4,13 +4,18 @@ const oneUser = JSON.parse(localStorage.getItem("admin_logIn"));
 const user_info = JSON.parse(localStorage.getItem("admin_info"));
 // compare and check the list
 let select_user = user_info.find(function (event) {
-  let customerEmail = event["Email"];
-  if (user_info == customerEmail) {
-    return true;
-  } else if (oneUser == customerEmail) {
-    return true;
+  try {
+    let customerEmail = event["Email"];
+    if (user_info == customerEmail) {
+      return true;
+    } else if (oneUser == customerEmail) {
+      return true;
+    }
+  } catch (error) {
+    console.error(error);
   }
 });
+
 // show the user's name in box
 const name = document.getElementById("profile");
 

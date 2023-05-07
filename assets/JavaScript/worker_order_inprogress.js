@@ -46,9 +46,13 @@ for (let i = 0; i < Ordered_list.length; i++) {
   // console.log(data[i]);
 
   let select_id = Ordered_list.find(function (event) {
-    let BillId = event["billId"];
-    if (Ordered_list[i]["billId"] == BillId) {
-      return true;
+    try {
+      let BillId = event["billId"];
+      if (Ordered_list[i]["billId"] == BillId) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
 
@@ -135,67 +139,81 @@ for (let i = 0; i < Ordered_list.length; i++) {
     // to delete the order for some reason
     p1.addEventListener("click", function (event) {
       event.preventDefault();
-      let indexFind = Ordered_list.indexOf(select_id);
-      let msg = confirm("Are you sure you delete this Product");
-      if (msg !== true) {
-        return;
-      } else {
-        Ordered_list.splice(indexFind, 1);
-        console.log(Ordered_list);
-        localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
+      try {
+        let indexFind = Ordered_list.indexOf(select_id);
+        let msg = confirm("Are you sure you delete this Product");
+        if (msg !== true) {
+          return;
+        } else {
+          Ordered_list.splice(indexFind, 1);
+          console.log(Ordered_list);
+          localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
+        }
+        location.reload();
+      } catch (error) {
+        console.error(error);
       }
-      location.reload();
     });
 
     // while click order completed order store in the completed list
     p3.addEventListener("click", function (event) {
       event.preventDefault();
-      let indexFind = Ordered_list.indexOf(select_id);
-      let Data = JSON.parse(localStorage.getItem("Ordered_list"));
-      let newData = JSON.parse(localStorage.getItem("owner_order_list"));
-      let owner_data = [];
+      try {
+        let indexFind = Ordered_list.indexOf(select_id);
+        let Data = JSON.parse(localStorage.getItem("Ordered_list"));
+        let newData = JSON.parse(localStorage.getItem("owner_order_list"));
+        let owner_data = [];
 
-      // to store the required details
-      let new_data = {
-        new_owner_data: Data[i]["products"],
-        billId: Data[i]["billId"],
-        buyer_id: Data[i]["buyer_id"],
-        Delivery_date: Data[i]["Delivery_date"],
-      };
+        // to store the required details
+        let new_data = {
+          new_owner_data: Data[i]["products"],
+          billId: Data[i]["billId"],
+          buyer_id: Data[i]["buyer_id"],
+          Delivery_date: Data[i]["Delivery_date"],
+        };
 
-      owner_data.push(new_data);
+        owner_data.push(new_data);
 
-      let msg = confirm("Are you sure you Delievered this Account");
-      if (msg !== true) {
-        return;
-      } else {
-        if (newData != null) {
-          owner_data = JSON.parse(localStorage.getItem("owner_order_list"));
-
-          owner_data.push(new_data);
-
-          localStorage.setItem("owner_order_list", JSON.stringify(owner_data));
+        let msg = confirm("Are you sure you Delievered this Account");
+        if (msg !== true) {
+          return;
         } else {
-          let owner_data = [];
+          if (newData != null) {
+            owner_data = JSON.parse(localStorage.getItem("owner_order_list"));
 
-          let new_data = {
-            new_owner_data: Data[i]["products"],
-            billId: Data[i]["billId"],
-            buyer_id: Data[i]["buyer_id"],
-            Delivery_date: Data[i]["Delivery_date"],
-          };
+            owner_data.push(new_data);
 
-          owner_data.push(new_data);
+            localStorage.setItem(
+              "owner_order_list",
+              JSON.stringify(owner_data)
+            );
+          } else {
+            let owner_data = [];
 
-          localStorage.setItem("owner_order_list", JSON.stringify(owner_data));
+            let new_data = {
+              new_owner_data: Data[i]["products"],
+              billId: Data[i]["billId"],
+              buyer_id: Data[i]["buyer_id"],
+              Delivery_date: Data[i]["Delivery_date"],
+            };
+
+            owner_data.push(new_data);
+
+            localStorage.setItem(
+              "owner_order_list",
+              JSON.stringify(owner_data)
+            );
+          }
         }
-      }
-      // to delete the completed orders list
-      Ordered_list.splice(indexFind, 1);
-      console.log(Ordered_list);
-      localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
+        // to delete the completed orders list
+        Ordered_list.splice(indexFind, 1);
+        console.log(Ordered_list);
+        localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));
 
-      location.reload();
+        location.reload();
+      } catch (error) {
+        console.error(error);
+      }
     });
 
     document.querySelector("body").append(form);

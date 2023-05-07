@@ -91,43 +91,46 @@ for (let i = 0; i < Card.length; i++) {
       // code for add the selected items to add cart page
       function addProduct(ProductId) {
         event.preventDefault();
+        try {
+          let addData = JSON.parse(localStorage.getItem("added_list"));
+          console.log(addData);
 
-        let addData = JSON.parse(localStorage.getItem("added_list"));
-        console.log(addData);
+          let currentProduct;
 
-        let currentProduct;
-
-        for (let i = 0; i < Card.length; i++) {
-          for (let j = 0; j < Card[i]["new_owner_data"].length; j++) {
-            if (Card[i]["new_owner_data"][j]["ProductId"] == ProductId) {
-              currentProduct = Card[i]["new_owner_data"][j];
+          for (let i = 0; i < Card.length; i++) {
+            for (let j = 0; j < Card[i]["new_owner_data"].length; j++) {
+              if (Card[i]["new_owner_data"][j]["ProductId"] == ProductId) {
+                currentProduct = Card[i]["new_owner_data"][j];
+              }
             }
           }
-        }
 
-        console.log(currentProduct);
+          console.log(currentProduct);
 
-        //  code for set the automatic qty for user as 1kg and it stores in local storage
-        let arr = [];
-        console.log(arr);
-        currentProduct["bQty"] = "1";
-        arr.push(currentProduct["bQty"]);
+          //  code for set the automatic qty for user as 1kg and it stores in local storage
+          let arr = [];
+          console.log(arr);
+          currentProduct["bQty"] = "1";
+          arr.push(currentProduct["bQty"]);
 
-        // msg for confirm to add to cart
-        let msg = confirm(
-          "Are you sure you want to add this product to your cart"
-        );
-        if (msg !== true) {
-          return;
-        } else {
-          if (addData === null) {
-            let array = [];
-            array.push(currentProduct);
-            localStorage.setItem("added_list", JSON.stringify(array));
+          // msg for confirm to add to cart
+          let msg = confirm(
+            "Are you sure you want to add this product to your cart"
+          );
+          if (msg !== true) {
+            return;
           } else {
-            addData.push(currentProduct);
-            localStorage.setItem("added_list", JSON.stringify(addData));
+            if (addData === null) {
+              let array = [];
+              array.push(currentProduct);
+              localStorage.setItem("added_list", JSON.stringify(array));
+            } else {
+              addData.push(currentProduct);
+              localStorage.setItem("added_list", JSON.stringify(addData));
+            }
           }
+        } catch (error) {
+          console.error(error);
         }
       }
       // url params code for passing the selected product details

@@ -41,9 +41,13 @@ for (let i = 0; i < owner_order_list.length; i++) {
   let total = 0;
 
   let select_id = owner_order_list.find(function (event) {
-    let BillId = event["billId"];
-    if (owner_order_list[i]["billId"] == BillId) {
-      return true;
+    try {
+      let BillId = event["billId"];
+      if (owner_order_list[i]["billId"] == BillId) {
+        return true;
+      }
+    } catch (error) {
+      console.log(error);
     }
   });
   console.log(currentDate);

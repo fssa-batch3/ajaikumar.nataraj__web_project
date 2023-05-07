@@ -5,46 +5,49 @@ let detail = document.getElementById("form");
 document.createElement("review");
 detail.addEventListener("submit", function (event) {
   event.preventDefault();
+  try {
+    let array = [];
 
-  let array = [];
+    if (localStorage.getItem("review") != null) {
+      array = JSON.parse(localStorage.getItem("review"));
 
-  if (localStorage.getItem("review") != null) {
-    array = JSON.parse(localStorage.getItem("review"));
+      location.reload();
+    }
 
-    location.reload();
+    // get the details for store the data in an array
+    const Description = document.getElementById("comment").value;
+    // const thumbs_up = document.getElementById("thumbs-up-count").value;
+    // const thumbs_down = document.getElementById("thumbs-down-count").value;
+    const commentId = Date.now();
+    const Time = new Date().getHours();
+    const Minutes = new Date().getMinutes();
+    const currentTime = `${Time}:${Minutes}`;
+    const userId = get_obj["id"];
+    const Name = get_obj["FullName"];
+    let presentDate = new Date().getDate();
+    let presentMonth = new Date().getMonth() + 1;
+    let presentYear = new Date().getFullYear();
+
+    let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
+
+    let value = {
+      // Name,
+      Description,
+      commentId,
+      // thumbs_up,
+      // thumbs_down,
+      // down_count,
+      // up_count,
+      currentTime,
+      userId,
+      Name,
+      currentDate,
+    };
+    array.push(value);
+    localStorage.setItem("review", JSON.stringify(array));
+  } catch (error) {
+    console.error(error);
   }
-
-  // get the details for store the data in an array
-  const Description = document.getElementById("comment").value;
-  // const thumbs_up = document.getElementById("thumbs-up-count").value;
-  // const thumbs_down = document.getElementById("thumbs-down-count").value;
-  const commentId = Date.now();
-  const Time = new Date().getHours();
-  const Minutes = new Date().getMinutes();
-  const currentTime = `${Time}:${Minutes}`;
-  const userId = get_obj["id"];
-  const Name = get_obj["FullName"];
-  let presentDate = new Date().getDate();
-  let presentMonth = new Date().getMonth() + 1;
-  let presentYear = new Date().getFullYear();
-
-  let currentDate = `${presentYear}-${presentMonth}-${presentDate}`;
-
-  let value = {
-    // Name,
-    Description,
-    commentId,
-    // thumbs_up,
-    // thumbs_down,
-    // down_count,
-    // up_count,
-    currentTime,
-    userId,
-    Name,
-    currentDate,
-  };
-  array.push(value);
-  localStorage.setItem("review", JSON.stringify(array));
 });
 
 // get the login details
@@ -61,9 +64,13 @@ const get_obj = id.find((e) => e.Email === login_id);
 
 for (i = 0; i < review.length; i++) {
   let select_comment = review.find(function (event) {
-    let id = event["commentId"];
-    if (review[i]["commentId"] == id) {
-      return true;
+    try {
+      let id = event["commentId"];
+      if (review[i]["commentId"] == id) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
   // console.log(select_comment);
@@ -147,46 +154,54 @@ for (i = 0; i < review.length; i++) {
     thumbs_down_img.addEventListener("click", function (event) {
       event.preventDefault();
 
-      // console.log(edit_comment);
+      try {
+        // console.log(edit_comment);
 
-      const desc = document.getElementById("feedback").value;
+        const desc = document.getElementById("feedback").value;
 
-      // console.log(desc);
+        // console.log(desc);
 
-      desc.value = select_comment["Description"];
+        desc.value = select_comment["Description"];
 
-      let Description = document.getElementById("feedback").value;
-      console.log(Description);
+        let Description = document.getElementById("feedback").value;
+        console.log(Description);
 
-      let new_desc = {
-        Description,
-      };
-      // console.log(new_desc);
+        let new_desc = {
+          Description,
+        };
+        // console.log(new_desc);
 
-      let change_desc = Object.assign(select_comment, new_desc);
+        let change_desc = Object.assign(select_comment, new_desc);
 
-      alert("successfully changed");
+        alert("successfully changed");
 
-      let findIndex = review.indexOf(select_comment);
-      review[findIndex] = change_desc;
-      localStorage.setItem("review", JSON.stringify(review));
+        let findIndex = review.indexOf(select_comment);
+        review[findIndex] = change_desc;
+        localStorage.setItem("review", JSON.stringify(review));
 
-      location.reload();
+        location.reload();
+      } catch (error) {
+        console.error(error);
+      }
     });
 
     // for delete the login user's review
     thumbs_up_img.addEventListener("click", function (event) {
       event.preventDefault();
-      let comment_delete = review.indexOf(select_comment);
-      let msg = confirm("Are you sure you want to delete this comment");
-      if (msg !== true) {
-        return;
-      } else {
-        review.splice(comment_delete, 1);
-        localStorage.setItem("review", JSON.stringify(review));
-      }
+      try {
+        let comment_delete = review.indexOf(select_comment);
+        let msg = confirm("Are you sure you want to delete this comment");
+        if (msg !== true) {
+          return;
+        } else {
+          review.splice(comment_delete, 1);
+          localStorage.setItem("review", JSON.stringify(review));
+        }
 
-      location.reload();
+        location.reload();
+      } catch (error) {
+        console.error(error);
+      }
     });
 
     document.querySelector(".others_comment").append(other_section);
@@ -196,9 +211,13 @@ for (i = 0; i < review.length; i++) {
 // show the other user's comments
 for (i = 0; i < review.length; i++) {
   let findDetail = review.find(function (event) {
-    let id = event["commentId"];
-    if (review[i]["commentId"] == id) {
-      return true;
+    try {
+      let id = event["commentId"];
+      if (review[i]["commentId"] == id) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
 

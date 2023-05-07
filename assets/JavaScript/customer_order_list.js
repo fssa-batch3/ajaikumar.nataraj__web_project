@@ -26,9 +26,13 @@ for (let i = 0; i <= Ordered_list.length; i++) {
   let total = 0;
 
   let select_id = Ordered_list.find(function (event) {
-    let BillId = event["billId"];
-    if (Ordered_list[i]["billId"] == BillId) {
-      return true;
+    try {
+      let BillId = event["billId"];
+      if (Ordered_list[i]["billId"] == BillId) {
+        return true;
+      }
+    } catch (error) {
+      console.error(error);
     }
   });
   console.log(currentDate);
