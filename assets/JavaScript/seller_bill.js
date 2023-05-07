@@ -118,6 +118,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
     Pickup_date,
   };
 
+  // push the data from user's to admin
   orderedData.push(order);
 
   console.log(orderedData);
@@ -143,6 +144,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
     localStorage.setItem("newUploadList", JSON.stringify(orderedData));
   }
 
+  // remove the details from user's storage
   localStorage.removeItem("newly_added");
   window.location.href = "/pages/10.upload.html";
 });

@@ -1,3 +1,4 @@
+// get the details from localstorage
 let Card = JSON.parse(localStorage.getItem("Ordered_list"));
 
 // get the searching name by id and classname
@@ -18,6 +19,7 @@ searchbar.addEventListener("input", () => {
   }
 });
 
+// to get current date
 const today = new Date();
 const year = today.getFullYear();
 let month = today.getMonth() + 1;
@@ -36,12 +38,14 @@ const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
 
+// create the card by for loop
 for (let i = 0; i < Card.length; i++) {
   let data = Card[i]["products"];
   let total = 0;
   console.log(currentDate);
   console.log(data[i]["Pickup_date"]);
 
+  // check the currentdate and delivery date to show today's products to complete
   if (currentDate == Card[i]["Delivery_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
@@ -102,6 +106,7 @@ for (let i = 0; i < Card.length; i++) {
       ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
       ul_div.append(ul4);
 
+      // totral of all values
       total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
     }
 

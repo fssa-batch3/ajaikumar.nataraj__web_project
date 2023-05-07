@@ -1,3 +1,4 @@
+// to get the details from the newUploadList
 let newUploadList = JSON.parse(localStorage.getItem("newUploadList"));
 
 // get the searching name by id and classname
@@ -36,12 +37,14 @@ const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
 
+// card creating by for loop
 for (let i = 0; i < newUploadList.length; i++) {
   let data = newUploadList[i]["newUploadProducts"];
   let total = 0;
   console.log(currentDate);
   console.log(data[i]["Pickup_date"]);
 
+  // check currentdate and stored date
   if (currentDate == newUploadList[i]["Pickup_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
@@ -102,6 +105,7 @@ for (let i = 0; i < newUploadList.length; i++) {
       ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
       ul_div.append(ul4);
 
+      // total the value of products
       total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
     }
 

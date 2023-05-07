@@ -1,3 +1,4 @@
+// get the details from localstorage
 let newUploadList = JSON.parse(localStorage.getItem("newUploadList"));
 
 // get the searching name by id and classname
@@ -18,6 +19,7 @@ searchbar.addEventListener("input", () => {
   }
 });
 
+// create the card by details from localstorage
 for (let i = 0; i < newUploadList.length; i++) {
   let data = newUploadList[i]["newUploadProducts"];
   let total = 0;
@@ -84,6 +86,7 @@ for (let i = 0; i < newUploadList.length; i++) {
     ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
     ul_div.append(ul4);
 
+    // total of all values
     total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
   }
 

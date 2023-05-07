@@ -1,6 +1,8 @@
+// get the mail from logined user and check in the user's list
 const oneUser = JSON.parse(localStorage.getItem("admin_logIn"));
 
 const user_info = JSON.parse(localStorage.getItem("admin_info"));
+// compare and check the list
 let select_user = user_info.find(function (event) {
   let customerEmail = event["Email"];
   if (user_info == customerEmail) {
@@ -9,7 +11,7 @@ let select_user = user_info.find(function (event) {
     return true;
   }
 });
-
+// show the user's name in box
 const name = document.getElementById("profile");
 
 name.value = select_user["FullName"];

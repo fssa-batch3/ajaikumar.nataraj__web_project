@@ -1,3 +1,4 @@
+// get the details from localstorage
 let newUploadList = JSON.parse(localStorage.getItem("newUploadList"));
 
 // get the searching name by id and classname
@@ -18,6 +19,7 @@ searchbar.addEventListener("input", () => {
   }
 });
 
+// get current date details
 const today = new Date();
 const year = today.getFullYear();
 let month = today.getMonth() + 1;
@@ -36,6 +38,7 @@ const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
 
+// createw the card by for loop
 for (let i = 0; i < newUploadList.length; i++) {
   let data = newUploadList[i]["newUploadProducts"];
   let total = 0;
@@ -49,6 +52,7 @@ for (let i = 0; i < newUploadList.length; i++) {
     }
   });
 
+  // check the stored date and current date are same
   if (currentDate == newUploadList[i]["Pickup_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
@@ -128,6 +132,7 @@ for (let i = 0; i < newUploadList.length; i++) {
     console.log(data[i]["Price"]);
     console.log(data[i]["bQty"]);
 
+    // to delete the order for some reason
     p1.addEventListener("click", function (event) {
       event.preventDefault();
       let indexDel = newUploadList.indexOf(select_id);
@@ -144,6 +149,7 @@ for (let i = 0; i < newUploadList.length; i++) {
       location.reload();
     });
 
+    // while click order completed order store in the completed list
     p3.addEventListener("click", function (event) {
       event.preventDefault();
       let indexFind = newUploadList.indexOf(select_id);
@@ -151,6 +157,7 @@ for (let i = 0; i < newUploadList.length; i++) {
       let newData = JSON.parse(localStorage.getItem("owner_upload_list"));
       let owner_data = [];
 
+      // to store the required details
       let new_data = {
         new_owner_data: Data[i]["newUploadProducts"],
         billId: Data[i]["billId"],
@@ -185,6 +192,7 @@ for (let i = 0; i < newUploadList.length; i++) {
           localStorage.setItem("owner_upload_list", JSON.stringify(owner_data));
         }
       }
+      // to delete the completed orders list
       newUploadList.splice(indexFind, 1);
       console.log(newUploadList);
       localStorage.setItem("newUploadList", JSON.stringify(newUploadList));

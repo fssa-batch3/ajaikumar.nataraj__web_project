@@ -1,3 +1,4 @@
+// get the inputs from the login page
 let logIn = document.getElementById("form");
 console.log(logIn);
 
@@ -5,27 +6,30 @@ let arr = [];
 
 logIn.addEventListener("submit", (event) => {
   event.preventDefault();
-  let defaultData = JSON.parse(localStorage.getItem("admin_info"));
-  console.log(defaultData);
+  let getAdminInfo = JSON.parse(localStorage.getItem("admin_info"));
+  console.log(getAdminInfo);
 
+  // get the values by id
   let Email = document.getElementById("Email").value.toLowerCase().trim();
   let Password = document.getElementById("Password").value;
 
   let match = false;
 
-  for (let i = 0; i < defaultData.length; i++) {
+  // check the values in admin list
+  for (let i = 0; i < getAdminInfo.length; i++) {
     if (
-      Email == defaultData[i]["Email"] &&
-      Password == defaultData[i]["Password"]
+      Email == getAdminInfo[i]["Email"] &&
+      Password == getAdminInfo[i]["Password"]
     ) {
       match = true;
-      arr.push(defaultData[i]);
+      arr.push(getAdminInfo[i]);
+
+      // store the user's login details for further use
       window.localStorage.setItem(
         "admin_logIn",
         JSON.stringify(arr[0]["Email"])
       );
       break;
-      // i = i + defaultData.length;
     } else {
       match = false;
     }

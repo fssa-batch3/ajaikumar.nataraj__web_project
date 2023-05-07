@@ -1,3 +1,4 @@
+// get the details from localstorage
 let Ordered_list = JSON.parse(localStorage.getItem("Ordered_list"));
 
 // get the searching name by id and classname
@@ -18,6 +19,7 @@ searchbar.addEventListener("input", () => {
   }
 });
 
+// get current date details
 const today = new Date();
 const year = today.getFullYear();
 let month = today.getMonth() + 1;
@@ -36,6 +38,7 @@ const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
 
+// createw the card by for loop
 for (let i = 0; i < Ordered_list.length; i++) {
   let data = Ordered_list[i]["products"];
   let total = 0;
@@ -49,6 +52,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
     }
   });
 
+  // check the stored date and current date are same
   if (currentDate == Ordered_list[i]["Delivery_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
@@ -128,6 +132,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
     console.log(data[i]["Price"]);
     console.log(data[i]["bQty"]);
 
+    // to delete the order for some reason
     p1.addEventListener("click", function (event) {
       event.preventDefault();
       let indexFind = Ordered_list.indexOf(select_id);
@@ -142,6 +147,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
       location.reload();
     });
 
+    // while click order completed order store in the completed list
     p3.addEventListener("click", function (event) {
       event.preventDefault();
       let indexFind = Ordered_list.indexOf(select_id);
@@ -149,6 +155,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
       let newData = JSON.parse(localStorage.getItem("owner_order_list"));
       let owner_data = [];
 
+      // to store the required details
       let new_data = {
         new_owner_data: Data[i]["products"],
         billId: Data[i]["billId"],
@@ -183,6 +190,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
           localStorage.setItem("owner_order_list", JSON.stringify(owner_data));
         }
       }
+      // to delete the completed orders list
       Ordered_list.splice(indexFind, 1);
       console.log(Ordered_list);
       localStorage.setItem("Ordered_list", JSON.stringify(Ordered_list));

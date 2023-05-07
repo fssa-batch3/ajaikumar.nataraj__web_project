@@ -1,8 +1,10 @@
+// to get login details from form
 let worker_login = document.getElementById("form");
 console.log(worker_login);
 
 let arr = [];
 
+// get and compare the value while click the button
 worker_login.addEventListener("submit", (event) => {
   event.preventDefault();
   let defaultData = JSON.parse(localStorage.getItem("worker_info"));
@@ -31,6 +33,7 @@ worker_login.addEventListener("submit", (event) => {
     }
   }
 
+  // msg for inputs are correct  are not
   if (match == true) {
     alert("You Successfully login to your account");
 

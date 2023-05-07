@@ -1,7 +1,9 @@
+// to get user's list
 let Card = JSON.parse(localStorage.getItem("user_info"));
 
 Card.sort((a, b) => b.points - a.points);
 
+// create the card by table
 let table_card = document.createElement("table");
 table_card.setAttribute("id", "leaderboard");
 

@@ -1,3 +1,4 @@
+// to get details of logined user by compare
 const oneUser = JSON.parse(localStorage.getItem("worker_login"));
 
 const user_info = JSON.parse(localStorage.getItem("worker_info"));
@@ -10,6 +11,7 @@ let select_user = user_info.find(function (event) {
   }
 });
 
+// set user name in the name box
 const name = document.getElementById("profile");
 
 name.value = select_user["FullName"];

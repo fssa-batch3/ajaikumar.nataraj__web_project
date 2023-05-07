@@ -48,6 +48,7 @@ const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
 
+// create the new order list
 for (let i = 0; i < owner_upload_list.length; i++) {
   let data = owner_upload_list[i]["new_owner_data"];
   let total = 0;
@@ -121,6 +122,7 @@ for (let i = 0; i < owner_upload_list.length; i++) {
     ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
     ul_div.append(ul4);
 
+    // get the total value
     total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
   }
 

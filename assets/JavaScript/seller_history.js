@@ -1,3 +1,4 @@
+// get logined user's details
 let id = JSON.parse(localStorage.getItem("user_info"));
 console.log(id);
 
@@ -7,6 +8,7 @@ console.log(login_id);
 const get_obj = id.find((e) => e.Email === login_id);
 console.log(get_obj);
 
+// get details from localstorage
 let Card = JSON.parse(localStorage.getItem("newUploadList"));
 
 for (let i = 0; i < Card.length; i++) {
@@ -73,6 +75,7 @@ for (let i = 0; i < Card.length; i++) {
       ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
       ul_div.append(ul4);
 
+      // get price total
       total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
     }
 

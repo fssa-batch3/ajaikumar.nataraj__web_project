@@ -1,3 +1,4 @@
+// to set the user's age more than 18
 const inputDate = document.getElementById("DOB");
 const today = new Date();
 today.setFullYear(today.getFullYear() - 18);
@@ -199,7 +200,7 @@ delete_user.addEventListener("click", function (event) {
     window.location.href = "/pages/1.signin.html";
   }
 });
-
+// logout the user
 let logout_user = document.getElementById("logout");
 logout_user.addEventListener("click", function (event) {
   event.preventDefault();

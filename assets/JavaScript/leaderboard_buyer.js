@@ -1,7 +1,10 @@
+// to get the details from buyer's list
 let Card = JSON.parse(localStorage.getItem("buyer_info"));
 
+// ordered by points
 Card.sort((a, b) => b.points - a.points);
 
+// create the table by the details get from list
 let table_card = document.createElement("table");
 table_card.setAttribute("id", "leaderboard");
 

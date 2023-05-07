@@ -1,3 +1,4 @@
+// get the value from localstorage
 let Ordered_list = JSON.parse(localStorage.getItem("Ordered_list"));
 
 // get the searching name by id and classname
@@ -18,18 +19,7 @@ searchbar.addEventListener("input", () => {
   }
 });
 
-// let presentDate = new Date().getDate();
-// let presentMonth = new Date().getMonth();
-// let presentYear = new Date().getFullYear();
-
-// let currentDate = `${presentYear}-0${presentMonth}-${presentDate}`;
-
-// console.log(presentDate);
-// console.log(presentMonth);
-// console.log(presentYear);
-
-// console.log(currentDate);
-
+// get currentdate
 const today = new Date();
 const year = today.getFullYear();
 let month = today.getMonth() + 1;
@@ -47,7 +37,7 @@ if (day < 10) {
 const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
-
+// create card by javascript
 for (let i = 0; i < Ordered_list.length; i++) {
   let data = Ordered_list[i]["products"];
   let total = 0;
@@ -121,6 +111,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
     ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
     ul_div.append(ul4);
 
+    // total of price and qty
     total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
   }
 

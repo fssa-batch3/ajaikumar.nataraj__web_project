@@ -1,5 +1,7 @@
+// to get the details from ordered list
 let Ordered_list = JSON.parse(localStorage.getItem("Ordered_list"));
 
+// date format for set date
 const today = new Date();
 const year = today.getFullYear();
 let month = today.getMonth() + 1;
@@ -18,6 +20,7 @@ const currentDate = `${year}-${month}-${day}`;
 
 console.log(currentDate);
 
+// for creating ordered list by for loop
 for (let i = 0; i <= Ordered_list.length; i++) {
   let data = Ordered_list[i]["products"];
   let total = 0;
@@ -31,6 +34,7 @@ for (let i = 0; i <= Ordered_list.length; i++) {
   console.log(currentDate);
   // console.log(data[i]["Pickup_date"]);
 
+  // create the card list
   let form = document.createElement("form");
   form.setAttribute("class", "form");
   form.setAttribute("action", "bill");
@@ -91,6 +95,7 @@ for (let i = 0; i <= Ordered_list.length; i++) {
     ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
     ul_div.append(ul4);
 
+    // get the total of all products
     total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
   }
 

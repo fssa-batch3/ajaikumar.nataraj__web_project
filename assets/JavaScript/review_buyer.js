@@ -1,5 +1,7 @@
+// to get description from form
 let detail = document.getElementById("form");
 
+// to create the review array
 document.createElement("buyer_review");
 detail.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -12,9 +14,7 @@ detail.addEventListener("submit", function (event) {
     location.reload();
   }
 
-  // let match = false;
-
-  // const Name = document.getElementById("name").value;
+  // get the details for store the data in an array
   const Description = document.getElementById("comment").value;
   // const thumbs_up = document.getElementById("thumbs-up-count").value;
   // const thumbs_down = document.getElementById("thumbs-down-count").value;
@@ -47,6 +47,7 @@ detail.addEventListener("submit", function (event) {
   localStorage.setItem("buyer_review", JSON.stringify(array));
 });
 
+// get the login details
 const buyer_review = JSON.parse(localStorage.getItem("buyer_review"));
 
 let id = JSON.parse(localStorage.getItem("buyer_info"));
@@ -66,6 +67,7 @@ for (i = 0; i < buyer_review.length; i++) {
     }
   });
   // console.log(select_comment);
+  // to get the logined user's review
   if (buyer_review[i]["userId"] == get_obj["id"]) {
     let other_section = document.createElement("section");
     other_section.setAttribute("class", "own_comment");
@@ -110,6 +112,7 @@ for (i = 0; i < buyer_review.length; i++) {
     // thumbs_down_span.innerHTML = 0;
     // thumbs_down_div.append(thumbs_down_span);
 
+    // to set the time for review
     let name = document.createElement("p");
     name.innerText =
       buyer_review[i]["Name"] +
@@ -140,11 +143,7 @@ for (i = 0; i < buyer_review.length; i++) {
     profile_img.setAttribute("class", "profile");
     text_div.append(profile_img);
 
-    // let edit_comment = document.getElementById("edit");
-    // console.log(edit_comment);
-    // edit_comment.addEventListener("click", function (event) {
-    //   event.preventDefault();
-
+    // for edit the login user's review
     thumbs_down_img.addEventListener("click", function (event) {
       event.preventDefault();
 
@@ -175,9 +174,7 @@ for (i = 0; i < buyer_review.length; i++) {
       location.reload();
     });
 
-    // let delete_comment = document.getElementById("delete");
-    // console.log(delete_comment);
-    // delete_comment.addEventListener("click", function (event) {
+    // for delete the login user's review
     thumbs_up_img.addEventListener("click", function (event) {
       event.preventDefault();
       let comment_delete = buyer_review.indexOf(select_comment);
@@ -196,6 +193,7 @@ for (i = 0; i < buyer_review.length; i++) {
   }
 }
 
+// show the other user's comments
 for (i = 0; i < buyer_review.length; i++) {
   let findDetail = buyer_review.find(function (event) {
     let id = event["commentId"];
