@@ -9,14 +9,14 @@ const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
 const info = JSON.parse(localStorage.getItem("user_info"));
 let select_user = info.find(function (event) {
-  try {
-    let customerEmail = event["Email"];
-    if (info == customerEmail) {
-      return true;
-    }
-  } catch (error) {
-    console.error(error);
+  // try {
+  let customerEmail = event["Email"];
+  if (oneUser == customerEmail) {
+    return true;
   }
+  // } catch (error) {
+  //   console.error(error);
+  // }
 });
 
 console.log(select_user);

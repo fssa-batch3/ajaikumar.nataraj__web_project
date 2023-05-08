@@ -2,14 +2,14 @@ const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
 const buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
 let select_user = buyer_info.find(function (event) {
-  try {
-    let customerEmail = event["Email"];
-    if (buyer_info == customerEmail) {
-      return true;
-    }
-  } catch (error) {
-    console.error(error);
+  // try {
+  let customerEmail = event["Email"];
+  if (oneUser == customerEmail) {
+    return true;
   }
+  // } catch (error) {
+  //   console.error(error);
+  // }
 });
 
 console.log(select_user);
@@ -40,10 +40,6 @@ gender.value = select_user["gender"] || "";
 Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
 country.value = select_user["country"] || "";
-
-function change() {
-  window.location.href = "/pages/profileedit_buy.html";
-}
 
 // delete option in the page
 
@@ -83,7 +79,11 @@ logout_user.addEventListener("click", function (event) {
 });
 
 function back() {
-  window.location.href = "/pages/4.index.html";
+  window.history.back();
+}
+
+function change() {
+  window.location.href = "/pages/profileedit_buy.html";
 }
 
 // to show and hide password

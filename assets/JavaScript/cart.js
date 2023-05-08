@@ -115,6 +115,7 @@ for (let i = 0; i <= Card.length; i++) {
     } catch (error) {
       console.error(error);
     }
+    location.reload();
   });
 
   // to delete the product in the add to cart page
@@ -137,6 +138,7 @@ for (let i = 0; i <= Card.length; i++) {
     } catch (error) {
       console.error(error);
     }
+    location.reload();
   });
 
   document.querySelector(".card_main").append(div_card);

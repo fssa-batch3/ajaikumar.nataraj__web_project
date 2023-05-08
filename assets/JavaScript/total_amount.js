@@ -79,6 +79,7 @@ for (let i = 0; i <= Card.length; i++) {
     } catch (error) {
       console.error(error);
     }
+    location.reload();
   });
 
   // for total amount

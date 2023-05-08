@@ -85,10 +85,12 @@
       <form id="form" class="section-detail">
         <label for="card_no">Enter Your Card No</label> <br />
         <input
-          type="number"
+          type="tel"
           id="Bank_Card_no"
-          pattern="[a-zA-Z]{12,16}"
-          autocomplete="off"
+          pattern="[0-9]{16}"
+          autocomplete="hgfgtyfygh"
+          maxlength="16"
+          required
         />
         <br />
         <label for="card_name">Enter Your Card Holder Name</label> <br />
@@ -103,9 +105,11 @@
         <label for="card_cvv_no">Enter Your CVV No</label> <br />
         <input
           id="cvv_no"
-          type="number"
-          pattern="[a-zA-Z]{1,20}"
-          autocomplete="off"
+          type="tel"
+          pattern="[0-9]{3}"
+          autocomplete="hgfgtyfygh"
+          maxlength="3"
+          required
         /><br />
         <label for="card_ex_date">Enter Your Expiry Date</label> <br />
         <input
@@ -116,6 +120,7 @@
         />
         <!-- <button type="submit">save</button> -->
       </form>
+      <script src="../assets/JavaScript/buy_payment.js"></script>
     </main>
 
     <main>
@@ -157,7 +162,5 @@
       <p>Do you have Coupon Code?</p>
       <input type="text" />
     </footer>
-
-    <script src="../assets/JavaScript/buy_payment.js"></script>
   </body>
 </html>

@@ -58,10 +58,11 @@
       <form id="form" class="section-detail">
         <label for="card_no">Enter Your Card No</label> <br />
         <input
-          type="number"
+          type="tel"
           id="Bank_Card_no"
           pattern="[0-9]{16}"
           autocomplete="off"
+          maxlength="16"
           required
         />
         <br />
@@ -83,11 +84,11 @@
         /><br />
         <label for="card_cvv_no">Enter Your CVV No</label> <br />
         <input
-          type="number"
-          pattern="[0-9]"
-          autocomplete="off"
-          maxlength="3"
           id="cvv_no"
+          type="tel"
+          pattern="[0-9]{3}"
+          autocomplete="hgfgtyfygh"
+          maxlength="3"
           required
         /><br />
         <label for="card_ex_date">Enter Your Expiry Date</label> <br />

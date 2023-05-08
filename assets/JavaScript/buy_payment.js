@@ -9,16 +9,14 @@ inputDate.setAttribute("min", minDate);
 const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 const buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
 let select_user = buyer_info.find(function (event) {
-  try {
-    let customerEmail = event["Email"];
-    if (buyer_info == customerEmail) {
-      return true;
-    } else if (oneUser == customerEmail) {
-      return true;
-    }
-  } catch (error) {
-    console.error(error);
+  // try {
+  let customerEmail = event["Email"];
+  if (oneUser == customerEmail) {
+    return true;
   }
+  // } catch (error) {
+  //   console.error(error);
+  // }
 });
 
 console.log(select_user);
@@ -31,10 +29,10 @@ const exp_date = document.getElementById("card_exp_date");
 
 // Compare the values
 
-Card_no.value = select_user["Bank_Card_no"];
+Card_no.value = select_user["Bank_Card_no"] || "";
 holder_name.value = select_user["Account_holder_name"] || " ";
 ifsc.value = select_user["IFSC_Code"] || " ";
-cvv_no.value = select_user["CVV_No"];
+cvv_no.value = select_user["CVV_No"] || "";
 exp_date.value = select_user["Card_Expiry_Date"];
 
 // to replace the values

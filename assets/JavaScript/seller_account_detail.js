@@ -30,10 +30,10 @@ const cvv_no = document.getElementById("cvv_no");
 const exp_date = document.getElementById("card_exp_date");
 
 // Compare the values
-Card_no.value = select_user["Bank_Card_no"];
+Card_no.value = select_user["Bank_Card_no"] || "";
 holder_name.value = select_user["Account_holder_name"] || "";
 ifsc.value = select_user["IFSC_Code"] || "";
-cvv_no.value = select_user["CVV_No"];
+cvv_no.value = select_user["CVV_No"] || "";
 exp_date.value = select_user["Card_Expiry_Date"];
 
 // to replace the values
@@ -60,7 +60,7 @@ form.addEventListener("submit", function (event) {
     // assign the value to
     const combineData = Object.assign(select_user, newData);
     console.log(combineData);
-    alert("successfully changed");
+    // alert("successfully changed");
 
     let findIndex = user_info.indexOf(select_user);
     user_info[findIndex] = combineData;
