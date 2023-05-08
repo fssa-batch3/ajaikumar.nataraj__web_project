@@ -42,7 +42,7 @@ for (let i = 0; i < newUploadList.length; i++) {
   let data = newUploadList[i]["newUploadProducts"];
   let total = 0;
   console.log(currentDate);
-  console.log(data[i]["Pickup_date"]);
+  console.log(newUploadList[i]["Pickup_date"]);
 
   // check currentdate and stored date
   if (currentDate == newUploadList[i]["Pickup_date"]) {

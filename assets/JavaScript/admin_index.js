@@ -8,8 +8,6 @@ let select_user = user_info.find(function (event) {
     let customerEmail = event["Email"];
     if (user_info == customerEmail) {
       return true;
-    } else if (oneUser == customerEmail) {
-      return true;
     }
   } catch (error) {
     console.error(error);

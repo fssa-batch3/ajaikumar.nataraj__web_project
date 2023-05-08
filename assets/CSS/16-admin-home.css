@@ -54,9 +54,6 @@ button:hover {
   margin-top: 40px;
 }
 
-.form input {
-  font-size: 30px;
-}
 .head {
   display: flex;
   align-content: center;

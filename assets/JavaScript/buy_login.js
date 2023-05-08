@@ -9,8 +9,8 @@ buyer_logIn.addEventListener("submit", (event) => {
   event.preventDefault();
   try {
     // get details from local storage
-    let defaultData = JSON.parse(localStorage.getItem("buyer_info"));
-    console.log(defaultData);
+    let user_data = JSON.parse(localStorage.getItem("buyer_info"));
+    console.log(user_data);
 
     // get value from form
     let Email = document.getElementById("Email").value.toLowerCase().trim();
@@ -19,13 +19,10 @@ buyer_logIn.addEventListener("submit", (event) => {
     let match = false;
 
     // compare the values
-    for (let i = 0; i < defaultData.length; i++) {
-      if (
-        Email == defaultData[i]["Email"] &&
-        Password == defaultData[i]["Password"]
-      ) {
+    for (let find of user_data) {
+      if (Email == find["Email"] && Password == find["Password"]) {
         match = true;
-        arr.push(defaultData[i]);
+        arr.push(find);
         window.localStorage.setItem(
           "buyer_logIn",
           JSON.stringify(arr[0]["Email"])

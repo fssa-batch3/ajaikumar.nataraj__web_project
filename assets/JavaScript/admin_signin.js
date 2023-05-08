@@ -26,8 +26,8 @@ signUpform.addEventListener("submit", function (event) {
       alert("Password and Confirm password are not match");
       return false;
     } else {
-      for (let i = 0; i < array.length; i++) {
-        if (Email == array[i]["Email"]) {
+      for (let user_arr of array) {
+        if (Email == user_arr["Email"]) {
           match = true;
         }
       }
