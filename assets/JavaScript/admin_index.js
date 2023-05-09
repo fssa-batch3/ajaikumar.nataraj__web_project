@@ -6,7 +6,7 @@ const user_info = JSON.parse(localStorage.getItem("admin_info"));
 let select_user = user_info.find(function (event) {
   try {
     let customerEmail = event["Email"];
-    if (user_info == customerEmail) {
+    if (oneUser == customerEmail) {
       return true;
     }
   } catch (error) {

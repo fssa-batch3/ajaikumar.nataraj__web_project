@@ -18,18 +18,6 @@ searchbar.addEventListener("input", () => {
   }
 });
 
-// let presentDate = new Date().getDate();
-// let presentMonth = new Date().getMonth();
-// let presentYear = new Date().getFullYear();
-
-// let currentDate = `${presentYear}-0${presentMonth}-${presentDate}`;
-
-// console.log(presentDate);
-// console.log(presentMonth);
-// console.log(presentYear);
-
-// console.log(currentDate);
-
 const today = new Date();
 const year = today.getFullYear();
 let month = today.getMonth() + 1;
@@ -74,24 +62,24 @@ for (let i = 0; i < owner_upload_list.length; i++) {
   bill_div.setAttribute("class", "bill");
   form.append(bill_div);
 
-  let p1 = document.createElement("img");
-  p1.setAttribute("src", "../assets/image/wrong.png");
-  p1.setAttribute("class", "img");
-  p1.setAttribute("id", "delete");
-  // p1.setAttribute("width", "50px");
-  // p1.setAttribute("height", "50px");
-  bill_div.append(p1);
+  // let p1 = document.createElement("img");
+  // p1.setAttribute("src", "../assets/image/wrong.png");
+  // p1.setAttribute("class", "img");
+  // p1.setAttribute("id", "delete");
+  // // p1.setAttribute("width", "50px");
+  // // p1.setAttribute("height", "50px");
+  // bill_div.append(p1);
 
   let p2 = document.createElement("p");
   p2.innerText = "Order Id : " + owner_upload_list[i]["billId"];
   bill_div.append(p2);
 
-  let p3 = document.createElement("img");
-  p3.setAttribute("src", "../assets/image/tick_green.jpg");
-  p3.setAttribute("class", "img");
-  // p3.setAttribute("width", "50px");
-  // p3.setAttribute("height", "50px");
-  bill_div.append(p3);
+  // let p3 = document.createElement("img");
+  // p3.setAttribute("src", "../assets/image/tick_green.jpg");
+  // p3.setAttribute("class", "img");
+  // // p3.setAttribute("width", "50px");
+  // // p3.setAttribute("height", "50px");
+  // bill_div.append(p3);
 
   let buy_div = document.createElement("div");
   buy_div.setAttribute("class", "buy");

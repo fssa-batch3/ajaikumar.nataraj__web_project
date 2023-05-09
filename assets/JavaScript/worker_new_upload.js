@@ -39,19 +39,19 @@ for (let i = 0; i < newUploadList.length; i++) {
   bill_div.setAttribute("class", "bill");
   form.append(bill_div);
 
-  let p1 = document.createElement("img");
-  p1.setAttribute("src", "../assets/image/wrong.png");
-  p1.setAttribute("class", "img");
-  bill_div.append(p1);
+  // let p1 = document.createElement("img");
+  // p1.setAttribute("src", "../assets/image/wrong.png");
+  // p1.setAttribute("class", "img");
+  // bill_div.append(p1);
 
   let p2 = document.createElement("p");
   p2.innerText = "Order Id : " + newUploadList[i]["billId"];
   bill_div.append(p2);
 
-  let p3 = document.createElement("img");
-  p3.setAttribute("src", "../assets/image/tick_green.jpg");
-  p3.setAttribute("class", "img");
-  bill_div.append(p3);
+  // let p3 = document.createElement("img");
+  // p3.setAttribute("src", "../assets/image/tick_green.jpg");
+  // p3.setAttribute("class", "img");
+  // bill_div.append(p3);
 
   let buy_div = document.createElement("div");
   buy_div.setAttribute("class", "buy");
