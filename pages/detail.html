@@ -42,6 +42,7 @@
       let currentProduct;
 
       let productLength = Data;
+      console.log(productLength);
 
       for (let i = 0; i < productLength.length; i++) {
         for (let j = 0; j < productLength[i]["new_owner_data"].length; j++) {
@@ -89,70 +90,18 @@
       description.innerText = "Description : " + currentProduct["Description"];
       detail.append(description);
 
-      // let input_value = document.createElement("input");
-      // input_value.setAttribute("type", "number");
-      // input_value.setAttribute("id", "quantity");
-      // detail.append(input_value);
-
       document.querySelector("body").append(div_card);
 
       let footer = document.createElement("footer");
       footer.setAttribute("class", "footer");
 
-      // let buy_btn = document.createElement("button");
-      // buy_btn.innerText = "BUY NOW";
-      // footer.append(buy_btn);
+      let buy_btn = document.createElement("button");
+      buy_btn.innerText = "BUY NOW";
+      footer.append(buy_btn);
 
-      // let cart_btn = document.createElement("button");
-      // cart_btn.innerText = "ADD CART";
-      // cart_btn.setAttribute("onclick", `addProdect(${Card[i]["ProductId"]})`);
-      // footer.append(cart_btn);
-
-      // cart_btn.addEventListener("click", function (event) {
-      //   event.preventDefault();
-      //   let addData = JSON.parse(localStorage.getItem("added_list"));
-      //   let findIndex = Card.indexOf(findDetail);
-      //   Card[findIndex]["bQty"] = input_value.value;
-      //   let msg = confirm(
-      //     "Are you sure you want to add this product to your cart"
-      //   );
-      //   if (msg !== true) {
-      //     return;
-      //   } else {
-      //     if (addData === null) {
-      //       let array = [];
-      //       array.push(Card[findIndex]);
-      //       localStorage.setItem("added_list", JSON.stringify(array));
-      //     } else {
-      //       addData.push(Card[findIndex]);
-      //       localStorage.setItem("added_list", JSON.stringify(addData));
-      //     }
-      //   }
-      // });
-
-      // buy_btn.addEventListener("click", function (event) {
-      //   event.preventDefault();
-      //   let addData = JSON.parse(localStorage.getItem("added_list"));
-      //   let findIndex = Card.indexOf(findDetail);
-      //   Card[findIndex]["bQty"] = input_value.value;
-      //   let msg = confirm(
-      //     "Are you sure you want to add this product to your cart"
-      //   );
-      //   if (msg !== true) {
-      //     return;
-      //   } else {
-      //     if (addData === null) {
-      //       let array = [];
-      //       array.push(Card[findIndex]);
-      //       localStorage.setItem("added_list", JSON.stringify(array));
-      //     } else {
-      //       addData.push(Card[findIndex]);
-      //       localStorage.setItem("added_list", JSON.stringify(addData));
-      //     }
-
-      //     window.location.href = "/pages/7.tot-amo.html";
-      //   }
-      // });
+      let cart_btn = document.createElement("button");
+      cart_btn.innerText = "ADD CART";
+      footer.append(cart_btn);
 
       document.querySelector("body").append(footer);
     </script>

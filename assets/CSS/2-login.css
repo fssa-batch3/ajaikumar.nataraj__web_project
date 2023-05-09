@@ -9,8 +9,8 @@
 .center {
   justify-content: space-between;
   align-content: center;
-  border: 1px solid #2bae66ff;
-  box-shadow: 3px 3px 3px 3px rgb(217, 244, 217);
+  /* border: 1px solid #2bae66ff; */
+  box-shadow: 3px 3px 5px 5px rgb(217, 244, 217);
   height: 600px;
   width: 600px;
   border-radius: 10px;

@@ -30,6 +30,7 @@
             id="full_name"
             pattern="[a-zA-Z]+\s[a-zA-Z]+"
             autocomplete="off"
+            title="Give space between Firstname and Lastname"
             required
           /><br />
           <label>Mail id:</label><br />
@@ -55,6 +56,9 @@
             pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
             type="password"
             autocomplete="hg"
+            title="- Don't leave spaces between the password
+                  - Atleast 6 characters
+                  - Use capital and small aiphabets"
             required
           /><i class="bi bi-eye-slash" id="togglePassword"></i>
           <br />
