@@ -133,15 +133,15 @@ for (let i = 0; i < Ordered_list.length; i++) {
     let p6 = document.createElement("p");
     p6.innerText = "Delivery Date : " + Ordered_list[i]["Delivery_date"];
     date_div.append(p6);
-    console.log(data[i]["Price"]);
-    console.log(data[i]["bQty"]);
+    // console.log(data[i]["Price"]);
+    // console.log(data[i]["bQty"]);
 
     // to delete the order for some reason
     p1.addEventListener("click", function (event) {
       event.preventDefault();
       try {
         let indexFind = Ordered_list.indexOf(select_id);
-        let msg = confirm("Are you sure you delete this Product");
+        let msg = confirm("Are you sure you didn't delivered this product");
         if (msg !== true) {
           return;
         } else {

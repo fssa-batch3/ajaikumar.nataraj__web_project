@@ -9,26 +9,6 @@
     <link rel="stylesheet" href="../assets/CSS/detail.css" />
   </head>
   <body>
-    <!-- <div class="card">
-      <div class="img">
-        <img src="../assets/image/apple.jpg" alt="" />
-      </div>
-      <div class="detail">
-        <p>Name: "Apple",</p>
-        <p>Price: 150,</p>
-        <p>Type: "Kashmir Reddish Apple",</p>
-        <p>Place: "Pulwama district, Kashmir",</p>
-        <p>
-          Description: "It is a fresh and organic apple from pulwama district in
-          kashmir",
-        </p>
-      </div>
-    </div>
-    <footer>
-      <button>BUY NOW</button>
-      <button>ADD CART</button>
-    </footer> -->
-    <!-- <script src="../pages/card.js"></script> -->
     <script>
       let url = window.location.search; // ?name=Fruit[i]
       console.log(url);
@@ -82,9 +62,9 @@
       type.innerText = "Type :" + currentProduct["Type"];
       detail.append(type);
 
-      let place = document.createElement("p");
-      place.innerText = "Place :" + currentProduct["Place"];
-      detail.append(place);
+      // let place = document.createElement("p");
+      // place.innerText = "Place :" + currentProduct["Place"];
+      // detail.append(place);
 
       let description = document.createElement("p");
       description.innerText = "Description : " + currentProduct["Description"];
@@ -104,6 +84,46 @@
       footer.append(cart_btn);
 
       document.querySelector("body").append(footer);
+
+      // let id = JSON.parse(localStorage.getItem("owner_upload_list"));
+      let user_id = currentProduct["userId"];
+      console.log(user_id);
+
+      let full_id = JSON.parse(localStorage.getItem("user_info")) || " ";
+      console.log(full_id);
+
+      const get_user_id = full_id.find((e) => e.id === user_id) || "";
+      console.log(get_user_id);
+
+      let seller_details = document.createElement("div");
+      seller_details.setAttribute("class", "details");
+
+      let seller_name = document.createElement("p");
+      seller_name.innerText = "Seller Name = " + get_user_id["FullName"];
+      seller_details.append(seller_name);
+
+      let seller_number = document.createElement("p");
+      seller_number.innerText = "Phone Number = " + get_user_id["Phone_number"];
+      seller_details.append(seller_number);
+
+      let seller_address = document.createElement("p");
+      seller_address.innerText = "Address = " + get_user_id["Land_Address"];
+      seller_details.append(seller_address);
+
+      let seller_email = document.createElement("p");
+      seller_email.innerText = "Seller Email = " + get_user_id["Email"];
+      seller_details.append(seller_email);
+
+      let seller_state = document.createElement("p");
+      seller_state.innerText = "Seller State = " + get_user_id["State"] || "";
+      seller_details.append(seller_state);
+
+      let seller_district = document.createElement("p");
+      seller_district.innerText =
+        "Seller District = " + get_user_id["District"] || "";
+      seller_details.append(seller_district);
+
+      document.querySelector("body").append(seller_details);
     </script>
   </body>
 </html>

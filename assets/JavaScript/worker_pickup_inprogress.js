@@ -133,17 +133,15 @@ for (let i = 0; i < newUploadList.length; i++) {
     let p6 = document.createElement("p");
     p6.innerText = "Pickup Date : " + newUploadList[i]["Pickup_date"];
     date_div.append(p6);
-    console.log(data[i]["Price"]);
-    console.log(data[i]["bQty"]);
+    // console.log(data[i]["Price"]);
+    // console.log(data[i]["bQty"]);
 
     // to delete the order for some reason
     p1.addEventListener("click", function (event) {
       event.preventDefault();
       try {
         let indexDel = newUploadList.indexOf(select_id);
-        let msg = confirm(
-          "Are you sure you want to delete this Product newUploadList"
-        );
+        let msg = confirm("Are you sure you didn't picked up this product");
         if (msg !== true) {
           return;
         } else {

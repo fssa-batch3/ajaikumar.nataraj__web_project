@@ -81,7 +81,7 @@ for (let i = 0; i < Card.length; i++) {
       div_card.append(fruit_name);
 
       let rupees = document.createElement("input");
-      rupees.setAttribute("value", Data[j]["Price"] + " /kg");
+      rupees.setAttribute("value", " ₹ " + Data[j]["Price"] + " /kg");
       rupees.setAttribute("id", "pPrice");
       rupees.setAttribute("type", "text");
       rupees.setAttribute("disabled", "");

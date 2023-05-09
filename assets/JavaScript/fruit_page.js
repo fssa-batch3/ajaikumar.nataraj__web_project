@@ -49,7 +49,7 @@ document.querySelector(".button").append(bar);
 const detail = JSON.parse(localStorage.getItem("owner_upload_list"));
 
 // Card creating by using JavaScript
-for (let i = 0; i <= Card.length; i++) {
+for (let i = 0; i < Card.length; i++) {
   let Data = Card[i]["new_owner_data"];
   console.log(Data);
 
@@ -76,7 +76,7 @@ for (let i = 0; i <= Card.length; i++) {
       div_card.append(fruit_name);
 
       let rupees = document.createElement("input");
-      rupees.setAttribute("value", Data[j]["Price"] + " /kg");
+      rupees.setAttribute("value", " ₹ " + Data[j]["Price"] + " /kg");
       rupees.setAttribute("id", "pPrice");
       rupees.setAttribute("type", "text");
       rupees.setAttribute("disabled", "");

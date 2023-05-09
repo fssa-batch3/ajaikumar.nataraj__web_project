@@ -123,8 +123,8 @@ for (let i = 0; i < Card.length; i++) {
     let p6 = document.createElement("p");
     p6.innerText = "Delivery Date : " + Card[i]["Delivery_date"];
     date_div.append(p6);
-    console.log(data[i]["Price"]);
-    console.log(data[i]["bQty"]);
+    // console.log(data[i]["Price"]);
+    // console.log(data[i]["bQty"]);
 
     document.querySelector("body").append(form);
   }

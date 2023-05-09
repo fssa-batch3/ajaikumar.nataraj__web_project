@@ -42,7 +42,19 @@ button:hover {
   color: #2bae66ff;
 }
 footer {
-  /* margin-top: 100px; */
   display: flex;
   justify-content: space-evenly;
+  position: fixed;
+  top: 600px;
+}
+.details {
+  width: 100%;
+  background-color: rgb(225, 240, 232);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: fixed;
+  top: 700px;
+}
+p {
+  font-size: 25px;
 }
