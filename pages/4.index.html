@@ -17,7 +17,13 @@
         <img src="../assets/image/logo.png" alt="logo" width="130px" />
       </div>
       <div>
-        <input disabled type="text" id="profile" onclick="profile()" />
+        <input
+          disabled
+          class="pro"
+          type="text"
+          id="profile"
+          onclick="profile()"
+        />
       </div>
       <div>
         <img
@@ -28,40 +34,28 @@
         />
       </div>
     </header>
-    <main class="img-1">
-      <nav>
-        <img src="../assets/image/Fruits.jpg" alt="Fruits" width="200px" />
-        <br />
-        <button type="button" onclick="fruit()">Fruits</button>
-      </nav>
-      <nav>
+
+    <main class="card_main">
+      <div class="card_div">
+        <img src="../assets/image/card_fruits.jpg" alt="Fruits" width="275px" />
+        <button onclick="fruit()">Fruits</button>
+      </div>
+      <div class="card_div">
         <img
-          src="../assets/image/vegetables.jpg"
-          alt="vegetables"
-          width="200px"
+          src="../assets/image/card_vegetables.jpg"
+          alt="vegetable"
+          width="275px"
         />
-        <br />
-        <button type="button" onclick="veg()">Vegetables</button>
-      </nav>
-      <nav>
-        <img
-          src="../assets/image/Coffee-Tea-Powder-Combo-Pack.jpg"
-          alt="powder"
-          width="200px"
-          height="130px"
-        />
-        <br />
-        <button type="button" onclick="coffee()">Coffee & Tea</button>
-      </nav>
-      <nav>
-        <img
-          src="../assets/image/Cereals-and-Pulses.jpg"
-          alt="grains"
-          width="230px"
-        />
-        <br />
-        <button type="button" onclick="grain()">Cereals & Grains</button>
-      </nav>
+        <button onclick="veg()">Vegetables</button>
+      </div>
+      <div class="card_div">
+        <img src="../assets/image/card_grain.jpg" alt="grain" width="275px" />
+        <button onclick="grain()">Cereals and Grains</button>
+      </div>
+      <div class="card_div">
+        <img src="../assets/image/card_tea.jpg" alt="tea" width="275px" />
+        <button onclick="coffee()">Tea and Coffee</button>
+      </div>
     </main>
 
     <script src="../assets/JavaScript/buyer_index.js"></script>

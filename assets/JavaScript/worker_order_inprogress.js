@@ -57,7 +57,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
   });
 
   // check the stored date and current date are same
-  if (currentDate == Ordered_list[i]["Delivery_date"]) {
+  if (currentDate >= Ordered_list[i]["Delivery_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
     form.setAttribute("action", "bill");

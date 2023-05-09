@@ -10,7 +10,12 @@
   <body>
     <header>
       <nav>
-        <img src="../assets/image/arrowback.png" alt="arrow" width="50px" />
+        <img
+          src="../assets/image/arrowback.png"
+          onclick="back()"
+          alt="arrow"
+          width="50px"
+        />
       </nav>
       <nav>
         <img
@@ -43,6 +48,11 @@
       <button onclick="bill()">Go to Bill Page</button>
     </footer>
 
+    <script>
+      function back() {
+        window.history.back();
+      }
+    </script>
     <script src="../assets/JavaScript/seller_place_order.js"></script>
   </body>
 </html>

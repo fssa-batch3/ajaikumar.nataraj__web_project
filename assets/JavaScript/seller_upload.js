@@ -70,4 +70,7 @@ uploadForm.addEventListener("submit", function (event) {
 function profile() {
   window.location.href = "/pages/profile.html";
 }
+function back() {
+  window.history.back();
+}
 // const start = Date.now();
