@@ -39,3 +39,6 @@ function grain() {
 function profile() {
   window.location.href = "/pages/profile_buy.html";
 }
+function history() {
+  window.location.href = "/pages/4_buyer_history.html";
+}

@@ -52,7 +52,7 @@ body {
   transition: 0.5s;
 }
 
-.card_div button {
+button {
   font-size: 25px;
   width: 275px;
   height: 30px;
