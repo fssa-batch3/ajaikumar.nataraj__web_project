@@ -35,7 +35,7 @@ buyer_logIn.addEventListener("submit", (event) => {
 
     // details are same move to next page
     if (match == true) {
-      alert("Success");
+      alert("Successfully You login to your Account");
 
       window.location.href = "/pages/4.index.html";
     } else {

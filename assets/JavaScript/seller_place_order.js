@@ -79,7 +79,7 @@ for (let i = 0; i <= Card.length; i++) {
       let findIndex = detail.indexOf(findDetail);
       detail[findIndex] = assignData;
       localStorage.setItem("newly_added", JSON.stringify(detail));
-      alert("Succesfully changed");
+      // alert("Succesfully changed");
     } catch (error) {
       console.error(error);
     }
@@ -91,7 +91,7 @@ for (let i = 0; i <= Card.length; i++) {
     try {
       let deleteData = JSON.parse(localStorage.getItem("deleted_list"));
       let findIndex = detail.indexOf(findDetail);
-      let msg = confirm("Are you sure you want to delete this product");
+      let msg = confirm("Are you sure you want to delete your product");
       if (msg !== true) {
         return;
       } else {

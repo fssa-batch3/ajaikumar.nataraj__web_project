@@ -37,7 +37,7 @@ logIn.addEventListener("submit", (event) => {
     }
 
     if (match == true) {
-      alert("Success");
+      alert("Successfully You login to your Account");
 
       window.location.href = "/pages/17-admin-index.html";
     } else {

@@ -108,7 +108,7 @@ for (let i = 0; i <= Card.length; i++) {
         let findIndex = detail.indexOf(findDetail);
         detail[findIndex] = assignData;
         localStorage.setItem("added_list", JSON.stringify(detail));
-        alert("Succesfully changed");
+        // alert("Succesfully changed");
         document.getElementById("div");
         window.reload();
       }

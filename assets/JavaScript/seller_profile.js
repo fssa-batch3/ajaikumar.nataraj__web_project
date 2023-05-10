@@ -57,7 +57,7 @@ delete_user.addEventListener("click", function (event) {
   event.preventDefault();
   try {
     let indexDel = user_info.indexOf(select_user);
-    let msg = confirm("Are you sure you want to delete this account");
+    let msg = confirm("Are you sure you want to delete your account");
     if (msg !== true) {
       return;
     } else {
@@ -76,7 +76,7 @@ logout_user.addEventListener("click", function (event) {
   event.preventDefault();
   try {
     let indexDel = user_info.indexOf(select_user);
-    let msg = confirm("Are you sure you want to logout this account");
+    let msg = confirm("Are you sure you want to logout from your account");
     if (msg !== true) {
       return;
     } else {

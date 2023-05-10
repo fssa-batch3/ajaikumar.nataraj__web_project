@@ -174,7 +174,7 @@ for (let i = 0; i < Ordered_list.length; i++) {
 
         owner_data.push(new_data);
 
-        let msg = confirm("Are you sure you Delievered this Account");
+        let msg = confirm("Are you sure you Delievered this Product");
         if (msg !== true) {
           return;
         } else {

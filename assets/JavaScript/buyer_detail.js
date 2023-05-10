@@ -2,7 +2,7 @@
 let Card = JSON.parse(localStorage.getItem("buyer_info"));
 
 // sort by points which is stored in the user_info
-Card.sort((a, b) => b.points - a.points);
+// Card.sort((a, b) => b.points - a.points);
 
 // code for create table
 let table_card = document.createElement("table");
@@ -66,9 +66,9 @@ for (let i = 0; i < Card.length; i++) {
   document.querySelector(".table").append(table_card);
 }
 
-let leaderboardHTML = "<ol>";
+// let leaderboardHTML = "<ol>";
 
-leaderboardHTML += "</ol>";
+// leaderboardHTML += "</ol>";
 
 // function for redirect the pages
 

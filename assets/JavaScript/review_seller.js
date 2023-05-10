@@ -173,7 +173,7 @@ for (i = 0; i < review.length; i++) {
 
         let change_desc = Object.assign(select_comment, new_desc);
 
-        alert("successfully changed");
+        // alert("successfully changed");
 
         let findIndex = review.indexOf(select_comment);
         review[findIndex] = change_desc;
@@ -190,7 +190,7 @@ for (i = 0; i < review.length; i++) {
       event.preventDefault();
       try {
         let comment_delete = review.indexOf(select_comment);
-        let msg = confirm("Are you sure you want to delete this comment");
+        let msg = confirm("Are you sure you want to delete your comment");
         if (msg !== true) {
           return;
         } else {
