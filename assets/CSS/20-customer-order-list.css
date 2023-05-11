@@ -30,6 +30,7 @@ body {
 a {
   color: #2bae66ff;
   font-style: normal;
+  text-decoration: none;
 }
 .f-btn {
   background-color: rgb(191, 227, 191);

@@ -60,7 +60,7 @@ signUpform.addEventListener("submit", function (event) {
 });
 
 function log() {
-  window.location.href = "/pages/16-admin-home.html";
+  window.location.href = "/pages/16.admin.login.html";
 }
 
 // for create  user id
