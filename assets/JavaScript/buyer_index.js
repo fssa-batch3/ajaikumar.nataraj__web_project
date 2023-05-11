@@ -19,6 +19,22 @@ const name = document.getElementById("profile");
 
 name.value = select_user["FullName"];
 
+let buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
+console.log(buyer_info);
+
+let login_id = JSON.parse(localStorage.getItem("buyer_logIn"));
+console.log(login_id);
+
+const get_obj = buyer_info.find((e) => e.Email === login_id);
+console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 // submitForm();
 // code for redirection of page
 function submit() {

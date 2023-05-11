@@ -7,29 +7,27 @@ const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
 
 const user_info = JSON.parse(localStorage.getItem("buyer_info"));
 let select_user = user_info.find(function (event) {
-  try {
-    let customerEmail = event["Email"];
-    if (user_info == customerEmail) {
-      return true;
-    } else if (oneUser == customerEmail) {
-      return true;
-    }
-  } catch (error) {
-    console.error(error);
+  // try {
+  let customerEmail = event["Email"];
+  if (oneUser == customerEmail) {
+    return true;
   }
+  // } catch (error) {
+  //   console.error(error);
+  // }
 });
 
 console.log(select_user);
 // to get value from delivery form
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
-const Land_Address = document.getElementById("Land_Address");
+const Home_Address = document.getElementById("Home_Address");
 
 // Compare the values
 
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-Land_Address.value = select_user["Land_Address"] || " ";
+Home_Address.value = select_user["Home_Address"] || " ";
 
 // to replace the values
 const form = document.getElementById("form");
@@ -38,12 +36,12 @@ form.addEventListener("change", function (event) {
   try {
     let FullName = document.getElementById("First_name").value;
     let Phone_number = document.getElementById("Phone_Number").value;
-    let Land_Address = document.getElementById("Land_Address").value;
+    let Home_Address = document.getElementById("Home_Address").value;
 
     let newData = {
       FullName,
       Phone_number,
-      Land_Address,
+      Home_Address,
     };
     console.log(newData);
 

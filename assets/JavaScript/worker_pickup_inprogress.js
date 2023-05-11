@@ -88,8 +88,12 @@ for (let i = 0; i < newUploadList.length; i++) {
     buy_div.setAttribute("class", "buy");
     form.append(buy_div);
 
-    let p4 = document.createElement("p");
+    let p4 = document.createElement("a");
     p4.innerText = "Seller Id : " + newUploadList[i]["seller_id"];
+    p4.setAttribute(
+      "href",
+      "/pages/detail_seller.html?seller_id=" + newUploadList[i]["seller_id"]
+    );
     buy_div.append(p4);
 
     let ful_div = document.createElement("div");

@@ -13,12 +13,12 @@ body {
   /* border-radius: 50px; */
 }
 .header button {
-  border-radius: 70px;
+  border-radius: 10px;
   margin-top: 15px;
   margin-left: 20px;
 }
 .before-arrow img {
-  border-radius: 50px;
+  /* border-radius: 50px; */
   margin-left: 20px;
 }
 .hol {
@@ -27,22 +27,10 @@ body {
   color: white;
   margin: 15px;
 }
-/* .table {
-  font-size: 30px;
-  margin-top: 30px;
-  border: solid 1px #2bae66ff;
+a {
+  color: #2bae66ff;
+  font-style: normal;
 }
-.table tr td {
-  border: 1px solid #2bae66ff;
-}
-.table button {
-  font-size: 20px;
-  /* color: blue; *
-  width: 120px;
-  height: 40px;
-  border-radius: 50px;
-  background-color: #2bae66ff;
-} */
 .f-btn {
   background-color: rgb(191, 227, 191);
   top: 803px;

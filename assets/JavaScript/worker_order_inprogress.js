@@ -88,9 +88,14 @@ for (let i = 0; i < Ordered_list.length; i++) {
     buy_div.setAttribute("class", "buy");
     form.append(buy_div);
 
-    let p4 = document.createElement("p");
+    let p4 = document.createElement("a");
     p4.innerText = "Buyer Id : " + Ordered_list[i]["buyer_id"];
+    p4.setAttribute(
+      "href",
+      "/pages/detail_buyer.html?buyer_id=" + Ordered_list[i]["buyer_id"]
+    );
     buy_div.append(p4);
+    console.log(Ordered_list[i]["buyer_id"]);
 
     let ful_div = document.createElement("div");
     ful_div.setAttribute("class", "ful");

@@ -183,13 +183,13 @@ console.log(select_user);
 const id = document.getElementById("buyer_id");
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
-const Land_Address = document.getElementById("Land_Address");
+const Home_Address = document.getElementById("Home_Address");
 
 // Compare the values
 id.value = select_user["id"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-Land_Address.value = select_user["Land_Address"] || " ";
+Home_Address.value = select_user["Home_Address"] || " ";
 
 function download() {
   window.print();
