@@ -27,8 +27,7 @@
         <img src="../assets/image/profile.png" alt="apple" /> <br />
         <label for="Home_Address">Home Address</label>
         <input id="Home_Address" class="input" placeholder="Home Address" />
-        <label for="aadhar number">Aadhar Number</label>
-        <input id="Aadhar_number" class="input" placeholder="Aadhar Number" />
+
         <label for="gender">Gender</label>
         <input
           id="gender"
@@ -119,6 +118,160 @@
     </form>
     <footer></footer>
 
-    <script src="/assets/JavaScript/buyer_profile_edit.js"></script>
+    <!-- <script src="/assets/JavaScript/buyer_profile_edit.js"></script> -->
+    <script>
+      // to set the user's age more than 18
+      const inputDate = document.getElementById("DOB");
+      const today = new Date();
+      today.setFullYear(today.getFullYear() - 18);
+      const minDate = today.toISOString().split("T")[0];
+      inputDate.setAttribute("max", minDate);
+
+      const oneUser = JSON.parse(localStorage.getItem("buyer_logIn"));
+
+      const buyer_info = JSON.parse(localStorage.getItem("newBuyerInfo"));
+      let select_user = buyer_info.find(function (event) {
+        try {
+          let customerEmail = event["Email"];
+          if (buyer_info == customerEmail) {
+            return true;
+          } else if (oneUser == customerEmail) {
+            return true;
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+
+      console.log(select_user);
+      // to get value from registration form
+      const email = document.getElementById("Email");
+      const phNo = document.getElementById("Phone_Number");
+      const userName = document.getElementById("First_name");
+      const password = document.getElementById("password");
+      const DOB = document.getElementById("DOB");
+      const transport_DOB = document.getElementById("DOB");
+      const Home_Address = document.getElementById("Home_Address");
+      const District = document.getElementById("District");
+      const gender = document.getElementById("gender");
+      const state = document.getElementById("state");
+      const country = document.getElementById("country");
+
+      // Compare the values
+
+      email.value = select_user["Email"];
+      phNo.value = select_user["Phone_number"];
+      userName.value = select_user["FullName"];
+      password.value = select_user["Password"];
+      DOB.value = select_user["DOB"];
+      transport_DOB.value = select_user["DOB"];
+      Home_Address.value = select_user["Home_Address"] || "";
+      District.value = select_user["District"] || "";
+      gender.value = select_user["gender"] || "";
+      state.value = select_user["state"] || "";
+      country.value = select_user["country"] || "";
+
+      // to replace the values
+      const form = document.getElementById("form");
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        try {
+          let FullName = document.getElementById("First_name").value;
+          // let Email = document.getElementById("Email").value;
+          let Phone_number = document.getElementById("Phone_Number").value;
+          let Password = document.getElementById("password").value;
+          let DOB = document.getElementById("DOB").value;
+          let transport_DOB = document.getElementById("DOB").value;
+          let Home_Address = document.getElementById("Home_Address").value;
+          let District = document.getElementById("District").value;
+          let gender = document.getElementById("gender").value;
+          let state = document.getElementById("state").value;
+          let country = document.getElementById("country").value;
+
+          let newData = {
+            FullName,
+            // Email,
+            Phone_number,
+            Password,
+            DOB,
+            transport_DOB,
+            Home_Address,
+            District,
+            gender,
+            state,
+            country,
+          };
+          console.log(newData);
+
+          // assign the value to
+
+          const combineData = Object.assign(select_user, newData);
+          console.log(combineData);
+          alert("successfully changed");
+
+          let findIndex = buyer_info.indexOf(select_user);
+          buyer_info[findIndex] = combineData;
+          localStorage.setItem("newBuyerInfo", JSON.stringify(buyer_info));
+          // window.location.href = "/pages/profile_buy.html";
+          window.history.back();
+        } catch (error) {
+          console.error(error);
+        }
+      });
+
+      // delete option in the page
+
+      let delete_user = document.getElementById("delete");
+      delete_user.addEventListener("click", function (event) {
+        event.preventDefault();
+        try {
+          let indexDel = buyer_info.indexOf(select_user);
+          let msg = confirm("Are you sure you want to delete your account");
+          if (msg !== true) {
+            return;
+          } else {
+            buyer_info.splice(indexDel, 1);
+            console.log(buyer_info);
+            localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
+            window.location.href = "/pages/1.signin.html";
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+      // logout the user
+      let logout_user = document.getElementById("logout");
+      logout_user.addEventListener("click", function (event) {
+        event.preventDefault();
+        try {
+          let indexDel = buyer_info.indexOf(select_user);
+          let msg = confirm(
+            "Are you sure you want to logout from your account"
+          );
+          if (msg !== true) {
+            return;
+          } else {
+            window.location.href = "/pages/2.Login.html";
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      });
+
+      // to show and hide password
+      const togglePassword = document.querySelector("#togglePassword");
+
+      const change = document.querySelector("#password");
+
+      togglePassword.addEventListener("click", () => {
+        const type =
+          change.getAttribute("type") === "password" ? "text" : "password";
+
+        change.setAttribute("type", type);
+
+        this.classList.toggle("bi-eye");
+      });
+    </script>
   </body>
 </html>
