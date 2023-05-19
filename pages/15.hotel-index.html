@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -232,4 +232,41 @@
     </script>
   </body>
 </html>
--
+- -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Discount Price</title>
+    <script>
+      // Function to calculate the discounted price percentage
+      function calculateDiscountPercentage(originalPrice, discountPrice) {
+        var discountPercentage =
+          ((originalPrice - discountPrice) / originalPrice) * 100;
+        return discountPercentage.toFixed(2); // Round to 2 decimal places
+      }
+
+      // Function to update the HTML elements with the prices and discount percentage
+      function updatePrices() {
+        var originalPrice = 100; // Replace with your original price
+        var discountPrice = 80;
+        //  localStorage.getItem("discountPrice");
+        var discountPercentage = calculateDiscountPercentage(
+          originalPrice,
+          discountPrice
+        );
+
+        document.getElementById("originalPrice").textContent = originalPrice;
+        document.getElementById("discountPrice").textContent = discountPrice;
+        document.getElementById("discountPercentage").textContent =
+          discountPercentage;
+      }
+    </script>
+  </head>
+  <body onload="updatePrices()">
+    <h1>Discount Price</h1>
+    <p>Original Price: $<span id="originalPrice"></span></p>
+    <p>Discount Price: $<span id="discountPrice"></span></p>
+    <p>Discount Percentage: <span id="discountPercentage"></span>%</p>
+  </body>
+</html>

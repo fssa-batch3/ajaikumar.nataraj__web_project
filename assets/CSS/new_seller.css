@@ -12,6 +12,12 @@ body {
   color: white;
   height: 80px;
 }
+.topic {
+  color: #2bae66ff;
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
 .pro {
   font-size: 30px;
   background-color: white;
@@ -43,6 +49,17 @@ button {
 input {
   font-size: 30px;
 }
+.contact {
+  background-color: #2bae66ff;
+  height: 20px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+.contact p {
+  margin-top: 2px;
+}
 .form {
   display: flex;
   justify-content: center;
@@ -51,7 +68,7 @@ input {
 }
 form {
   box-shadow: 1px 1px 1px 1px #2bae66ff;
-  height: 500px;
+  height: 700px;
   width: 1200px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);

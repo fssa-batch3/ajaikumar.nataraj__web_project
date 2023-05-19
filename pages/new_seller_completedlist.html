@@ -20,10 +20,13 @@
       </div>
     </header>
 
-    <button class="completedOrder" onclick="completedOrder()">
-      Completed Products List
-    </button>
-
+    <!-- <section class="sideBar">
+      <input type="checkbox" value="All" />All
+      <input type="checkbox" value="Fruits" />Fruits
+      <input type="checkbox" value="Vegetables" />Vegetables
+      <input type="checkbox" value="Cereals & Grains" />Cereals & Grains
+      <input type="checkbox" value="Tea & Coffee" />Tea & Coffee
+    </section> -->
     <section class="sideBar">
       <span style="font-size: 30px; cursor: pointer" onclick="openNav()"
         >&#9776; Types</span
@@ -149,7 +152,7 @@
       name.value = profile;
       console.log(name);
 
-      let Data = JSON.parse(localStorage.getItem("newSellerProducts"));
+      let Data = JSON.parse(localStorage.getItem("newSellerHistoryProducts"));
 
       // create card
       for (let j = 0; j < Data.length; j++) {
@@ -199,36 +202,17 @@
           Type.setAttribute("disabled", "");
           div_card.append(Type);
 
-          let btn_div = document.createElement("div");
-          btn_div.setAttribute("class", "btnDiv");
-          div_card.append(btn_div);
+          let btn = document.createElement("button");
+          btn.innerText = "Add";
+          btn.setAttribute("id", "submit");
+          btn.setAttribute("value", "submit");
+          btn.setAttribute("id", Data[j]["ProductId"]);
+          btn.setAttribute("onclick", "addProduct(this.id)");
+          div_card.append(btn);
 
-          let button = document.createElement("button");
-          button.innerText = "Product Completed";
-          button.setAttribute("id", "submit");
-          button.setAttribute("value", "submit");
-          button.setAttribute("id", Data[j]["ProductId"]);
-          button.setAttribute("onclick", "removeProduct(this.id)");
-          btn_div.append(button);
-          console.log(button);
-
-          let edit = document.createElement("button");
-          btn_div.append(edit);
-
-          // url params code for passing the selected product details
-          let info = document.createElement("a");
-          info.innerText = "Edit";
-          info.setAttribute(
-            "href",
-            "./new_seller_product_edit.html?ProductId=" + Data[j]["ProductId"]
-          );
-          edit.append(info);
-
-          function removeProduct(ProductId) {
+          function addProduct(ProductId) {
             event.preventDefault();
-            let newData = JSON.parse(
-              localStorage.getItem("newSellerHistoryProducts")
-            );
+            let newData = JSON.parse(localStorage.getItem("newSellerProducts"));
 
             let selectProduct;
             for (let i = 0; i < Data.length; i++) {
@@ -245,13 +229,13 @@
                 let array = [];
                 array.push(selectProduct);
                 localStorage.setItem(
-                  "newSellerHistoryProducts",
+                  "newSellerProducts",
                   JSON.stringify(array)
                 );
               } else {
                 newData.push(selectProduct);
                 localStorage.setItem(
-                  "newSellerHistoryProducts",
+                  "newSellerProducts",
                   JSON.stringify(newData)
                 );
               }
@@ -259,19 +243,41 @@
               console.log(Data);
               console.log(selectProduct);
               Data.splice(removeProduct, 1);
-              localStorage.setItem("newSellerProducts", JSON.stringify(Data));
+              localStorage.setItem(
+                "newSellerHistoryProducts",
+                JSON.stringify(Data)
+              );
             }
             window.location.reload();
           }
+
+          //   let btn_div = document.createElement("div");
+          //   btn_div.setAttribute("class", "btnDiv");
+          //   div_card.append(btn_div);
+
+          //   let button = document.createElement("button");
+          //   button.innerText = "Product Completed";
+          //   button.setAttribute("id", "submit");
+          //   button.setAttribute("value", "submit");
+          //   btn_div.append(button);
+
+          //   let edit = document.createElement("button");
+          //   btn_div.append(edit);
+
+          // url params code for passing the selected product details
+          //   let info = document.createElement("a");
+          //   info.innerText = "Edit";
+          //   info.setAttribute(
+          //     "href",
+          //     "./new_seller_product_edit.html?ProductId=" + Data[j]["ProductId"]
+          //   );
+          //   edit.append(info);
 
           document.querySelector(".card").append(div_card);
         }
       }
       function pro() {
         window.location.href = "/pages/profile.html";
-      }
-      function completedOrder() {
-        window.location.href = "/pages/new_seller_completedlist.html";
       }
     </script>
   </body>

@@ -42,6 +42,8 @@
       </section> -->
     </main>
 
+    <footer></footer>
+
     <script>
       // url params for id
       let url = window.location.search;
@@ -103,6 +105,7 @@
       full_section.append(product_section);
 
       let product_img_div = document.createElement("div");
+      product_img_div.setAttribute("class", "full_div");
       product_section.append(product_img_div);
 
       let product_img = document.createElement("img");
@@ -112,6 +115,7 @@
       product_img_div.append(product_img);
 
       let product_detail_div = document.createElement("div");
+      product_detail_div.setAttribute("class", "full_div");
       product_section.append(product_detail_div);
 
       let product_name = document.createElement("p");
@@ -132,6 +136,7 @@
       product_detail_div.append(product_description);
 
       let user_section = document.createElement("section");
+      user_section.setAttribute("class", "full_div");
       full_section.append(user_section);
 
       let user_name = document.createElement("p");
@@ -150,7 +155,55 @@
       user_address.innerText = "Address : " + user_id["Home_Address"];
       user_section.append(user_address);
 
+      let product_place = document.createElement("p");
+      product_place.innerText =
+        "Place : " + product_id["District"] + "," + product_id["State"];
+      user_section.append(product_place);
+
       document.querySelector("main").append(full_section);
+
+      let suggest = JSON.parse(localStorage.getItem("newSellerProducts"));
+
+      // create card
+      for (let j = 0; j < Data.length; j++) {
+        let info = document.createElement("a");
+        info.setAttribute("class", "aTag");
+        info.setAttribute(
+          "href",
+          "./new_detail.html?ProductId=" + suggest[j]["ProductId"]
+        );
+
+        let div_card = document.createElement("div");
+        div_card.setAttribute("class", "card_div" + " " + suggest[j]["Type"]);
+        div_card.setAttribute("type", "button");
+        div_card.setAttribute("id", "form");
+        info.append(div_card);
+
+        let image = document.createElement("img");
+        image.setAttribute("src", suggest[j]["Url"]);
+        image.setAttribute("alt", "image");
+        image.setAttribute("id", "pUrl");
+        image.setAttribute("width", "150px");
+        div_card.append(image);
+
+        let fruit_name = document.createElement("p");
+        fruit_name.innerText = suggest[j]["Name"];
+        fruit_name.setAttribute("id", "pName");
+        fruit_name.setAttribute("disabled", " ");
+        div_card.append(fruit_name);
+        // console.log(fruit_name);
+
+        let rupees = document.createElement("p");
+        rupees.innerText = "Price :" + " ₹ " + suggest[j]["Price"] + " /kg";
+        rupees.setAttribute("id", "pPrice");
+        rupees.setAttribute("type", "text");
+        rupees.setAttribute("disabled", "");
+        div_card.append(rupees);
+
+        // url params code for passing the selected product details
+
+        document.querySelector("footer").append(info);
+      }
 
       function pro() {
         window.location.href = "/pages/profile_buy.html";
