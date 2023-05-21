@@ -74,14 +74,14 @@
           autocomplete="off"
           required
         /><br />
-        <label for="card_ifsc_no">Enter Your IFSC Code</label> <br />
+        <!-- <label for="card_ifsc_no">Enter Your IFSC Code</label> <br />
         <input
           type="text"
           id="ifsc_code"
           pattern="{0-9}[A-Z]"
           autocomplete="off"
           required
-        /><br />
+        /><br /> -->
         <label for="card_cvv_no">Enter Your CVV No</label> <br />
         <input
           id="cvv_no"
@@ -93,15 +93,15 @@
         /><br />
         <label for="card_ex_date">Enter Your Expiry Date</label> <br />
         <input
-          type="date"
+          type="month"
           id="card_exp_date"
           pattern="[a-zA-Z]{1,20}"
           autocomplete="off"
           required
         /><br />
         <!-- <div class="btn"> -->
-        <button type="submit">Save</button>
-        <button onclick="bill()">Go to Bill</button>
+        <!-- <button type="submit">Save</button> -->
+        <button type="submit" onclick="bill()">Go to Bill</button>
         <!-- </div> -->
       </form>
     </main>

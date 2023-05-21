@@ -36,7 +36,8 @@ uploadForm.addEventListener("submit", function (event) {
     const Price = document.getElementById("price").value;
     const Qty = document.getElementById("qty").value;
     const bQty = document.getElementById("qty").value;
-    // const Place = document.getElementById("place").value;
+    const City = document.getElementById("city").value;
+    const District = document.getElementById("District").value;
     const Description = document.getElementById("description").value;
     let ProductId = Date.now();
     let userId = get_obj["id"];
@@ -49,7 +50,8 @@ uploadForm.addEventListener("submit", function (event) {
       Price,
       Qty,
       bQty,
-      // Place,
+      City,
+      District,
       Description,
       ProductId,
       userId,

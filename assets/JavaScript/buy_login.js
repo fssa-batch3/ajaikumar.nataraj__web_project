@@ -37,7 +37,7 @@ buyer_logIn.addEventListener("submit", (event) => {
     if (match == true) {
       alert("Successfully You login to your Account");
 
-      window.location.href = "/pages/4.index.html";
+      window.location.href = "/pages/5a-fruits.html";
     } else {
       alert("Login credentials not correct");
     }

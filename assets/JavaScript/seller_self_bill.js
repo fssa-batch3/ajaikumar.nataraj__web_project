@@ -29,7 +29,7 @@ const Land_Address = document.getElementById("Land_Address");
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
 // transport_DOB.value = select_user["transport_DOB"];
-Land_Address.value = select_user["Land_Address"] || "";
+Land_Address.value = select_user["Home_Address"] || "";
 
 // to replace the values
 const form = document.getElementById("form");
@@ -39,13 +39,13 @@ form.addEventListener("change", function (event) {
     let FullName = document.getElementById("First_name").value;
     let Phone_number = document.getElementById("Phone_Number").value;
     // let transport_DOB = document.getElementById("Pickup_date").value;
-    let Land_Address = document.getElementById("Land_Address").value;
+    let Home_Address = document.getElementById("Land_Address").value;
 
     let newData = {
       FullName,
       Phone_number,
       // transport_DOB,
-      Land_Address,
+      Home_Address,
     };
     console.log(newData);
 

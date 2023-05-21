@@ -23,7 +23,7 @@ const transport_DOB = document.getElementById("DOB");
 const Home_Address = document.getElementById("Home_Address");
 const District = document.getElementById("District");
 const gender = document.getElementById("gender");
-const Aadhar_number = document.getElementById("Aadhar_number");
+// const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
 const country = document.getElementById("country");
 
@@ -37,7 +37,7 @@ transport_DOB.value = select_user["DOB"] || "";
 Home_Address.value = select_user["Home_Address"] || "";
 District.value = select_user["District"] || "";
 gender.value = select_user["gender"] || "";
-Aadhar_number.value = select_user["Aadhar_number"] || "";
+// Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
 country.value = select_user["country"] || "";
 
@@ -71,7 +71,7 @@ logout_user.addEventListener("click", function (event) {
     if (msg !== true) {
       return;
     } else {
-      window.location.href = "/pages/2.Login.html";
+      window.location.href = "/pages/2.buy-login.html";
     }
   } catch (error) {
     console.error(error);

@@ -20,12 +20,12 @@
       />
     </header>
 
-    <button class="btn" onclick="download()">download the Bill</button>
-
     <table>
       <div class="details">
         <h3 class="btn">Your Delivery details:</h3>
         <div class="detail">
+          <input disabled id="buyer_id" type="number" />
+
           <input disabled type="text" id="First_name" placeholder="name" />
           <input
             type="number"
@@ -42,6 +42,7 @@
             placeholder="Delivery Address"
             disabled
           />
+
           <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
         </div>
       </div>
@@ -56,9 +57,9 @@
           <td id="operoation"></td>
         </tr>
       </table>
-    </div>
 
-    <input disabled id="buyer_id" type="number" />
+      <button class="btn" onclick="download()">download the Bill</button>
+    </div>
 
     <footer class="btn">
       <img

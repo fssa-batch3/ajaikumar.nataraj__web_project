@@ -31,7 +31,7 @@ const Land_Address = document.getElementById("Land_Address");
 id.value = select_user["id"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-Land_Address.value = select_user["Land_Address"] || "";
+Land_Address.value = select_user["Home_Address"] || "";
 
 function profile() {
   window.location.href = "/pages/profile.html";

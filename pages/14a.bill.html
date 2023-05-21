@@ -21,7 +21,29 @@
       />
     </header>
 
-    <button class="btn" onclick="download()">Download the Bill</button>
+    <div class="details">
+      <h3 class="btn">Your Pickup details:</h3>
+      <div class="detail">
+        <input disabled id="seller_id" type="number" />
+
+        <input type="text" id="First_name" placeholder="name" disabled />
+        <input
+          type="number"
+          id="Phone_Number"
+          placeholder="Phone number"
+          maxlength="10"
+          disabled
+        />
+
+        <input
+          class="address_input"
+          type="text"
+          id="Land_Address"
+          placeholder="address"
+          disabled
+        />
+      </div>
+    </div>
 
     <main class="table">
       <script src="../assets/JavaScript/seller_bill.js"></script>
@@ -35,30 +57,10 @@
           </tr>
         </table>
       </div>
-      <div class="details">
-        <h3 class="btn">Your Pickup details:</h3>
-        <div class="detail">
-          <input type="text" id="First_name" placeholder="name" disabled />
-          <input
-            type="number"
-            id="Phone_Number"
-            placeholder="Phone number"
-            maxlength="10"
-            disabled
-          />
-
-          <input
-            class="address_input"
-            type="text"
-            id="Land_Address"
-            placeholder="address"
-            disabled
-          />
-        </div>
-      </div>
+      <button class="downloadBtn" onclick="download()">
+        Download the Bill
+      </button>
     </main>
-
-    <input disabled id="seller_id" type="number" />
 
     <footer class="btn" class="footer">
       <p class="foot-p">

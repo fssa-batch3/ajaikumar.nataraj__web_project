@@ -32,7 +32,7 @@ for (let i = 0; i < Card.length; i++) {
     // bill_div.append(p1);
 
     let p2 = document.createElement("p");
-    p2.innerText = "Order Id : " + Card[i]["billId"];
+    p2.innerText = "Ordered Id : " + Card[i]["billId"];
     bill_div.append(p2);
 
     // let p3 = document.createElement("img");
@@ -90,7 +90,7 @@ for (let i = 0; i < Card.length; i++) {
     date_div.append(p5);
 
     let p6 = document.createElement("p");
-    p6.innerText = "Delivery Date : " + Card[i]["Delivery_date"];
+    p6.innerText = "Delivered Date : " + Card[i]["Delivery_date"];
     date_div.append(p6);
     // console.log(data[i]["Price"]);
     // console.log(data[i]["bQty"]);

@@ -95,17 +95,17 @@
         <br />
         <label for="card_name">Enter Your Card Holder Name</label> <br />
         <input type="text" id="holder_name" autocomplete="off" /><br />
-        <label for="card_ifsc_no">Enter Your IFSC Code</label> <br />
-        <input
+        <!-- <label for="card_ifsc_no">Enter Your IFSC Code</label> <br /> -->
+        <!-- <input
           type="text"
           id="ifsc_code"
           pattern="{0-9}[A-Z]"
           autocomplete="off"
-        /><br />
+        /><br /> -->
         <label for="card_cvv_no">Enter Your CVV No</label> <br />
         <input
           id="cvv_no"
-          type="tel"
+          type="password"
           pattern="[0-9]{3}"
           autocomplete="hgfgtyfygh"
           maxlength="3"
@@ -113,7 +113,7 @@
         /><br />
         <label for="card_ex_date">Enter Your Expiry Date</label> <br />
         <input
-          type="date"
+          type="month"
           id="card_exp_date"
           pattern="[a-zA-Z]{1,20}"
           autocomplete="off"

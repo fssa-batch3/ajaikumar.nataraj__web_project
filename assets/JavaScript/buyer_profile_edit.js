@@ -122,7 +122,7 @@ const transport_DOB = document.getElementById("DOB");
 const Home_Address = document.getElementById("Home_Address");
 const District = document.getElementById("District");
 const gender = document.getElementById("gender");
-const Aadhar_number = document.getElementById("Aadhar_number");
+// const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
 const country = document.getElementById("country");
 
@@ -137,7 +137,7 @@ transport_DOB.value = select_user["DOB"];
 Home_Address.value = select_user["Home_Address"] || "";
 District.value = select_user["District"] || "";
 gender.value = select_user["gender"] || "";
-Aadhar_number.value = select_user["Aadhar_number"] || "";
+// Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
 country.value = select_user["country"] || "";
 
@@ -156,7 +156,7 @@ form.addEventListener("submit", function (event) {
     let Home_Address = document.getElementById("Home_Address").value;
     let District = document.getElementById("District").value;
     let gender = document.getElementById("gender").value;
-    let Aadhar_number = document.getElementById("Aadhar_number").value;
+    // let Aadhar_number = document.getElementById("Aadhar_number").value;
     let state = document.getElementById("state").value;
     let country = document.getElementById("country").value;
 
@@ -170,7 +170,7 @@ form.addEventListener("submit", function (event) {
       Home_Address,
       District,
       gender,
-      Aadhar_number,
+      // Aadhar_number,
       state,
       country,
     };

@@ -30,6 +30,7 @@ for (let i = 0; i <= Card.length; i++) {
   image.setAttribute("src", Card[i]["Url"]);
   image.setAttribute("alt", "image");
   image.setAttribute("id", "pUrl");
+  image.setAttribute("width", "150px");
   div_card.append(image);
 
   let fruit_name = document.createElement("input");
@@ -49,6 +50,9 @@ for (let i = 0; i <= Card.length; i++) {
   input_value.setAttribute("value", Card[i]["bQty"]);
   input_value.setAttribute("type", "number");
   input_value.setAttribute("width", "10px");
+  input_value.setAttribute("id", "bQty");
+  input_value.setAttribute("min", "1");
+  input_value.setAttribute("oninput", "validateInput()");
   input_value.setAttribute("id", Card[i]["ProductId"]);
   div_card.append(input_value);
 
@@ -64,9 +68,40 @@ for (let i = 0; i <= Card.length; i++) {
   cancel.setAttribute("type", "submit");
   div_card.append(cancel);
 
+  function validateInput() {
+    var input = document.getElementById("bQty");
+    var value = parseFloat(input.value);
+
+    if (isNaN(value) || value < 1) {
+      input.value = value; // Clear the input value
+    }
+  }
+
+  // // check the buying qty for minimum of 1kg
+  // // Get the input element
+  // let input = document.getElementsByClassName("bQty");
+
+  // // Listen for input changes
+  // input.addEventListener("input", function () {
+  //   let value = parseInt(input.value, 10); // Parse the input value as an integer
+
+  //   // Check if the value is less than 1
+  //   if (value < 1 || isNaN(value)) {
+  //     input.value = 1; // Set the value to 1
+  //   }
+  // });
+
   // edit value of the card while click the "edit" button
   edit.addEventListener("click", function (event) {
     event.preventDefault();
+
+    if (input_value.value < 1) {
+      alert("Don't enter quantity below 1 kg");
+      return;
+      // if (alert == true) {
+      //   location.reload();
+      // }
+    }
 
     try {
       // console.log();

@@ -20,6 +20,7 @@ textarea:valid {
 textarea:invalid {
   border: 2px solid red;
 }
+
 .body {
   font-size: 30px;
   color: black;
@@ -48,6 +49,12 @@ textarea:invalid {
 .form input {
   font-size: 30px;
   border-radius: 6px;
+}
+textarea {
+  font-size: 30px;
+  width: 370px;
+  border-radius: 6px;
+  height: 100px;
 }
 .full {
   justify-content: center;
