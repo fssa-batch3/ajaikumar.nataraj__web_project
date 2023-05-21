@@ -1,9 +1,18 @@
-// code for set the date for future days for card expiry date
-// let inputDate = document.getElementById("card_exp_date");
-// let today = new Date();
-// today.setDate(today.getDate() + 10);
-// let minDate = today.toISOString().split("T")[0];
-// inputDate.setAttribute("min", minDate);
+let id = JSON.parse(localStorage.getItem("user_info"));
+console.log(id);
+
+let login_id = JSON.parse(localStorage.getItem("logIn"));
+console.log(login_id);
+
+const get_obj = id.find((e) => e.Email === login_id);
+console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
 
 // Get current date
 var today = new Date();

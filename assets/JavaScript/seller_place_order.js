@@ -1,3 +1,19 @@
+let id = JSON.parse(localStorage.getItem("user_info"));
+console.log(id);
+
+let login_id = JSON.parse(localStorage.getItem("logIn"));
+console.log(login_id);
+
+const get_obj = id.find((e) => e.Email === login_id);
+console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 // to get the upload details from the local storage
 let Card = JSON.parse(localStorage.getItem("newly_added"));
 console.log(Card);
@@ -39,34 +55,34 @@ for (let i = 0; i <= Card.length; i++) {
   div_card.append(fruit_name);
 
   let rupees = document.createElement("input");
-  rupees.setAttribute("value", Card[i]["Price"]);
+  rupees.setAttribute("value", "₹ " + Card[i]["Price"] + " /kg");
   rupees.setAttribute("id", "pPrice");
   rupees.setAttribute("type", "text");
   rupees.setAttribute("disabled", " ");
   div_card.append(rupees);
 
   let input_value = document.createElement("input");
-  input_value.setAttribute("value", Card[i]["Qty"]);
+  input_value.setAttribute("value", "Qty: " + Card[i]["Qty"] + " kg");
   // input_value.setAttribute("type", "number");
   input_value.setAttribute("width", "10px");
   input_value.setAttribute("id", "pQty");
   input_value.setAttribute("disabled", " ");
   div_card.append(input_value);
 
-  let edit = document.createElement("button");
-  // edit.innerText = "Edit";
-  // edit.setAttribute("id", "submit");
-  // edit.setAttribute("type", "submit");
-  div_card.append(edit);
-
   // url params code for passing the selected product details
   let info = document.createElement("a");
-  info.innerText = "Edit";
+  // info.innerText = "Edit";
   info.setAttribute(
     "href",
     "/pages/new_seller_product_edit.html?ProductId=" + Card[i]["ProductId"]
   );
-  edit.append(info);
+  div_card.append(info);
+
+  let edit = document.createElement("button");
+  edit.innerText = "Edit";
+  // edit.setAttribute("id", "submit");
+  // edit.setAttribute("type", "submit");
+  info.append(edit);
 
   let button = document.createElement("button");
   button.innerText = "Delete";

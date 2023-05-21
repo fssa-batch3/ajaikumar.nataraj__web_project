@@ -1,3 +1,19 @@
+let id = JSON.parse(localStorage.getItem("user_info"));
+console.log(id);
+
+let login_id = JSON.parse(localStorage.getItem("logIn"));
+console.log(login_id);
+
+const get_obj = id.find((e) => e.Email === login_id);
+console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 // to get the upload details from the local storage
 let Card = JSON.parse(localStorage.getItem("newly_added"));
 let total = 0;

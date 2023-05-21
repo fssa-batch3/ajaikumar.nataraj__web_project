@@ -16,6 +16,13 @@ console.log(login_id);
 const get_obj = id.find((e) => e.Email === login_id);
 console.log(get_obj);
 
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 document.createElement("newly_added");
 
 // to get details of the products from the form by id and store in the new array

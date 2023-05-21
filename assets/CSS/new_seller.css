@@ -18,22 +18,35 @@ body {
   justify-content: space-between;
   width: 700px;
 }
+.contact {
+  background-color: #2bae66ff;
+  height: 20px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+}
+.contact p {
+  margin-top: 2px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  background-color: #2bae66ff;
+}
+
 .pro {
   font-size: 30px;
   background-color: white;
   text-align: center;
   color: #2bae66ff;
-}
-.name {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 45px;
-  color: white;
-  border-radius: 100px;
-  width: 70px;
-  height: 70px;
-  background-color: #2bae66ff;
 }
 textarea {
   font-size: 50px;
@@ -49,17 +62,7 @@ button {
 input {
   font-size: 30px;
 }
-.contact {
-  background-color: #2bae66ff;
-  height: 20px;
-  font-size: 15px;
-  color: white;
-  display: flex;
-  justify-content: space-evenly;
-}
-.contact p {
-  margin-top: 2px;
-}
+
 .form {
   display: flex;
   justify-content: center;

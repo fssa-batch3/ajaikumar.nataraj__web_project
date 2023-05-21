@@ -11,6 +11,13 @@ console.log(login_id);
 const get_obj = user_info.find((e) => e.Email === login_id);
 console.log(get_obj);
 
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 let total = 0;
 
 // to create the button for place the order
