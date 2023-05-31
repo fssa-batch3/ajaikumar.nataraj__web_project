@@ -8,56 +8,39 @@
     <link rel="stylesheet" href="../assets/CSS/20-customer-order-list.css" />
   </head>
   <body>
-    <header class="header">
-      <a href="../pages/17-admin-index.html">
-        <button>
-          <img
-            src="../assets/image/arrowback.png"
-            alt="arrow-back"
-            width="50px"
-          /></button
-      ></a>
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
       <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="110px" />
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
       </div>
-      <div class="hol">Home Order's List..</div>
+      <div class="name">
+        <p id="newimg"></p>
+      </div>
     </header>
-    <table aria-describedby="order" class="table">
-      <tr>
-        <th>Name/ID</th>
-        <th>Products</th>
-        <th>Quantity</th>
-        <th>Delivery Date</th>
-        <th>Availability</th>
-        <th>Accept/Decline</th>
-      </tr>
-      <tr>
-        <td>
-          Shin Chan <br />
-          SC 12345
-        </td>
-        <td>onion <br />Tomato <br />Carrot <br />Brinjal <br />Coconut</td>
-        <td>5 kg <br />2 kg <br />1 kg <br />1 kg <br />10 shells</td>
-        <td>14/12/2022</td>
-        <td>Available</td>
-        <td><button>okay</button> <button>cancel</button></td>
-      </tr>
-      <hr />
-      <tr>
-        <td>
-          Jackie Chan <br />
-          JC 54321
-        </td>
-        <td>onion <br />Potato <br />Lady's finger <br />Brinjal</td>
-        <td>3 kg <br />1 kg <br />1 kg <br />1 kg</td>
-        <td>15/12/2022</td>
-        <td>Available</td>
-        <td><button>okay</button> <button>cancel</button></td>
-      </tr>
-    </table>
+
+    <nav>
+      <input type="search" id="searchbar" placeholder="Search here..." />
+    </nav>
+    <!-- <table aria-describedby="order" class="table"></table> -->
     <hr />
-    <footer class="f-btn">
+    <!-- <footer class="f-btn">
       <a href="../pages/19a-store.html"><button>Go to Store</button></a>
-    </footer>
+    </footer> -->
+
+    <script src="/assets/JavaScript/worker_new_order.js"></script>
   </body>
 </html>

@@ -1,106 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
-  </head>
-  <body class="body">
-    <header class="head">
-      <a href="../pages/3.home.html">
-        <button class="before-arrow">
-          <img
-            src="../assets/image/arrowback.png"
-            alt="arrow-back"
-            width="40px"
-          />
-        </button>
-      </a>
-      <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="130px" />
-      </div>
-      <div class="pro">
-        <img src="../assets/image/profile.png" alt="profile" />
-      </div>
-    </header>
-    <div style="display: flex">
-      <div class="main">
-        <h3>Your Bill</h3>
-        <table aria-describedby="billx">
-          Noncompliant -->
-<!--      <tr>
-            <th>Products Name</th>
-            <th>Quantity</th>
-            <th>Amount</th>
-          </tr>
-          <tr>
-            <td>Apple</td>
-            <td>1kg</td>
-            <td>Rs.150</td>
-          </tr>
-        </table>
-      </div>
-      <div class="details">
-        <h3>Your Delivery details:</h3>
-        <div class="detail">
-           <input type="text" placeholder="name" />
-          <input type="number" placeholder="Phone number" maxlength="10" />
-          <input type="text" placeholder="address" />
-          <input type="date" placeholder="Pickup date" /> -
-          <button class="name">Name</button>
-          <button class="phno">Phone Number</button>
-          <button class="add">Address</button>
-          <button class="pickup">Pickup Date</button>
-        </div>
-      </div>
-    </div>
-    <div class="id">
-      <p>Order ID: 1003767380</p>
-      <p>Toll-free no:1800 123 3000</p>
-    </div>
-
-    <footer class="footer">
-      <p class="foot-p">
-        <img
-          src="../assets/image/smiling-face.gif"
-          alt="smiling-face"
-          width="50px"
-        />
-        Thanks for Purchasing
-        <img
-          src="../assets/image/sparkling-heart.gif"
-          alt="heart"
-          width="50px"
-        />
-        We always Welcomes you!
-      </p>
-    </footer>
-     <script>
-      function output() {
-        const user_name = localStorage.getItem("user_name");
-        document.getElementsByClassName("name")[0].innerHTML = user_name;
-        console.log(user_name);
-
-        const user_add = localStorage.getItem("user_add");
-        document.getElementsByClassName("add")[0].innerHTML = user_add;
-        console.log(user_add);
-
-        const user_phno = localStorage.getItem("user_phno");
-        document.getElementsByClassName("phno")[0].innerHTML = user_phno;
-        console.log(user_phno);
-
-        const user_pickup = localStorage.getItem("user_pickup");
-        document.getElementsByClassName("pickup")[0].innerHTML = user_pickup;
-        console.log(user_pickup);
-      }
-      output();
-    </script> -
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -111,68 +8,88 @@
     <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
   </head>
   <body>
-    <header>
-      <img src="../assets/image/logo (2).png" alt="logo" width="100px" />
-      <h4>Your Product's Bill</h4>
-      <img src="../assets/image/profile.png" alt="profile" width="80px" />
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
+      <div class="logo">
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
+      </div>
+      <div class="name">
+        <p onclick="profile()" id="newimg"></p>
+      </div>
     </header>
 
     <table>
-      <script>
-        let Card = JSON.parse(localStorage.getItem("added_list"));
-
-        for (let i = 0; i <= Card.length; i++) {
-          let table_card = document.createElement("table");
-
-          let th_tr1 = document.createElement("tr");
-          table_card.append(th_tr1);
-
-          let th1_tr = document.createElement("th");
-          th1_tr.innerText = "Products Name";
-          th_tr1.append(th1_tr);
-
-          let th2_tr = document.createElement("th");
-          th2_tr.innerText = "Quantity";
-          th_tr1.append(th2_tr);
-
-          let th3_tr = document.createElement("th");
-          th3_tr.innerText = "Amount";
-          th_tr1.append(th3_tr);
-
-          let td_tr2 = document.createElement("tr");
-          table_card.append(td_tr2);
-
-          let td1_tr = document.createElement("td");
-          td1_tr.innerText = Card[i]["Name"];
-          td_tr2.append(td1_tr);
-
-          let td2_tr = document.createElement("td");
-          td2_tr.innerText = Card[i]["Qty"];
-          td_tr2.append(td2_tr);
-
-          let td3_tr = document.createElement("td");
-          td3_tr.innerText = Card[i]["total"];
-          td_tr2.append(td3_tr);
-
-          document.querySelector("table").append(table_card);
-        }
-      </script>
       <div class="details">
-        <h3>Your Delivery details:</h3>
+        <h3 class="btn">Your Delivery details:</h3>
         <div class="detail">
-          <input type="text" placeholder="name" />
-          <input type="number" placeholder="Phone number" maxlength="10" />
-          <input type="text" placeholder="address" />
-          <input type="date" placeholder="Pickup date" /> -
-          <button class="name">Name</button>
-          <button class="phno">Phone Number</button>
-          <button class="add">Address</button>
-          <button class="pickup">Pickup Date</button>
+          <nav>
+            <label>Name</label> <br />
+            <input disabled type="text" id="First_name" placeholder="name" />
+          </nav>
+          <nav>
+            <label>Phone Number</label> <br />
+            <input
+              type="number"
+              id="Phone_Number"
+              placeholder="Phone number"
+              maxlength="10"
+              disabled
+            />
+          </nav>
+          <nav>
+            <label>Delivery Address</label> <br />
+            <input
+              class="address_input"
+              type="text"
+              id="Home_Address"
+              required
+              placeholder="Delivery Address"
+              disabled
+            />
+          </nav>
+          <nav>
+            <label>Pin Code</label> <br />
+            <input
+              id="pincode"
+              type="tel"
+              pattern="[0-9]{6}"
+              maxlength="6"
+              minlength="6"
+            />
+          </nav>
+          <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
         </div>
       </div>
     </table>
 
-    <footer>
+    <div class="amount_total">
+      <table aria-describedby="total_amount">
+        <tr>
+          <th>Total Amount</th>
+        </tr>
+        <tr>
+          <td id="operoation"></td>
+        </tr>
+      </table>
+
+      <button class="btn" onclick="download()">download the Bill</button>
+    </div>
+
+    <footer class="btn">
       <img
         src="../assets/image/smiling-face.gif"
         alt="smiling-face"
@@ -182,5 +99,7 @@
       <img src="../assets/image/sparkling-heart.gif" alt="heart" width="50px" />
       We always Welcomes you!
     </footer>
+
+    <script src="../assets/JavaScript/buyer_bill.js"></script>
   </body>
 </html>

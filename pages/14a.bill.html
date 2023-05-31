@@ -4,64 +4,96 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
-    <link rel="stylesheet" href="../assets/CSS/14a-bill.css" />
+    <title>Bill</title>
+    <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
   </head>
-  <body class="body">
-    <header>
-      <div>
-        <a href="../pages/3.home.html"
-          ><img src="../assets/image/arrowback.png" alt="ab" width="20px"
-        /></a>
+  <body>
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
+      <div class="logo">
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
       </div>
-      <div class="header">
-        <img src="../assets/image/logo.png" alt="logo" width="150px" />
+      <div class="name">
+        <p onclick="profile()" id="newimg"></p>
       </div>
     </header>
+
     <div class="details">
-      <h3>Your pickup details:</h3>
-      <div class="detail">
-        <!-- <input type="text" placeholder="Name" />
-        <input type="number" placeholder="Phone number" />
-        <input type="text" placeholder="Address" />
-        <input type="date" placeholder="Pickup date" /> -->
-        <button class="name">Name</button>
-        <button class="phno">Phone Number</button>
-        <button class="add">Address</button>
-        <button class="pickup">Pickup Date</button>
-      </div>
+      <h3 class="btn">Your Pickup details:</h3>
+      <form class="detail">
+        <nav>
+          <label>Name</label> <br />
+          <input type="text" id="First_name" placeholder="name" disabled />
+        </nav>
+        <nav>
+          <label>Phone Number</label> <br />
+          <input
+            type="number"
+            id="Phone_Number"
+            placeholder="Phone number"
+            maxlength="10"
+            minlength="10"
+            disabled
+          />
+        </nav>
+        <nav>
+          <label>Address</label> <br />
+          <input
+            type="text"
+            id="Land_Address"
+            placeholder="address"
+            style="width: 500px"
+            required
+            disabled
+          />
+        </nav>
+        <nav>
+          <label>Pincode</label> <br />
+          <input
+            id="pincode"
+            type="tel"
+            pattern="[0-9]{6}"
+            maxlength="6"
+            minlength="6"
+            disabled
+          />
+        </nav>
+        <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
+      </form>
     </div>
-    <div class="main">
-      <h3>Your Product's Bill</h3>
-      <table aria-describedby="bil">
-        <tr>
-          <th>Products Name</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Amount</th>
-        </tr>
-        <tr>
-          <td>Banana</td>
-          <td>Rs.20 /kg</td>
-          <td>150 kg</td>
-          <td>Rs.3000</td>
-        </tr>
-        <div class="total-amount">
+
+    <main class="table">
+      <script src="../assets/JavaScript/seller_bill.js"></script>
+      <div class="amount_total">
+        <table aria-describedby="total_amount">
           <tr>
-            <td></td>
-            <td>Total</td>
-            <td>Amount</td>
-            <td>Rs.3000</td>
+            <th>Total Amount</th>
           </tr>
-        </div>
-      </table>
-    </div>
-    <div class="id">
-      <p>Order ID: 1006738360</p>
-      <p>Toll-free no:1800 123 4000</p>
-    </div>
-    <footer class="footer">
+          <tr>
+            <td id="operoation"></td>
+          </tr>
+        </table>
+      </div>
+      <button class="downloadBtn" onclick="download()">
+        Download the Bill
+      </button>
+    </main>
+
+    <footer class="btn" class="footer">
       <p class="foot-p">
         <img
           src="../assets/image/smiling-face.gif"
@@ -77,26 +109,6 @@
         We always Welcomes you!
       </p>
     </footer>
-
-    <script>
-      function output() {
-        const user_name = localStorage.getItem("user_name");
-        document.getElementsByClassName("name")[0].innerHTML = user_name;
-        console.log(user_name);
-
-        const user_add = localStorage.getItem("user_add");
-        document.getElementsByClassName("add")[0].innerHTML = user_add;
-        console.log(user_add);
-
-        const user_phno = localStorage.getItem("user_phno");
-        document.getElementsByClassName("phno")[0].innerHTML = user_phno;
-        console.log(user_phno);
-
-        const user_pickup = localStorage.getItem("user_pickup");
-        document.getElementsByClassName("pickup")[0].innerHTML = user_pickup;
-        console.log(user_pickup);
-      }
-      output();
-    </script>
+    <script src="/assets/JavaScript/seller's_bill.js"></script>
   </body>
 </html>

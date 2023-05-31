@@ -24,8 +24,20 @@
       <div class="head">
         <p onclick="home()">Home</p>
         <p>About us</p>
-        <p onclick="sign()">Register</p>
-        <p onclick="customer()">Log In</p>
+        <div class="dropdown">
+          <p class="dropbtn">Register</p>
+          <div class="dropdown-content">
+            <a onclick="buy_sign()">as Buyer</a>
+            <a onclick="sell_sign()">as Seller</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <p class="dropbtn">Log in</p>
+          <div class="dropdown-content">
+            <a onclick="buy_login()">as Buyer</a>
+            <a onclick="sell_login()">as Seller</a>
+          </div>
+        </div>
       </div>
       <div>
         <img src="../assets/image/profile.png" alt="profile" width="120px" />
@@ -156,21 +168,47 @@
         <ul>
           Terms and Conditions
         </ul>
+        <ul onclick="review()">
+          Reviews
+        </ul>
       </div>
     </footer>
+    <div class="own">
+      <p onclick="admin()">Admin</p>
+      <p onclick="worker()">Worker</p>
+      <p onclick="leader_board()">Leader Board</p>
+    </div>
     <nav class="copyright">
       @ copyright 2022 RISHI AGRI MARKET | All rights reserved
     </nav>
 
     <script>
-      function sign() {
+      function sell_sign() {
         window.location.href = "/pages/1.signin.html";
       }
-      function customer() {
+      function sell_login() {
         window.location.href = "/pages/2.Login.html";
       }
+      function buy_sign() {
+        window.location.href = "/pages/1.buy-signin.html";
+      }
+      function buy_login() {
+        window.location.href = "/pages/2.buy-login.html";
+      }
       function home() {
-        window.location.href = "/index-1.html";
+        window.location.href = "/index.html";
+      }
+      function admin() {
+        window.location.href = "/pages/16.adminsignin.html";
+      }
+      function review() {
+        window.location.href = "/pages/review.html";
+      }
+      function worker() {
+        window.location.href = "/pages/worker_login.html";
+      }
+      function leader_board() {
+        window.location.href = "/pages/leaderboard_seller.html";
       }
     </script>
   </body>

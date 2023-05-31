@@ -13,20 +13,21 @@
   </head>
 
   <body class="body">
-    <div>
+    <div class="header">
       <header class="head">
         <div class="logo">
           <img src="../assets/image/logo.png" alt="logo" width="100px" />
         </div>
-        <button id="profile" onclick="profile()">Shin chan</button>
+        <input type="text" id="profile" onclick="profile()" />
         <img
           onclick="profile()"
           src="../assets/image/profile.png"
-          alt="profilr"
+          alt="profile"
           width="100px"
         />
       </header>
     </div>
+
     <div class="com-btn">
       <nav class="com-btn_nav1">
         <img src="../assets/image/select_buying.png" alt="buyer" />
@@ -43,10 +44,21 @@
     </div>
 
     <script>
-      let BIO = JSON.parse(localStorage.getItem("logIn"));
-      console.log(BIO);
+      const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
-      document.getElementById("profile").innerHTML = user_info[0]["FullName"];
+      const user_info = JSON.parse(localStorage.getItem("user_info"));
+      let select_user = user_info.find(function (event) {
+        let customerEmail = event["Email"];
+        if (user_info == customerEmail) {
+          return true;
+        } else if (oneUser == customerEmail) {
+          return true;
+        }
+      });
+
+      const name = document.getElementById("profile");
+
+      name.value = select_user["FullName"];
 
       function buyer() {
         window.location.href = "/pages/4.index.html";

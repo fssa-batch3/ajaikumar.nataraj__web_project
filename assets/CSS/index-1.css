@@ -48,7 +48,7 @@
 
 .card_div:hover {
   box-shadow: 2px 2px 2px 2px #99dbb2;
-  scale: 1.2;
+  /* scale: 1.2; */
   transition: 0.5s;
 }
 .card_div b {
@@ -69,7 +69,7 @@
   background-color: white;
   color: #2bae66ff;
   transition: 1s;
-  scale: 1.1;
+  /* scale: 1.1; */
 }
 .delivery_main {
   display: flex;
@@ -95,7 +95,7 @@
 }
 .delivery_div:hover {
   box-shadow: 3px 3px 3px 3px #99dbb2;
-  scale: 1.2;
+  /* scale: 1.2; */
   transition: 1s;
 }
 .discount_main {
@@ -129,11 +129,11 @@
   justify-content: space-evenly;
   /* border: 1px solid #2bae66ff; */
   border-radius: 5px;
-  box-shadow: 2px 2px 2px 2px #99dbb2;
   background-color: aliceblue;
 }
 .discount_full_div:hover {
-  scale: 1.2;
+  box-shadow: 1px 1px 1px 6px rgb(139, 239, 184);
+  /* scale: 1.2; */
   transition: 1s;
 }
 .discount_day {
@@ -176,7 +176,7 @@
 }
 .buy_sell_div:hover {
   box-shadow: 3px 3px 3px 3px #99dbb2;
-  scale: 1.2;
+  /* scale: 1.2; */
   transition: 1s;
 }
 .img_slide {
@@ -185,7 +185,14 @@
   height: 400px;
   width: 80%;
 }
-
+.img_slide h1 {
+  display: flex;
+  justify-content: center;
+  width: 1490px;
+  color: #2bae66ff;
+  font-size: 30px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
 .img_slide div {
   position: relative;
   animation: 8s img_slide infinite;

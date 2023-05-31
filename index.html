@@ -1,242 +1,184 @@
-<!DOCTYPE >
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="./assets/CSS/index.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/CSS/index-1.css" />
+    <link rel="stylesheet" href="./assets/CSS/head.css" />
+    <!-- <link rel="stylesheet" href="./assets/details.js" /> -->
   </head>
-
   <body>
-    <div>
-      <header class="head">
-        <div class="logo">
-          <img src="./assets/image/logo.png" alt="logo" width="100px" />
-        </div>
-        <div class="h-mid">
-          <a href="./pages/4.index.html"> <nav>Home</nav></a>
-          <nav><a href="#foot"> Contact</a></nav>
-          <nav><a href="#about"> About us</a></nav>
-        </div>
-        <div class="btn">
-          <div>
-            <button type="button" onclick="sign()">Sign up</button>
-          </div>
-          <div class="btn-1">
-            <button class="no">Log In</button>
-            <div class="no-dw">
-              <a type="text" onclick="customer()"> as Customer</a>
-              <a type="text" onclick="admin()"> as Admin</a>
-            </div>
+    <header>
+      <div>
+        <img src="./assets/image/RISHIMARKET (1).png" alt="logo" width="50%" />
+      </div>
+      <div class="head">
+        <p>Home</p>
+        <p onclick="about()">About us</p>
+        <div class="dropdown">
+          <p class="dropbtn">Register</p>
+          <div class="dropdown-content">
+            <a onclick="buy_sign()">as Buyer</a>
+            <a onclick="sell_sign()">as Seller</a>
           </div>
         </div>
-        <div class="mobile-menu-div">
-          <img
-            class="mobile-menu"
-            src="./assets/image/toggle-menu (1).png"
-            alt="mobile-menu-icon"
-          />
+        <div class="dropdown">
+          <p class="dropbtn">Log in</p>
+          <div class="dropdown-content">
+            <a onclick="buy_login()">as Buyer</a>
+            <a onclick="sell_login()">as Seller</a>
+          </div>
         </div>
+        <!-- <p onclick="customer()">Log In</p> -->
+      </div>
+      <div>
+        <img src="./assets/image/logo.png" alt="profile" width="100px" />
+      </div>
+    </header>
 
-        <div id="google_translate_element"></div>
+    <section class="content_sec">
+      <img src="./assets/image/left.jpg" alt="left" width="500px" />
+      <p class="content_sec_p">
+        If you are busy <br />
+        Buy products in RISHI
+      </p>
+      <img src="./assets/image/right.png" alt="right" width="570px" />
+    </section>
 
-        <script type="text/javascript">
-          function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-              {
-                pageLanguage: "en",
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-              },
-              "google_translate_element"
-            );
-          }
-        </script>
+    <section class="detail_para">
+      <p>Buy and Sell your Agricultural Products online</p>
+    </section>
 
-        <script
-          type="text/javascript"
-          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-        ></script>
-      </header>
-      <section class="gif">
-        <img src="./assets/image/index.gif" alt="gif" />
-      </section>
-      <section>
-        <nav></nav>
-        <nav></nav>
-      </section>
-    </div>
-    <div class="scroll-ln">
-      <h3 class="ln">OUR FUTURE PRODUCTS</h3>
-      <div class="scroll">| FRESH JUICE | HONEY | CHOCOLATES | JAM |</div>
-    </div>
-    <h3 id="about">About us</h3>
-    <main class="about">
-      <div id="img" class="imgp-1">
-        <div class="img-1">
-          <img
-            src="./assets/image/sunny-meadow.jpg"
-            alt="sunny"
-            width="700px"
-          />
+    <main class="card_main">
+      <div class="card_div">
+        <img src="./assets/image/card_fruits.jpg" alt="Fruits" width="275px" />
+
+        <b>Fruits</b>
+        <button onclick="buy_login()">Buy Now</button>
+        <button onclick="sell_login()">Sell Now</button>
+      </div>
+      <div class="card_div">
+        <img
+          src="./assets/image/card_vegetables.jpg"
+          alt="vegetable"
+          width="275px"
+        />
+        <b>Vegetables</b>
+        <button onclick="buy_login()">Buy Now</button>
+        <button onclick="sell_login()">Sell Now</button>
+      </div>
+      <div class="card_div">
+        <img src="./assets/image/card_tea.jpg" alt="tea" width="275px" />
+        <b>Tea and Coffee</b>
+        <button onclick="buy_login()">Buy Now</button>
+        <button onclick="sell_login()">Sell Now</button>
+      </div>
+      <div class="card_div">
+        <img src="./assets/image/card_grain.jpg" alt="grain" width="275px" />
+        <b>Cereals and Grains</b>
+        <button onclick="buy_login()">Buy Now</button>
+        <button onclick="sell_login()">Sell Now</button>
+      </div>
+    </main>
+
+    <main class="delivery_main">
+      <div class="delivery_div">
+        <img src="./assets/image/delivery_truck.jpg" alt="truck" />
+        <p>We have a Fast and Free delivery System</p>
+      </div>
+      <div class="delivery_div">
+        <img src="./assets/image/delivery_fresh_eatables.jpg" alt="fresh_eat" />
+        <p>We have a Fresh and Organic Products</p>
+      </div>
+    </main>
+
+    <main class="discount_main">
+      <div class="discount_full_div">
+        <div class="discount_div">
+          <img src="./assets/image/barcode.png" alt="barcode" width="85px" />
         </div>
-        <div>
-          <h3>About our Website</h3>
-          <p>
-            We created this website for farmers, who are not able to sell their
-            productions, we help him to sell their products with a profitable
-            price. We take all responsibilities including transaction money,
-            transportation and sell their products.
-          </p>
+        <div class="discount_div">
+          <nav class="discount_day">
+            <h5>UPTO 40% off</h5>
+            <h2>FARMER'S DAY</h2>
+            <p></p>
+          </nav>
+          <nav class="discount_date">
+            <h5>EXPIRATION DATE</h5>
+            <p>30/02/2023</p>
+          </nav>
         </div>
       </div>
-      <div id="img" class="imgp-2">
-        <div class="img-2">
-          <img
-            src="./assets/image/farmer-problem.jpg"
-            alt="plo"
-            width="700px"
-          />
+      <div class="discount_full_div">
+        <div class="discount_div">
+          <img src="./assets/image/barcode.png" alt="barcode" width="85px" />
         </div>
-        <div>
-          <h3>What is the Problem?</h3>
-          <p>
-            Many Farmers are not able to sell their products. If their is a way
-            to sell their products it contains less profit amount.
-          </p>
-        </div>
-      </div>
-      <div class="img-3">
-        <div>
-          <img
-            src="./assets/image/farmer with money.jpg"
-            alt="farmer-with-money"
-            width="700px"
-          />
-        </div>
-        <div>
-          <h3>How we solved the Problem?</h3>
-          <p>
-            We solved the problem by take their products with some profit
-            amount, which is profit for all people who are their in this chain.
-          </p>
-        </div>
-      </div>
-      <div class="img-4">
-        <div>
-          <img src="./assets/image/plough.jpg" alt="plough" width="700px" />
-        </div>
-        <div>
-          <h3>About Agriculture</h3>
-          <p>
-            Agriculture is the art and science of cultivating the soil, growing
-            crops and raising livestock. It includes the preparation of plant
-            and animal products for people to use and their distribution to
-            markets. Agriculture provides most of the world's food and fabrics.
-          </p>
+        <div class="discount_div">
+          <nav class="discount_day">
+            <h5>UPTO 30% off</h5>
+            <h2>STUDENT'S DAY</h2>
+            <p></p>
+          </nav>
+          <nav class="discount_date">
+            <h5>EXPIRATION DATE</h5>
+            <p>30/02/2023</p>
+          </nav>
         </div>
       </div>
     </main>
 
-    <h2>Our Famous Products</h2>
-    <section class="f-products" id="john">
-      <div class="btn-1">
-        <button class="no">Fruits</button>
-        <div class="fp-dw">
-          <a> Apple</a>
-          <a> Orange</a>
-          <a> Graphes</a>
-          <a>Watermelon</a>
-          <a>Banana</a>
-          <a>Lemon</a>
-          <a>Pine Apple</a>
-        </div>
+    <section class="img_slide">
+      <h1>Our Products</h1>
+      <div>
+        <img src="./assets/image/home-fruit.jpg" alt="fruit_img" />
+        <img src="./assets/image/home-vegetable.jpg" alt="vegetable_img" />
+        <img src="./assets/image/home-tea.jpg" alt="tea_img" />
+        <img src="./assets/image/home-grain.jpg" alt="grain_img" />
       </div>
-      <div class="btn-1">
-        <button class="no">Vegetables</button>
-        <div class="fp-dw">
-          <a> Tomato</a>
-          <a> Potato</a>
-          <a>Brinjal</a>
-          <a>Onion</a>
-          <a>Bottle Gourd</a>
-          <a>Pumpkin</a>
-        </div>
+    </section>
+
+    <main class="buy_sell_main">
+      <div class="buy_sell_div">
+        <img
+          src="./assets/image/buy_online.png"
+          alt="buy_online"
+          width="350px"
+        />
+        <p>
+          You can buy Eatables in your home or office, whenever and wherever you
+          want
+        </p>
       </div>
-      <div class="btn-1">
-        <button class="no">Grains</button>
-        <div class="fp-dw">
-          <a> Millet</a>
-          <a>Wheat</a>
-          <a> Brown Rice</a>
-          <a>Oats</a>
-          <a>Maize</a>
-        </div>
+      <div class="buy_sell_div">
+        <img src="./assets/image/sell_online.png" alt="sell_online" />
+        <p>You can sell your Agricultural products in your home</p>
       </div>
-      <div class="btn-1">
-        <button class="no">Nuts and Spices</button>
-        <div class="fp-dw">
-          <a> Cashew nut</a>
-          <a> Almond</a>
-          <a>Ground Nut</a>
-          <a>Dates</a>
-          <a>Dry Graphs</a>
-        </div>
+    </main>
+
+    <section class="img_slide">
+      <h1>Our Future Products</h1>
+      <div>
+        <img src="./assets/image/honey.jpg" alt="honey_img" />
+        <img src="./assets/image/juice.jpg" alt="juice_img" />
+        <img src="./assets/image/milk_products.jpg" alt="milk_img" />
+        <img src="./assets/image/nuts.jpg" alt="nuts_img" />
       </div>
-      <!-- <div class="btn-1">
-        <button class="no">Dals</button>
-        <div class="fp-dw">
-          <a> Yellow Moong Dal</a>
-          <a> Orange Masoor Dal</a>
-          <a>Green Moong Dal</a>
-          <a>Black Urad</a>
-          <a>White Dried peas</a>
-        </div>
+    </section>
+
+    <section>
+      <form class="chat-history" action="comment"></form>
+    </section>
+
+    <footer id="foot">
+      <div class="foot-img">
+        <img src="./assets/image/logo (2).png" alt="logo" width="130px" />
       </div>
-      <div class="btn-1">
-        <button class="no">Nursery Plants</button>
-        <div class="fp-dw">
-          <a> Rose Plant</a>
-          <a> Coconut Plant</a>
-          <a>Apple Plant</a>
-          <a>Mango Plant</a>
-          <a> Jackfruit Plant</a>
-        </div>
-      </div> -->
-    </section>
-    <section class="dis">
-      <nav>
-        <img src="./assets/image/discount.png" alt="discount" width="700px" />
-      </nav>
-      <nav class="dis-p">
-        This Special OFFER is for Customers, who buy more than Rs.50,000 of
-        Eatables before <b> NEW YEAR</b>...
-        <p>Code : SONW50000</p>
-      </nav>
-    </section>
-    <section class="dis-ft">
-      <nav>
-        <img src="./assets/image/discount-1.png" alt="discount" width="700px" />
-      </nav>
-      <nav class="dis-ap">
-        This Special OFFER is for Customers, who buy<b> FIRST TIME </b>...
-        <p>Code : SOFT50</p>
-      </nav>
-    </section>
-    <section class="gif">
-      <img src="./assets/image/goal.gif" alt="goal" />
-    </section>
-    <section class="gif">
-      <img src="./assets/image/Delivery.png" alt="delivery" />
-    </section>
-    <section class="big">
-      <img src="./assets/image/free delivery.jpg" alt="free-delivery" />
-    </section>
-    <footer class="foot" id="foot">
       <div class="foot-1">
         <h4>Contact us</h4>
         <ul>
@@ -244,18 +186,23 @@
             class="fa fa-phone"
             style="font-size: 24px; color: rgb(49, 49, 176)"
           ></i>
-          - 9876543210
+          9876543210
         </ul>
         <ul>
           <i
             class="fa fa-envelope"
-            style="font-size: 24px; color: rgb(219, 30, 30)"
+            style="font-size: 24px; color: rgb(245, 11, 11)"
           ></i>
-          - Rishi-market@agri.com
+          Rishi-market@agri.com
         </ul>
         <ul>
           <i class="fa fa-whatsapp" style="font-size: 24px; color: green"></i>
-          - 8967452301
+          8967452301
+        </ul>
+        <ul>
+          <i class="fa fa-home" style="font-size: 24px; color: green"></i>
+          Rishi office, Global Infocity,<br />
+          Perungudi, Chennai 600096
         </ul>
       </div>
       <div class="foot-2">
@@ -264,7 +211,7 @@
           <ul>
             <i
               class="fa fa-youtube-play"
-              style="font-size: 24px; color: red"
+              style="font-size: 24px; color: rgb(254, 4, 4)"
             ></i>
             You Tube
           </ul>
@@ -300,21 +247,105 @@
         <ul>
           Terms and Conditions
         </ul>
+        <ul onclick="review()">
+          Reviews
+        </ul>
       </div>
     </footer>
+    <div class="own">
+      <p onclick="admin()">Admin</p>
+      <p onclick="worker()">Worker</p>
+      <!-- <p onclick="leader_board()">Leader Board</p> -->
+    </div>
     <nav class="copyright">
       @ copyright 2022 RISHI AGRI MARKET | All rights reserved
     </nav>
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+      // import { getDatabase } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
+      // import { initializeApp }
+
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      import {
+        getDatabase,
+        ref,
+        onValue,
+      } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC-FWOIV2irTWli3IBg2kcM9UCqgND13VQ",
+        authDomain: "rishi-agri-organic-market.firebaseapp.com",
+        projectId: "rishi-agri-organic-market",
+        storageBucket: "rishi-agri-organic-market.appspot.com",
+        messagingSenderId: "46817418325",
+        appId: "1:46817418325:web:10b5571b8c78ec64a0c8dc",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+
+      // get complete information about the database and console log it
+      let database = getDatabase();
+      console.log(database);
+
+      // get the current value
+      const starCountRef = ref(database, "name/");
+      onValue(starCountRef, (snapshot) => {
+        // get the update value
+        const data = snapshot.val();
+        console.log(data);
+      });
+    </script>
+
     <script>
-      function sign() {
-        window.location.href = "http://127.0.0.1:5500/pages/1.signin.html";
+      function sell_sign() {
+        window.location.href = "/pages/1.signin.html";
       }
-      function customer() {
-        window.location.href = "http://127.0.0.1:5500/pages/2.Login.html";
+      function sell_login() {
+        window.location.href = "/pages/2.Login.html";
+      }
+      function buy_sign() {
+        window.location.href = "/pages/1.buy-signin.html";
+      }
+      function buy_login() {
+        window.location.href = "/pages/2.buy-login.html";
       }
       function admin() {
-        window.location.href = "http://127.0.0.1:5500/pages/16-admin-home.html";
+        window.location.href = "/pages/16.admin.login.html";
+      }
+      function about() {
+        window.location.href = "/pages/Aboutus.html";
+      }
+      function sell() {
+        window.location.href = "/pages/10.upload.html";
+      }
+      function fruitbuy() {
+        window.location.href = "/pages/5a-fruits.html";
+      }
+      function vegbuy() {
+        window.location.href = "/pages/5b-vegetables.html";
+      }
+      function grainbuy() {
+        window.location.href = "/pages/5d-grain.html";
+      }
+      function teabuy() {
+        window.location.href = "/pages/5c-tea.html";
+      }
+      function review() {
+        window.location.href = "/pages/review.html";
+      }
+      function worker() {
+        window.location.href = "/pages/worker_login.html";
+      }
+      function leader_board() {
+        window.location.href = "/pages/leaderboard_seller.html";
       }
     </script>
+    <!-- <a href="./pages/review.html"></a> -->
   </body>
 </html>

@@ -1,37 +1,56 @@
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
-  background-color: rgb(191, 227, 191);
-}
-.logo img {
-  align-content: center;
-}
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
-}
-.back {
-  width: 280px;
-  height: 50px;
-  margin-top: 35px;
-}
-.pro {
-  margin-right: 50px;
-  margin-top: 35px;
-  width: 300px;
-  color: #2bae66ff;
-  font-size: 30px;
-  height: 50px;
+  /* background-color: rgb(191, 227, 191); */
 }
 .head {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-top: -1px;
-  background-color: #2bae66ff;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px;
   color: white;
-  height: 130px;
+  height: 80px;
+  font-size: 30px;
+  position: fixed;
+  width: 100%;
+  top: 20px;
+  background-color: white;
+  left: 0px;
+  z-index: 1;
+}
+.topic {
+  color: #2bae66ff;
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+}
+.contact {
+  background-color: #2bae66ff;
+  height: 20px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  left: 0px;
+}
+.contact p {
+  margin-top: 2px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  background-color: #2bae66ff;
 }
 .side-bar {
   position: fixed;
@@ -41,15 +60,16 @@ body {
   margin-left: -10px;
   color: white;
   margin-top: 130px;
-  font-size: 30px;
+  font-size: 25px;
   border-radius: 50px;
 }
-.side-bar h3 {
-  margin-left: 10px;
+.side-bar p,
+h3 {
+  padding: 10px 0px 10px 50px;
 }
 .btn button {
   font-size: 30px;
-  width: 280px;
+  width: 480px;
   height: 70px;
   border-radius: 50px;
   margin: 20px;
@@ -76,17 +96,17 @@ body {
   display: block;
 }
 .no-dw a:hover {
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   border-radius: 20px;
+  box-shadow: 0px 8px 16px 0px rgb(103, 181, 99);
 }
 .no-dw {
   display: none;
   position: absolute;
-  background-color: rgb(191, 227, 191);
+  /* background-color: rgb(191, 227, 191); */
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgb(103, 181, 99);
   z-index: 1;
   border-radius: 20px;
-  margin-left: 300px;
+  margin-left: 500px;
   margin-top: -90px;
 }

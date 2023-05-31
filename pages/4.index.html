@@ -13,77 +13,42 @@
   </head>
   <body>
     <header class="head">
-      <button type="button" onclick="submit()" class="before-arrow">
-        <img
-          src="../assets/image/arrowback.png"
-          alt="arrow-back"
-          width="40px"
-        />
-      </button>
-
       <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="130px" />
+        <img src="../assets/image/logo.png" alt="logo" width="80px" />
       </div>
-      <button id="profile" placeholder="Shin Chan">Shin chan</button>
+      <div>
+        <input disabled class="pro" type="text" id="profile" />
+      </div>
+      <div class="name">
+        <p onclick="profile()" id="newimg"></p>
+      </div>
     </header>
-    <main class="img-1">
-      <nav>
-        <img src="../assets/image/Fruits.jpg" alt="Fruits" width="200px" />
-        <br />
-        <button type="button" onclick="fruit()">Fruits</button>
-      </nav>
-      <nav>
+
+    <button onclick="history()">History</button>
+
+    <main class="card_main">
+      <div class="card_div">
+        <img src="../assets/image/card_fruits.jpg" alt="Fruits" width="275px" />
+        <button onclick="fruit()">Fruits</button>
+      </div>
+      <div class="card_div">
         <img
-          src="../assets/image/vegetables.jpg"
-          alt="vegetables"
-          width="200px"
+          src="../assets/image/card_vegetables.jpg"
+          alt="vegetable"
+          width="275px"
         />
-        <br />
-        <button type="button" onclick="veg()">Vegetables</button>
-      </nav>
-      <nav>
-        <img
-          src="../assets/image/Coffee-Tea-Powder-Combo-Pack.jpg"
-          alt="powder"
-          width="200px"
-          height="130px"
-        />
-        <br />
-        <button type="button" onclick="coffee()">Coffee & Tea</button>
-      </nav>
-      <nav>
-        <img
-          src="../assets/image/Cereals-and-Pulses.jpg"
-          alt="grains"
-          width="230px"
-        />
-        <br />
-        <button type="button" onclick="grain()">Cereals & Grains</button>
-      </nav>
+        <button onclick="veg()">Vegetables</button>
+      </div>
+      <div class="card_div">
+        <img src="../assets/image/card_grain.jpg" alt="grain" width="275px" />
+        <button onclick="grain()">Cereals and Grains</button>
+      </div>
+      <div class="card_div">
+        <img src="../assets/image/card_tea.jpg" alt="tea" width="275px" />
+        <button onclick="coffee()">Tea and Coffee</button>
+      </div>
     </main>
 
-    <script>
-      let BIO = JSON.parse(localStorage.getItem("BIO"));
-      console.log(BIO);
-
-      document.getElementById("profile").innerHTML = BIO[0]["FN"];
-
-      submitForm();
-      function submit() {
-        window.location.href = "/pages/3.home.html";
-      }
-      function fruit() {
-        window.location.href = "/pages/5a-fruits.html";
-      }
-      function veg() {
-        window.location.href = "/pages/5b-vegetable.html";
-      }
-      function coffee() {
-        window.location.href = "/pages/5c-tea.html";
-      }
-      function grain() {
-        window.location.href = "/pages/5d-cereals.html";
-      }
-    </script>
+    <script src="../assets/JavaScript/buyer_index.js"></script>
   </body>
 </html>

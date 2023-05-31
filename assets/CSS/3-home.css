@@ -45,6 +45,15 @@ button {
   justify-content: space-between;
   background-color: #2bae66ff;
   height: 120px;
+  align-items: center;
+}
+.head input {
+  width: 200px;
+  height: 40px;
+  font-size: 30px;
+  display: flex;
+  text-align: center;
+  color: #2bae66ff;
 }
 .com-btn nav {
   width: 600px;
