@@ -11,11 +11,25 @@ console.log(login_id);
 const get_obj = buyer_info.find((e) => e.Email === login_id);
 console.log(get_obj);
 
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
+function profile() {
+  window.location.href = "/pages/profile_buy.html";
+}
+function back() {
+  window.history.back();
+}
+
 let total = 0;
 
 // to create the button for place the order
 let btn = document.createElement("button");
-btn.innerText = "Place & Back";
+btn.innerText = "Shop More";
 btn.setAttribute("id", "submit");
 btn.setAttribute("class", "btn");
 document.querySelector("table").append(btn);
@@ -180,13 +194,13 @@ let select_user = info.find(function (event) {
 
 console.log(select_user);
 // to get value from registration form
-const id = document.getElementById("buyer_id");
+const pincode = document.getElementById("pincode");
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
 const Home_Address = document.getElementById("Home_Address");
 
 // Compare the values
-id.value = select_user["id"];
+pincode.value = select_user["Pincode"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
 Home_Address.value = select_user["Home_Address"] || " ";
@@ -196,4 +210,7 @@ function download() {
 }
 function profile() {
   window.location.href = "/pages/profile_buy.html";
+}
+function home() {
+  window.location.href = "/index.html";
 }

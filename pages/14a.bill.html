@@ -13,14 +13,19 @@
       <p>Rishi-market@agri.com</p>
     </div>
     <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
       <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="90px" />
-      </div>
-      <div class="topic">
-        <!-- <input disabled class="pro" type="text" id="profile" /> -->
-        <p onclick="home()">Home</p>
-        <p onclick="about()">About Us</p>
-        <p onclick="service()">Services</p>
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
       </div>
       <div class="name">
         <p onclick="profile()" id="newimg"></p>
@@ -29,26 +34,46 @@
 
     <div class="details">
       <h3 class="btn">Your Pickup details:</h3>
-      <div class="detail">
-        <input disabled id="seller_id" type="number" />
-
-        <input type="text" id="First_name" placeholder="name" disabled />
-        <input
-          type="number"
-          id="Phone_Number"
-          placeholder="Phone number"
-          maxlength="10"
-          disabled
-        />
-
-        <input
-          class="address_input"
-          type="text"
-          id="Land_Address"
-          placeholder="address"
-          disabled
-        />
-      </div>
+      <form class="detail">
+        <nav>
+          <label>Name</label> <br />
+          <input type="text" id="First_name" placeholder="name" disabled />
+        </nav>
+        <nav>
+          <label>Phone Number</label> <br />
+          <input
+            type="number"
+            id="Phone_Number"
+            placeholder="Phone number"
+            maxlength="10"
+            minlength="10"
+            disabled
+          />
+        </nav>
+        <nav>
+          <label>Address</label> <br />
+          <input
+            type="text"
+            id="Land_Address"
+            placeholder="address"
+            style="width: 500px"
+            required
+            disabled
+          />
+        </nav>
+        <nav>
+          <label>Pincode</label> <br />
+          <input
+            id="pincode"
+            type="tel"
+            pattern="[0-9]{6}"
+            maxlength="6"
+            minlength="6"
+            disabled
+          />
+        </nav>
+        <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
+      </form>
     </div>
 
     <main class="table">

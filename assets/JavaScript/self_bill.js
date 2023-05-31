@@ -67,3 +67,10 @@ for (let i = 0; i < Card.length; i++) {
 
   document.querySelector(".table").append(table_card);
 }
+
+function back() {
+  window.history.back();
+}
+function home() {
+  window.location.href = "/index.html";
+}

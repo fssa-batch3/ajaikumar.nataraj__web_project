@@ -1,3 +1,35 @@
+let buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
+console.log(buyer_info);
+
+let login_id = JSON.parse(localStorage.getItem("buyer_logIn"));
+console.log(login_id);
+
+const get_obj = buyer_info.find((e) => e.Email === login_id);
+console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
+let searchbar = document.getElementById("searchbar");
+let cards = document.getElementsByClassName("card_div");
+// compare the values from search bar and name from each card
+searchbar.addEventListener("input", () => {
+  for (let i = 0; i < cards.length; i++) {
+    const element = cards[i];
+    if (
+      element.innerHTML.toLowerCase().includes(searchbar.value.toLowerCase())
+    ) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
+    }
+  }
+});
+
 // get detail from add to cart stored data
 let Card = JSON.parse(localStorage.getItem("added_list"));
 console.log(Card);
@@ -5,7 +37,7 @@ console.log(Card);
 const detail = JSON.parse(localStorage.getItem("added_list"));
 
 // Card creating by using JavaScript by for loop
-for (let i = 0; i <= Card.length; i++) {
+for (let i = 0; i < Card.length; i++) {
   let findDetail = detail.find(function (event) {
     try {
       let id = event["ProductId"];
@@ -63,7 +95,7 @@ for (let i = 0; i <= Card.length; i++) {
   div_card.append(edit);
 
   let cancel = document.createElement("button");
-  cancel.innerText = "Cancel";
+  cancel.innerText = "Remove";
   cancel.setAttribute("id", "submit");
   cancel.setAttribute("type", "submit");
   div_card.append(cancel);
@@ -77,20 +109,6 @@ for (let i = 0; i <= Card.length; i++) {
     }
   }
 
-  // // check the buying qty for minimum of 1kg
-  // // Get the input element
-  // let input = document.getElementsByClassName("bQty");
-
-  // // Listen for input changes
-  // input.addEventListener("input", function () {
-  //   let value = parseInt(input.value, 10); // Parse the input value as an integer
-
-  //   // Check if the value is less than 1
-  //   if (value < 1 || isNaN(value)) {
-  //     input.value = 1; // Set the value to 1
-  //   }
-  // });
-
   // edit value of the card while click the "edit" button
   edit.addEventListener("click", function (event) {
     event.preventDefault();
@@ -98,9 +116,6 @@ for (let i = 0; i <= Card.length; i++) {
     if (input_value.value < 1) {
       alert("Don't enter quantity below 1 kg");
       return;
-      // if (alert == true) {
-      //   location.reload();
-      // }
     }
 
     try {
@@ -180,7 +195,7 @@ for (let i = 0; i <= Card.length; i++) {
 }
 
 function back() {
-  window.location.href = "/pages/5a-fruits.html";
+  window.history.back();
 }
 
 function order() {
@@ -188,4 +203,7 @@ function order() {
 }
 function profile() {
   window.location.href = "/pages/profile_buy.html";
+}
+function home() {
+  window.location.href = "/index.html";
 }

@@ -24,6 +24,10 @@
     </header>
     <form class="main" id="form">
       <div class="profile">
+        <nav class="extraDetail">
+          <p>UserId:</p>
+          <p id="userId"></p>
+        </nav>
         <img src="../assets/image/profile.png" alt="apple" /> <br />
         <label for="Home_Address">Home Address</label>
         <input id="Home_Address" class="input" placeholder="Home Address" />
@@ -58,80 +62,103 @@
         </datalist>
       </div>
       <div class="form" id="form">
+        <nav onclick="leaderBoard()" class="extraDetail">
+          <p>Points:</p>
+          <p id="points"></p>
+        </nav>
         <label for="User name">User name</label> <br />
         <input id="First_name" class="input" placeholder="User Name" />
         <label for="ph no">Phone Number</label>
-        <input id="Phone_Number" class="input" placeholder="Phone Number" />
+        <input
+          type="tel"
+          id="Phone_Number"
+          pattern="[6-9]{1}[0-9]{9}"
+          class="input"
+          maxlength="10"
+          minlength="10"
+          placeholder="Phone Number"
+        />
         <label for="email">Email</label>
         <input id="Email" class="input" placeholder="Email" disabled />
-        <label for="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          class="input"
-          placeholder="Password"
-          pattern="^(?!\s)(?!.*\s)[^\s]{6,}$"
-        /><i class="bi bi-eye-slash" id="togglePassword"></i>
         <label for="Date of Birth">Date of Birth</label>
         <input id="DOB" type="date" class="input" placeholder="Date of Birth" />
+        <label for="pincode">Pincode</label>
+        <input
+          id="pincode"
+          type="tel"
+          class="input"
+          placeholder="Pincode"
+          pattern="[0-9]{6}"
+          maxlength="6"
+          minlength="6"
+        />
 
-        <label for="state">State</label>
+        <label for="district">District</label>
         <input
           type="text"
-          id="state"
-          list="State"
-          placeholder="Select your state"
+          id="district"
+          list="Districts"
+          placeholder="Select your district"
+          autocomplete="none"
         />
-        <datalist id="State" name="State">
-          <option value="" selected disabled>Select State</option>
-          <option value="Andhra Pradesh">Andhra Pradesh</option>
-          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-          <option value="Assam">Assam</option>
-          <option value="Bihar">Bihar</option>
-          <option value="Chhattisgarh">Chhattisgarh</option>
-          <option value="Goa">Goa</option>
-          <option value="Gujarat">Gujarat</option>
-          <option value="Haryana">Haryana</option>
-          <option value="Himachal Pradesh">Himachal Pradesh</option>
-          <option value="Jharkhand">Jharkhand</option>
-          <option value="Karnataka">Karnataka</option>
-          <option value="Kerala">Kerala</option>
-          <option value="Madhya Pradesh">Madhya Pradesh</option>
-          <option value="Maharashtra">Maharashtra</option>
-          <option value="Manipur">Manipur</option>
-          <option value="Meghalaya">Meghalaya</option>
-          <option value="Mizoram">Mizoram</option>
-          <option value="Nagaland">Nagaland</option>
-          <option value="Odisha">Odisha</option>
-          <option value="Punjab">Punjab</option>
-          <option value="Rajasthan">Rajasthan</option>
-          <option value="Sikkim">Sikkim</option>
-          <option value="Tamil Nadu">Tamil Nadu</option>
-          <option value="Telangana">Telangana</option>
-          <option value="Tripura">Tripura</option>
-          <option value="Uttar Pradesh">Uttar Pradesh</option>
-          <option value="Uttarakhand">Uttarakhand</option>
-          <option value="West Bengal">West Bengal</option>
+        <datalist id="Districts" name="Districts">
+          <option value="">Select District</option>
+          <option value="Ariyalur">Ariyalur</option>
+          <option value="Chengalpattu">Chengalpattu</option>
+          <option value="Chennai">Chennai</option>
+          <option value="Coimbatore">Coimbatore</option>
+          <option value="Cuddalore">Cuddalore</option>
+          <option value="Dharmapuri">Dharmapuri</option>
+          <option value="Dindigul">Dindigul</option>
+          <option value="Erode">Erode</option>
+          <option value="Kallakurichi">Kallakurichi</option>
+          <option value="Kancheepuram">Kancheepuram</option>
+          <option value="Kanyakumari">Kanyakumari</option>
+          <option value="Karur">Karur</option>
+          <option value="Krishnagiri">Krishnagiri</option>
+          <option value="Madurai">Madurai</option>
+          <option value="Nagapattinam">Nagapattinam</option>
+          <option value="Namakkal">Namakkal</option>
+          <option value="Nilgiris">Nilgiris</option>
+          <option value="Perambalur">Perambalur</option>
+          <option value="Pudukkottai">Pudukkottai</option>
+          <option value="Ramanathapuram">Ramanathapuram</option>
+          <option value="Salem">Salem</option>
+          <option value="Sivaganga">Sivaganga</option>
+          <option value="Tenkasi">Tenkasi</option>
+          <option value="Thanjavur">Thanjavur</option>
+          <option value="Theni">Theni</option>
+          <option value="Thiruvallur">Thiruvallur</option>
+          <option value="Thiruvarur">Thiruvarur</option>
+          <option value="Thoothukudi">Thoothukudi</option>
+          <option value="Tiruchirappalli">Tiruchirappalli</option>
+          <option value="Tirunelveli">Tirunelveli</option>
+          <option value="Tirupathur">Tirupathur</option>
+          <option value="Tiruppur">Tiruppur</option>
+          <option value="Tiruvannamalai">Tiruvannamalai</option>
+          <option value="Vellore">Vellore</option>
+          <option value="Viluppuram">Viluppuram</option>
+          <option value="Virudhunagar">Virudhunagar</option>
         </datalist>
-        <label for="country">Country</label>
+        <label for="state">State</label>
         <input
-          id="country"
+          id="state"
           name="type"
           class="input"
           list="countries"
           autocomplete="off"
-          value="India"
+          value="TamilNadu"
         />
         <datalist id="countries">
-          <option value="India"></option>
+          <option value="TamilNadu">TamilNadu</option>
         </datalist>
         <button type="submit">SUBMIT</button>
       </div>
     </form>
     <footer></footer>
 
-    <!-- <script src="/assets/JavaScript/seller_profile_edit.js"></script> -->
-    <script>
+    <script src="/assets/JavaScript/seller_profile_edit.js"></script>
+    <!-- <script>
       const inputDate = document.getElementById("DOB");
       const today = new Date();
       today.setFullYear(today.getFullYear() - 18);
@@ -292,6 +319,6 @@
 
         // this.classList.toggle("bi-eye");
       });
-    </script>
+    </script> -->
   </body>
 </html>

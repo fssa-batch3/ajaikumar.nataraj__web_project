@@ -21,14 +21,14 @@ let select_user = info.find(function (event) {
 
 console.log(select_user);
 // to get value from registration form
-const id = document.getElementById("seller_id");
+const Pincode = document.getElementById("pincode");
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
 const Land_Address = document.getElementById("Land_Address");
 
 // Compare the values
 
-id.value = select_user["id"];
+Pincode.value = select_user["Pincode"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
 Land_Address.value = select_user["Home_Address"] || "";
@@ -38,4 +38,10 @@ function profile() {
 }
 function download() {
   window.print();
+}
+function back() {
+  window.history.back();
+}
+function home() {
+  window.location.href = "/index.html";
 }

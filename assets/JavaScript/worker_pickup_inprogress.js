@@ -226,3 +226,9 @@ for (let i = 0; i < newUploadList.length; i++) {
 function store() {
   window.location.href = "/pages/19a-store.html";
 }
+function back() {
+  window.history.back();
+}
+function home() {
+  window.location.href = "/index.html";
+}

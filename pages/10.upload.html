@@ -17,14 +17,19 @@
       <p>Rishi-market@agri.com</p>
     </div>
     <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
       <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="90px" />
-      </div>
-      <div class="topic">
-        <!-- <input disabled class="pro" type="text" id="profile" /> -->
-        <p onclick="home()">Home</p>
-        <p onclick="about()">About Us</p>
-        <p onclick="service()">Services</p>
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
       </div>
       <div class="name">
         <p onclick="profile()" id="newimg"></p>
@@ -45,25 +50,25 @@
       <div class="full_list">
         <div class="list">
           <nav>
-            <label for="url">Enter Your Url</label>
+            <label for="url">Product's Url</label>
             <input
               required="required"
               type="url"
               id="url"
-              placeholder="Enter Url"
+              placeholder="Enter Image Url"
             />
           </nav>
           <nav>
-            <label for="name">Enter Your Product Name</label>
+            <label for="name">Product's Name</label>
             <input
               required="required"
               type="text"
               id="product"
-              placeholder="Your Product Name"
+              placeholder="Your Product's Name"
             />
           </nav>
           <nav>
-            <label for="type">Enter Your Product Type</label>
+            <label for="type">Product's Type</label>
             <input
               required="required"
               list="Types"
@@ -80,9 +85,7 @@
             </datalist>
           </nav>
           <nav>
-            <label for="description">
-              Type description about your products
-            </label>
+            <label for="description"> Description about your product </label>
             <br />
             <input
               required="required"
@@ -95,40 +98,80 @@
         </div>
         <div class="list">
           <nav>
-            <label for="price">Enter Your Price</label>
+            <label for="price">Product's Price</label>
             <input
               required="required"
               type="number"
               id="price"
-              placeholder="Enter Your Price per kg"
+              placeholder="Enter Your Product's Price per kg"
             />
           </nav>
           <nav>
-            <label for="qty">Enter Your Quantity</label>
+            <label for="qty">Product's Quantity</label>
             <input
               required="required"
               type="number"
               id="qty"
-              placeholder="Enter Your Product Quantity"
+              placeholder="Enter Your Product's Quantity"
             />
           </nav>
           <nav>
-            <label for="qty">Enter Your City Name</label>
+            <label for="qty">City Name</label>
             <input
               required="required"
               type="text"
               id="city"
-              placeholder="Enter Your City"
+              placeholder="Enter Your City Name"
             />
           </nav>
           <nav>
-            <label for="qty">Enter Your District</label>
+            <label for="District">District</label> <br />
             <input
-              required="required"
               type="text"
               id="District"
-              placeholder="Enter Your District"
+              list="Districts"
+              placeholder="Select your district"
+              autocomplete="jhvygcy"
             />
+            <datalist id="Districts" name="Districts">
+              <option value="">Select District</option>
+              <option value="Ariyalur">Ariyalur</option>
+              <option value="Chengalpattu">Chengalpattu</option>
+              <option value="Chennai">Chennai</option>
+              <option value="Coimbatore">Coimbatore</option>
+              <option value="Cuddalore">Cuddalore</option>
+              <option value="Dharmapuri">Dharmapuri</option>
+              <option value="Dindigul">Dindigul</option>
+              <option value="Erode">Erode</option>
+              <option value="Kallakurichi">Kallakurichi</option>
+              <option value="Kancheepuram">Kancheepuram</option>
+              <option value="Kanyakumari">Kanyakumari</option>
+              <option value="Karur">Karur</option>
+              <option value="Krishnagiri">Krishnagiri</option>
+              <option value="Madurai">Madurai</option>
+              <option value="Nagapattinam">Nagapattinam</option>
+              <option value="Namakkal">Namakkal</option>
+              <option value="Nilgiris">Nilgiris</option>
+              <option value="Perambalur">Perambalur</option>
+              <option value="Pudukkottai">Pudukkottai</option>
+              <option value="Ramanathapuram">Ramanathapuram</option>
+              <option value="Salem">Salem</option>
+              <option value="Sivaganga">Sivaganga</option>
+              <option value="Tenkasi">Tenkasi</option>
+              <option value="Thanjavur">Thanjavur</option>
+              <option value="Theni">Theni</option>
+              <option value="Thiruvallur">Thiruvallur</option>
+              <option value="Thiruvarur">Thiruvarur</option>
+              <option value="Thoothukudi">Thoothukudi</option>
+              <option value="Tiruchirappalli">Tiruchirappalli</option>
+              <option value="Tirunelveli">Tirunelveli</option>
+              <option value="Tirupathur">Tirupathur</option>
+              <option value="Tiruppur">Tiruppur</option>
+              <option value="Tiruvannamalai">Tiruvannamalai</option>
+              <option value="Vellore">Vellore</option>
+              <option value="Viluppuram">Viluppuram</option>
+              <option value="Virudhunagar">Virudhunagar</option>
+            </datalist>
           </nav>
           <!-- <nav>
             <label for="place">Enter your Pickup Address</label>

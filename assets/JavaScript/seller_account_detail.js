@@ -28,30 +28,29 @@ cardExpDateInput.min =
 const oneUser = JSON.parse(localStorage.getItem("logIn"));
 const user_info = JSON.parse(localStorage.getItem("user_info"));
 let select_user = user_info.find(function (event) {
-  try {
-    let customerEmail = event["Email"];
-    if (user_info == customerEmail) {
-      return true;
-    } else if (oneUser == customerEmail) {
-      return true;
-    }
-  } catch (error) {
-    console.error(error);
+  // try {
+  let customerEmail = event["Email"];
+  if (oneUser == customerEmail) {
+    return true;
   }
+  // else if (oneUser == customerEmail) {
+  //   return true;
+  // }
+  // } catch (error) {
+  //   console.error(error);
+  // }
 });
 
 console.log(select_user);
 // to get value from registration form
 const Card_no = document.getElementById("Bank_Card_no");
 const holder_name = document.getElementById("holder_name");
-// const ifsc = document.getElementById("ifsc_code");
 const cvv_no = document.getElementById("cvv_no");
 const exp_date = document.getElementById("card_exp_date");
 
 // Compare the values
 Card_no.value = select_user["Bank_Card_no"] || "";
 holder_name.value = select_user["Account_holder_name"] || "";
-// ifsc.value = select_user["IFSC_Code"] || "";
 cvv_no.value = select_user["CVV_No"] || "";
 exp_date.value = select_user["Card_Expiry_Date"];
 
@@ -63,14 +62,12 @@ form.addEventListener("submit", function (event) {
   try {
     let Bank_Card_no = document.getElementById("Bank_Card_no").value;
     let Account_holder_name = document.getElementById("holder_name").value;
-    // let IFSC_Code = document.getElementById("ifsc_code").value;
     let CVV_No = document.getElementById("cvv_no").value;
     let Card_Expiry_Date = document.getElementById("card_exp_date").value;
 
     let newData = {
       Bank_Card_no,
       Account_holder_name,
-      // IFSC_Code,
       CVV_No,
       Card_Expiry_Date,
     };
@@ -89,12 +86,15 @@ form.addEventListener("submit", function (event) {
   }
 });
 
-function bill() {
-  window.location.href = "/pages/14.product-bill.html";
-}
+// function bill() {
+//   window.location.href = "/pages/14.product-bill.html";
+// }
 function profile() {
   window.location.href = "/pages/profile.html";
 }
 function back() {
   window.history.back();
+}
+function home() {
+  window.location.href = "/index.html";
 }

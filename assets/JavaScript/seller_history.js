@@ -8,14 +8,22 @@ console.log(login_id);
 const get_obj = id.find((e) => e.Email === login_id);
 console.log(get_obj);
 
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 // get details from localstorage
 let Card = JSON.parse(localStorage.getItem("owner_upload_list"));
 
 for (let i = 0; i < Card.length; i++) {
+  console.log(Card[i]["seller_id"]);
+  console.log(get_obj["id"]);
+  let data = Card[i]["new_owner_data"];
+  let total = 0;
   if (Card[i]["seller_id"] == get_obj["id"]) {
-    let data = Card[i]["new_owner_data"];
-    let total = 0;
-
     let form = document.createElement("form");
     form.setAttribute("class", "form");
     form.setAttribute("action", "bill");
@@ -24,31 +32,13 @@ for (let i = 0; i < Card.length; i++) {
     bill_div.setAttribute("class", "bill");
     form.append(bill_div);
 
-    // let p1 = document.createElement("img");
-    // p1.setAttribute("src", "../assets/image/wrong.png");
-    // p1.setAttribute("class", "img");
-    // // p1.setAttribute("width", "50px");
-    // // p1.setAttribute("height", "50px");
-    // bill_div.append(p1);
-
     let p2 = document.createElement("p");
     p2.innerText = "Order Id : " + Card[i]["billId"];
     bill_div.append(p2);
 
-    // let p3 = document.createElement("img");
-    // p3.setAttribute("src", "../assets/image/tick_green.jpg");
-    // p3.setAttribute("class", "img");
-    // // p3.setAttribute("width", "50px");
-    // // p3.setAttribute("height", "50px");
-    // bill_div.append(p3);
-
     let buy_div = document.createElement("div");
     buy_div.setAttribute("class", "buy");
     form.append(buy_div);
-
-    // let p4 = document.createElement("p");
-    // p4.innerText = "Buyer Id : " + Card[i]["seller_id"];
-    // buy_div.append(p4);
 
     let ful_div = document.createElement("div");
     ful_div.setAttribute("class", "ful");
@@ -75,6 +65,15 @@ for (let i = 0; i < Card.length; i++) {
       ul4.innerHTML = "Total Amount : " + data[j]["Price"] * data[j]["bQty"];
       ul_div.append(ul4);
 
+      let info = document.createElement("a");
+      info.innerText = "Edit";
+      info.setAttribute(
+        "href",
+        "/pages/new_seller_sold_product_edit.html?ProductId=" +
+          data[j]["ProductId"]
+      );
+      ul_div.append(info);
+
       // get price total
       total += parseInt(data[j]["Price"]) * parseInt(data[j]["bQty"]);
     }
@@ -92,8 +91,6 @@ for (let i = 0; i < Card.length; i++) {
     let p6 = document.createElement("p");
     p6.innerText = "Picked up Date : " + Card[i]["Pickup_date"];
     date_div.append(p6);
-    // console.log(data[i]["Price"]);
-    // console.log(data[i]["bQty"]);
 
     document.querySelector("body").append(form);
   }
@@ -104,4 +101,11 @@ for (let i = 0; i < Card.length; i++) {
 // }
 function back() {
   window.history.back();
+}
+
+function profile() {
+  window.location.href = "/pages/profile.html";
+}
+function home() {
+  window.location.href = "/index.html";
 }

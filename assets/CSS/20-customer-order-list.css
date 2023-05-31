@@ -4,24 +4,54 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 30px;
 }
-.header {
+.head {
   display: flex;
-  font-size: 40px;
-  /* background-color: #2bae66ff; */
+  align-items: center;
+  justify-content: space-between;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px;
+  color: white;
   height: 80px;
+  font-size: 30px;
+  position: fixed;
   width: 100%;
-  /* border-radius: 50px; */
+  top: 20px;
+  background-color: white;
+  left: 0px;
+  z-index: 1;
 }
-.header button {
-  border-radius: 10px;
-  margin-top: 15px;
-  margin-left: 20px;
+.topic {
+  color: #2bae66ff;
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
 }
-.before-arrow img {
-  /* border-radius: 50px; */
-  margin-left: 20px;
+.contact {
+  background-color: #2bae66ff;
+  height: 20px;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  left: 0px;
+}
+.contact p {
+  margin-top: 2px;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: white;
+  border-radius: 100px;
+  width: 50px;
+  height: 50px;
+  background-color: #2bae66ff;
 }
 .hol {
   text-align: center;

@@ -11,6 +11,12 @@ body {
   color: white;
   height: 80px;
   font-size: 30px;
+  position: fixed;
+  width: 100%;
+  top: 20px;
+  background-color: white;
+  left: 0px;
+  z-index: 1;
 }
 .topic {
   color: #2bae66ff;
@@ -25,6 +31,10 @@ body {
   color: white;
   display: flex;
   justify-content: space-evenly;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  left: 0px;
 }
 .contact p {
   margin-top: 2px;
@@ -44,12 +54,32 @@ body {
 
 .nav {
   display: flex;
-  justify-content: space-around;
-  /* box-shadow: 1px 1px 1px 3px rgb(145, 232, 184); */
-  margin-top: 10px;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  width: 93%;
+  height: 70px;
+  left: 120px;
+  top: 95px;
   border-radius: 5px;
 }
-
+.nav input {
+  width: 400px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px;
+  outline: none;
+  height: 30px;
+}
+.nav button {
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px;
+  outline: none;
+  height: 30px;
+  color: white;
+  background-color: #2bae66ff;
+}
 .nav nav {
   display: flex;
 }
@@ -57,13 +87,34 @@ h2 {
   width: 300px;
   font-size: 20px;
 }
+.placeOrderBtn {
+  margin-top: 110px;
+  margin-left: 1300px;
+}
+.details {
+  position: fixed;
+  top: 100px;
+}
+.details h1 {
+  padding: 0px 0px 0px 0px;
+}
+.detail {
+  margin-top: 0px;
+  display: flex;
+}
+.detail input {
+  margin-top: 0px;
+}
+label {
+  font-size: 25px;
+}
 .card_div {
-  /* padding: 40px 40px 40px 60px; */
   width: 250px;
-  margin-top: 70px;
-  box-shadow: 1px 1px 1px 3px rgb(199, 237, 199);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px;
   border-radius: 6px;
 }
+
 .card_div img {
   margin-top: 10px;
 }
@@ -73,34 +124,80 @@ h2 {
 }
 button {
   font-size: 20px;
-  width: 140px;
+  width: 150px;
   margin: 10px 0px 0px 10px;
   background-color: white;
   border: none;
+  /* border: 1px solid #2bae66ff; */
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px;
   color: #2bae66ff;
   border-radius: 4px;
 }
 button:hover {
   color: white;
   background-color: #2bae66ff;
+  box-shadow: none;
 }
+a {
+  text-decoration: none;
+  color: #2bae66ff;
+}
+.editBtn:hover {
+  color: white;
+}
+/* a:hover {
+  color: white;
+  background-color: #2bae66ff;
+} */
 .button nav {
   display: flex;
   justify-content: space-around;
-  box-shadow: 1.5px 1px 1px 3px rgb(173, 229, 198);
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px;
   margin-top: 20px;
   border-radius: 5px;
 }
 .button button {
   width: 250px;
 }
-a {
+.aTag {
   text-decoration: none;
   color: #2bae66ff;
+  width: 300px;
+  margin-top: 40px;
+  border-radius: 5px;
+  font-size: 25px;
+  border: 1px solid #2bae66ff;
+
+  /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px; */
 }
-a:hover {
-  color: white;
-  background-color: #2bae66ff;
+
+.form [quantity="100"] {
+  box-shadow: green;
+  border: 1px solid #2bae66ff;
+}
+.aTag:hover {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px;
+  border: none;
+}
+/* .aTag p {
+  margin: 10px;
+  font-weight: normal;
+} */
+/* .quantity[aTag-quantity="100"] {
+  box-shadow: green;
+} */
+.productName {
+  font-size: 30px;
+}
+.price {
+  font-size: 22px;
+}
+.type {
+  font-size: 18px;
 }
 .card_main {
   display: grid;
@@ -110,6 +207,7 @@ a:hover {
   /* align-items: center; */
   align-content: center;
   color: #2bae66ff;
+  margin-top: 160px;
 }
 input {
   font-size: 20px;
@@ -117,16 +215,85 @@ input {
   width: 180px;
 }
 
-.amount_total td {
-  font-size: 25px;
-  padding: 20px 0px 0px 50px;
+.amount_total {
+  font-size: 35px;
+  display: flex;
 }
+.amount_total p {
+  margin-left: 20px;
+}
+
+.sideBar {
+  position: fixed;
+  width: 200px;
+  left: 10px;
+  top: 100px;
+  font-size: 15px;
+  color: #2bae66ff;
+  z-index: 1;
+}
+
+/* css for side bar */
+.sidenav {
+  /* height: 100%; */
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 100px;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  color: #2bae66ff;
+  font-size: 20px;
+}
+.sidenav nav {
+  display: flex;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #2bae66ff;
+  display: block;
+  transition: 0.1s;
+}
+
+.sidenav a:hover {
+  color: #2bae66ff;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.check {
+  height: 15px;
+  width: 15px;
+}
+.btnDiv {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+.label {
+  margin-top: 14px;
+}
+
 /* Media query */
 @media screen and (max-width: 600px) {
   header {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(191, 227, 191);
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px;
     text-align: center;
     align-content: center;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

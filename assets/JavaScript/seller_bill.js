@@ -22,7 +22,7 @@ let total = 0;
 
 // to create the button for place the order
 let btn = document.createElement("button");
-btn.innerText = "Save & Upload";
+btn.innerText = "Sell More";
 btn.setAttribute("id", "submit");
 btn.setAttribute("class", "btn");
 document.querySelector(".table").append(btn);

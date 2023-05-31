@@ -1,3 +1,19 @@
+let buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
+console.log(buyer_info);
+
+let login_id = JSON.parse(localStorage.getItem("buyer_logIn"));
+console.log(login_id);
+
+const get_obj = buyer_info.find((e) => e.Email === login_id);
+console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 // get detail from add to cart stored data
 let Card = JSON.parse(localStorage.getItem("added_list"));
 let total = 0;
@@ -7,15 +23,11 @@ console.log(Card);
 const detail = JSON.parse(localStorage.getItem("added_list"));
 
 // Card creating by using JavaScript
-for (let i = 0; i <= Card.length; i++) {
+for (let i = 0; i < Card.length; i++) {
   let findDetail = detail.find(function (event) {
-    try {
-      let id = event["ProductId"];
-      if (Card[i]["ProductId"] == id) {
-        return true;
-      }
-    } catch (error) {
-      console.error(error);
+    let id = event["ProductId"];
+    if (Card[i]["ProductId"] == id) {
+      return true;
     }
   });
   // console.log(Card[i]["Url"]);
@@ -56,7 +68,7 @@ for (let i = 0; i <= Card.length; i++) {
   div_card.append(image);
 
   let delete_product = document.createElement("button");
-  delete_product.innerText = "Cancel";
+  delete_product.innerText = "Remove";
   delete_product.setAttribute("id", "submit");
   delete_product.setAttribute("type", "submit");
   div_card.append(delete_product);
@@ -88,3 +100,10 @@ for (let i = 0; i <= Card.length; i++) {
   document.querySelector(".card_main").append(div_card);
 }
 // for get users details
+
+function back() {
+  window.history.back();
+}
+function home() {
+  window.location.href = "/index.html";
+}

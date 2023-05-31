@@ -8,17 +8,32 @@
     <link rel="stylesheet" href="../assets/CSS/17-admin-index.css" />
   </head>
   <body>
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
     <header class="head">
-      <nav class="back">
-        <img src="../assets/image/arrowback.png" alt="back" width="50px" />
-      </nav>
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
       <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="110px" />
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
       </div>
-      <input type="text" id="profile" class="pro" placeholder="Shin Chan" />
+      <div class="name">
+        <p id="newimg"></p>
+      </div>
     </header>
+
     <div class="side-bar">
-      <h3>Member's List</h3>
+      <h3>Members' List</h3>
       <p onclick="customer()">Mr. Buyer</p>
       <!-- <p>Hotel Customers</p> -->
       <p onclick="seller()">Mr. Vendors</p>

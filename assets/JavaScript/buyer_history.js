@@ -8,6 +8,13 @@ console.log(login_id);
 const get_obj = id.find((e) => e.Email === login_id);
 console.log(get_obj);
 
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;
+
 // get details from localstorage
 let Card = JSON.parse(localStorage.getItem("owner_order_list"));
 
@@ -104,4 +111,7 @@ for (let i = 0; i < Card.length; i++) {
 // }
 function back() {
   window.history.back();
+}
+function profile() {
+  window.location.href = "/pages/profile_buy.html";
 }

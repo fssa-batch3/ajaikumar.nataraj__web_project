@@ -19,32 +19,36 @@ console.log(select_user);
 const email = document.getElementById("Email");
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
-const password = document.getElementById("password");
+const Pincode = document.getElementById("pincode");
 const DOB = document.getElementById("DOB");
 const transport_DOB = document.getElementById("DOB");
 const Home_Address = document.getElementById("Home_Address");
 const Land_Address = document.getElementById("Land_Address");
 const gender = document.getElementById("gender");
 const farmer = document.getElementById("farmer");
-const Aadhar_number = document.getElementById("Aadhar_number");
+// const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
-const country = document.getElementById("country");
+const district = document.getElementById("district");
+const userId = document.getElementById("userId");
+const points = document.getElementById("points");
 
-// // Compare the values
+// Compare the values
 
 email.value = select_user["Email"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-password.value = select_user["Password"];
+Pincode.value = select_user["Pincode"] || "";
 DOB.value = select_user["DOB"];
 transport_DOB.value = select_user["DOB"];
 Home_Address.value = select_user["Home_Address"] || "";
 Land_Address.value = select_user["Land_Address"] || "";
 gender.value = select_user["gender"] || "";
 farmer.value = select_user["farmer"] || "";
-Aadhar_number.value = select_user["Aadhar_number"] || "";
+// Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
-country.value = select_user["country"] || "";
+district.value = select_user["district"] || "";
+userId.innerText = select_user["id"];
+points.innerText = select_user["points"] || 0;
 
 function change() {
   window.location.href = "/pages/profileedit.html";
@@ -104,3 +108,7 @@ togglePassword.addEventListener("click", () => {
 
   // this.classList.toggle("bi-eye");
 });
+
+function leaderBoard() {
+  window.location.href = "/pages/leaderboard_seller.html";
+}

@@ -6,20 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../assets/CSS/20-customer-order-list.css" />
+    <link rel="stylesheet" href="../assets/CSS/history.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="img_div">
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
+      <div class="logo">
         <img
-          src="../assets/image/arrowback.png"
-          alt="arrow-back"
-          class="img"
-          onclick="back()"
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
         />
       </div>
-      <div class="hol">Your History</div>
-      <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="80px" />
+      <div class="name">
+        <p onclick="profile()" id="newimg"></p>
       </div>
     </header>
 

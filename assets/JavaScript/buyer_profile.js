@@ -17,29 +17,29 @@ console.log(select_user);
 const email = document.getElementById("Email");
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
-const password = document.getElementById("password");
+const Pincode = document.getElementById("pincode");
 const DOB = document.getElementById("DOB");
 const transport_DOB = document.getElementById("DOB");
 const Home_Address = document.getElementById("Home_Address");
 const District = document.getElementById("District");
 const gender = document.getElementById("gender");
-// const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
-const country = document.getElementById("country");
+const userId = document.getElementById("userId");
+const points = document.getElementById("points");
 
 // Compare the values
 email.value = select_user["Email"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-password.value = select_user["Password"];
+Pincode.value = select_user["Pincode"] || "";
 DOB.value = select_user["DOB"] || "";
 transport_DOB.value = select_user["DOB"] || "";
 Home_Address.value = select_user["Home_Address"] || "";
 District.value = select_user["District"] || "";
 gender.value = select_user["gender"] || "";
-// Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
-country.value = select_user["country"] || "";
+userId.innerText = select_user["id"];
+points.innerText = select_user["points"] || 0;
 
 // delete option in the page
 
@@ -87,15 +87,19 @@ function change() {
 }
 
 // to show and hide password
-const togglePassword = document.querySelector("#togglePassword");
+// const togglePassword = document.querySelector("#togglePassword");
 
-const changePassword = document.querySelector("#password");
+// const changePassword = document.querySelector("#password");
 
-togglePassword.addEventListener("click", () => {
-  const type =
-    changePassword.getAttribute("type") === "password" ? "text" : "password";
+// togglePassword.addEventListener("click", () => {
+//   const type =
+//     changePassword.getAttribute("type") === "password" ? "text" : "password";
 
-  changePassword.setAttribute("type", type);
+//   changePassword.setAttribute("type", type);
 
-  this.classList.toggle("bi-eye");
-});
+//   this.classList.toggle("bi-eye");
+// });
+
+function leaderBoard() {
+  window.location.href = "/pages/leaderboard_buyer.html";
+}

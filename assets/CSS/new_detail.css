@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
-  height: 490px;
+  height: 470px;
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
     rgba(0, 0, 0, 0.09) 0px 8px 4px;
 }
@@ -42,7 +42,7 @@ body {
     rgba(0, 0, 0, 0.09) 0px 8px 4px;
   justify-content: center;
   /* text-align: center; */
-  height: 460px;
+  height: 430px;
   border-radius: 5px;
 }
 .full_div {
@@ -72,4 +72,13 @@ a {
 }
 .aTag {
   color: #2bae66ff;
+}
+
+button {
+  color: white;
+  background-color: #2bae66ff;
+  border: none;
+  font-size: 25px;
+  padding: 5px;
+  border-radius: 5px;
 }

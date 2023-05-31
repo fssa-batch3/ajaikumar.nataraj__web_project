@@ -116,30 +116,29 @@ console.log(select_user);
 const email = document.getElementById("Email");
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
-const password = document.getElementById("password");
+const pincode = document.getElementById("pincode");
 const DOB = document.getElementById("DOB");
 const transport_DOB = document.getElementById("DOB");
 const Home_Address = document.getElementById("Home_Address");
-const District = document.getElementById("District");
+const District = document.getElementById("district");
 const gender = document.getElementById("gender");
-// const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
-const country = document.getElementById("country");
-
+const userId = document.getElementById("userId");
+const points = document.getElementById("points");
 // Compare the values
 
 email.value = select_user["Email"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-password.value = select_user["Password"];
+pincode.value = select_user["Pincode"] || "";
 DOB.value = select_user["DOB"];
 transport_DOB.value = select_user["DOB"];
 Home_Address.value = select_user["Home_Address"] || "";
 District.value = select_user["District"] || "";
 gender.value = select_user["gender"] || "";
-// Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
-country.value = select_user["country"] || "";
+userId.innerText = select_user["id"];
+points.innerText = select_user["points"] || 0;
 
 // to replace the values
 const form = document.getElementById("form");
@@ -150,29 +149,24 @@ form.addEventListener("submit", function (event) {
     let FullName = document.getElementById("First_name").value;
     // let Email = document.getElementById("Email").value;
     let Phone_number = document.getElementById("Phone_Number").value;
-    let Password = document.getElementById("password").value;
+    let Pincode = document.getElementById("pincode").value;
     let DOB = document.getElementById("DOB").value;
     let transport_DOB = document.getElementById("DOB").value;
     let Home_Address = document.getElementById("Home_Address").value;
-    let District = document.getElementById("District").value;
+    let District = document.getElementById("district").value;
     let gender = document.getElementById("gender").value;
-    // let Aadhar_number = document.getElementById("Aadhar_number").value;
     let state = document.getElementById("state").value;
-    let country = document.getElementById("country").value;
 
     let newData = {
       FullName,
-      // Email,
       Phone_number,
-      Password,
+      Pincode,
       DOB,
       transport_DOB,
       Home_Address,
       District,
       gender,
-      // Aadhar_number,
       state,
-      country,
     };
     console.log(newData);
 
@@ -185,7 +179,6 @@ form.addEventListener("submit", function (event) {
     let findIndex = buyer_info.indexOf(select_user);
     buyer_info[findIndex] = combineData;
     localStorage.setItem("buyer_info", JSON.stringify(buyer_info));
-    // window.location.href = "/pages/profile_buy.html";
     window.history.back();
   } catch (error) {
     console.error(error);
@@ -230,14 +223,18 @@ logout_user.addEventListener("click", function (event) {
 });
 
 // to show and hide password
-const togglePassword = document.querySelector("#togglePassword");
+// const togglePassword = document.querySelector("#togglePassword");
 
-const change = document.querySelector("#password");
+// const change = document.querySelector("#password");
 
-togglePassword.addEventListener("click", () => {
-  const type = change.getAttribute("type") === "password" ? "text" : "password";
+// togglePassword.addEventListener("click", () => {
+//   const type = change.getAttribute("type") === "password" ? "text" : "password";
 
-  change.setAttribute("type", type);
+//   change.setAttribute("type", type);
 
-  this.classList.toggle("bi-eye");
-});
+//   this.classList.toggle("bi-eye");
+// });
+
+function leaderBoard() {
+  window.location.href = "/pages/leaderboard_buyer.html";
+}

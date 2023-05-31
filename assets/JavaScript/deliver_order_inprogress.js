@@ -43,10 +43,10 @@ for (let i = 0; i < Card.length; i++) {
   let data = Card[i]["products"];
   let total = 0;
   console.log(currentDate);
-  console.log(data[i]["Pickup_date"]);
+  // console.log(data[i]["Pickup_date"]);
 
   // check the currentdate and delivery date to show today's products to complete
-  if (currentDate == Card[i]["Delivery_date"]) {
+  if (currentDate >= Card[i]["Delivery_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
     form.setAttribute("action", "bill");
@@ -133,3 +133,22 @@ for (let i = 0; i < Card.length; i++) {
 function store() {
   window.location.href = "/pages/19a-store.html";
 }
+function home() {
+  window.location.href = "/index.html";
+}
+
+let buyer_info = JSON.parse(localStorage.getItem("admin_info"));
+// console.log(buyer_info);
+
+let login_id = JSON.parse(localStorage.getItem("admin_logIn"));
+// console.log(login_id);
+
+const get_obj = buyer_info.find((e) => e.Email === login_id);
+// console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;

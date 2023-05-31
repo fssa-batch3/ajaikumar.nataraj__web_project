@@ -8,41 +8,69 @@
     <link rel="stylesheet" href="../assets/CSS/9a-bill.css" />
   </head>
   <body>
-    <header>
-      <img src="../assets/image/logo.png" alt="logo" width="130px" />
-      <h4 class="btn">Your Product's Bill</h4>
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
       <img
-        class="btn"
-        src="../assets/image/profile.png"
-        alt="profile"
-        width="110px"
-        onclick="profile()"
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
       />
+      <div class="logo">
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
+      </div>
+      <div class="name">
+        <p onclick="profile()" id="newimg"></p>
+      </div>
     </header>
 
     <table>
       <div class="details">
         <h3 class="btn">Your Delivery details:</h3>
         <div class="detail">
-          <input disabled id="buyer_id" type="number" />
-
-          <input disabled type="text" id="First_name" placeholder="name" />
-          <input
-            type="number"
-            id="Phone_Number"
-            placeholder="Phone number"
-            maxlength="10"
-            disabled
-          />
-          <input
-            class="address_input"
-            type="text"
-            id="Home_Address"
-            required
-            placeholder="Delivery Address"
-            disabled
-          />
-
+          <nav>
+            <label>Name</label> <br />
+            <input disabled type="text" id="First_name" placeholder="name" />
+          </nav>
+          <nav>
+            <label>Phone Number</label> <br />
+            <input
+              type="number"
+              id="Phone_Number"
+              placeholder="Phone number"
+              maxlength="10"
+              disabled
+            />
+          </nav>
+          <nav>
+            <label>Delivery Address</label> <br />
+            <input
+              class="address_input"
+              type="text"
+              id="Home_Address"
+              required
+              placeholder="Delivery Address"
+              disabled
+            />
+          </nav>
+          <nav>
+            <label>Pin Code</label> <br />
+            <input
+              id="pincode"
+              type="tel"
+              pattern="[0-9]{6}"
+              maxlength="6"
+              minlength="6"
+            />
+          </nav>
           <!-- <input type="date" id="Pickup_date" placeholder="Pickup date" /> -->
         </div>
       </div>
@@ -73,6 +101,5 @@
     </footer>
 
     <script src="../assets/JavaScript/buyer_bill.js"></script>
-    <script></script>
   </body>
 </html>

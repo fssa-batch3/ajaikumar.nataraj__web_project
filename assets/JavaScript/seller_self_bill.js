@@ -22,13 +22,13 @@ console.log(select_user);
 // to get value from registration form
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
-// const transport_DOB = document.getElementById("Pickup_date");
+const Pincode = document.getElementById("pincode");
 const Land_Address = document.getElementById("Land_Address");
 
 // Compare the values
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-// transport_DOB.value = select_user["transport_DOB"];
+Pincode.value = select_user["Pincode"];
 Land_Address.value = select_user["Home_Address"] || "";
 
 // to replace the values
@@ -38,13 +38,13 @@ form.addEventListener("change", function (event) {
   try {
     let FullName = document.getElementById("First_name").value;
     let Phone_number = document.getElementById("Phone_Number").value;
-    // let transport_DOB = document.getElementById("Pickup_date").value;
+    let Pincode = document.getElementById("pincode").value;
     let Home_Address = document.getElementById("Land_Address").value;
 
     let newData = {
       FullName,
       Phone_number,
-      // transport_DOB,
+      Pincode,
       Home_Address,
     };
     console.log(newData);

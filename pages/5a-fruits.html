@@ -6,30 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../assets/CSS/history.css" />
-    <link rel="stylesheet" href="../assets/CSS/new_buyer.css" />
+    <!-- <link rel="stylesheet" href="../assets/CSS/new_buyer.css" /> -->
   </head>
+  <style>
+    .high_quantity {
+      box-shadow: #e8f6e8;
+    }
+  </style>
   <body>
-    <header>
-      <nav>
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
+      <div class="logo">
         <img
-          src="../assets/image/arrowback.png"
-          alt="arrow"
-          onclick="back()"
-          width="50px"
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
         />
-      </nav>
-      <nav>
-        <img src="../assets/image/logo.png" alt="logo" width="80px" />
-      </nav>
-      <!-- <nav><h2>Fruits Shop</h2></nav> -->
-      <nav>
-        <img
-          src="../assets/image/profile.png"
-          alt="profile"
-          width="80px"
-          onclick="profile()"
-        />
-      </nav>
+      </div>
+      <div onclick="profile()" class="name">
+        <p id="newimg"></p>
+      </div>
     </header>
 
     <section class="sideBar">
@@ -89,12 +95,32 @@
         <input type="search" id="searchbar" placeholder="Search here..." />
       </nav>
       <button onclick="cart()">Go to Cart</button>
+      <button onclick="history()">History</button>
     </div>
 
     <main id="form" class="card_main"></main>
 
     <!-- <script src="../assets/JavaScript/fruit_page.js"></script> -->
     <script>
+      function home() {
+        window.location.href = "/index.html";
+      }
+
+      let buyer_info = JSON.parse(localStorage.getItem("buyer_info"));
+      // console.log(buyer_info);
+
+      let login_id = JSON.parse(localStorage.getItem("buyer_logIn"));
+      // console.log(login_id);
+
+      const get_obj = buyer_info.find((e) => e.Email === login_id);
+      // console.log(get_obj);
+
+      const word = get_obj["FullName"];
+      const firstLetter = word.charAt(0);
+      console.log(firstLetter);
+
+      let newimage = document.getElementById("newimg");
+      newimage.innerText = firstLetter;
       // filter bar
       // Get all the checkboxes
       const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -121,7 +147,7 @@
         // Loop through all the products and show/hide based on selected categories
         products.forEach(function (product) {
           const category = product.getAttribute("type");
-          console.log(category);
+          // console.log(category);
           if (
             selectedCategories.length === 0 ||
             selectedCategories.includes(category)
@@ -164,43 +190,29 @@
         }
       });
 
-      // for types bar........
-
-      // let bar = document.createElement("nav");
-
-      // let fruit = document.createElement("button");
-      // fruit.innerText = "Fruits";
-      // fruit.setAttribute("class", "same");
-      // fruit.setAttribute("onclick", "fruits()");
-      // bar.append(fruit);
-
-      // let vegetable = document.createElement("button");
-      // vegetable.innerText = "Vegetables";
-      // vegetable.setAttribute("onclick", "vegetables()");
-      // bar.append(vegetable);
-
-      // let grains = document.createElement("button");
-      // grains.innerText = "Cereals & Grains";
-      // grains.setAttribute("onclick", "pulses()");
-      // bar.append(grains);
-
-      // let tea = document.createElement("button");
-      // tea.innerText = "Tea & Coffee";
-      // tea.setAttribute("onclick", "coffee()");
-      // bar.append(tea);
-
-      // document.querySelector(".button").append(bar);
-
       // get the product details from localstorage
       const detail = JSON.parse(localStorage.getItem("owner_upload_list"));
 
       // Card creating by using JavaScript
       for (let i = 0; i < Card.length; i++) {
         let Data = Card[i]["new_owner_data"];
-        console.log(Data);
+        // console.log(Data);
 
         for (let j = 0; j < Data.length; j++) {
-          console.log(j);
+          // console.log(j);
+
+          // let avlQuantity = Data[j]["Qty"];
+          // console.log(avlQuantity);
+
+          // if (avlQuantity > 50) {
+          //   let avlQty = avlQuantity > 50;
+          //   let box = document.getElementsByClassName("aTag");
+          //   for (let i = 0; i < box.length; i++) {
+          //     avlQty[i].style.backgroundColor = "#e8f6e8";
+          //     // box[i].style.boxShadow = "green";
+          //   }
+          //   console.log(box);
+          // }
 
           let info = document.createElement("a");
           info.setAttribute("class", "aTag");
@@ -213,6 +225,7 @@
           // div_card.setAttribute("class", "card_div" + " " + Data[j]["Type"]);
           div_card.setAttribute("type", "button");
           div_card.setAttribute("id", "form");
+          div_card.setAttribute("class", "form");
           info.append(div_card);
 
           let image = document.createElement("img");
@@ -225,6 +238,7 @@
           let fruit_name = document.createElement("p");
           fruit_name.innerText = Data[j]["Name"];
           fruit_name.setAttribute("id", "pName");
+          fruit_name.setAttribute("class", "productName");
           fruit_name.setAttribute("disabled", " ");
           info.append(fruit_name);
           // console.log(fruit_name);
@@ -237,22 +251,13 @@
           rupees.setAttribute("disabled", "");
           info.append(rupees);
 
-          // let offer = document.createElement("p");
-          // offer.setAttribute("value", `$("discountPercentage")`);
-          // offer.setAttribute("id", "Offer");
-          // offer.setAttribute("class", "price");
-          // offer.setAttribute("type", "text");
-          // offer.setAttribute("disabled", "");
-          // info.append(offer);
-          // console.log(offer);
-
-          // let discountPrice = document.createElement("p");
-          // discountPrice.innerText =
-          //   "Price :" + " ₹ " + Data[j]["DiscountPrice"] + " /kg" || 0;
-          // discountPrice.setAttribute("id", "discountPrice");
-          // discountPrice.setAttribute("type", "text");
-          // discountPrice.setAttribute("disabled", "");
-          // info.append(discountPrice);
+          let avlQty = document.createElement("p");
+          avlQty.innerText = "Avl.Qty :" + Data[j]["Qty"] + " kg";
+          avlQty.setAttribute("id", "productQty");
+          avlQty.setAttribute("class", "quantity");
+          avlQty.setAttribute("type", "text");
+          avlQty.setAttribute("disabled", "");
+          info.append(avlQty);
 
           let Type = document.createElement("p");
           Type.innerText = "Type :" + Data[j]["Type"];
@@ -261,64 +266,52 @@
           Type.setAttribute("disabled", "");
           info.append(Type);
 
-          let district = document.createElement("p");
-          district.innerText = Data[j]["District"];
-          district.setAttribute("id", "district");
-          district.setAttribute("type", "text");
-          district.setAttribute("disabled", "");
-          info.append(district);
+          // let state = document.createElement("p");
+          // state.innerText = Data[j]["City"];
+          // state.setAttribute("id", "state");
+          // state.setAttribute("type", "text");
+          // state.setAttribute("disabled", "");
+          // info.append(state);
 
-          let state = document.createElement("p");
-          state.innerText = Data[j]["State"];
-          state.setAttribute("id", "state");
-          state.setAttribute("type", "text");
-          state.setAttribute("disabled", "");
-          info.append(state);
-
-          // code for compare the types from local storage, if types are same show in the page
-          // if (Data[j]["Type"] == "Fruit") {
-          //   let div_card = document.createElement("div");
-          //   div_card.setAttribute("class", "card_div");
-          //   div_card.setAttribute("type", "button");
-          //   div_card.setAttribute("id", "form");
-
-          //   let image = document.createElement("img");
-          //   image.setAttribute("src", Data[j]["Url"]);
-          //   image.setAttribute("alt", "image");
-          //   image.setAttribute("id", "pUrl");
-          //   div_card.append(image);
-
-          //   let fruit_name = document.createElement("input");
-          //   fruit_name.setAttribute("value", Data[j]["Name"]);
-          //   fruit_name.setAttribute("id", "pName");
-          //   fruit_name.setAttribute("disabled", " ");
-          //   div_card.append(fruit_name);
-
-          //   let rupees = document.createElement("input");
-          //   rupees.setAttribute("value", " ₹ " + Data[j]["Price"] + " /kg");
-          //   rupees.setAttribute("id", "pPrice");
-          //   rupees.setAttribute("type", "text");
-          //   rupees.setAttribute("disabled", "");
-          //   div_card.append(rupees);
+          // let district = document.createElement("p");
+          // district.innerText = Data[j]["District"];
+          // district.setAttribute("id", "district");
+          // district.setAttribute("type", "text");
+          // district.setAttribute("disabled", "");
+          // info.append(district);
 
           let button = document.createElement("button");
-          button.innerText = "Add Cart";
+          button.innerHTML = "Add to Cart";
           button.setAttribute("id", "submit");
           button.setAttribute("value", "submit");
           button.setAttribute("id", Data[j]["ProductId"]);
           button.setAttribute("onclick", "addProduct(this.id)");
           info.append(button);
 
+          // let addedCard = Data[j]["ProductId"];
+
+          // let checkId = JSON.parse(localStorage.getItem("added_list"));
+          // for (let k = 0; k < checkId.length; k++) {
+          //   let fullCard = checkId[k]["ProductId"];
+          //   console.log(fullCard);
+          //   console.log(addedCard);
+          //   if (fullCard === addedCard) {
+          //     button.innerHTML = "Added";
+          //   } else {
+          //     button.innerHTML = "Add to Cart";
+          //   }
+          // }
+
           // code for add the selected items to add cart page
           function addProduct(ProductId) {
             event.preventDefault();
-            console.log(ProductId);
+            // console.log(ProductId);
 
             try {
               let addData = JSON.parse(localStorage.getItem("added_list"));
-              console.log(addData);
+              // console.log(addData);
 
-              console.log(Card);
+              // console.log(Card);
 
               let currentProduct;
 
@@ -330,11 +323,11 @@
                 }
               }
 
-              console.log(currentProduct);
+              // console.log(currentProduct);
 
               //  code for set the automatic qty for user as 1kg and it stores in local storage
               let arr = [];
-              console.log(arr);
+              // console.log(arr);
               currentProduct["bQty"] = "1";
               arr.push(currentProduct["bQty"]);
 
@@ -355,14 +348,9 @@
                 }
               }
             } catch (error) {
-              console.error(error);
+              // console.error(error);
             }
           }
-          // url params code for passing the selected product details
-          // let info = document.createElement("a");
-          // info.innerText = "more info -->";
-          // info.setAttribute("href", "./detail.html?Name=" + Data[j]["Name"]);
-          // div_card.append(info);
 
           document.querySelector(".card_main").append(info);
 
@@ -376,7 +364,7 @@
         window.location.href = "/pages/6.buy-2.html";
       }
       function back() {
-        window.location.href = "/pages/4.index.html";
+        window.history.back();
       }
       function vegetables() {
         window.location.href = "/pages/5b-vegetables.html";
@@ -389,6 +377,9 @@
       }
       function profile() {
         window.location.href = "/pages/profile_buy.html";
+      }
+      function history() {
+        window.location.href = "/pages/4_buyer_history.html";
       }
     </script>
   </body>

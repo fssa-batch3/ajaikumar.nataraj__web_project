@@ -4,6 +4,9 @@ function submit() {
 function history() {
   window.location.href = "/pages/10.a.history.html";
 }
+function home() {
+  window.location.href = "/index.html";
+}
 
 // compare the user's detail from the login email to get details of uploader
 uploadForm = document.getElementById("form");

@@ -20,6 +20,7 @@ signUpform.addEventListener("submit", function (event) {
     const Email = document.getElementById("email").value.toLowerCase();
     const Phone_number = document.getElementById("phone_number").value;
     const Password = document.getElementById("password").value;
+    const Pincode = document.getElementById("pincode").value;
     const Home_Address = document.getElementById("address").value;
     const Confirm_Password = document.getElementById("conform_password").value;
 
@@ -45,6 +46,7 @@ signUpform.addEventListener("submit", function (event) {
         Email,
         Phone_number,
         Password,
+        Pincode,
         Home_Address,
         Confirm_Password,
         points: 0,

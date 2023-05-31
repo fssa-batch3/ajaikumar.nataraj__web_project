@@ -13,14 +13,19 @@
       <p>Rishi-market@agri.com</p>
     </div>
     <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
       <div class="logo">
-        <img src="../assets/image/logo.png" alt="logo" width="90px" />
-      </div>
-      <div class="topic">
-        <!-- <input disabled class="pro" type="text" id="profile" /> -->
-        <p onclick="home()">Home</p>
-        <p onclick="about()">About Us</p>
-        <p onclick="service()">Services</p>
+        <img
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
+        />
       </div>
       <div class="name">
         <p onclick="profile()" id="newimg"></p>
@@ -43,6 +48,9 @@
     <script>
       function back() {
         window.history.back();
+      }
+      function home() {
+        window.location.href = "/index.html";
       }
     </script>
     <script src="../assets/JavaScript/seller_place_order.js"></script>

@@ -69,49 +69,28 @@ for (let i = 0; i <= Card.length; i++) {
   input_value.setAttribute("disabled", " ");
   div_card.append(input_value);
 
+  let edit = document.createElement("button");
+  edit.setAttribute("class", "editBtn");
+  // edit.innerText = "Edit";
+  // edit.setAttribute("id", "submit");
+  // edit.setAttribute("type", "submit");
+  div_card.append(edit);
+
   // url params code for passing the selected product details
   let info = document.createElement("a");
-  // info.innerText = "Edit";
+  info.setAttribute("class", "editBtn");
+  info.innerText = "Edit";
   info.setAttribute(
     "href",
     "/pages/new_seller_product_edit.html?ProductId=" + Card[i]["ProductId"]
   );
-  div_card.append(info);
-
-  let edit = document.createElement("button");
-  edit.innerText = "Edit";
-  // edit.setAttribute("id", "submit");
-  // edit.setAttribute("type", "submit");
-  info.append(edit);
+  edit.append(info);
 
   let button = document.createElement("button");
   button.innerText = "Delete";
   button.setAttribute("id", "delete");
   button.setAttribute("value", "delete");
   div_card.append(button);
-
-  // edit the price or qty for the products
-  // edit.addEventListener("click", function (event) {
-  //   event.preventDefault();
-
-  //   try {
-  //     let changeData = {
-  //       Name: fruit_name.value,
-  //       Price: rupees.value,
-  //       Qty: input_value.value,
-  //     };
-  //     console.log(changeData);
-
-  //     const assignData = Object.assign(findDetail, changeData);
-
-  //     let findIndex = detail.indexOf(findDetail);
-  //     detail[findIndex] = assignData;
-  //     localStorage.setItem("newly_added", JSON.stringify(detail));
-  //     // alert("Succesfully changed");
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // });
 
   // to delete the product by clicking the delete button
   button.addEventListener("click", function (event) {

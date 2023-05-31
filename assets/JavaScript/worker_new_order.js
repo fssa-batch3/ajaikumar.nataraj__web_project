@@ -135,3 +135,25 @@ for (let i = 0; i < Ordered_list.length; i++) {
 function store() {
   window.location.href = "/pages/19a-store.html";
 }
+function back() {
+  window.history.back();
+}
+function home() {
+  window.location.href = "/index.html";
+}
+
+let buyer_info = JSON.parse(localStorage.getItem("admin_info"));
+// console.log(buyer_info);
+
+let login_id = JSON.parse(localStorage.getItem("admin_logIn"));
+// console.log(login_id);
+
+const get_obj = buyer_info.find((e) => e.Email === login_id);
+// console.log(get_obj);
+
+const word = get_obj["FullName"];
+const firstLetter = word.charAt(0);
+console.log(firstLetter);
+
+let newimage = document.getElementById("newimg");
+newimage.innerText = firstLetter;

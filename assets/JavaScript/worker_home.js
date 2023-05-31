@@ -38,3 +38,9 @@ function customer() {
 function seller() {
   window.location.href = "/pages/seller.html";
 }
+function back() {
+  window.history.back();
+}
+function home() {
+  window.location.href = "/index.html";
+}

@@ -25,32 +25,36 @@ console.log(select_user);
 const email = document.getElementById("Email");
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
-const password = document.getElementById("password");
+const Pincode = document.getElementById("pincode");
 const DOB = document.getElementById("DOB");
 const transport_DOB = document.getElementById("DOB");
 const Home_Address = document.getElementById("Home_Address");
 const Land_Address = document.getElementById("Land_Address");
 const gender = document.getElementById("gender");
 const farmer = document.getElementById("farmer");
-const Aadhar_number = document.getElementById("Aadhar_number");
+// const Aadhar_number = document.getElementById("Aadhar_number");
 const state = document.getElementById("state");
-const country = document.getElementById("country");
+const district = document.getElementById("district");
+const userId = document.getElementById("userId");
+const points = document.getElementById("points");
 
 // Compare the values
 
 email.value = select_user["Email"];
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-password.value = select_user["Password"];
+Pincode.value = select_user["Pincode"] || "";
 DOB.value = select_user["DOB"];
 transport_DOB.value = select_user["DOB"];
 Home_Address.value = select_user["Home_Address"] || "";
 Land_Address.value = select_user["Land_Address"] || "";
 gender.value = select_user["gender"] || "";
 farmer.value = select_user["farmer"] || "";
-Aadhar_number.value = select_user["Aadhar_number"] || "";
+// Aadhar_number.value = select_user["Aadhar_number"] || "";
 state.value = select_user["state"] || "";
-country.value = select_user["country"] || "";
+district.value = select_user["district"] || "";
+userId.innerText = select_user["id"];
+points.innerText = select_user["points"] || 0;
 
 // to replace the values
 const form = document.getElementById("form");
@@ -61,31 +65,29 @@ form.addEventListener("submit", function (event) {
     let FullName = document.getElementById("First_name").value;
     // let Email = document.getElementById("Email").value;
     let Phone_number = document.getElementById("Phone_Number").value;
-    let Password = document.getElementById("password").value;
+    let Pincode = document.getElementById("pincode").value;
     let DOB = document.getElementById("DOB").value;
     let transport_DOB = document.getElementById("DOB").value;
     let Home_Address = document.getElementById("Home_Address").value;
     let Land_Address = document.getElementById("Land_Address").value;
     let gender = document.getElementById("gender").value;
     let farmer = document.getElementById("farmer").value;
-    let Aadhar_number = document.getElementById("Aadhar_number").value;
+    // let Aadhar_number = document.getElementById("Aadhar_number").value;
     let state = document.getElementById("state").value;
-    let country = document.getElementById("country").value;
+    let district = document.getElementById("district").value;
 
     let newData = {
       FullName,
-      // Email,
       Phone_number,
-      Password,
+      Pincode,
       DOB,
       transport_DOB,
       Home_Address,
       Land_Address,
       gender,
       farmer,
-      Aadhar_number,
       state,
-      country,
+      district,
     };
     console.log(newData);
 
@@ -155,3 +157,7 @@ togglePassword.addEventListener("click", () => {
 
   // this.classList.toggle("bi-eye");
 });
+
+function leaderBoard() {
+  window.location.href = "/pages/leaderboard_seller.html";
+}

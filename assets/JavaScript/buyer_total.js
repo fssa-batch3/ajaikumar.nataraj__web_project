@@ -22,12 +22,14 @@ console.log(select_user);
 const phNo = document.getElementById("Phone_Number");
 const userName = document.getElementById("First_name");
 const Home_Address = document.getElementById("Home_Address");
+const Pincode = document.getElementById("pincode");
 
 // Compare the values
 
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
 Home_Address.value = select_user["Home_Address"] || " ";
+Pincode.value = select_user["Pincode"] || " ";
 
 // to replace the values
 const form = document.getElementById("form");
@@ -37,11 +39,13 @@ form.addEventListener("change", function (event) {
     let FullName = document.getElementById("First_name").value;
     let Phone_number = document.getElementById("Phone_Number").value;
     let Home_Address = document.getElementById("Home_Address").value;
+    let Pincode = document.getElementById("Pincode").value;
 
     let newData = {
       FullName,
       Phone_number,
       Home_Address,
+      Pincode,
     };
     console.log(newData);
 

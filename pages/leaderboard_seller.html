@@ -18,38 +18,33 @@
     />
   </head>
   <body>
-    <header>
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
       <div>
-        <img src="../assets/image/RISHIMARKET (1).png" alt="logo" width="50%" />
+        <img
+          onclick="back()"
+          src="../assets/image/arrowback.png"
+          alt="back"
+          width="50px"
+        />
       </div>
-      <div class="head">
-        <p onclick="home()">Home</p>
-        <p onclick="about()">About us</p>
-        <div class="dropdown">
-          <p class="dropbtn">Register</p>
-          <div class="dropdown-content">
-            <a onclick="buy_sign()">as Buyer</a>
-            <a onclick="sell_sign()">as Seller</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <p class="dropbtn">Log in</p>
-          <div class="dropdown-content">
-            <a onclick="buy_login()">as Buyer</a>
-            <a onclick="sell_login()">as Seller</a>
-          </div>
-        </div>
+      <div class="logo">
+        <img src="../assets/image/logo.png" alt="logo" width="90px" />
       </div>
-      <div>
-        <img src="../assets/image/profile.png" alt="profile" width="100px" />
+
+      <div class="name">
+        <p onclick="profile()" id="newimg"></p>
       </div>
     </header>
     <h1>Seller's Leaderboard</h1>
     <div class="full_table">
-      <div class="sidebar">
+      <!-- <div class="sidebar">
         <button onclick="buyer()">Buyer</button><br />
         <button class="same">Seller</button>
-      </div>
+      </div> -->
       <main aria-describedby="order" class="table"></main>
     </div>
     <script src="/assets/JavaScript/leaderboard_seller.js"></script>

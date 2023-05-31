@@ -32,6 +32,11 @@
     </header>
     <form class="main" id="form">
       <div class="profile">
+        <nav class="extraDetail">
+          <p>UserId:</p>
+          <p id="userId"></p>
+        </nav>
+
         <img src="../assets/image/profile.png" alt="apple" /> <br />
         <label for="Home_Address">Home Address</label>
         <input
@@ -63,6 +68,11 @@
         />
       </div>
       <div class="form" id="form">
+        <nav onclick="leaderBoard()" class="extraDetail">
+          <p>Points:</p>
+          <p id="points"></p>
+        </nav>
+
         <label for="User name">User name</label> <br />
         <input id="First_name" class="input" placeholder="User Name" disabled />
         <label for="ph no">Phone Number</label>
@@ -74,11 +84,6 @@
         />
         <label for="email">Email</label>
         <input id="Email" class="input" placeholder="Email" disabled />
-        <label for="password">Password</label>
-        <input id="password" class="input" placeholder="Password" disabled /><i
-          class="bi bi-eye-slash"
-          id="togglePassword"
-        ></i>
         <label for="Date of Birth">Date of Birth</label>
         <input
           id="DOB"
@@ -87,21 +92,23 @@
           placeholder="Date of Birth"
           disabled
         />
+        <label for="Pincode">Pincode</label>
+        <input id="pincode" class="input" placeholder="Pincode" disabled />
+        <label for="state">District</label>
+        <input id="district" class="input" placeholder="State" disabled />
+        <label for="country">State</label>
+        <input id="state" class="input" placeholder="Country" disabled />
 
-        <label for="state">State</label>
-        <input id="state" class="input" placeholder="State" disabled />
-        <label for="country">Country</label>
-        <input id="country" class="input" placeholder="Country" disabled />
         <button type="button" onclick="change()">EDIT</button>
       </div>
     </form>
     <footer></footer>
 
-    <!-- <script src="/assets/JavaScript/seller_profile.js"></script> -->
-    <script>
+    <script src="/assets/JavaScript/seller_profile.js"></script>
+    <!-- <script>
       const oneUser = JSON.parse(localStorage.getItem("logIn"));
 
-      const user_info = JSON.parse(localStorage.getItem("newSellerInfo"));
+      const user_info = JSON.parse(localStorage.getItem("user_info"));
       let select_user = user_info.find(function (event) {
         // try {
         let customerEmail = event["Email"];
@@ -207,6 +214,6 @@
 
         // this.classList.toggle("bi-eye");
       });
-    </script>
+    </script> -->
   </body>
 </html>
