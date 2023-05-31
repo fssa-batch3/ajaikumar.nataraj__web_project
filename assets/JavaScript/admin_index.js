@@ -41,6 +41,9 @@ function pickup_orders() {
 function home() {
   window.location.href = "/index.html";
 }
+function back() {
+  window.history.back();
+}
 
 let buyer_info = JSON.parse(localStorage.getItem("admin_info"));
 // console.log(buyer_info);

@@ -45,7 +45,7 @@ for (let i = 0; i < newUploadList.length; i++) {
   console.log(newUploadList[i]["Pickup_date"]);
 
   // check currentdate and stored date
-  if (currentDate == newUploadList[i]["Pickup_date"]) {
+  if (currentDate >= newUploadList[i]["Pickup_date"]) {
     let form = document.createElement("form");
     form.setAttribute("class", "form");
     form.setAttribute("action", "bill");

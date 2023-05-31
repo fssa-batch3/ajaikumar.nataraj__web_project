@@ -87,7 +87,7 @@
           td_tr2.append(td_tr);
 
           let td1_tr = document.createElement("td");
-          td1_tr.innerText = Ordered_list[i]["buyer_id"];
+          td1_tr.innerText = Ordered_list[i]["worker_id"];
           td_tr2.append(td1_tr);
 
           let td10_tr = document.createElement("td");
@@ -119,23 +119,23 @@
         }
       }
     </script> -->
-    <script>
-      let buyer_info = JSON.parse(localStorage.getItem("worker_info"));
-      console.log(buyer_info);
+    <!-- <script>
+      let worker_info = JSON.parse(localStorage.getItem("worker_info"));
+      console.log(worker_info);
 
-      let login_id = JSON.parse(localStorage.getItem("worker_login"));
-      console.log(login_id);
+      let workerLoginId = JSON.parse(localStorage.getItem("worker_login"));
+      console.log(workerLoginId);
 
-      const get_obj = buyer_info.find((e) => e.Email === login_id);
-      console.log(get_obj);
+      const findObj = worker_info.find((e) => e.Email === workerLoginId);
+      console.log(findObj);
 
-      const word = get_obj["FullName"];
+      const word = findObj["FullName"];
       const firstLetter = word.charAt(0);
       console.log(firstLetter);
 
       let newimage = document.getElementById("newimg");
       newimage.innerText = firstLetter;
-    </script>
+    </script> -->
     <script src="/assets/JavaScript/worker_new_order.js"></script>
   </body>
 </html>

@@ -9,8 +9,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../assets/CSS/index-1.css" />
-    <link rel="stylesheet" href="../assets/CSS/head.css" />
+    <!-- <link rel="stylesheet" href="../assets/CSS/index-1.css" /> -->
+    <!-- <link rel="stylesheet" href="../assets/CSS/head.css" /> -->
     <link rel="stylesheet" href="../assets/CSS/user_detail.css" />
     <link
       rel="stylesheet"
@@ -18,20 +18,28 @@
     />
   </head>
   <body>
-    <header>
-      <div class="arrow">
+    <div class="contact">
+      <p>+91 9876543210</p>
+      <p>Rishi-market@agri.com</p>
+    </div>
+    <header class="head">
+      <img
+        onclick="back()"
+        src="../assets/image/arrowback.png"
+        alt="back"
+        width="50px"
+      />
+      <div class="logo">
         <img
-          src="../assets/image/arrowback.png"
-          alt="arrow"
-          width="50px"
-          height="50px"
-          onclick="back()"
+          onclick="home()"
+          src="../assets/image/logo.png"
+          alt="logo"
+          width="90px"
         />
       </div>
-      <div>
-        <img src="../assets/image/RISHIMARKET (1).png" alt="logo" width="50%" />
+      <div class="name">
+        <p onclick="profile()" id="newimg"></p>
       </div>
-      <input type="text" id="profile" class="pro" placeholder="Shin Chan" />
     </header>
     <h1>Buyer's Details</h1>
     <div class="full_table">
