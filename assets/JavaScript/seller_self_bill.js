@@ -28,8 +28,8 @@ const Land_Address = document.getElementById("Land_Address");
 // Compare the values
 phNo.value = select_user["Phone_number"];
 userName.value = select_user["FullName"];
-Pincode.value = select_user["Pincode"];
-Land_Address.value = select_user["Home_Address"] || "";
+Pincode.value = select_user["Pincode"] || "";
+Land_Address.value = select_user["Land_Address"] || "";
 
 // to replace the values
 const form = document.getElementById("form");
@@ -39,13 +39,13 @@ form.addEventListener("change", function (event) {
     let FullName = document.getElementById("First_name").value;
     let Phone_number = document.getElementById("Phone_Number").value;
     let Pincode = document.getElementById("pincode").value;
-    let Home_Address = document.getElementById("Land_Address").value;
+    let Land_Address = document.getElementById("Land_Address").value;
 
     let newData = {
       FullName,
       Phone_number,
       Pincode,
-      Home_Address,
+      Land_Address,
     };
     console.log(newData);
 
